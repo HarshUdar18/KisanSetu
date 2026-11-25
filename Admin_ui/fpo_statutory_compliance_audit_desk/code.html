@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#97e9ab",
+          "surface-container-high": "#e1ebe1",
+          "on-secondary-fixed-variant": "#005227",
+          "surface-container-highest": "#dbe5db",
+          "on-background": "#151e18",
+          "secondary-fixed-dim": "#73dc90",
+          "surface-tint": "#166c3b",
+          "surface": "#f2fcf2",
+          "primary-container": "#146b3a",
+          "on-error": "#ffffff",
+          "inverse-surface": "#29332c",
+          "inverse-on-surface": "#e9f3e9",
+          "on-primary-fixed-variant": "#005229",
+          "tertiary-fixed-dim": "#f4bf1b",
+          "on-secondary-fixed": "#00210c",
+          "on-surface-variant": "#3f4940",
+          "primary-fixed-dim": "#87d89c",
+          "on-secondary": "#ffffff",
+          "inverse-primary": "#87d89c",
+          "secondary-fixed": "#8ff9aa",
+          "on-surface": "#151e18",
+          "error-container": "#ffdad6",
+          "primary-fixed": "#a2f5b6",
+          "tertiary": "#584200",
+          "tertiary-container": "#755900",
+          "surface-bright": "#f2fcf2",
+          "surface-container": "#e6f1e7",
+          "on-tertiary": "#ffffff",
+          "surface-dim": "#d2ddd3",
+          "outline-variant": "#bfc9be",
+          "secondary-container": "#8ff9aa",
+          "secondary": "#006d36",
+          "on-secondary-container": "#00743a",
+          "on-error-container": "#93000a",
+          "on-tertiary-fixed": "#251a00",
+          "outline": "#6f7a70",
+          "on-primary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-primary-fixed": "#00210d",
+          "tertiary-fixed": "#ffdf95",
+          "primary": "#005128",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#dbe5db",
+          "background": "#f2fcf2",
+          "on-tertiary-container": "#ffd158",
+          "surface-container-low": "#ecf6ec",
+          "on-tertiary-fixed-variant": "#594400"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "margin-tablet": "1.5rem",
+          "margin": "1rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.015em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(20,40,25,0.06)] overflow-y-auto"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest sticky top-0 z-10"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[22px]">agriculture</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Kisan Setu</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Portal</span></div></div><nav class="flex-1 px-space-md py-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics-reports" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-md text-label-md">Analytics &amp; Reports</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Stakeholders</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmers" href="#"><span class="material-symbols-outlined text-[20px]">nature_people</span><span class="font-label-md text-label-md">Farmers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-360-profile" href="#"><span class="material-symbols-outlined text-[20px]">contact_page</span><span class="font-label-md text-label-md">Farmer 360° Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="fpos" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">FPOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="register-fpo" href="#"><span class="material-symbols-outlined text-[20px]">domain_add</span><span class="font-label-md text-label-md">Register FPO</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg" data-path="kyc-verification" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">KYC Verification</span></div><span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">14</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Supply Chain &amp; Catalog</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-catalogue" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Product Catalogue</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="produce-listings" href="#"><span class="material-symbols-outlined text-[20px]">potted_plant</span><span class="font-label-md text-label-md">Produce Listings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="demand-matching" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span class="font-label-md text-label-md">Demand Matching</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="order-management" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Order Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="collection-points" href="#"><span class="material-symbols-outlined text-[20px]">location_on</span><span class="font-label-md text-label-md">Collection Points</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="quality-inspection" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-md text-label-md">Quality Inspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span class="font-label-md text-label-md">Warehouses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">shelves</span><span class="font-label-md text-label-md">Inventory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="logistics-fleet" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-md text-label-md">Logistics &amp; Fleet</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Finance &amp; Commerce</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="payments-escrow" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-label-md text-label-md">Payments &amp; Escrow</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-settlements" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Farmer Settlements</span></a></div><div class="space-y-space-xs pb-space-lg"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="support-grievances" href="#"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Support &amp; Grievances</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a></div></nav></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(20,40,25,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span>Stakeholders</span><span>/</span><span class="text-primary font-label-md text-label-md">KYC Verification Desk</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Services: Operational</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant w-72"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm flex-1 text-outline">Search farmer, FPO, document ID...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Ctrl+K</kbd></div><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-sm text-label-sm">Today: Nov 22, 2024</span></div><button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">Quick Action</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Rajesh Kulkarni</span><span class="font-label-sm text-label-sm text-outline leading-tight">Super Admin</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command Sticky / Navigation Anchor Header -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest shadow-sm flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-outline">Stakeholders</span>
+<span>/</span>
+<span class="text-outline">KYC Verification</span>
+<span>/</span>
+<span class="text-outline">FPO Statutory Audit</span>
+<span>/</span>
+<span class="font-label-md text-label-md text-primary bg-primary-fixed/30 px-2 py-0.5 rounded">#FPO-MH-JUN-084</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">FPO Statutory Compliance &amp; Governance Audit Desk</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          Tier-1 Mega Aggregator (500+ Farmers)
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+          Audit in Progress (4/5 Verified)
+        </span>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+        Export Statutory File
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container text-tertiary hover:bg-surface-container-high transition-colors font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+        Request SFAC Clarification
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-error-container text-on-error-container hover:bg-error/20 transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">block</span>
+        Reject FPO Onboarding
+      </button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-md font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+        Grant Approved FPO License
+      </button>
+</div>
+</div>
+<!-- Main Scrollable Audit Canvas -->
+<div class="p-space-lg space-y-space-lg">
+<!-- 1. FPO Identity & Statutory Verification Summary Bar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-16 h-16 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[36px]">energy_savings_leaf</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Sahyadri Organic Farmer Producer Co. Ltd.</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Active Producer Co.</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-outline font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">fingerprint</span>
+                CIN: <strong class="text-on-surface font-label-sm text-label-sm">U01409MH2024PTC398124</strong> (RoC Pune)
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">location_pin</span>
+                Cluster: <strong class="text-on-surface font-label-sm text-label-sm">MH-JUN-084</strong> (Junnar North Valley)
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">warehouse</span>
+                Packhouse: Gat No. 412/2, Narayangaon, Pune
+              </span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3 bg-surface-container-low p-space-sm rounded-xl">
+<div class="px-3 py-1.5 bg-surface-container-lowest rounded-lg">
+<span class="block font-label-sm text-label-sm text-outline">Chairman</span>
+<span class="font-label-md text-label-md text-on-surface">Rameshwar Thorat</span>
+<span class="block font-label-sm text-label-sm text-outline">DIN: 08492011</span>
+</div>
+<div class="px-3 py-1.5 bg-surface-container-lowest rounded-lg">
+<span class="block font-label-sm text-label-sm text-outline">Chief Executive</span>
+<span class="font-label-md text-label-md text-on-surface">Sunil Deshmukh</span>
+<span class="block font-label-sm text-label-sm text-outline">Appointed Jan 2024</span>
+</div>
+<div class="px-3 py-1.5 bg-surface-container-lowest rounded-lg">
+<span class="block font-label-sm text-label-sm text-outline">Capacity</span>
+<span class="font-label-md text-label-md text-primary">500+ Farmers</span>
+<span class="block font-label-sm text-label-sm text-outline">25 MT Pre-cooling</span>
+</div>
+<div class="px-3 py-1.5 bg-surface-container-lowest rounded-lg">
+<span class="block font-label-sm text-label-sm text-outline">Escrow Integration</span>
+<span class="font-label-md text-label-md text-on-surface">Axis Bank Ltd.</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Live API
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. 4-Pillar Statutory Verification Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
+<!-- Pillar 1: MCA Live Registry -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface">1. MCA Live Registry</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Active
+            </span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Authorized Capital</span>
+<span class="font-label-md text-label-md text-on-surface">₹50.00 Lakh</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Paid-up Capital</span>
+<span class="font-label-md text-label-md text-on-surface">₹25.00 Lakh</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Inc. Date</span>
+<span class="font-label-md text-label-md text-on-surface">14/03/2024</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Compliance Filings</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">MGT-7 &amp; AOC-4 Valid</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>MCA21 v3 Handshake</span>
+<span class="text-secondary font-label-sm text-label-sm">Handshake 200 OK</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline truncate">
+            SHA256: 7f8b9a10243e8d9c0fa1...
+          </p>
+</div>
+</div>
+<!-- Pillar 2: Board DIN & Aadhaar KYC -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface">2. Board DIN &amp; KYC</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+              4 of 5 Done
+            </span>
+</div>
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm bg-surface-container-low p-1.5 rounded">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Rameshwar Thorat</span>
+<span class="font-label-sm text-label-sm text-outline">MD • DIN 08492011</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm bg-surface-container-low p-1.5 rounded">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Savita Tai Wagh</span>
+<span class="font-label-sm text-label-sm text-outline">Women Dir • DIN 09124401</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm bg-error-container/40 p-1.5 rounded">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pandurang Vikhe</span>
+<span class="font-label-sm text-label-sm text-error">DIN 09440192 • Video KYC Req.</span>
+</div>
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+</div>
+</div>
+</div>
+<button class="w-full text-center text-primary font-label-sm text-label-sm hover:underline py-1" type="button">
+          View All 5 Principal Directors (UIDAI Audit Log) →
+        </button>
+</div>
+<!-- Pillar 3: Statutory Licenses & Accreditations -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface">3. Statutory Licenses</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Cleared
+            </span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="space-y-0.5">
+<span class="block font-label-sm text-label-sm text-outline">FSSAI Central Sorting/Packaging</span>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">#1152399800012</span>
+<span class="font-label-sm text-label-sm text-secondary">Exp: 2028</span>
+</div>
+</div>
+<div class="space-y-0.5">
+<span class="block font-label-sm text-label-sm text-outline">APMC Unified Trader License</span>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">#PUN-APMC-TR-9941</span>
+<span class="font-label-sm text-label-sm text-primary">Pune Div</span>
+</div>
+</div>
+<div class="space-y-0.5">
+<span class="block font-label-sm text-label-sm text-outline">SFAC Equity Grant Verification</span>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">₹18.00 Lakh Eligible</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container bg-tertiary-container/10 px-1 rounded">Stage 2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<span class="text-outline font-label-sm text-label-sm">NPOP Organic Cert.</span>
+<span class="font-label-md text-label-md text-secondary">Valid • Accredited</span>
+</div>
+</div>
+<!-- Pillar 4: Dedicated Escrow & PFMS -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface">4. Escrow &amp; Banking</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">link</span>
+              Connected
+            </span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Escrow Institution</span>
+<span class="font-label-md text-label-md text-on-surface">Axis Bank Ltd.</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Virtual Account</span>
+<span class="font-label-md text-label-md text-on-surface font-mono">•••• •••• 9921</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">IFSC Code</span>
+<span class="font-label-md text-label-md text-on-surface font-mono">UTIB0002140</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">Tripartite Agreement</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">e-Signed (3/3)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>PFMS Beneficiary ID</span>
+<span class="text-on-surface font-label-md text-label-md">MH-JUN-8841</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Document Audit Deck & Side-by-Side Reviewer -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left side: Document Inspection Deck (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Statutory Document Review Deck</h2>
+<p class="font-body-sm text-body-sm text-outline">High-resolution OCR view with cryptographically signed timestamps</p>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-lg">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_out</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Rotate" type="button">
+<span class="material-symbols-outlined text-[18px]">rotate_right</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Fullscreen" type="button">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Document Tab Strip -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1" id="documentTabs">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+            COI_MCA_Pune.pdf
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+            MOA_AOA_Signed.pdf
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+            Board_Resolution_KisanSetu.pdf
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            FSSAI_Packhouse_2024.pdf
+          </button>
+</div>
+<!-- Document Preview Canvas Card -->
+<div class="relative bg-surface-container-low rounded-xl p-space-lg flex flex-col items-center justify-center min-h-[440px] overflow-hidden">
+<!-- Background Document Sheet Visual Simulation -->
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-lg shadow-md p-space-lg flex flex-col space-y-space-md relative">
+<!-- Notary/Seal Stamp Overlay -->
+<div class="absolute right-6 top-8 w-24 h-24 rounded-full border-2 border-primary/30 flex flex-col items-center justify-center text-primary rotate-12 bg-primary-fixed/20 pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-sm text-[9px] uppercase tracking-wider text-center leading-tight">RoC Pune<br/>VERIFIED</span>
+<span class="font-mono text-[8px]">14-MAR-2024</span>
+</div>
+<div class="text-center space-y-1 pb-space-sm border-b border-surface-container">
+<div class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[28px] text-primary">account_balance</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">GOVERNMENT OF INDIA</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline block">MINISTRY OF CORPORATE AFFAIRS</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Certificate of Incorporation</span>
+<span class="font-mono text-label-sm text-label-sm text-outline">[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8]</span>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm text-on-surface leading-relaxed">
+<p>
+                I hereby certify that <strong class="text-primary">SAHYADRI ORGANIC FARMER PRODUCER COMPANY LIMITED</strong> is incorporated on this <strong>Fourteenth day of March Two Thousand Twenty-Four</strong> under the Companies Act, 2013 and that the company is a Producer Company limited by shares.
+              </p>
+<div class="bg-surface-container-high/60 p-space-sm rounded space-y-1 text-on-surface">
+<div class="flex justify-between">
+<span class="text-outline">Corporate Identity Number (CIN):</span>
+<span class="font-mono font-semibold">U01409MH2024PTC398124</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Permanent Account Number (PAN):</span>
+<span class="font-mono font-semibold">AABCS4912J</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Registrar of Companies:</span>
+<span class="font-semibold">RoC Pune, Maharashtra</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-end justify-between">
+<div class="space-y-1">
+<span class="material-symbols-outlined text-[28px] text-secondary">verified</span>
+<div class="font-label-sm text-label-sm text-outline">Digital Signature Hash:</div>
+<div class="font-mono text-[10px] text-outline truncate max-w-[200px]">e149d59e31a89c3bc89...</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface block">Sunil K. Ramaswamy</span>
+<span class="font-label-sm text-label-sm text-outline block">Registrar of Companies</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Digitally Signed &amp; Authenticated</span>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Audit Inspection Tag -->
+<div class="mt-space-md bg-surface-container-lowest/95 backdrop-blur-sm px-space-md py-space-xs rounded-full shadow-md flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+              Digital Signature Valid
+            </span>
+<span class="text-outline">|</span>
+<span>Document Pages: 1 of 4</span>
+<span class="text-outline">|</span>
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">sync_saved_locally</span>
+              MCA Direct Synced: 2 mins ago
+            </span>
+</div>
+</div>
+</div>
+<!-- Right side: Auditor Checklist & Governance Controls (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col space-y-space-lg">
+<!-- Checklist Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">fact_check</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Auditor Statutory Checklist</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+              3/4 Mandatory
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+            Verify every statutory milestone required under the Indian Companies Act &amp; Kisan Setu Aggregator Protocol.
+          </p>
+<div class="space-y-3">
+<!-- Checklist Item 1 -->
+<label class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 text-primary rounded bg-surface-container-lowest accent-primary" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface">MCA active status verified</span>
+<span class="font-body-sm text-body-sm text-outline">CIN U01409MH2024PTC398124 active with no default filings.</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input class="mt-0.5 w-4 h-4 text-primary rounded bg-surface-container-lowest accent-primary" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface">Minimum 5 farmer-directors verified</span>
+<span class="font-body-sm text-body-sm text-error">Director Pandurang Vikhe pending biometric/video confirmation.</span>
+</div>
+<span class="material-symbols-outlined text-error text-[20px]">priority_high</span>
+</label>
+<!-- Checklist Item 3 -->
+<label class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 text-primary rounded bg-surface-container-lowest accent-primary" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface">Clean CIBIL commercial track record</span>
+<span class="font-body-sm text-body-sm text-outline">Credit report CMR-2 score: 785/900. Zero default history.</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+</label>
+<!-- Checklist Item 4 -->
+<label class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 text-primary rounded bg-surface-container-lowest accent-primary" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface">Packhouse geolocation in Junnar cluster</span>
+<span class="font-body-sm text-body-sm text-outline">GPS tag confirmed at Narayangaon Valley cold facility (25 MT).</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+</label>
+</div>
+<!-- Auditor Internal Note Input -->
+<div class="space-y-1 pt-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant block" for="auditorNote">Auditor Verification Remarks</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-primary" id="auditorNote" placeholder="Enter specific observations for SFAC or nodal officers... (e.g., Pre-cooling equipment invoice verified)" rows="3"></textarea>
+</div>
+</div>
+<!-- Direct Resolution Decision CTAs Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Audit Sanction Decisions</h3>
+<span class="material-symbols-outlined text-outline text-[20px]">gavel</span>
+</div>
+<div class="space-y-space-sm">
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-md group" type="button">
+<div class="flex items-center gap-space-sm text-left">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<div>
+<span class="font-label-lg text-label-lg block leading-tight">Sanction Tier-1 FPO Access</span>
+<span class="font-label-sm text-label-sm opacity-80 block leading-tight">Approve 500+ farmer aggregation &amp; escrow payout bridge</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all" type="button">
+<div class="flex items-center gap-space-sm text-left">
+<span class="material-symbols-outlined text-tertiary text-[24px]">send_and_archive</span>
+<div>
+<span class="font-label-lg text-label-lg block leading-tight text-on-surface">Send Correction Notice to Nodal Officer</span>
+<span class="font-label-sm text-label-sm text-outline block leading-tight">Request Pandurang Vikhe Video KYC within 48 hours</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span class="font-body-sm text-body-sm text-outline">
+              Statutory verification files are cryptographically mirrored to Department of Agriculture &amp; Farmers Welfare (MoA&amp;FW) logs.
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Registered Infrastructure & Geolocation Snapshot -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Registered Physical Packhouse &amp; Agro-Cluster Geography</h2>
+<p class="font-body-sm text-body-sm text-outline">Site inspection conducted by Junnar Regional Agri-Officer on 18 Nov 2024</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          Physical Packhouse Geotag Verified
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Infrastructure Location Map Box -->
+<div class="h-48 md:h-full min-h-[190px] w-full rounded-xl bg-cover bg-center shadow-inner relative flex items-end p-space-md" data-location="Narayangaon, Junnar, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtp0Fd3Hb0wNktxQdOL_M7oIRYPUwTA-NHgOISRx-kfAYN5Kjpw9mJh2w-fqprEGm88XxpixXRUAguLoAtqgrwjOzdwWvM5w42o3CBx4PM3VUQobpMGQZPf_arlh0lQhZM5s385CHGspY7RmHd3l3FAFppV135LfsiQvfp4B3RSNmH6JMHP3BC8flTcVI1Xv9SnQxyDixNlyGP7ZgcIJgY_lMVXUmzCZ83zxvs0srZ');">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md p-space-xs px-space-sm rounded-lg shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span>
+<span class="font-label-sm text-label-sm text-on-surface">Lat: 19.1238° N | Lon: 73.9745° E</span>
+</div>
+</div>
+<!-- Infrastructure Details 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between space-y-space-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Pre-Cooling &amp; Cold Storage</span>
+<span class="font-headline-sm text-headline-sm text-primary">25 MT Chambers</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Ammonia-free hydro-cooling unit certified by NABARD rural infrastructure scheme. Maintained at +2°C to +8°C.
+            </p>
+</div>
+<div class="pt-2 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Primary Commodity:</span>
+<strong class="text-on-surface font-label-sm text-label-sm">Grapes, Pomegranates &amp; Exotics</strong>
+</div>
+</div>
+<!-- Infrastructure Details 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between space-y-space-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Sourcing Footprint</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">512 Active Members</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Spread across 18 Junnar gram panchayats with direct electronic weighing scales linked to the Kisan Setu API gateway.
+            </p>
+</div>
+<div class="pt-2 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Last Field Inspection:</span>
+<strong class="text-secondary font-label-sm text-label-sm">Passed (18/11/2024)</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive tab toggle for document inspection
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('#documentTabs button');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.className = 'px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1.5';
+        });
+        btn.className = 'px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap shadow-sm flex items-center gap-1.5';
+      });
+    });
+  });
+</script></main></div></body></html>

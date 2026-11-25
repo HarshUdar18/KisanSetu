@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#8ff9aa", "surface-variant": "#dbe5db", "error": "#ba1a1a", "outline": "#6f7a70", "surface-container": "#e6f1e7", "surface-dim": "#d2ddd3", "on-primary-fixed-variant": "#005229", "on-primary-container": "#97e9ab", "on-secondary-fixed": "#00210c", "primary-fixed-dim": "#87d89c", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdf95", "tertiary-fixed-dim": "#f4bf1b", "inverse-primary": "#87d89c", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "outline-variant": "#bfc9be", "on-background": "#151e18", "inverse-on-surface": "#e9f3e9", "surface": "#f2fcf2", "secondary-fixed": "#8ff9aa", "on-tertiary-fixed-variant": "#594400", "on-tertiary-container": "#ffd158", "error-container": "#ffdad6", "on-error": "#ffffff", "on-surface": "#151e18", "primary-fixed": "#a2f5b6", "on-secondary-fixed-variant": "#005227", "primary": "#005128", "secondary-fixed-dim": "#73dc90", "primary-container": "#146b3a", "on-secondary": "#ffffff", "surface-bright": "#f2fcf2", "on-error-container": "#93000a", "tertiary": "#584200", "surface-container-high": "#e1ebe1", "on-tertiary-fixed": "#251a00", "surface-tint": "#166c3b", "surface-container-low": "#ecf6ec", "inverse-surface": "#29332c", "surface-container-highest": "#dbe5db", "tertiary-container": "#755900", "background": "#f2fcf2", "on-secondary-container": "#00743a", "secondary": "#006d36", "on-primary-fixed": "#00210d" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-tablet": "1.5rem", "margin": "1rem", "gutter-mobile": "0.75rem", "gutter": "1rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "space-xl": "2rem" }, "fontFamily": { "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-space-xs flex items-center justify-between gap-space-xs"><div class="flex items-center min-w-0 flex-1"><button aria-label="मागे जा (Go Back)" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors flex-shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Crop Wise Cost Of Cultivation &amp; Profit Margin</h1></div><div class="flex items-center gap-space-xs flex-shrink-0 pr-space-sm"><button aria-label="सामायिक करा (Share)" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">share</span></button><button aria-label="अधिक पर्याय (More)" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Farmer Profile Header Context -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-headline-sm">
+<span class="material-symbols-outlined text-[24px]">agriculture</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">रमेश शिंदे</span>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-2 py-0.5 rounded-full">प्रमाणित शेतकरी</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">रब्बी हंगाम २०२४-२५ • प्लॉट A-१ (नाशिक क्लस्टर)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline block">एकूण क्षेत्र</span>
+<span class="font-headline-sm text-headline-sm text-primary">३.२ एकर</span>
+</div>
+</div>
+<!-- Horizontal Filter Chips (Crop Selection) -->
+<div class="px-margin-mobile py-space-sm overflow-x-auto scrollbar-none flex items-center gap-space-sm">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      सर्व पिके (All Crops)
+    </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm whitespace-nowrap active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      🌿 गावरान पालक (Desi Spinach)
+    </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      🍅 टोमॅटो (Tomato 1057)
+    </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      🌿 कोथिंबीर (Coriander)
+    </button>
+</div>
+<!-- Hero Unit Economics Card (Desi Spinach) -->
+<div class="px-margin-mobile pt-space-xs pb-space-sm">
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-md p-space-md relative overflow-hidden">
+<!-- Background subtle brand accent -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-primary/5 pointer-events-none"></div>
+<!-- Card Top: Crop Badge & Plot Metrics -->
+<div class="flex items-start justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-headline-md text-headline-md text-on-surface">गावरान पालक</span>
+<span class="bg-surface-container text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-md">४५ दिवस चक्र</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">प्लॉट A-1 (१.५ एकर) • एकूण उत्पादन: ९,२०० किलो (६१३ क्रेट्स)</p>
+</div>
+<span class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</span>
+</div>
+<!-- Net Profit Highlight Box -->
+<div class="bg-primary text-on-primary rounded-lg p-space-md my-space-xs shadow-sm">
+<div class="flex items-baseline justify-between">
+<span class="font-label-lg text-label-lg text-on-primary-container">निव्वळ नफा (Net Profit)</span>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">ROI १९२.७%</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">₹२,५४,४००</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">प्रति किलो नफा: <strong class="text-on-primary">₹२७.६५</strong></span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-primary-container text-body-sm font-body-sm">
+<span>दैनिक नफा वेग: ₹५,६५३ / दिवस</span>
+<span class="flex items-center gap-0.5 text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> उत्तम परतावा
+          </span>
+</div>
+</div>
+<!-- Financial Split: Gross vs Cost -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-sm">
+<div class="bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">payments</span>
+            एकूण विक्री (Revenue)
+          </div>
+<p class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">₹३,८६,४००</p>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">सरासरी दर: ₹४२.००/kg</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">receipt_long</span>
+            एकूण खर्च (Cost)
+          </div>
+<p class="font-headline-sm text-headline-sm text-tertiary-container font-bold mt-0.5">₹१,३२,०००</p>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">उत्पादन खर्च: ₹१४.३५/kg</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Cost per Acre Breakdown Section -->
+<div class="px-margin-mobile pt-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">प्रति एकर तपशीलवार खर्च</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cost of Cultivation per Acre (१.५ एकर एकूण: ₹१,३२,०००)</p>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold bg-surface-container px-2 py-1 rounded-md">
+        ₹८८,००० / एकर
+      </span>
+</div>
+<!-- Cost Breakdown List -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Item 1: Daily Weeding & Labor -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">खुरपणी व मजुरी</span>
+<span class="font-body-sm text-body-sm text-outline block">Daily Weeding &amp; Labour</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹२२,०००</span>
+<span class="font-label-sm text-label-sm text-outline block">२५% वाटा</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">१२ महिला मजूर x २ पाळ्या (स्थानिक मजूर संघ)</p>
+</div>
+<!-- Item 2: Selective Harvesting & Packing -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">काढणी व क्रेट पॅकिंग</span>
+<span class="font-body-sm text-body-sm text-outline block">Selective Harvesting &amp; Crates</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹१६,५००</span>
+<span class="font-label-sm text-label-sm text-outline block">१९% वाटा</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 62%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">६१३ क्रेट्स जुडी बांधणी व वॉशिंग</p>
+</div>
+<!-- Item 3: Bio-Fertilizers & Jeevamrut -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">compost</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">सेंद्रिय खते व जीवामृत</span>
+<span class="font-body-sm text-body-sm text-outline block">Bio-Fertilizers &amp; Nutrition</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹१४,२००</span>
+<span class="font-label-sm text-label-sm text-primary block">३२% FPO बचत</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 52%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">शेणखत २ ट्रॉली + FPO बॅक्टेरियल कल्चर</p>
+</div>
+<!-- Item 4: Transportation to APMC/Hub -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">वाहतूक खर्च (APMC हब)</span>
+<span class="font-body-sm text-body-sm text-outline block">Direct Market Transit</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹१८,८००</span>
+<span class="font-label-sm text-label-sm text-outline block">२१% वाटा</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">शेत ते मुंबई वाशी मार्केट (थेट टेम्पो खेपा)</p>
+</div>
+<!-- Item 5: Drip & Crop Care -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">औषध फवारणी व ठिबक</span>
+<span class="font-body-sm text-body-sm text-outline block">Drip Fertigation &amp; Spray</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹८,८००</span>
+<span class="font-label-sm text-label-sm text-outline block">१०% वाटा</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 38%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">निंबोळी अर्क व सूक्ष्म अन्नद्रव्ये</p>
+</div>
+<!-- Item 6: Land Prep & Rotavator -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">handyman</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">नांगरणी व गादी वाफा</span>
+<span class="font-body-sm text-body-sm text-outline block">Land Preparation &amp; Rotavator</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹४,५००</span>
+<span class="font-label-sm text-label-sm text-secondary block">५०% SMAM अनुदान</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 25%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">कस्टम हायरिंग सेंटर ट्रॅक्टर भाडे</p>
+</div>
+<!-- Item 7: Certified Seeds -->
+<div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+</span>
+<div>
+<span class="font-semibold text-on-surface">महाबीज प्रमाणित बियाणे</span>
+<span class="font-body-sm text-body-sm text-outline block">Certified Desi Seeds</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹३,२००</span>
+<span class="font-label-sm text-label-sm text-outline block">४% वाटा</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 18%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">FPO घाऊक दरात थेट खरेदी (१२ किलो)</p>
+</div>
+</div>
+</div>
+<!-- AI Agronomy Margin Optimizer Insights -->
+<div class="px-margin-mobile pt-space-lg">
+<div class="flex items-center gap-2 mb-space-sm">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">कृषी AI नफा विश्लेषण</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Margin Optimizer &amp; Field Insights</p>
+</div>
+</div>
+<div class="space-y-space-sm">
+<!-- AI Tip 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border-l-4 border-primary">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">wb_twilight</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary font-bold">काढणी वेळ ऑप्टिमायझेशन</span>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-2 py-0.5 rounded-full font-semibold">+₹१४,२०० नफा</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-snug">
+              काढणीची वेळ पहाटे ४ ते ६ ठेवल्याने पानांतील पाण्याचे प्रमाण टिकून वजनात ५% घट टळली व अतिरिक्त नफा झाला.
+            </p>
+</div>
+</div>
+</div>
+<!-- AI Tip 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border-l-4 border-secondary">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">hub</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-secondary font-bold">FPO गट खरेदी फायदा</span>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-2 py-0.5 rounded-full font-semibold">३२% खत बचत</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-snug">
+              सह्याद्री फार्मर्स प्रोड्युसर कंपनीमार्फत थेट खते व जैविक औषध खरेदीमुळे खुल्या बाजारापेक्षा प्रति एकर ₹४,५०० ची थेट बचत.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparative Crop Profitability Matrix -->
+<div class="px-margin-mobile pt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">इतर पिकांशी नफा तुलना</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparative Profitability Analysis</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">रब्बी हंगाम</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Crop 1: Desi Spinach -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="text-xl">🌿</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">गावरान पालक</span>
+<span class="font-body-sm text-body-sm text-outline block">१.५ एकर • ४५ दिवस चक्र</span>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-2 py-1 rounded-full font-bold flex items-center gap-1">
+            🏆 सर्वोच्च नफा
+          </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs bg-surface-container-low rounded-lg p-2 text-center">
+<div>
+<span class="font-label-sm text-label-sm text-outline block">निव्वळ नफा</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">₹२,५४,४००</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">परतावा (ROI)</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">१९३%</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">प्रति दिन नफा</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">₹५,६५३</span>
+</div>
+</div>
+</div>
+<!-- Crop 2: Tomato 1057 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="text-xl">🍅</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">टोमॅटो (१०५७ हायब्रिड)</span>
+<span class="font-body-sm text-body-sm text-outline block">१.२ एकर • ९० दिवस चक्र</span>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-2 py-1 rounded-full font-semibold flex items-center gap-1">
+            📈 स्थिर उत्पादन
+          </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs bg-surface-container-low rounded-lg p-2 text-center">
+<div>
+<span class="font-label-sm text-label-sm text-outline block">निव्वळ नफा</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹१,८२,०००</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">परतावा (ROI)</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">१४२%</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">प्रति दिन नफा</span>
+<span class="font-label-lg text-label-lg text-outline font-bold">₹२,०२२</span>
+</div>
+</div>
+</div>
+<!-- Crop 3: Coriander -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="text-xl">🌿</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">कोथिंबीर (लवली)</span>
+<span class="font-body-sm text-body-sm text-outline block">०.५ एकर • ३५ दिवस चक्र</span>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container text-label-sm font-label-sm px-2 py-1 rounded-full font-semibold flex items-center gap-1">
+            ⚠️ बाजार चढ-उतार
+          </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs bg-surface-container-low rounded-lg p-2 text-center">
+<div>
+<span class="font-label-sm text-label-sm text-outline block">निव्वळ नफा</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹४८,५००</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">परतावा (ROI)</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">११५%</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">प्रति दिन नफा</span>
+<span class="font-label-lg text-label-lg text-outline font-bold">₹१,३८५</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Bottom Action Section -->
+<div class="px-margin-mobile pt-space-xl flex flex-col gap-space-sm">
+<button class="w-full h-12 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 shadow-sm active:bg-on-primary-fixed-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+      विस्तृत खर्च अहवाल डाउनलोड करा (PDF)
+    </button>
+<button class="w-full h-12 bg-surface-container text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+      नवीन पिकाचा खर्च नोंदवा (Log Expense)
+    </button>
+</div>
+</div></main></body></html>

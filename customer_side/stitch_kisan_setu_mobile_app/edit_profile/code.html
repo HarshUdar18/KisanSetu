@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#151e18", "surface-container-high": "#e1ebe1", "background": "#f2fcf2", "inverse-surface": "#29332c", "surface-bright": "#f2fcf2", "on-tertiary-fixed-variant": "#594400", "surface-container": "#e6f1e7", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#005227", "on-primary": "#ffffff", "on-secondary-container": "#00743a", "primary": "#005128", "error": "#ba1a1a", "primary-fixed": "#a2f5b6", "on-tertiary-fixed": "#251a00", "outline": "#6f7a70", "inverse-primary": "#87d89c", "on-primary-fixed": "#00210d", "on-surface-variant": "#3f4940", "tertiary-fixed-dim": "#f4bf1b", "primary-container": "#146b3a", "on-primary-container": "#97e9ab", "tertiary-fixed": "#ffdf95", "outline-variant": "#bfc9be", "surface": "#f2fcf2", "on-secondary-fixed": "#00210c", "on-secondary": "#ffffff", "secondary-container": "#8ff9aa", "surface-container-highest": "#dbe5db", "inverse-on-surface": "#e9f3e9", "secondary-fixed": "#8ff9aa", "secondary": "#006d36", "on-background": "#151e18", "surface-dim": "#d2ddd3", "on-error": "#ffffff", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#73dc90", "surface-tint": "#166c3b", "primary-fixed-dim": "#87d89c", "on-tertiary-container": "#ffd158", "on-error-container": "#93000a", "tertiary-container": "#755900", "surface-container-low": "#ecf6ec", "surface-variant": "#dbe5db", "tertiary": "#584200", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#005229" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "margin-tablet": "1.5rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "margin": "1rem", "space-xs": "0.25rem" }, fontFamily: { "label-lg": ["Inter"], "display-lg": ["Inter"], "display-lg-mobile": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f2fcf2;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Edit Profile</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-safe">
+<!-- Top Secondary Sub-bar for Action State -->
+<div class="px-margin pt-space-sm pb-space-sm flex items-center justify-between bg-surface">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">Profile Synchronization Active</span>
+</div>
+<button class="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg transition-transform active:scale-95 shadow-sm" id="topSaveBtn" type="button">
+      Save
+    </button>
+</div>
+<!-- Profile Photo Section -->
+<section class="flex flex-col items-center justify-center pt-space-md pb-space-lg px-margin">
+<div class="relative group">
+<div class="w-28 h-28 rounded-full overflow-hidden shadow-md bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Warm documentary style portrait of Sunita Deshmukh, an Indian woman in her late thirties with a friendly smile, dressed in an earthy green cotton kurta, soft natural morning daylight, organic farm backdrop with soft leafy greens and warm sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnACPRmXqnHK2KZYFlC2ywws8Y7FOumv3Gku3f353UjaFrEOLrbgpshdl1vkBa7iMj5FOOEwdY6Yx7l2uLSL-R_NGEIYnWMwEvdFLMgkZxr7gF_t4Y_k0KGGRXYotwwl9E_tPCYd3trFOY0e9uFFfq11L-7YxBXrUAKcoOI08f61k81kjqIV8lWEd1u2jjJOVVTYicr04bo6O4SijfCi2riB8YBDj9NQHkXZM6GtvL"/>
+<div class="absolute inset-0 bg-on-surface/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-surface text-[28px]">photo_camera</span>
+</div>
+</div>
+<button aria-label="Change photo" class="absolute bottom-0 right-0 w-9 h-9 rounded-full bg-primary text-on-primary shadow-md flex items-center justify-center transition-transform active:scale-90" type="button">
+<span class="material-symbols-outlined text-[20px]">camera_alt</span>
+</button>
+</div>
+<button class="mt-space-sm inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md shadow-sm active:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Change Photo</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 text-center">FPO Farmer Partner Member ID: #KS-84920</p>
+</section>
+<!-- Form Fields Container -->
+<form class="flex flex-col gap-space-lg px-margin" id="editProfileForm" onsubmit="event.preventDefault();">
+<!-- Full Name Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="fullName">
+<span>Full Name</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">KYC Verified</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full h-[52px] px-space-md pr-12 rounded-xl bg-surface-container-lowest text-on-surface font-body-lg text-body-lg shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="fullName" type="text" value="Sunita Deshmukh"/>
+<div class="absolute right-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Matches bank account linked for harvest rebates</p>
+</div>
+<!-- Phone Number Section with Badge & OTP change -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface" for="phone">Registered Mobile</label>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Verified
+        </span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-on-surface-variant font-body-lg text-body-lg">
+<span class="material-symbols-outlined text-[20px] align-middle mr-1 text-outline">call</span>
+</span>
+<input class="w-full h-[52px] pl-12 pr-28 rounded-xl bg-surface-container text-on-surface font-body-lg text-body-lg shadow-sm cursor-not-allowed select-none" id="phone" readonly="" type="text" value="+91 98220 14890"/>
+<button class="absolute right-2 px-space-sm py-1.5 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md active:bg-surface-container-highest transition-colors" id="changeMobileBtn" type="button">
+          Change Mobile
+        </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+        Updating phone requires SMS OTP verification
+      </p>
+</div>
+<!-- Important Delivery Callout -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="font-label-md text-label-md text-on-surface">Cluster Delivery Route Notice</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your phone number is linked to your regional FPO cluster delivery routes. Updating it requires OTP re-verification.</p>
+</div>
+</div>
+<!-- Email Address -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface" for="email">Email Address</label>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+          Verified for Invoices
+        </span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-on-surface-variant font-body-lg text-body-lg">
+<span class="material-symbols-outlined text-[20px] align-middle mr-1 text-outline">mail</span>
+</span>
+<input class="w-full h-[52px] pl-12 pr-28 rounded-xl bg-surface-container text-on-surface font-body-lg text-body-lg shadow-sm cursor-not-allowed" id="email" readonly="" type="email" value="sunita.deshmukh@gmail.com"/>
+<button class="absolute right-2 px-space-sm py-1.5 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md active:bg-surface-container-highest transition-colors" type="button">
+          Change Email
+        </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tax invoices &amp; weekly harvest almanacs sent here</p>
+</div>
+<!-- Alternate Contact -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="altPhone">
+<span>Alternate Contact Number <span class="font-body-sm text-body-sm text-on-surface-variant">(Optional)</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Secondary</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline">
+<span class="material-symbols-outlined text-[20px]">contacts</span>
+</span>
+<input class="w-full h-[52px] pl-12 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface font-body-lg text-body-lg shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="altPhone" placeholder="Family / Secondary contact" type="tel" value="+91 94220 88210"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Used as backup if gate entry requires confirmation</p>
+</div>
+<!-- Date of Birth -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface" for="dob">
+          Date of Birth <span class="font-body-sm text-body-sm text-on-surface-variant">(Optional)</span>
+</label>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">featured_seasonal_and_gifts</span>
+          Gift Basket
+        </span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline">
+<span class="material-symbols-outlined text-[20px]">cake</span>
+</span>
+<input class="w-full h-[52px] pl-12 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface font-body-lg text-body-lg shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="dob" type="text" value="14 August 1988"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">For your complimentary seasonal harvest birthday basket from local FPOs</p>
+</div>
+<!-- Household Size Selector -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface">Household Size</label>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Recommended: 3-4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Helps Kisan Setu calculate optimal vegetable basket size &amp; reduce food waste.</p>
+<div aria-label="Household size selection" class="grid grid-cols-3 gap-2 mt-1" role="radiogroup">
+<!-- 1-2 Members -->
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all active:scale-95 shadow-sm" data-group="household" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">person</span>
+<span class="font-label-md text-label-md">1-2 Members</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Compact (3kg)</span>
+</button>
+<!-- 3-4 Members [Selected] -->
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary text-on-primary transition-all active:scale-95 shadow-md" data-group="household" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">group</span>
+<span class="font-label-lg text-label-lg">3-4 Members</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Family (6kg)</span>
+</button>
+<!-- 5+ Members -->
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all active:scale-95 shadow-sm" data-group="household" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">diversity_3</span>
+<span class="font-label-md text-label-md">5+ Members</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Joint (10kg+)</span>
+</button>
+</div>
+</div>
+<!-- Dietary Preference Chips -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Dietary Preference</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curates weekly farm picks, pulse varietals, and dairy inclusions.</p>
+<div aria-label="Dietary preferences" class="flex flex-wrap gap-2 mt-1" role="radiogroup">
+<!-- 100% Vegetarian [Selected] -->
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm transition-all active:scale-95" data-group="diet" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[18px]">eco</span>
+<span>100% Vegetarian</span>
+<span class="material-symbols-outlined text-[16px] ml-0.5">check</span>
+</button>
+<!-- Vegan -->
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all active:scale-95" data-group="diet" type="button">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+<span>Vegan</span>
+</button>
+<!-- Eggetarian -->
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all active:scale-95" data-group="diet" type="button">
+<span class="material-symbols-outlined text-[18px]">egg</span>
+<span>Eggetarian</span>
+</button>
+</div>
+</div>
+<!-- Subtle Trust Footnote -->
+<div class="pt-space-xs pb-space-xs flex items-center justify-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-body-sm text-body-sm">Your data is governed strictly by the Farmer-Consumer Charter.</span>
+</div>
+<!-- Bottom Action Button Sticky/Block -->
+<div class="pt-space-xs pb-space-lg">
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md active:bg-primary-container transition-all active:scale-[0.99]" id="saveChangesBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</form>
+<!-- Interactive script for delightful micro-interactions -->
+<script>
+    (function() {
+      // Toggle Household chips
+      const householdButtons = document.querySelectorAll('button[data-group="household"]');
+      householdButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          householdButtons.forEach(b => {
+            b.removeAttribute('data-selected');
+            b.className = 'flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all active:scale-95 shadow-sm';
+            const sub = b.querySelectorAll('span')[2];
+            if (sub) sub.className = 'font-label-sm text-label-sm text-on-surface-variant';
+          });
+          btn.setAttribute('data-selected', 'true');
+          btn.className = 'flex flex-col items-center justify-center p-3 rounded-xl bg-primary text-on-primary transition-all active:scale-95 shadow-md';
+          const subSelected = btn.querySelectorAll('span')[2];
+          if (subSelected) subSelected.className = 'font-label-sm text-label-sm text-on-primary-container';
+        });
+      });
+
+      // Toggle Diet chips
+      const dietButtons = document.querySelectorAll('button[data-group="diet"]');
+      dietButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          dietButtons.forEach(b => {
+            b.removeAttribute('data-selected');
+            b.className = 'inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all active:scale-95';
+            const check = b.querySelector('.ml-0\\.5');
+            if (check) check.remove();
+          });
+          btn.setAttribute('data-selected', 'true');
+          btn.className = 'inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm transition-all active:scale-95';
+          if (!btn.querySelector('.ml-0\\.5')) {
+            const checkIcon = document.createElement('span');
+            checkIcon.className = 'material-symbols-outlined text-[16px] ml-0.5';
+            checkIcon.innerText = 'check';
+            btn.appendChild(checkIcon);
+          }
+        });
+      });
+
+      // Toast feedback helper
+      function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-space-lg py-2.5 bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg rounded-full shadow-xl flex items-center gap-2 transition-all transform duration-300';
+        toast.innerHTML = '<span class="material-symbols-outlined text-secondary-fixed text-[20px]">task_alt</span>' + message;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 2200);
+      }
+
+      const saveAction = () => {
+        showToast('Profile updated successfully!');
+      };
+
+      document.getElementById('saveChangesBtn')?.addEventListener('click', saveAction);
+      document.getElementById('topSaveBtn')?.addEventListener('click', saveAction);
+
+      document.getElementById('changeMobileBtn')?.addEventListener('click', () => {
+        showToast('Verification OTP sent to +91 98220 14890');
+      });
+    })();
+  </script>
+</div></main></body></html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#584200", "on-surface": "#151e18", "on-tertiary": "#ffffff", "surface-dim": "#d2ddd3", "tertiary-container": "#755900", "on-error-container": "#93000a", "primary": "#005128", "on-primary-fixed-variant": "#005229", "surface-container": "#e6f1e7", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#00210d", "error-container": "#ffdad6", "error": "#ba1a1a", "tertiary-fixed-dim": "#f4bf1b", "secondary": "#006d36", "on-tertiary-fixed": "#251a00", "on-primary": "#ffffff", "outline-variant": "#bfc9be", "primary-container": "#146b3a", "secondary-container": "#8ff9aa", "on-background": "#151e18", "inverse-on-surface": "#e9f3e9", "inverse-primary": "#87d89c", "on-secondary-fixed-variant": "#005227", "surface-tint": "#166c3b", "outline": "#6f7a70", "surface-container-low": "#ecf6ec", "primary-fixed": "#a2f5b6", "surface-container-highest": "#dbe5db", "background": "#f2fcf2", "tertiary-fixed": "#ffdf95", "secondary-fixed": "#8ff9aa", "on-secondary": "#ffffff", "secondary-fixed-dim": "#73dc90", "primary-fixed-dim": "#87d89c", "surface-bright": "#f2fcf2", "surface": "#f2fcf2", "surface-container-high": "#e1ebe1", "on-primary-container": "#97e9ab", "on-tertiary-fixed-variant": "#594400", "on-secondary-container": "#00743a", "on-secondary-fixed": "#00210c", "surface-variant": "#dbe5db", "inverse-surface": "#29332c", "on-tertiary-container": "#ffd158", "on-surface-variant": "#3f4940", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-space-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors active:bg-surface-container shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Apply Coupon &amp; Offers</h1></div><div class="flex items-center gap-space-xs shrink-0"><div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-primary"><span class="material-symbols-outlined text-[16px]">verified_user</span><span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">100% Secure</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface flex-grow min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Cart Order Context Banner -->
+<div class="px-space-md pt-space-md">
+<div class="bg-surface-container-high rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Basket Overview</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">₹530.00 <span class="font-body-sm text-body-sm text-outline">• 4 Items</span></p>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest text-primary font-label-md text-label-md px-2.5 py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[14px]">local_activity</span>
+            Eligible
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span class="font-label-md text-label-md">Unlocking direct farm savings on this basket!</span>
+</div>
+</div>
+</div>
+<!-- Promo Code Manual Input Form -->
+<div class="px-space-md pt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-space-xs" for="promoInput">
+        Have a coupon or village cluster code?
+      </label>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">sell</span>
+<input class="w-full h-12 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none uppercase" id="promoInput" placeholder="Enter Kisan promo or referral code" type="text"/>
+</div>
+<button class="h-12 px-space-md bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm transition-all active:scale-95 shrink-0 flex items-center justify-center" id="applyManualBtn" onclick="applyManualCoupon()">
+          Apply
+        </button>
+</div>
+<!-- Micro Interactive Feedback Notification -->
+<div class="hidden mt-space-sm p-space-sm rounded-lg flex items-center gap-2" id="couponFeedback">
+<span class="material-symbols-outlined text-[18px]" id="feedbackIcon"></span>
+<span class="font-body-sm text-body-sm flex-1" id="feedbackText"></span>
+<button class="text-outline hover:text-on-surface" onclick="dismissFeedback()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Simulated Error / Tip Helper Banner -->
+<div class="px-space-md pt-space-sm">
+<div class="bg-error-container/60 rounded-xl p-space-sm flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">error_outline</span>
+<p class="font-body-sm text-body-sm text-on-error-container flex-1">
+        Tip: Code <strong class="font-label-md text-label-md">EXPIRED20</strong> has expired. Select from live seasonal lots below.
+      </p>
+</div>
+</div>
+<!-- Available Offers Section -->
+<div class="px-space-md pt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">loyalty</span>
+        Available Farmer Coupons
+      </h2>
+<span class="font-label-sm text-label-sm text-outline">4 Active</span>
+</div>
+<div class="space-y-space-md">
+<!-- Coupon 1: KISANFIRST -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden coupon-ticket transition-all">
+<!-- Best value flag badge -->
+<div class="absolute top-0 right-0">
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-3 py-1 rounded-bl-xl font-bold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+            BEST VALUE
+          </span>
+</div>
+<div class="p-space-md flex gap-space-md">
+<!-- Ticket Left Stamping Icon -->
+<div class="w-12 h-12 rounded-xl bg-secondary-container/60 text-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[24px]">agriculture</span>
+</div>
+<!-- Ticket Content -->
+<div class="flex-1 min-w-0 pr-16">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold tracking-wider text-primary bg-surface-container px-2 py-0.5 rounded">KISANFIRST</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">Flat ₹100 OFF</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Valid on your first direct farm basket over ₹399. Direct subsidy from FPO cluster.</p>
+<div class="mt-space-sm pt-space-xs flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Max ₹100 • New patrons</span>
+</div>
+</div>
+</div>
+<!-- Ticket Cutout and Action Divider -->
+<div class="relative flex items-center px-space-md py-space-xs bg-surface-container-low/60">
+<!-- Left Cutout Notch -->
+<div class="absolute -left-2 w-4 h-4 bg-surface rounded-full"></div>
+<!-- Right Cutout Notch -->
+<div class="absolute -right-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="w-full flex items-center justify-between pl-2">
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" onclick="toggleDetails('t1')">
+<span>View Terms</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="font-label-md text-label-md text-primary font-bold px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors flex items-center gap-1 active:scale-95" onclick="applyOffer('KISANFIRST', 100)">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+              Tap to Apply
+            </button>
+</div>
+</div>
+<!-- Collapsible Details -->
+<div class="hidden px-space-md py-space-sm bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm" id="t1">
+<ul class="list-disc pl-4 space-y-1">
+<li>Applicable only once per household and phone number.</li>
+<li>Direct basket value must exceed ₹399 excluding delivery.</li>
+<li>Funded jointly by Kisan Setu Nashik FPO Alliance.</li>
+</ul>
+</div>
+</div>
+<!-- Coupon 2: DAWN50 -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden coupon-ticket transition-all">
+<div class="p-space-md flex gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[24px]">wb_twilight</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold tracking-wider text-primary bg-surface-container px-2 py-0.5 rounded">DAWN50</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">₹50 OFF on Early Slots</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Morning dew harvest delivery slots (6:00 AM – 8:00 AM). Crispest field produce.</p>
+<div class="mt-space-sm pt-space-xs flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Orders ₹299+ • Sunrise slot</span>
+</div>
+</div>
+</div>
+<div class="relative flex items-center px-space-md py-space-xs bg-surface-container-low/60">
+<div class="absolute -left-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="absolute -right-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="w-full flex items-center justify-between pl-2">
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" onclick="toggleDetails('t2')">
+<span>View Terms</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="font-label-md text-label-md text-primary font-bold px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors flex items-center gap-1 active:scale-95" onclick="applyOffer('DAWN50', 50)">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+              Tap to Apply
+            </button>
+</div>
+</div>
+<div class="hidden px-space-md py-space-sm bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm" id="t2">
+<ul class="list-disc pl-4 space-y-1">
+<li>Customer must select 6 AM - 8 AM delivery slot at checkout.</li>
+<li>Valid on all fresh organic greens, herbs, and desi vegetables.</li>
+</ul>
+</div>
+</div>
+<!-- Coupon 3: MULSHI20 -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden coupon-ticket transition-all">
+<div class="p-space-md flex gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[24px]">forest</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold tracking-wider text-primary bg-surface-container px-2 py-0.5 rounded">MULSHI20</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">20% OFF Organic Greens</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Applies directly to Mulshi Organic Cluster heirloom vegetables and fresh leaves.</p>
+<div class="mt-space-sm pt-space-xs flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Max discount ₹60</span>
+</div>
+</div>
+</div>
+<div class="relative flex items-center px-space-md py-space-xs bg-surface-container-low/60">
+<div class="absolute -left-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="absolute -right-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="w-full flex items-center justify-between pl-2">
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" onclick="toggleDetails('t3')">
+<span>View Terms</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="font-label-md text-label-md text-primary font-bold px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors flex items-center gap-1 active:scale-95" onclick="applyOffer('MULSHI20', 60)">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+              Tap to Apply
+            </button>
+</div>
+</div>
+<div class="hidden px-space-md py-space-sm bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm" id="t3">
+<ul class="list-disc pl-4 space-y-1">
+<li>Minimum cluster item value ₹200.</li>
+<li>Calculated on Mulshi cooperative tagged produce only.</li>
+</ul>
+</div>
+</div>
+<!-- Coupon 4: GIRCOW -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden coupon-ticket transition-all">
+<div class="p-space-md flex gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[24px]">water_drop</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold tracking-wider text-primary bg-surface-container px-2 py-0.5 rounded">GIRCOW</span>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-1.5 py-0.5 rounded">Free Item</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">Free 500ml A2 Buttermilk</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Complimentary freshly churned A2 cultured chaas on Bilona Ghee or Raw Milk above ₹450.</p>
+<div class="mt-space-sm pt-space-xs flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Dairy items ₹450+</span>
+</div>
+</div>
+</div>
+<div class="relative flex items-center px-space-md py-space-xs bg-surface-container-low/60">
+<div class="absolute -left-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="absolute -right-2 w-4 h-4 bg-surface rounded-full"></div>
+<div class="w-full flex items-center justify-between pl-2">
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" onclick="toggleDetails('t4')">
+<span>View Terms</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="font-label-md text-label-md text-primary font-bold px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors flex items-center gap-1 active:scale-95" onclick="applyOffer('GIRCOW', 45)">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+              Tap to Apply
+            </button>
+</div>
+</div>
+<div class="hidden px-space-md py-space-sm bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm" id="t4">
+<ul class="list-disc pl-4 space-y-1">
+<li>Automatically appends 1 pouch (500ml) Gir Cow Chaas to morning dispatch.</li>
+<li>Subject to daily gaushala yield limits.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Referral & Cooperative Community Card -->
+<div class="px-space-md pt-space-lg">
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">group_add</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Village &amp; Neighbor Referral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Have a neighbor's referral code? Save ₹50 on your first harvest basket and your neighbor gets ₹50 farm credit.
+          </p>
+<div class="mt-space-md flex items-center gap-space-sm">
+<button class="bg-surface-container-lowest text-primary font-label-md text-label-md px-3.5 py-2 rounded-lg shadow-sm flex items-center gap-1.5 hover:bg-surface-container-high transition-colors" onclick="shareReferralPrompt()">
+<span class="material-symbols-outlined text-[16px]">share</span>
+              Invite Neighbors
+            </button>
+<button class="text-secondary font-label-md text-label-md px-2 py-2 hover:underline" onclick="pasteReferralHint()">
+              Enter Code Above
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust & Policy Micro-note -->
+<div class="px-space-md pt-space-md pb-space-lg text-center">
+<p class="font-body-sm text-body-sm text-outline flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+      Discounts honor fair MSP payments direct to registered farmer accounts.
+    </p>
+</div>
+<!-- Sticky Bottom Checkout Action Dock -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md px-space-md py-space-sm shadow-[0_-4px_16px_rgba(20,40,25,0.08)] pb-safe">
+<div class="max-w-md mx-auto flex items-center justify-between gap-space-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="appliedPromoStatus">No coupon applied</p>
+<p class="font-headline-md text-headline-md text-primary" id="basketFinalPrice">₹530.00</p>
+</div>
+<button class="flex-1 h-12 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all" id="continueBtn" onclick="confirmAndReturn()">
+<span>Continue with Cart</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let baseCartTotal = 530.00;
+  let activeDiscount = 0;
+  let currentCoupon = null;
+
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.toggle('hidden');
+    }
+  }
+
+  function applyOffer(code, discountAmount) {
+    currentCoupon = code;
+    activeDiscount = discountAmount;
+    updateBasketUI(code, discountAmount);
+    showFeedback(`Code ${code} applied successfully! You saved ₹${discountAmount}.00`, 'success');
+  }
+
+  function applyManualCoupon() {
+    const input = document.getElementById('promoInput');
+    const code = (input.value || '').trim().toUpperCase();
+    
+    if (!code) {
+      showFeedback('Please enter a coupon code', 'error');
+      return;
+    }
+
+    if (code === 'KISANFIRST') {
+      applyOffer('KISANFIRST', 100);
+    } else if (code === 'DAWN50') {
+      applyOffer('DAWN50', 50);
+    } else if (code === 'MULSHI20') {
+      applyOffer('MULSHI20', 60);
+    } else if (code === 'GIRCOW') {
+      applyOffer('GIRCOW', 45);
+    } else if (code === 'EXPIRED20') {
+      showFeedback('Coupon EXPIRED20 is no longer valid', 'error');
+    } else {
+      showFeedback(`Coupon code "${code}" is invalid or not applicable for this basket`, 'error');
+    }
+  }
+
+  function updateBasketUI(code, discount) {
+    const finalVal = Math.max(0, baseCartTotal - discount);
+    const priceDisplay = document.getElementById('basketFinalPrice');
+    const statusDisplay = document.getElementById('appliedPromoStatus');
+    const continueBtn = document.getElementById('continueBtn');
+    
+    if (priceDisplay) {
+      priceDisplay.innerHTML = `₹${finalVal.toFixed(2)} <span class="font-body-sm text-body-sm text-outline line-through">₹${baseCartTotal.toFixed(2)}</span>`;
+    }
+    if (statusDisplay) {
+      statusDisplay.innerHTML = `<span class="text-primary font-bold">${code}</span> applied (-₹${discount})`;
+    }
+    if (continueBtn) {
+      continueBtn.innerHTML = `<span>Continue (₹${finalVal.toFixed(2)})</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>`;
+    }
+  }
+
+  function showFeedback(msg, type) {
+    const container = document.getElementById('couponFeedback');
+    const textEl = document.getElementById('feedbackText');
+    const iconEl = document.getElementById('feedbackIcon');
+    if (!container || !textEl || !iconEl) return;
+
+    container.classList.remove('hidden', 'bg-error-container', 'text-on-error-container', 'bg-secondary-container', 'text-on-secondary-container');
+    
+    if (type === 'error') {
+      container.classList.add('bg-error-container', 'text-on-error-container');
+      iconEl.textContent = 'error';
+    } else {
+      container.classList.add('bg-secondary-container', 'text-on-secondary-container');
+      iconEl.textContent = 'check_circle';
+    }
+
+    textEl.textContent = msg;
+  }
+
+  function dismissFeedback() {
+    const container = document.getElementById('couponFeedback');
+    if (container) container.classList.add('hidden');
+  }
+
+  function shareReferralPrompt() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Kisan Setu Farm Savings',
+        text: 'Order direct from local harvest clusters with Kisan Setu. Use my link to get ₹50 off!',
+        url: window.location.href
+      }).catch(() => {});
+    } else {
+      showFeedback('Referral invite link copied to clipboard!', 'success');
+    }
+  }
+
+  function pasteReferralHint() {
+    const input = document.getElementById('promoInput');
+    if (input) {
+      input.value = 'VILLAGE50';
+      input.focus();
+    }
+  }
+
+  function confirmAndReturn() {
+    history.back();
+  }
+</script></main></body></html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#005227", "outline-variant": "#bfc9be", "on-background": "#151e18", "on-primary-container": "#97e9ab", "inverse-on-surface": "#e9f3e9", "tertiary-fixed": "#ffdf95", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#594400", "secondary-container": "#8ff9aa", "background": "#f2fcf2", "on-primary-fixed": "#00210d", "surface-container-highest": "#dbe5db", "primary-fixed-dim": "#87d89c", "outline": "#6f7a70", "surface-bright": "#f2fcf2", "on-surface": "#151e18", "on-tertiary-container": "#ffd158", "on-tertiary-fixed": "#251a00", "on-primary": "#ffffff", "surface-variant": "#dbe5db", "on-error": "#ffffff", "surface": "#f2fcf2", "surface-tint": "#166c3b", "inverse-primary": "#87d89c", "primary-container": "#146b3a", "surface-dim": "#d2ddd3", "surface-container-high": "#e1ebe1", "on-primary-fixed-variant": "#005229", "on-secondary-container": "#00743a", "primary": "#005128", "error-container": "#ffdad6", "secondary-fixed": "#8ff9aa", "tertiary-container": "#755900", "secondary": "#006d36", "on-secondary-fixed": "#00210c", "error": "#ba1a1a", "on-surface-variant": "#3f4940", "surface-container-lowest": "#ffffff", "inverse-surface": "#29332c", "tertiary": "#584200", "primary-fixed": "#a2f5b6", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#73dc90", "tertiary-fixed-dim": "#f4bf1b", "surface-container": "#e6f1e7", "surface-container-low": "#ecf6ec" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-tablet": "1.5rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "margin": "1rem", "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-sm": ["Inter"], "display-lg-mobile": ["Inter"], "body-md": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"] }, fontSize: { "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 flex-shrink-0 flex items-center justify-center text-on-surface rounded-full active:bg-surface-container" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col justify-center min-w-0 flex-1"><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">Mulshi Valley Organic FPO</span><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">Fpo Input Order Summary & Subsidized Billing</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin"><div class="flex flex-col w-full pb-28">
+<!-- Top Meta Ledger Header -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm mb-space-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 opacity-5 pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[130px]">receipt_long</span>
+</div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm relative z-10">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">FPO Requisition Ledger</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Verified Shareholder</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-snug mb-1">
+      Order Summary & Subsidized Bill
+    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+      खरेदी व शासकीय अनुदान बिल तपशील
+    </p>
+<!-- Meta Details Box -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm flex flex-col gap-1.5 relative z-10">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">tag</span>
+          Invoice Ref
+        </span>
+<span class="font-semibold text-on-surface font-label-md text-label-md font-mono">#FPO-INP-2024-8842</span>
+</div>
+<div class="flex items-start justify-between text-body-sm font-body-sm pt-1">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">badge</span>
+          Member
+        </span>
+<div class="text-right">
+<span class="font-semibold text-on-surface block">Ramesh B. Shinde</span>
+<span class="text-label-sm font-label-sm text-primary block">Shareholder #319 • Mulshi Valley</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Savings Callout Banner -->
+<div class="bg-gradient-to-r from-primary-container to-secondary rounded-xl p-space-md text-on-primary mb-space-md shadow-sm relative overflow-hidden flex items-center justify-between gap-space-sm">
+<div class="relative z-10">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">savings</span>
+<span class="font-label-lg text-label-lg font-bold tracking-tight text-on-primary">Total Savings: ₹3,390</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+        40% collective benefit from FPO pool & Govt DBT
+      </p>
+</div>
+<div class="bg-surface-container-lowest/20 backdrop-blur-md rounded-lg px-2.5 py-1 text-center flex-shrink-0">
+<span class="font-label-sm text-label-sm block text-on-primary uppercase tracking-wider">Discount</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary leading-tight">40%</span>
+</div>
+</div>
+<!-- Section 1: Itemized Requisition Breakdown -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">inventory_2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Procurement Items</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Bookings</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1: IFFCO Prom Manure -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex-1 min-w-0">
+<span class="inline-block bg-surface-container text-primary text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded mb-1">
+              Bio-Fertilizer Lot
+            </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[15px] leading-tight">
+              IFFCO Prom Organic Manure
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">50kg Bag × 8 Units (400kg Total)</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface block text-[16px]">₹3,360</span>
+<span class="font-body-sm text-body-sm text-outline line-through block">₹5,200</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg px-space-sm py-1.5 flex items-center justify-between text-body-sm font-body-sm mt-1">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span>
+            FPO Bulk Pool Discount (-35%)
+          </span>
+<span class="text-primary font-semibold">-₹1,840</span>
+</div>
+</div>
+<!-- Item 2: Mahabeej Seeds -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex-1 min-w-0">
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded mb-1">
+              Govt Certified Seed
+            </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[15px] leading-tight">
+              Mahabeej Certified Baby Spinach Seeds
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High-germination pack (2 kg total)</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface block text-[16px]">₹420</span>
+<span class="font-body-sm text-body-sm text-outline line-through block">₹620</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg px-space-sm py-1.5 flex items-center justify-between text-body-sm font-body-sm mt-1">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">loyalty</span>
+            FPO Member Subsidy (-32%)
+          </span>
+<span class="text-primary font-semibold">-₹200</span>
+</div>
+</div>
+<!-- Item 3: Custom Hiring Center Machinery -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex-1 min-w-0">
+<span class="inline-block bg-surface-container text-secondary text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded mb-1">
+              Custom Hiring Center (CHC)
+            </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[15px] leading-tight">
+              Rotavator Bed Prep Service
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">3 Hours @ ₹450 / hr (Tractor + Implement)</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface block text-[16px]">₹1,350</span>
+<span class="font-body-sm text-body-sm text-outline line-through block">₹2,700</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg px-space-sm py-1.5 flex items-center justify-between text-body-sm font-body-sm mt-1">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+            SMAM MahaGovt 50% Subsidy
+          </span>
+<span class="text-primary font-semibold">-₹1,350</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Transparent Financial Ledger -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex items-center gap-1.5 mb-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">calculate</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Subsidized Billing Ledger</h3>
+</div>
+<div class="flex flex-col gap-2 font-body-md text-body-md">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Total Gross Market Value</span>
+<span class="font-medium text-on-surface">₹8,520.00</span>
+</div>
+<div class="flex justify-between items-center text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+          FPO Bulk Collective Savings
+        </span>
+<span class="font-medium">-₹2,040.00</span>
+</div>
+<div class="flex justify-between items-center text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          SMAM Mechanization Subsidy
+        </span>
+<span class="font-medium">-₹1,350.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Handling & Hub Aggregation</span>
+<span class="text-secondary font-medium">FREE (FPO Covered)</span>
+</div>
+<div class="my-1.5 h-px bg-outline-variant/50"></div>
+<div class="flex justify-between items-baseline pt-1">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Net Payable</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">शेतकऱ्याने देय एकूण रक्कम</span>
+</div>
+<div class="text-right">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary block leading-none">₹5,130.00</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Taxes Exempted (Sec 11)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Delivery & Dispatch Schedule -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex items-center gap-1.5 mb-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">local_shipping</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fulfillment & Timing</h3>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Inputs Pickup Spot -->
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warehouse</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Input Pickup Location</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Bay #02</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Mulshi Dawn Aggregation Hub, Paud Road
+          </p>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline mt-1">
+<span class="material-symbols-outlined text-[14px]">event_available</span>
+<span>Ready: <strong>02 Nov 2024, 08:30 AM</strong></span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Machinery Farmgate Dispatch -->
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">agriculture</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Farmgate Machinery Arrival</span>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-1.5 py-0.5 rounded font-semibold">Operator Assigned</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Rotavator Operator: Dnyaneshwar G. (MH-12-FK-4412)
+          </p>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline mt-1">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+<span>Scheduled: <strong>30 Oct, 07:00 AM</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Flexible Settlement & Payment Selection -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">payments</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Payment Mode</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">निवडा (Select)</span>
+</div>
+<div class="flex flex-col gap-space-sm" id="payment-options">
+<!-- Option A: Harvest Escrow Settlement (Recommended & Default) -->
+<label class="bg-surface-container-low rounded-xl p-space-md shadow-sm block relative cursor-pointer active:bg-surface-container transition-colors" data-option="escrow">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs flex-1 min-w-0">
+<input checked="" class="w-5 h-5 accent-primary mt-0.5 cursor-pointer flex-shrink-0" name="payment_method" type="radio" value="escrow"/>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Harvest Escrow Settlement</span>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.2 rounded">Zero Upfront Cash</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">शेतमाल विक्रीतून थेट वजावट</span>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm mt-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  ₹5,130 will be auto-settled from <strong class="text-on-surface">Lot #LOT-SP-9021</strong> (Spinach Payout) currently locked in Axis Bank Escrow.
+                </p>
+<div class="flex items-center justify-between mt-2 pt-1 text-label-sm font-label-sm">
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+                    Escrow Locked: ₹23,850.00
+                  </span>
+<span class="text-primary font-bold">Approved</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</label>
+<!-- Option B: Kisan Wallet Balance -->
+<label class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm block relative cursor-pointer active:bg-surface-container transition-colors" data-option="wallet">
+<div class="flex items-start gap-space-xs">
+<input class="w-5 h-5 accent-primary mt-0.5 cursor-pointer flex-shrink-0" name="payment_method" type="radio" value="wallet"/>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Kisan Digital Wallet</span>
+<span class="font-label-md text-label-md font-bold text-primary">₹48,920.50</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">शेतकरी पाकीट (Instant 1-Click Debit)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Direct deduct with biometric / MPIN authorization.
+            </p>
+</div>
+</div>
+</label>
+<!-- Option C: Instant UPI / Direct Bank Transfer -->
+<label class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm block relative cursor-pointer active:bg-surface-container transition-colors" data-option="upi">
+<div class="flex items-start gap-space-xs">
+<input class="w-5 h-5 accent-primary mt-0.5 cursor-pointer flex-shrink-0" name="payment_method" type="radio" value="upi"/>
+<div class="min-w-0 flex-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface block">Instant UPI / NetBanking</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">PhonePe • Google Pay • BHIM • IMPS</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-surface-container text-on-surface-variant text-[11px] font-semibold px-2 py-0.5 rounded">Fast Settlement</span>
+<span class="bg-surface-container text-on-surface-variant text-[11px] font-semibold px-2 py-0.5 rounded">Zero Surcharge</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 5: Legal Certification & Digital Cryptographic Seal -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md shadow-sm text-on-surface-variant text-body-sm font-body-sm">
+<div class="flex items-center gap-space-xs mb-2 text-primary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Legal Compliance & GST Certification</span>
+</div>
+<p class="text-body-sm text-[12px] leading-relaxed text-on-surface-variant mb-space-sm">
+      This invoice complies with agricultural bio-inputs deregulation under Section 11 of CGST Act. Collective discounts processed via Maharashtra FPO Cluster Guidelines (2024-25).
+    </p>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface block font-bold">SHA-256 Validated</span>
+<span class="text-[10px] font-mono text-outline block truncate max-w-[170px]">9b4f2c019d3e8a71b...</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-primary block font-semibold">Mulshi FPO Sec.</span>
+<span class="text-[10px] text-outline">Digitally Signed</span>
+</div>
+</div>
+</div>
+<!-- Section 6: Sticky Bottom Checkout Actions -->
+<div class="fixed bottom-0 left-0 right-0 p-margin bg-surface/90 backdrop-blur-xl shadow-xl z-40 pb-safe flex flex-col gap-2">
+<div class="max-w-md mx-auto w-full flex flex-col gap-2">
+<!-- Main Authorization Button -->
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-headline-sm text-headline-sm flex items-center justify-between px-space-md shadow-md active:bg-primary-container transition-transform active:scale-[0.99]" id="authorize-btn">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+<span>Confirm & Authorize</span>
+</div>
+<span class="font-bold text-on-primary font-headline-sm text-headline-sm">₹5,130</span>
+</button>
+<!-- Secondary PDF download -->
+<button class="w-full py-1.5 flex items-center justify-center gap-1.5 text-primary active:bg-surface-container rounded font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download Subsidized Tax Bill (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Interactive Modal Confirmation Toast (Hidden by Default) -->
+<div class="fixed inset-x-4 top-20 z-50 bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-xl transition-all duration-300 transform -translate-y-20 opacity-0 pointer-events-none flex items-start gap-space-sm" id="success-toast">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[24px]">task_alt</span>
+<div class="flex-1">
+<h5 class="font-label-lg text-label-lg font-bold">Requisition Authorized!</h5>
+<p class="font-body-sm text-body-sm mt-0.5 opacity-90">
+        Settlement initiated against Spinach Escrow #LOT-SP-9021. SMS copy sent to registered SIM.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const radioInputs = document.querySelectorAll('input[name="payment_method"]');
+    const labels = document.querySelectorAll('#payment-options label');
+    const authBtn = document.getElementById('authorize-btn');
+    const toast = document.getElementById('success-toast');
+
+    // Handle payment method styling
+    radioInputs.forEach(input => {
+      input.addEventListener('change', function() {
+        labels.forEach(l => {
+          l.classList.remove('bg-surface-container-low');
+          l.classList.add('bg-surface-container-lowest');
+        });
+        const activeLabel = this.closest('label');
+        if (activeLabel) {
+          activeLabel.classList.remove('bg-surface-container-lowest');
+          activeLabel.classList.add('bg-surface-container-low');
+        }
+      });
+    });
+
+    // Authorize button interaction
+    if (authBtn && toast) {
+      authBtn.addEventListener('click', function() {
+        authBtn.classList.add('opacity-75');
+        authBtn.innerHTML = `
+          <div class="flex items-center justify-center w-full gap-2">
+            <span class="material-symbols-outlined text-[20px] animate-spin">refresh</span>
+            <span>Securing Escrow Settlement...</span>
+          </div>
+        `;
+
+        setTimeout(() => {
+          authBtn.classList.remove('opacity-75');
+          authBtn.innerHTML = `
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[22px]">check_circle</span>
+              <span>Requisition Confirmed!</span>
+            </div>
+            <span class="font-bold text-on-primary">₹5,130</span>
+          `;
+          authBtn.classList.replace('bg-primary', 'bg-secondary');
+
+          // Trigger delight toast
+          toast.classList.remove('-translate-y-20', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
+
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('-translate-y-20', 'opacity-0', 'pointer-events-none');
+          }, 4500);
+        }, 1100);
+      });
+    }
+  })();
+</script></main></body></html>

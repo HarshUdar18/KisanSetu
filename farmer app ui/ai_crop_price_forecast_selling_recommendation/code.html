@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#594400", "background": "#f2fcf2", "surface-container-highest": "#dbe5db", "on-primary-container": "#97e9ab", "on-error-container": "#93000a", "on-secondary-container": "#00743a", "primary": "#005128", "surface-dim": "#d2ddd3", "on-tertiary-fixed": "#251a00", "on-primary-fixed-variant": "#005229", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "outline": "#6f7a70", "on-tertiary": "#ffffff", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "tertiary-fixed-dim": "#f4bf1b", "surface-variant": "#dbe5db", "primary-container": "#146b3a", "on-secondary-fixed": "#00210c", "surface-container-low": "#ecf6ec", "on-primary-fixed": "#00210d", "on-background": "#151e18", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "outline-variant": "#bfc9be", "on-tertiary-container": "#ffd158", "on-surface": "#151e18", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "tertiary": "#584200", "primary-fixed-dim": "#87d89c", "tertiary-fixed": "#ffdf95", "inverse-on-surface": "#e9f3e9", "primary-fixed": "#a2f5b6", "surface-tint": "#166c3b", "secondary": "#006d36", "surface": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-secondary-fixed-variant": "#005227" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container shrink-0 transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Ai Crop Price Forecast &amp; Selling Recommendation</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Refresh Rates" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">sync</span></button><button aria-label="Share Mandi Intel" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full pb-8">
+<!-- Model Overview & Accuracy Indicator -->
+<div class="px-gutter pt-space-sm pb-space-xs">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider truncate">AI Krishi Predictor</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          ९३.८% अचूकता (Accuracy)
+        </span>
+</div>
+<div class="flex items-baseline justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">गावरान पालक (Baby Spinach)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">location_on</span>
+            पुणे व मुंबई क्लस्टर व्हेंडर्स
+          </p>
+</div>
+<span class="text-right shrink-0">
+<span class="font-label-sm text-label-sm text-outline block">सध्याचा बाजारभाव</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹४२.००<span class="font-body-sm text-body-sm text-on-surface-variant">/किलो</span></span>
+</span>
+</div>
+<!-- High-Impact Smart Recommendation Banner -->
+<div class="mt-space-md p-space-sm rounded-lg bg-primary-container text-on-primary flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-secondary-fixed font-bold tracking-wide">🟢 HOLD FOR 3 DAYS</span>
+<span class="px-1.5 py-0.2 bg-primary/60 rounded text-[10px] uppercase font-semibold text-secondary-fixed">उच्च परतावा</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high mt-0.5 leading-snug">
+            ३ दिवस माल राखून ठेवा. ३१ ऑक्टोबर रोजी सणासुदीच्या तेजीमुळे भावात प्रति किलो ₹९ ची भरघोस वाढ अपेक्षित!
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive 7-Day Trajectory Graph Section -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+<h3 class="font-label-lg text-label-lg text-on-surface">७ दिवसांचा अंदाज (Price Trajectory)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded-full">
+          कमाल ₹५१.००
+        </span>
+</div>
+<!-- Peak Demand Callout Card -->
+<div class="p-space-sm mb-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">stars</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+<strong class="text-tertiary">३१ ऑक्टोबर:</strong> सणासुदीची मागणी + आवक घट = <strong>₹५१/किलो</strong>चा उच्चांक (★ सर्वोत्तम विक्री दिवस).
+        </p>
+</div>
+<!-- Visual Trend Chart (SVG Sparkline + Data Columns) -->
+<div class="w-full relative pt-2 pb-1">
+<svg class="w-full h-36 overflow-visible" preserveaspectratio="none" viewbox="0 0 340 120">
+<defs>
+<lineargradient id="priceGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#146b3a" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#146b3a" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid lines -->
+<line stroke="#dbe5db" stroke-dasharray="3,3" stroke-width="1" x1="10" x2="330" y1="20" y2="20"></line>
+<line stroke="#dbe5db" stroke-dasharray="3,3" stroke-width="1" x1="10" x2="330" y1="65" y2="65"></line>
+<line stroke="#dbe5db" stroke-dasharray="3,3" stroke-width="1" x1="10" x2="330" y1="105" y2="105"></line>
+<!-- Area fill -->
+<polygon fill="url(#priceGradient)" points="20,95 70,82 120,60 170,18 220,35 270,78 320,105 320,118 20,118"></polygon>
+<!-- Trajectory Line -->
+<polyline fill="none" points="20,95 70,82 120,60 170,18 220,35 270,78 320,105" stroke="#146b3a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- Data Points -->
+<!-- 28 Oct -->
+<circle cx="20" cy="95" fill="#ffffff" r="4" stroke="#146b3a" stroke-width="2.5"></circle>
+<text fill="#3f4940" font-family="Inter" font-size="9" font-weight="600" text-anchor="middle" x="20" y="87">₹४२</text>
+<!-- 29 Oct -->
+<circle cx="70" cy="82" fill="#ffffff" r="3.5" stroke="#146b3a" stroke-width="2"></circle>
+<text fill="#3f4940" font-family="Inter" font-size="9" font-weight="500" text-anchor="middle" x="70" y="74">₹४३.५</text>
+<!-- 30 Oct -->
+<circle cx="120" cy="60" fill="#ffffff" r="3.5" stroke="#146b3a" stroke-width="2"></circle>
+<text fill="#3f4940" font-family="Inter" font-size="9" font-weight="500" text-anchor="middle" x="120" y="52">₹४६</text>
+<!-- 31 Oct (PEAK) -->
+<circle cx="170" cy="18" fill="#ffd158" r="6" stroke="#146b3a" stroke-width="2.5"></circle>
+<text fill="#005128" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="170" y="10">₹५१ ★</text>
+<!-- 01 Nov -->
+<circle cx="220" cy="35" fill="#ffffff" r="3.5" stroke="#146b3a" stroke-width="2"></circle>
+<text fill="#3f4940" font-family="Inter" font-size="9" font-weight="500" text-anchor="middle" x="220" y="27">₹४९</text>
+<!-- 02 Nov -->
+<circle cx="270" cy="78" fill="#ffffff" r="3.5" stroke="#146b3a" stroke-width="2"></circle>
+<text fill="#3f4940" font-family="Inter" font-size="9" font-weight="500" text-anchor="middle" x="270" y="70">₹४४</text>
+<!-- 03 Nov -->
+<circle cx="320" cy="105" fill="#ffffff" r="4" stroke="#ba1a1a" stroke-width="2"></circle>
+<text fill="#ba1a1a" font-family="Inter" font-size="9" font-weight="500" text-anchor="middle" x="320" y="97">₹४१</text>
+</svg>
+<!-- Chart Timeline Labels -->
+<div class="grid grid-cols-7 text-center pt-2">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface">२८ ऑक्टो</span>
+<span class="font-body-sm text-[10px] text-outline">आज</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface">२९ ऑक्टो</span>
+<span class="font-body-sm text-[10px] text-outline">उद्या</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface">३० ऑक्टो</span>
+<span class="font-body-sm text-[10px] text-secondary">तेजी</span>
+</div>
+<div class="flex flex-col items-center p-0.5 rounded bg-secondary-fixed">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed font-bold">३१ ऑक्टो</span>
+<span class="font-body-sm text-[10px] text-on-secondary-fixed font-semibold">पीक</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface">०१ नोव्हें</span>
+<span class="font-body-sm text-[10px] text-outline">स्थिर</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface">०२ नोव्हें</span>
+<span class="font-body-sm text-[10px] text-outline">मंद</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-error">०३ नोव्हें</span>
+<span class="font-body-sm text-[10px] text-error">घसरण</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Produce & Freshness Snapshot (Data Rich Visual Component) -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<img class="w-20 h-20 rounded-lg object-cover shrink-0" data-alt="Close up photograph of vibrant green fresh baby spinach leaves harvested in Pune India farm, soft morning dew droplets, natural agrarian sunlight, high resolution agricultural photography, rich earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeau4DHzs2RWXN8MFDWAMjA6MCGT192KBceO-EOiebjggXxwg9gMrwWitBwCmqZijdkx2z6CxgrBbncBsAFtFB0THhUR_mn1blrB-8yoMrgZfqwDMdIFFj2oC6c69DMdQIe3Mi4uWM0wWwjT0duX9LDNKQNxfpNO4wdbrgl0wY7r2gCkv98rvDZxGEOc9CedVzEpqvla4cGHbVZmDDmUA1znj2Wp4tHoE6Vv6O6M1p"/>
+<div class="flex-1 min-w-0">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+          A-Grade गावरान वाण
+        </span>
+<h4 class="font-label-lg text-label-lg text-on-surface mt-1 truncate">शेतकरी गट: पुरंदर कृषी विकास मंच</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-sm text-body-sm text-outline">अपेक्षित उत्पादन:</span>
+<span class="font-label-md text-label-md text-on-surface">१,५०० किलो</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm">गुणवत्ता चाचणी पूर्ण (Pre-certified)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Market Drivers / AI Analysis (भाव वाढण्याची ३ मुख्य कारणे) -->
+<div class="px-gutter mt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">analytics</span>
+        भाव वाढीची ३ मुख्य कारणे
+      </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Intel</span>
+</div>
+<div class="space-y-space-xs">
+<!-- Reason 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">festival</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">सणासुदीची वाढती मागणी (Festival Surge)</h4>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded font-semibold">+३५% मागणी</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              दिवाळी व आगामी लग्नसराईमुळे पुणे-मुंबई हॉटेल, रिसॉर्ट्स व केटरिंगकडून ताज्या पालेभाज्यांची मागणी ३५% वाढली आहे.
+            </p>
+</div>
+</div>
+</div>
+<!-- Reason 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">पावसामुळे आवक घट (Supply Inversion)</h4>
+<span class="font-label-sm text-label-sm text-error bg-error-container text-on-error-container px-1.5 py-0.5 rounded font-semibold">-४०% पुरवठा</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              नाशिक व बारामती पट्ट्यात अवकाळी पावसामुळे पालक काढणी ४०% लांबणीवर पडली असून थेट मंडई आवक लक्षणीय घटली आहे.
+            </p>
+</div>
+</div>
+</div>
+<!-- Reason 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">कोल्ड-चेन साठवणूक सल्ला (Storage Feasibility)</h4>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded font-semibold">०% घट</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              आपला पालक FPO प्री-कूलिंग चेंबरमध्ये ३ दिवस ४°C तापमानावर सुरक्षित ठेवता येईल, ज्यामुळे ताजगी कायम राहून वजनात ०% घट होईल.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Optimal Harvesting & Selling Strategy Planner (Calculated Roadmap) -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">event_available</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">काढणी व विक्रीचे अचूक नियोजन</h3>
+</div>
+<div class="space-y-space-sm">
+<!-- Harvest Window item -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">nest_clock_farsight_analog</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-outline block">सर्वोत्तम काढणीची वेळ (Harvest Window)</span>
+<span class="font-label-lg text-label-lg text-on-surface">३० ऑक्टोबर • मध्यरात्री १२:०० ते पहाटे ४:००</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">पहाटेच्या थंडीत पाने कुरकुरीत व तजेलदार राहतात.</span>
+</div>
+</div>
+<!-- Target Market item -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">storefront</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-outline block">लक्ष्य बाजारपेठ (Recommended Channel)</span>
+<span class="font-label-lg text-label-lg text-on-surface">पुणे गुलटेकडी लिलाव #१ किंवा FPO संस्थात्मक पुरवठा</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">कमीत कमी दलाली व तत्काळ थेट रोख पेमेंट.</span>
+</div>
+</div>
+<!-- Extra Earnings highlight box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">payments</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">अपेक्षित अतिरिक्त फायदा (1,500 kg)</span>
+<span class="font-body-sm text-body-sm text-outline">आजच्या ₹४२ तुलनेत ₹५१ वर विक्री केल्यास</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold shrink-0">
+            +₹१३,५००
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cold Storage Booking Shortcut Banner -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">warehouse</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">FPO कोल्ड स्टोरेज जागा आरक्षित करा</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              दर: <strong class="text-secondary">फक्त ₹०.३०/किलो/दिवस</strong> (सभासद सवलत)
+            </p>
+</div>
+</div>
+<button class="px-space-md py-2 bg-surface-container text-primary rounded-lg font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors" id="bookStorageBtn">
+          जागा निवडा
+        </button>
+</div>
+<!-- Live Storage Capacity Indicator -->
+<div class="mt-space-sm pt-space-xs border-t-0 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">शिरवळ FPO हब: ४२० क्रेट्स शिल्लक</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">तापमान: ४.२°C</span>
+</div>
+</div>
+</div>
+<!-- Visual Location Anchor Map for Mandi Logistics -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm">
+<div class="flex items-center justify-between px-space-xs mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+          नजीकचे वितरण केंद्र (Gultekdi APMC, Pune)
+        </span>
+<span class="font-body-sm text-body-sm text-outline"> अंतर: २८ किमी</span>
+</div>
+<div class="w-full h-32 bg-cover bg-center rounded-lg" data-location="Gultekdi Market Yard, Pune, Maharashtra" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8LuCLZCbstY2Fqdoi2uDejxBSngcfQ0ShNtdeCErj1hRXsgnpJjVjrxUGeVzGMcbg9FQew5M_VM_iVKwRdTdEAYC_2bU9_TEZSuIXLjPH3ovnGcjuD9ysBucbFgk2AVB2r9nhuTCgxeRYqUZpwoaWLWmpWwrz5dML7cV8ZyrUSo6UJB8ka4MgQ9v15FHxVnhKMFyigCHAn_2gTccmg-On4PnXP79ieZMG8LzP3ofu')"></div>
+</div>
+</div>
+<!-- Sticky-Style Mobile Action Tray -->
+<div class="px-gutter mt-space-lg space-y-space-xs">
+<!-- Primary CTA: Lock Selling Schedule -->
+<button class="w-full h-12 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md active:bg-primary-container transition-all" id="lockScheduleBtn">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>३१ ऑक्टोबरसाठी विक्री स्लॉट निश्चित करा</span>
+</button>
+<!-- Secondary CTA: WhatsApp PDF Report -->
+<button class="w-full h-11 rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors" id="whatsappReportBtn">
+<span class="material-symbols-outlined text-[20px] text-secondary">description</span>
+<span>WhatsApp वर तपशीलवार अहवाल मिळवा</span>
+</button>
+</div>
+<!-- Toast Notification Modal (Micro-interaction) -->
+<div class="fixed bottom-6 left-4 right-4 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl flex items-center justify-between gap-3 transform translate-y-32 transition-transform duration-300 z-50 pointer-events-none opacity-0" id="toastNotification">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm truncate" id="toastMsg">३१ ऑक्टोबर विक्री स्लॉट आरक्षित झाला आहे!</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed shrink-0">पुष्टीकरण SMS पाठवला</span>
+</div>
+</div>
+<script>
+  (function() {
+    const lockBtn = document.getElementById('lockScheduleBtn');
+    const whatsappBtn = document.getElementById('whatsappReportBtn');
+    const storageBtn = document.getElementById('bookStorageBtn');
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+
+    let toastTimer;
+
+    function showToast(message) {
+      if (!toast) return;
+      if (toastMsg) toastMsg.textContent = message;
+      toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    if (lockBtn) {
+      lockBtn.addEventListener('click', function() {
+        showToast('३१ ऑक्टोबर गुलटेकडी लिलाव #१ स्लॉट आरक्षित झाला!');
+      });
+    }
+
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', function() {
+        showToast('पालक भाव अंदाज PDF WhatsApp वर पाठवली आहे!');
+      });
+    }
+
+    if (storageBtn) {
+      storageBtn.addEventListener('click', function() {
+        showToast('FPO कोल्ड स्टोरेज चेंबर #२ मध्ये जागा तात्पुरती आरक्षित!');
+      });
+    }
+  })();
+</script></main></body></html>

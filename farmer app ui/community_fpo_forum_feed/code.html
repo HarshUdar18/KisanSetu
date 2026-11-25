@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#594400", "background": "#f2fcf2", "surface-container-highest": "#dbe5db", "on-primary-container": "#97e9ab", "on-error-container": "#93000a", "on-secondary-container": "#00743a", "primary": "#005128", "surface-dim": "#d2ddd3", "on-tertiary-fixed": "#251a00", "on-primary-fixed-variant": "#005229", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "outline": "#6f7a70", "on-tertiary": "#ffffff", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "tertiary-fixed-dim": "#f4bf1b", "surface-variant": "#dbe5db", "primary-container": "#146b3a", "on-secondary-fixed": "#00210c", "surface-container-low": "#ecf6ec", "on-primary-fixed": "#00210d", "on-background": "#151e18", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "outline-variant": "#bfc9be", "on-tertiary-container": "#ffd158", "on-surface": "#151e18", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "tertiary": "#584200", "primary-fixed-dim": "#87d89c", "tertiary-fixed": "#ffdf95", "inverse-on-surface": "#e9f3e9", "primary-fixed": "#a2f5b6", "surface-tint": "#166c3b", "secondary": "#006d36", "surface": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-secondary-fixed-variant": "#005227" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-10 h-10 rounded-xl bg-primary-container/15 flex items-center justify-center shrink-0 text-primary-container"><span class="material-symbols-outlined text-[24px]">diversity_2</span></div><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Community Fpo Forum & Feed</h1><span class="font-label-sm text-label-sm text-primary font-medium tracking-wide">Kisan Setu • FPO मंच</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search community" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container relative transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Top Community Header & Context Switcher -->
+<div class="bg-surface-container-low px-gutter py-space-sm shadow-[0_2px_8px_rgba(20,40,25,0.04)]">
+<!-- FPO Hub Dropdown / Identity -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">nature_people</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">मुळशी व्हॅली शेतकरी संघ</h2>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+            142 Active Members • 12 Panchayats
+          </span>
+</div>
+</div>
+<button class="flex items-center gap-0.5 px-space-xs py-1 rounded-lg bg-surface-container text-primary font-label-md text-label-md shrink-0">
+<span>बदला</span>
+<span class="material-symbols-outlined text-[16px]">unfold_more</span>
+</button>
+</div>
+<!-- Search Bar with Multimodal Triggers -->
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant ml-3 text-[22px] shrink-0">search</span>
+<input class="w-full h-12 bg-transparent pl-2 pr-20 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="कीड-रोग, खते किंवा प्रश्न शोधा..." type="text"/>
+<div class="absolute right-2 flex items-center gap-1">
+<button aria-label="Voice Search" class="w-8 h-8 rounded-full bg-secondary-container/50 text-on-secondary-container flex items-center justify-center transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+<button aria-label="Crop Photo Diagnosis" class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Category Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[16px]">done</span>
+<span>सर्व (All)</span>
+</button>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm active:bg-surface-container">
+<span>🌾 पीक सल्ला</span>
+</button>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm active:bg-surface-container">
+<span>🐛 कीड-रोग उपाय</span>
+</button>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm active:bg-surface-container">
+<span>🎙️ ऑडिओ चावडी</span>
+</button>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm active:bg-surface-container">
+<span>🚜 अवजारे भाडे</span>
+</button>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm active:bg-surface-container">
+<span>💰 बाजारभाव चर्चा</span>
+</button>
+</div>
+</div>
+<div class="p-gutter flex flex-col gap-space-md">
+<!-- Pinned Chairman / Official FPO Announcement Banner -->
+<div class="bg-gradient-to-r from-tertiary-fixed/30 to-surface-container-high rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[20px]">push_pin</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-fixed-variant font-bold">FPO अध्यक्ष सूचना • Chairman Note</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">आज</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+            जैविक जीवामृत प्रात्यक्षिक कार्यशाळा
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm leading-snug">
+            उद्या सकाळी १० वा. केंद्रीय गोडाऊनमध्ये सेंद्रिय जीवामृत व दशपर्णी अर्क निर्मितीचे प्रत्यक्ष प्रात्यक्षिक आयोजित केले आहे.
+          </p>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+              गोडाऊन शेड क्र. २, मुळशी
+            </span>
+<button class="px-3 py-1.5 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md shadow-sm flex items-center gap-1 active:scale-95 transition-transform">
+<span>नोंदणी करा</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Voice Query Record Bar -->
+<div class="bg-gradient-to-br from-primary via-primary-container to-secondary rounded-xl p-space-md text-on-primary shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-secondary-fixed/10 pointer-events-none blur-xl"></div>
+<div class="flex items-center justify-between gap-space-sm relative z-10 mb-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary-fixed font-bold tracking-wide flex items-center gap-1 uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+            त्वरित आवाज प्रश्नमंच (Voice Query)
+          </span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-primary leading-tight mt-0.5">
+            शेतात समस्या आहे? बोला आणि विचारा
+          </h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-lg cursor-pointer transform active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+</div>
+<div class="bg-on-primary/10 backdrop-blur-md rounded-lg p-space-sm flex items-center justify-between relative z-10">
+<div class="flex items-center gap-1.5">
+<span class="w-1 h-3 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="w-1 h-5 rounded-full bg-secondary-fixed"></span>
+<span class="w-1 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="w-1 h-4 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-body-sm text-body-sm text-on-primary/90 ml-1">मराठी, हिंदी किंवा इंग्रजीत बोला</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed bg-on-primary/20 px-2 py-0.5 rounded-full">
+          AI Transcribe
+        </span>
+</div>
+</div>
+<!-- FEED POST 1: Voice + Crop Photo Query with Expert Diagnosis -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<!-- Author info header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-11 h-11 rounded-full object-cover shrink-0 shadow-sm" data-alt="Close up warm portrait of a smiling Indian farmer Tukaram Garud wearing a white Nehru cap Gandhi topi standing in a vibrant green spinach farm under soft morning sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTuC1ihBjZzRO33BFLWvEAwjxZ8Lq5kXisQudm0sswUmjihV2IFx_zcsnkbY-GTZkmaHr5ZhOWU3ZjJtzf1SGmXiAgbkISm7lzSecm52qP8fPkUvsyLcj3NBJfeEOEE1-Dphe8GbQGlfDaelhBjkSp2OKPDD7L05bx5Pmd2jMpX9FBqDUIabLHrQ6BSSyQwS3sl7_EgNWJJGHYki8wP_GMqMsD_-yaXeDNhmVEuYm"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">तुकाराम गरूड</span>
+<span class="material-symbols-outlined text-secondary-container text-on-secondary-container rounded-full text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+              खडकवासला (२.४ किमी) • २० मिनिटांपूर्वी
+            </span>
+</div>
+</div>
+<span class="bg-surface-container px-2 py-1 rounded-md text-primary font-label-sm text-label-sm font-semibold shrink-0">
+          पालक उत्पादक
+        </span>
+</div>
+<!-- Question Text -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+          पालकाच्या पानांवर पिवळे ठिपके दिसत आहेत, काय फवारावे?
+        </h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          काल रात्रीच्या धुव्यानंतर कोवळ्या पानांवर तांबूस-पिवळे ठिपके पसरत आहेत. पाणी देण्याचे नियोजन कसे ठेवावे?
+        </p>
+</div>
+<!-- Crop Image Preview -->
+<div class="relative rounded-lg overflow-hidden bg-surface-container shadow-inner">
+<img class="w-full h-48 object-cover" data-alt="High detail macro close up photograph of baby green spinach leaves with early downy mildew chlorotic yellow and brown spots in agricultural soil bed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAANzqAdGgtacwMtd6xt3EZ55Dvt3YUofXzC3oeJnaNCSgEc6jhAQNKntl0AkpYSnbNJ1mlgwvFvgAYg-b4uBY9Zm0cktnnblC3Ds_6hGc9GmpsHhG5_nCTwu4GB8eWeUFpLSsFUvF9YGpBh9UijHKHlb89FccsmmGQiekOXs1rRITbjKSRHpZ_Ej_SJUBF64iYPODGuoai7NZ9KVHkAhbqFXVI9QQK3YrDYtP18Egb"/>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 backdrop-blur-md px-2.5 py-1 rounded-md text-inverse-on-surface flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-error-container">warning</span>
+<span>संभाव्य बुरशी संसर्ग (Suspected Fungus)</span>
+</div>
+</div>
+<!-- Farmer Voice Note Player -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<button aria-label="Play Farmer Audio" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-semibold text-primary">शेतकऱ्याचा ऑडिओ प्रश्न ऐका</span>
+<span>0:42</span>
+</div>
+<!-- Waveform visual mock -->
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex items-center">
+<div class="h-full bg-primary-container rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<!-- Verified Agronomist Response Box -->
+<div class="bg-surface-container-high rounded-xl p-space-sm mt-1">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary text-[13px]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">डॉ. सचिन पाटील (FPO मुख्य कृषितज्ज्ञ)</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">प्रमाणित सल्ला</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          "हे केवडा (डाऊनी मिल्ड्यू) रोगाचे प्राथमिक लक्षण आहे. ट्रायकोडर्मा व्हिरीडी ५ ग्रॅम प्रति लिटर पाण्यात मिसळून त्वरित संध्याकाळी फवारणी करावी. ३ दिवस पाणी भरणे टाळा."
+        </p>
+</div>
+<!-- Social Interactions Bar -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-1 text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>१८ टाळ्या</span>
+</button>
+<button class="flex items-center gap-1 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span>७ उत्तरे</span>
+</button>
+<button class="flex items-center gap-1 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span>३ ऑडिओ</span>
+</button>
+</div>
+<button aria-label="Share to WhatsApp" class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</article>
+<!-- FEED POST 2: Organic Farmer Innovation & Recipe Card -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-11 h-11 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of an Indian woman farmer Sunita Shinde wearing a saree and working cheerfully in her organic mulched farm field with earthen pot bio fertilizers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3PRSwTRNM4sSTuNZJK3gUPxDIoyUInaHPZGoYBbrS3YaV2QSQWyYyBvkY8pwQzru2pSZfZ5oTCWk2YA-oWLHfRO1e_Ln-EDSKM_4xOxNBW8O2tErKab3n8RptJ7FCJgyK0hWlp4o9wUFCo0v6AhbpVDiAOcjQtnTie-3d8-1lDVBqRxdvBx-hvGWQijQHABySo8VuZ7nV4voFe0YY6qFqEijVeBHlMyYHWAa5KtWI"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">सुनिता शिंदे</span>
+<span class="material-symbols-outlined text-tertiary text-[16px]">eco</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">पौड खुर्द • २ तासांपूर्वी</span>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full shrink-0">
+          सेंद्रिय पद्धत
+        </span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+          🌿 ताक आणि हिंगाचे जादुई द्रावण: मावा व तुडतुड्यांवर रामबाण उपाय
+        </h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          १५ लिटरच्या पंपासाठी २०० मिली आंबट गावरान ताक आणि ५ ग्रॅम शुद्ध हिंगाची पूड मिसळून फवारली. रासायनिक कीटकनाशकांचे प्रति पंप ₹४५० वाचले आणि पानांची चमकही वाढली!
+        </p>
+</div>
+<!-- Innovation Highlight Pills & Proof -->
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">savings</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">बचत</span>
+<span class="font-label-md text-label-md text-primary font-bold">₹४५० प्रति पंप</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">science</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">मात्रा</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">२०० मिली + ५ ग्रॅम</span>
+</div>
+</div>
+</div>
+<!-- Hashtags -->
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary/5 px-2 py-0.5 rounded">#सेंद्रियशेती</span>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary/5 px-2 py-0.5 rounded">#कमीखर्चशेती</span>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary/5 px-2 py-0.5 rounded">#शेतकरीप्रयोग</span>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-1 text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span>४२ जणांनी जतन केले</span>
+</button>
+<span class="text-on-surface-variant/80 font-body-sm text-body-sm">१२ शेतकऱ्यांनी वापरले</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 active:bg-surface-container-high">
+<span class="material-symbols-outlined text-[16px]">format_quote</span>
+<span>प्रयोग सांगा</span>
+</button>
+</div>
+</article>
+<!-- FEED POST 3: Community Machinery Sharing / Rental -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm flex items-center justify-center shrink-0 font-bold shadow-sm">
+            ज्ञा
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">ज्ञानेश्वर कदम</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.2 rounded text-on-surface-variant">पिरंगुट</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">४ तासांपूर्वी • अवजारे बँक</span>
+</div>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full shrink-0">
+          सामायिक अवजार
+        </span>
+</div>
+<div class="flex gap-space-sm items-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern Mahindra tractor coupled with blue heavy rotary tiller rotavator parked at an Indian farm shed under daytime sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_566n-wziShdC7xmtw-R8abhsS1tuErCLuy9OEoMIJuwzdNLkQ4OtS9kl1-UgZQWtv_iKUtiLztBQZYUYZBA2jhKAR9OLdHHFNR9TBSJQ46AgrLab3puff7z5CAq63wABv3iPZMvEaiVahFhV9dzwjOAVmprd4GV4DzGt3EbeJNnBPuNVpxvNb3zc-Z7zmV7QyoNywrAXH3vO_Hi9lhaoAoz7se8wNzBatsNRYeta"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug">
+            ४५ HP ट्रॅक्टर आणि रोटाव्हेटर भाड्याने उपलब्ध
+          </h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">उद्या दुपार १ ते ५ वाजेपर्यंत ३ स्लॉट रिकामे आहेत.</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹४५०</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ तास (डिझेलसह)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="h-10 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>कॉल करा</span>
+</button>
+<button class="h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>बुकिंग विनंती</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Floating Action Button for Asking Question or Sharing Tip -->
+<div class="fixed bottom-20 right-4 z-40">
+<button class="flex items-center gap-2 px-4 py-3 bg-primary-container text-on-primary rounded-full shadow-[0_4px_16px_rgba(20,40,25,0.25)] hover:bg-primary transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-wide">शंका विचारा / टिप द्या</span>
+</button>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] px-space-xs transition-all group text-primary-container font-semibold" data-path="community-fpo-forum-&-feed" href="#"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm mt-0.5">चावडी</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-on-surface transition-all group" data-path="voice-qa-chawadi" href="#"><span class="material-symbols-outlined text-[22px]">mic</span><span class="font-label-sm text-label-sm mt-0.5">प्रश्नमंच</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-on-surface transition-all group" data-path="success-stories-&-farmer-knowledge-hub" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">ज्ञान भांडार</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-on-surface transition-all group" data-path="ask-agronomist-&-share-field-tip" href="#"><span class="material-symbols-outlined text-[22px]">psychology_alt</span><span class="font-label-sm text-label-sm mt-0.5">कृषितज्ज्ञ</span></a></div></nav></body></html>

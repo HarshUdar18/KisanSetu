@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#584200", "on-surface": "#151e18", "on-tertiary": "#ffffff", "surface-dim": "#d2ddd3", "tertiary-container": "#755900", "on-error-container": "#93000a", "primary": "#005128", "on-primary-fixed-variant": "#005229", "surface-container": "#e6f1e7", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#00210d", "error-container": "#ffdad6", "error": "#ba1a1a", "tertiary-fixed-dim": "#f4bf1b", "secondary": "#006d36", "on-tertiary-fixed": "#251a00", "on-primary": "#ffffff", "outline-variant": "#bfc9be", "primary-container": "#146b3a", "secondary-container": "#8ff9aa", "on-background": "#151e18", "inverse-on-surface": "#e9f3e9", "inverse-primary": "#87d89c", "on-secondary-fixed-variant": "#005227", "surface-tint": "#166c3b", "outline": "#6f7a70", "surface-container-low": "#ecf6ec", "primary-fixed": "#a2f5b6", "surface-container-highest": "#dbe5db", "background": "#f2fcf2", "tertiary-fixed": "#ffdf95", "secondary-fixed": "#8ff9aa", "on-secondary": "#ffffff", "secondary-fixed-dim": "#73dc90", "primary-fixed-dim": "#87d89c", "surface-bright": "#f2fcf2", "surface": "#f2fcf2", "surface-container-high": "#e1ebe1", "on-primary-container": "#97e9ab", "on-tertiary-fixed-variant": "#594400", "on-secondary-container": "#00743a", "on-secondary-fixed": "#00210c", "surface-variant": "#dbe5db", "inverse-surface": "#29332c", "on-tertiary-container": "#ffd158", "on-surface-variant": "#3f4940", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Kisan Setu Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDzHuC4euPWV5eDEArFluoF3FJqz_I96RysK7z-niTV8n6_HxI0NKYbw1OCietqgnnQUs-w-e66SbGSGMXKqB6CtkB9yDCG7-42pONgd5O7IxrP7zvNd5R2f3fxhLUW7Y8Gm2wK74NaI3gB9u19KbCIJI858vA4KmLiJvN0LG0oEy4pYEfiFyMeAzSQwT9QWfk5f8Z5iaPb34fRjtmasOOylTnFGlfpq2h5wADKc6f_EQ"/><button class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-full text-left truncate max-w-[170px] min-h-[44px]"><span class="material-symbols-outlined text-primary text-[18px] shrink-0">location_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Deliver to: Kothrud, Pune 411038</span><span class="material-symbols-outlined text-outline text-[16px] shrink-0">expand_more</span></button></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search produce" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[24px]">search</span></button><button aria-label="Shopping Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[24px]">shopping_cart</span><span class="absolute top-2 right-1.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-[10px] font-bold leading-none shadow-sm">3</span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWdDwBGMqrbwq4bwzKo6HaaGpGR-PWZmxHHLrAp-lGHKuTIXfFjv5EASkHtLdy5LUHXcZxMy9pOb0iQCIEgSj6kPMsJgToBU-Ipwu8e2BDzVPOKh0sl1pXkmiYgavL_DkLKs7ZgwpLGHhFg5G0FToPKMIYyfAsWf7WM8HpeZ8xaJIbe1VF1HL-IjQym3lCmBftVHrCOwg9i4zEwdc6crR6bdJZO7k5Kwjvawd1xrn"/></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface flex-grow min-h-screen"><div class="flex flex-col w-full">
+<!-- Search Shortcut Bar & Quick Filter Chips -->
+<section class="px-margin pt-space-sm pb-space-sm bg-surface sticky top-0 z-20 shadow-[0_2px_8px_rgba(20,40,25,0.04)]">
+<!-- Vernacular Search Input -->
+<div class="relative w-full flex items-center bg-surface-container-lowest rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-outline ml-3 text-[20px]">search</span>
+<input class="w-full h-11 pl-2 pr-10 bg-transparent text-on-surface font-body-md text-body-md focus:outline-none placeholder:text-outline" placeholder="Search vegetables, atta, oils, FPOs..." type="text"/>
+<button aria-label="Vernacular Voice Search" class="absolute right-1 w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<!-- Filter Chips Carousel -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pt-space-sm pb-1">
+<button class="chip-filter active shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-xs">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Chemical-Free</span>
+</button>
+<button class="chip-filter shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>In Stock Today</span>
+</button>
+<button class="chip-filter shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">savings</span>
+<span>Under ₹50</span>
+</button>
+<button class="chip-filter shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>A-Grade Only</span>
+</button>
+</div>
+</section>
+<!-- Dual Panel Master-Detail Catalog -->
+<div class="flex w-full min-h-[calc(100vh-148px)]">
+<!-- Left Vertical Category Rail (28% width) -->
+<aside class="w-[88px] sm:w-28 shrink-0 bg-surface-container-low flex flex-col py-space-xs">
+<nav class="flex flex-col gap-1 w-full" id="categoryRail">
+<!-- Sidebar Item: Vegetables (Active) -->
+<button class="cat-nav-btn active group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors bg-surface text-primary" data-cat="vegetables">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-primary"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary-container text-on-secondary-container mb-1 shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+<span class="font-label-md text-label-md font-semibold leading-tight line-clamp-1">Vegetables</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">(18)</span>
+</button>
+<!-- Sidebar Item: Seasonal Fruits -->
+<button class="cat-nav-btn group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors text-on-surface-variant hover:bg-surface-container" data-cat="fruits">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-transparent"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">agriculture</span>
+</div>
+<span class="font-label-md text-label-md leading-tight line-clamp-1">Seasonal Fruits</span>
+<span class="font-label-sm text-label-sm text-outline">(14)</span>
+</button>
+<!-- Sidebar Item: Farm Grains & Atta -->
+<button class="cat-nav-btn group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors text-on-surface-variant hover:bg-surface-container" data-cat="grains">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-transparent"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">grain</span>
+</div>
+<span class="font-label-md text-label-md leading-tight line-clamp-1">Grains & Atta</span>
+<span class="font-label-sm text-label-sm text-outline">(12)</span>
+</button>
+<!-- Sidebar Item: Pulses & Dals -->
+<button class="cat-nav-btn group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors text-on-surface-variant hover:bg-surface-container" data-cat="pulses">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-transparent"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+</div>
+<span class="font-label-md text-label-md leading-tight line-clamp-1">Pulses & Dal</span>
+<span class="font-label-sm text-label-sm text-outline">(9)</span>
+</button>
+<!-- Sidebar Item: Cold Pressed Oils -->
+<button class="cat-nav-btn group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors text-on-surface-variant hover:bg-surface-container" data-cat="oils">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-transparent"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">oil_barrel</span>
+</div>
+<span class="font-label-md text-label-md leading-tight line-clamp-1">Cold Oils</span>
+<span class="font-label-sm text-label-sm text-outline">(6)</span>
+</button>
+<!-- Sidebar Item: Organic Jaggery & Honey -->
+<button class="cat-nav-btn group relative flex flex-col items-center py-2.5 px-1.5 text-center w-full transition-colors text-on-surface-variant hover:bg-surface-container" data-cat="jaggery">
+<div class="w-1.5 h-7 absolute left-0 top-1/2 -translate-y-1/2 rounded-r-full bg-transparent"></div>
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">hive</span>
+</div>
+<span class="font-label-md text-label-md leading-tight line-clamp-1">Jaggery & Honey</span>
+<span class="font-label-sm text-label-sm text-outline">(5)</span>
+</button>
+</nav>
+</aside>
+<!-- Right Content Workspace (72% width) -->
+<section class="flex-1 min-w-0 p-space-sm bg-surface overflow-y-auto space-y-space-md">
+<!-- Subcategory Group 1: Leafy Vegetables -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Leafy Greens</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Nashik Harvested</span>
+</div>
+<!-- 2-Column Product Grid -->
+<div class="grid grid-cols-2 gap-2">
+<!-- Card 1: Palak -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Crisp vibrant organic spinach leaves palak bunched with fresh morning dew drops, captured in natural daylight, hyper realistic, high resolution food photography, earthy green palette, agricultural purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtakcUx2Na6xy_tnxcxygwOA0Prlp4df2IT7F-4TiELLEpp28K1l1uEEY5qA2yE2wge6SHSwcmDgbGU3f6LSIg7IwUsMEkwlvCJqhWPDky2qAEZj2MaOfVJkHIj8Lv8O7GFkZYnH8hCG82rNyX6ao1y7ppfPeEPyxVIlvkdM5UGzwak5l3LL9HtiXH31PDHZ9zQmbmcuNaTMUY3cVk_aFNyso3uPAmJ3uk3PqWmAm-"/>
+<span class="absolute top-1.5 left-1.5 bg-surface-container-lowest/90 backdrop-blur-sm px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold text-primary shadow-xs">
+                  Harvested 4h ago
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Sahyadri FPO</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Fresh Palak</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Desi Broad Leaf Bunch</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹28</span>
+<span class="font-label-sm text-label-sm text-outline">/ bunch (250g)</span>
+</div>
+<!-- Stepper Active State -->
+<div class="stepper-box flex items-center justify-between bg-primary rounded-lg h-9 px-1.5 text-on-primary">
+<button aria-label="Decrease quantity" class="step-btn minus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-lg text-label-lg font-bold qty-val">1</span>
+<button aria-label="Increase quantity" class="step-btn plus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Methi -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Fresh vibrant green methi fenugreek leaves bunch with delicate stems, arranged neatly on a clean wooden cutting board, organic farm setting, natural soft sunlight, professional produce photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKXRkmmflcC5Rw_ApAIWl5zJWFVCU6gq8bvCwNxQ3eI31B1fiGtdeHR_T_uZaytorwcnQ1yVeWoBo0spk8vXtm4cxckzTy8LlcD10EhpcnE4Nt4A1Gs26v7gZ3nxlDwoDM2LPx-RPbwvPmCkkqNuIkIkwkI-nTTIc0W19PnnJRXaZkGD5eoAJd2hqeBOyBmOlB5hhQXLnOZGqNtejCwPjNm2BFED6evYNWZ_oyaD5E"/>
+<span class="absolute top-1.5 left-1.5 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold shadow-xs">
+                  A-Grade
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Maval Agro Coop</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Kasuri Methi</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Tender Fragrant Sprigs</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹32</span>
+<span class="font-label-sm text-label-sm text-outline">/ bunch (200g)</span>
+</div>
+<!-- Add to Cart Idle State -->
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- Subcategory Group 2: Daily Essentials -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daily Essentials</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Priced per KG</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Card 3: Solapur Onion -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Sun-cured pinkish red Indian Solapur red onions in a rustic jute basket, vibrant skins, authentic Indian mandi fresh produce aesthetic, high contrast daylight photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnBzgIkL5BZCvkiEwwV2fBYMJVj1Qih1YPH_kd1i9e5fDkWjNPz4_-sO-_VmHQn2t6J3qUksp8HW3R960vbutxx9q_pI0adO6rPiVKRD6L55tX6TJDVsgenzbf_WE0ZpYXzzW0EK0yxqqVvqP5grGAo3dBRxFL96r4MwrREfjYpCL2uyP2C3181GOPdoeYUceK556kPAf0EgjRZl3LuENTJ1W1trEP2RWPHgZVTTCx"/>
+<span class="absolute top-1.5 left-1.5 bg-surface-container-lowest/90 backdrop-blur-sm px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold text-primary shadow-xs">
+                  Direct Mandi
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Lasalgaon Growers</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Nashik Red Onion</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Medium-Large Bulb</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹34</span>
+<span class="font-label-sm text-label-sm text-outline">/ 1 kg</span>
+</div>
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Farm Fresh Tomato -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Ripe firm bright red field tomatoes with intact green calyx stems, fresh harvest morning light, rustic crate background, commercial farm produce aesthetic, deep natural reds and greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASvcIMu362tiUDahIGTu-eGWgk-rx8G73pYAZ29-kVo3r5dRi_T7JAKm_njXe8deaKd5Xbgh4U8mKajpmcsmxSqzkbFv9TMpZ4kyeTUerqoUHSixcmKvc0BD_xrsxJueLSeosBoyz-OR2CgbdIxqkigSnrhZj-iWH4eBFGbH7nSNWEPDYdMFXm2zALv1HfRPUbwEooIAod1UM0u2vet4gJmHRLv94R_aKSYxvUMCmB"/>
+<span class="absolute top-1.5 left-1.5 bg-surface-container-lowest/90 backdrop-blur-sm px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold text-primary shadow-xs">
+                  Field Picked
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Junnar Krushi</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Desi Tamatar</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Naturally Ripened</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹42</span>
+<span class="font-label-sm text-label-sm text-outline">/ 1 kg</span>
+</div>
+<!-- Stepper Active -->
+<div class="stepper-box flex items-center justify-between bg-primary rounded-lg h-9 px-1.5 text-on-primary">
+<button aria-label="Decrease quantity" class="step-btn minus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-lg text-label-lg font-bold qty-val">2</span>
+<button aria-label="Increase quantity" class="step-btn plus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Subcategory Group 3: Gourds & Cucumbers -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Gourds & Cucumbers</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">High Hydration</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Card 5: Lauki -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Tender pale-green bottle gourd lauki resting on burlap canvas, pristine smooth skin, freshly severed stem with water drop, crisp clean bright studio food photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyDqCbuVD8TnTXg8UcVyu044lC-SUIF0slsf7XyCIf2UMeVcSj5jmm3CnAwfHVbYHnLAMB0bzrswr10pb0t6c-Pm4786cWweR2P5M41aU2lgzVJV-xZG_DTlXUgmWd2uQybz2Dhx7v6cJa_2fBDbksTOqKXsT9OAmAUv4PrYoWDsG_plwJZtuDMmBZnTttpI0I6GIBasS6FFcfS945R7TZGIwZao7iCy1Vwt0pxR2c"/>
+<span class="absolute top-1.5 left-1.5 bg-surface-container-lowest/90 backdrop-blur-sm px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold text-primary shadow-xs">
+                  Tender Pick
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Shirwal FPO</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Tender Lauki</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">500g - 700g piece</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹30</span>
+<span class="font-label-sm text-label-sm text-outline">/ pc</span>
+</div>
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+<!-- Card 6: Desi Kheera -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Freshly harvested crisp green Indian desi cucumbers kheera sliced open displaying juicy interior seeds and translucent flesh, placed on slate table with sprigs of mint, clean modern agricultural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiafhtjCtbIeEsBbtLe8WKwzvTx0ELplnDu5jbcc_5_0TUmoD0ESu9v2guahjlx7A962AcQPve_RENeVdM0MJ2pLTsCurLP5KGtVELKrOoPL2zwG6g1Y2RwRlha8fpE2ovo2g1A8I1kZJZNElKfXNsDZGIZaYWxnIDstkVcV1_RRqaE8ehnfgtjf0tmUUHcrsPRvf9ZnSJq3u3doVjIcclaiu5zjYZDXEhVW81xkl"/>
+<span class="absolute top-1.5 left-1.5 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold shadow-xs">
+                  Zero Wax
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Indapur Biofarm</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Desi Kheera</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Crisp Sweet Crunch</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹38</span>
+<span class="font-label-sm text-label-sm text-outline">/ 500g</span>
+</div>
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- Subcategory Group 4: Exotic & Salad Greens -->
+<div class="space-y-space-xs pt-1 pb-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Exotic Greens</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Hydroponic/Protected</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Card 7: Broccoli -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Dense emerald green fresh broccoli crown head with tight florets, fresh cut stalk, studio lit with dramatic soft shadows, high clarity food editorial look, rich plant texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqazpRCip0-CkFN7JXBlXbzEYqhwvblPVNSNwHtcQlJ1CGHgKsEMyJoZ5DX9qyQ9oKowOcJYr6vHLtqZKE6NLgcTXJhZRw1mw-iD3K2gb5rpHtC1BKgU7pcU2jjuLGDKpzDzHPpliYlkAOvEKUWxql6LPUx1LQQPKgIYDgKWd_fPjXqWZq7pNI6tZGnuHPsBrrUbpickSn2Pf434kSLYFzx-fRvm7h-83S7n34jBzc"/>
+<span class="absolute top-1.5 left-1.5 bg-surface-container-lowest/90 backdrop-blur-sm px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold text-primary shadow-xs">
+                  Mahabaleshwar
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Valley Greens</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Green Broccoli</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Dense Crown 350g</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹65</span>
+<span class="font-label-sm text-label-sm text-outline">/ pc</span>
+</div>
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+<!-- Card 8: Cherry Tomatoes -->
+<article class="bg-surface-container-lowest rounded-xl p-2.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+<div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Cluster of shiny red and golden vine cherry tomatoes attached to their fresh green vine, resting on dark craft paper, bright natural lighting, pristine organic gourmet farm produce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5S9L2ms0AUe6cvoHaZ4g229U2Ow7YBnXRpXmXRjGYWXUcL3MCu6cDMmlKmM9JyUwA0moC_aSRVeTBDyOG0GumhfkGdALAg8lkYiKSx3mzjqeGjz70ntcLpf32UWOTZR-r-QI3mJoF4OArxOl76eJyRgUR4zcAccfRntEuyIc8JMMDPWQVDBxXuJX8XiecbhYCx-rH5W9s4tGVT8m0ppFtcbX_zf9iB4WH2wQ800bX"/>
+<span class="absolute top-1.5 left-1.5 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded-full font-label-sm text-[10px] font-bold shadow-xs">
+                  Vine-Ripened
+                </span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Flora Polyhouse</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-snug line-clamp-1">Cherry Tomato</h3>
+<p class="font-body-sm text-body-sm text-outline-variant text-[11px] mb-2">Vine Cluster 250g</p>
+</div>
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">₹55</span>
+<span class="font-label-sm text-label-sm text-outline">/ punnet</span>
+</div>
+<button class="add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>ADD</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Client-side Script for Steppers & Category Rail Tabs -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sidebar Tab Switching
+      const railButtons = document.querySelectorAll('.cat-nav-btn');
+      railButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          railButtons.forEach(b => {
+            b.classList.remove('bg-surface', 'text-primary');
+            b.classList.add('text-on-surface-variant');
+            const ind = b.querySelector('.absolute');
+            if (ind) ind.classList.replace('bg-primary', 'bg-transparent');
+          });
+          btn.classList.add('bg-surface', 'text-primary');
+          btn.classList.remove('text-on-surface-variant');
+          const ind = btn.querySelector('.absolute');
+          if (ind) ind.classList.replace('bg-transparent', 'bg-primary');
+        });
+      });
+
+      // Filter chips toggle
+      const chips = document.querySelectorAll('.chip-filter');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chip.classList.toggle('bg-primary');
+          chip.classList.toggle('text-on-primary');
+          chip.classList.toggle('bg-surface-container-low');
+          chip.classList.toggle('text-on-surface-variant');
+        });
+      });
+
+      // Add to Cart transform to Stepper
+      const addBtns = document.querySelectorAll('.add-cart-btn');
+      addBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const parent = btn.parentElement;
+          const stepper = document.createElement('div');
+          stepper.className = 'stepper-box flex items-center justify-between bg-primary rounded-lg h-9 px-1.5 text-on-primary animate-fade-in';
+          stepper.innerHTML = `
+            <button aria-label="Decrease quantity" class="step-btn minus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+              <span class="material-symbols-outlined text-[18px]">remove</span>
+            </button>
+            <span class="font-label-lg text-label-lg font-bold qty-val">1</span>
+            <button aria-label="Increase quantity" class="step-btn plus w-7 h-7 flex items-center justify-center rounded text-on-primary hover:bg-primary-container transition-colors">
+              <span class="material-symbols-outlined text-[18px]">add</span>
+            </button>
+          `;
+          parent.replaceChild(stepper, btn);
+          bindStepperEvents(stepper);
+        });
+      });
+
+      function bindStepperEvents(stepper) {
+        const minus = stepper.querySelector('.minus');
+        const plus = stepper.querySelector('.plus');
+        const qty = stepper.querySelector('.qty-val');
+
+        plus.addEventListener('click', () => {
+          let count = parseInt(qty.textContent, 10);
+          qty.textContent = count + 1;
+        });
+
+        minus.addEventListener('click', () => {
+          let count = parseInt(qty.textContent, 10);
+          if (count > 1) {
+            qty.textContent = count - 1;
+          } else {
+            const addBtn = document.createElement('button');
+            addBtn.className = 'add-cart-btn flex items-center justify-center gap-1 w-full h-9 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all';
+            addBtn.innerHTML = `
+              <span class="material-symbols-outlined text-[16px]">add</span>
+              <span>ADD</span>
+            `;
+            stepper.parentElement.replaceChild(addBtn, stepper);
+            addBtn.addEventListener('click', () => {
+              addBtn.parentElement.replaceChild(stepper, addBtn);
+              qty.textContent = '1';
+              bindStepperEvents(stepper);
+            });
+          }
+        });
+      }
+
+      // Bind initially present steppers
+      document.querySelectorAll('.stepper-box').forEach(bindStepperEvents);
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(20,40,25,0.06)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[48px] px-space-xs transition-colors text-primary font-bold" data-path="categories" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-label-sm">Categories</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="weekly-cart" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-label-sm text-label-sm">Weekly Cart</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="orders" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">Orders</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[48px] px-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

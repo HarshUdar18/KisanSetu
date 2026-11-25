@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#73dc90", "surface-container": "#e6f1e7", "on-surface": "#151e18", "secondary": "#006d36", "tertiary-container": "#755900", "tertiary": "#584200", "surface-container-highest": "#dbe5db", "on-secondary-container": "#00743a", "on-primary-fixed": "#00210d", "secondary-fixed": "#8ff9aa", "surface-tint": "#166c3b", "primary-fixed-dim": "#87d89c", "on-tertiary-fixed-variant": "#594400", "error": "#ba1a1a", "on-tertiary-fixed": "#251a00", "outline-variant": "#bfc9be", "on-tertiary": "#ffffff", "surface": "#f2fcf2", "on-secondary": "#ffffff", "inverse-on-surface": "#e9f3e9", "on-primary-fixed-variant": "#005229", "primary": "#005128", "on-error": "#ffffff", "tertiary-fixed-dim": "#f4bf1b", "surface-container-high": "#e1ebe1", "secondary-container": "#8ff9aa", "outline": "#6f7a70", "surface-variant": "#dbe5db", "on-primary-container": "#97e9ab", "primary-fixed": "#a2f5b6", "on-secondary-fixed-variant": "#005227", "inverse-primary": "#87d89c", "surface-container-low": "#ecf6ec", "primary-container": "#146b3a", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#00210c", "inverse-surface": "#29332c", "on-tertiary-container": "#ffd158", "on-surface-variant": "#3f4940", "background": "#f2fcf2", "on-primary": "#ffffff", "on-background": "#151e18", "on-error-container": "#93000a", "surface-dim": "#d2ddd3", "surface-bright": "#f2fcf2", "tertiary-fixed": "#ffdf95", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-md": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs min-w-0"><button class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Farm Plot Details</h1></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[24px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Top Trust & Sync Banner -->
+<section class="px-margin pt-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">AgriStack Verified</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">शेतकरी ओळख व शेती खाते</p>
+</div>
+</div>
+<button class="h-9 px-3 rounded-lg bg-surface-container-highest active:bg-surface-variant flex items-center gap-1.5 transition-colors" id="resyncBtn" onclick="triggerSyncAnim()">
+<span class="material-symbols-outlined text-primary text-[18px]" id="syncIcon">sync</span>
+<span class="font-label-md text-label-md text-primary">Live Sync</span>
+</button>
+</div>
+</section>
+<!-- FPO Organization Profile Card -->
+<section class="px-margin pt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">corporate_fare</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">एफपीओ संलग्नता (FPO Details)</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Class A Shareholder</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- FPO Header Details -->
+<div class="p-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+</div>
+<div class="min-w-0 flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface leading-tight">Mulshi Valley Organic Farmer Producer Co. Ltd.</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">CIN: U01111MH2021PTC364121</p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">ID: FPO-MUL-0428</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सहभाग: March 2021</span>
+</div>
+</div>
+</div>
+<!-- Equity Badge & Dividend Bar -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">50 Equity Shares Held</p>
+<p class="font-body-sm text-body-sm text-secondary font-medium">4% Quarterly Dividend + Subsidized Reefer</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-on-surface font-label-sm text-label-sm">Active</span>
+</div>
+<!-- Hub Location Grid -->
+<div class="mt-space-md pt-space-md grid grid-cols-1 gap-space-sm bg-surface-container-lowest">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">storefront</span>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface">Assigned Collection Point & Cold Hub</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Mulshi Dawn Hub • <span class="text-secondary font-medium">5.2 km from farm gate</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Agronomist Support Drawer -->
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-outline">Cluster Agronomist</p>
+<p class="font-label-lg text-label-lg text-on-surface truncate">Dr. Sandeep More</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Call Agronomist" class="h-10 px-3 rounded-lg bg-surface-container-lowest text-primary active:bg-primary active:text-on-primary flex items-center gap-1 shadow-sm transition-colors" href="tel:+919800012345">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="font-label-md text-label-md">कॉल</span>
+</a>
+<button aria-label="Message Agronomist" class="h-10 px-3 rounded-lg bg-primary text-on-primary active:bg-primary-container flex items-center gap-1 shadow-sm transition-colors" onclick="toggleChatSheet()">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="font-label-md text-label-md">चर्चा</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Land Revenue Records (7/12 & 8A Extract) -->
+<section class="px-margin pt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">map</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">जमीन महसूल नोंद (7/12 & 8A)</h2>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">draw</span>
+<span class="font-label-sm text-label-sm">Talathi Signed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<!-- Khatedar & Land Identity -->
+<div class="pb-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-outline">खातेदार (Khatedar Name)</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold">Ramesh Balasaheb Shinde</p>
+</div>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-md">8A Khata #319</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Gat / Survey No. <span class="font-bold text-on-surface">142/2B</span>, Taluka Mulshi, Dist. Pune
+        </p>
+</div>
+<!-- Land Breakdown Visual Card -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">grain</span>
+<span class="font-label-md text-label-md">जिरायत (Rainfed)</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">1.2 <span class="font-body-sm text-body-sm text-outline">Acres</span></p>
+<p class="font-body-sm text-body-sm text-outline">Pot-Kharaba: 0.05 Ac</p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+<span class="font-label-md text-label-md">बागायत (Irrigated)</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">2.2 <span class="font-body-sm text-body-sm text-outline">Acres</span></p>
+<p class="font-body-sm text-body-sm text-secondary">Perennial Canal/Lift</p>
+</div>
+</div>
+<!-- Extract File Tile & Quick Actions -->
+<div class="mt-space-md p-space-sm bg-surface-container rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-error shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Mahabhulekh_Gat_142_Shinde.pdf</p>
+<p class="font-body-sm text-body-sm text-outline">1.2 MB • Updated 14 days ago</p>
+</div>
+</div>
+<button class="h-9 px-3 rounded-lg bg-surface-container-lowest text-primary active:bg-surface-container-high shadow-sm font-label-md text-label-md transition-colors shrink-0" onclick="viewExtractToast()">
+          पहा (View)
+        </button>
+</div>
+<!-- Secondary Action Row -->
+<div class="mt-space-sm flex gap-space-sm">
+<button class="flex-1 h-11 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg active:bg-surface-container-high flex items-center justify-center gap-2 transition-colors" onclick="triggerSyncAnim()">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+          Re-sync from AgriStack
+        </button>
+</div>
+</div>
+</section>
+<!-- Farm Infrastructure & Water Rights -->
+<section class="px-margin pt-space-lg">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">water_pump</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">पाणी हक्क व शेत पायाभूत सुविधा</h2>
+</div>
+<div class="space-y-space-sm">
+<!-- Water Rights Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">waves</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface">Mutha River Lifting Rights</h3>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Valid 2028</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Mutual river lifting permit via 3-inch pressurized pipeline network. Allocated 18,000 m³/yr.
+            </p>
+</div>
+</div>
+</div>
+<!-- Solar Power Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">solar_power</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface">MSEDCL Ag Solar Feeder</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Active 5 HP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Continuous daytime power guarantee (08:00 AM – 04:00 PM). Connected to Gat 142 Pump Set.
+            </p>
+</div>
+</div>
+</div>
+<!-- Crate Tracking Hub Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Kisan Setu Returnable Crates</h3>
+<p class="font-body-sm text-body-sm text-outline">FPO Smart Trace Tagged</p>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">25 <span class="font-label-sm text-label-sm text-outline">Total</span></span>
+</div>
+<!-- Crate Status Split -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">शेतात स्वच्छ (At Farm)</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">18</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">मार्गात (In Transit)</span>
+<span class="font-label-lg text-label-lg text-tertiary font-bold">7</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Management & Service Requests -->
+<section class="px-margin pt-space-lg">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">अर्ज व सेटिंग्ज (Actions & Requests)</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Request Re-survey -->
+<button class="w-full p-space-md text-left flex items-center justify-between active:bg-surface-container transition-colors" onclick="openActionModal('boundary')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">square_foot</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Request Plot Boundary Re-survey</p>
+<p class="font-body-sm text-body-sm text-outline truncate">शेताची मोजणी व जीपीएस सीमांकन विनंती</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</button>
+<!-- Water Source Update -->
+<button class="w-full p-space-md text-left flex items-center justify-between active:bg-surface-container transition-colors" onclick="openActionModal('irrigation')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">water_voc</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Update Water / Irrigation Source</p>
+<p class="font-body-sm text-body-sm text-outline truncate">विहीर, बोअरवेल किंवा पाईपलाईन नोंद बदला</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</button>
+<!-- Contact Cluster Helpdesk -->
+<button class="w-full p-space-md text-left flex items-center justify-between active:bg-surface-container transition-colors" onclick="openActionModal('helpdesk')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Contact FPO Cluster Helpdesk</p>
+<p class="font-body-sm text-body-sm text-outline truncate">मुळशी क्लस्टर प्रतिनिधीशी संपर्क साधा</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Interactive Quick Sheet / Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-end justify-center p-0 transition-opacity" id="actionModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-t-2xl p-space-lg shadow-xl animate-in slide-in-from-bottom">
+<div class="w-12 h-1.5 rounded-full bg-outline-variant mx-auto mb-space-md"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modalTitle">विनंती सबमिट करा</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="closeActionModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md" id="modalDescription">
+        आपली विनंती थेट मुळशी व्हॅली FPO ऑपरेशन्स टीमकडे पाठविली जाईल.
+      </p>
+<div class="p-space-sm bg-surface-container rounded-lg mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span class="font-label-sm text-label-sm text-on-surface">कृषी सहाय्यक 24 तासांत संपर्क करतील</span>
+</div>
+</div>
+<div class="flex gap-space-sm">
+<button class="flex-1 h-12 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg" onclick="closeActionModal()">रद्द करा</button>
+<button class="flex-1 h-12 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg" onclick="submitRequest()">पुष्टी करा (Confirm)</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 left-4 right-4 z-50 bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-lg transform translate-y-32 opacity-0 transition-all duration-300 flex items-center gap-space-sm" id="toast">
+<span class="material-symbols-outlined text-secondary-fixed text-[22px]" id="toastIcon">check_circle</span>
+<span class="font-body-md text-body-md flex-1" id="toastMsg">नोंद यशस्वीरीत्या अपडेट केली!</span>
+</div>
+</div>
+<script>
+  function triggerSyncAnim() {
+    const icon = document.getElementById('syncIcon');
+    if (icon) {
+      icon.classList.add('animate-spin');
+      showToast('AgriStack डेटा व महाभूलेख डिजिटल स्वाक्षरी अद्ययावत केली जात आहे...', 'sync');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('महाभूलेख गट 142/2B यशस्वीरीत्या सिंक झाले!', 'check_circle');
+      }, 1500);
+    }
+  }
+
+  function viewExtractToast() {
+    showToast('Mahabhulekh_Gat_142_Shinde.pdf सुरक्षित दर्शक उघडत आहे...', 'download');
+  }
+
+  function toggleChatSheet() {
+    showToast('Dr. Sandeep More यांच्याशी थेट संवाद विंडो उघडत आहे...', 'chat');
+  }
+
+  function openActionModal(type) {
+    const modal = document.getElementById('actionModal');
+    const title = document.getElementById('modalTitle');
+    const desc = document.getElementById('modalDescription');
+
+    if (type === 'boundary') {
+      title.innerText = 'Plot Boundary Re-survey Request';
+      desc.innerText = 'Gat 142/2B च्या जीपीएस व महसूल खात्यानुसार फेरमोजणीसाठी एफपीओ सर्व्हेअर नियुक्त केला जाईल.';
+    } else if (type === 'irrigation') {
+      title.innerText = 'Update Irrigation & Water Rights';
+      desc.innerText = 'मुठा नदी उपसा परवाना, पाईपलाईन जोडणी किंवा सूक्ष्म सिंचन (Micro-irrigation) तपशील अद्ययावत करा.';
+    } else if (type === 'helpdesk') {
+      title.innerText = 'Mulshi Cluster Helpdesk';
+      desc.innerText = 'कलेक्शन सेंटर स्लॉट, क्रेट्स उपलब्धता किंवा पेमेंट संबंधित सहकार्यासाठी कॉल विनंती पाठवा.';
+    }
+
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeActionModal() {
+    const modal = document.getElementById('actionModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function submitRequest() {
+    closeActionModal();
+    showToast('विनंती नोंदवली गेली आहे! तिकीट क्र: MUL-REQ-8891', 'done_all');
+  }
+
+  function showToast(message, iconName) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastIcon = document.getElementById('toastIcon');
+
+    if (toast && toastMsg && toastIcon) {
+      toastMsg.innerText = message;
+      toastIcon.innerText = iconName || 'check_circle';
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 3000);
+    }
+  }
+</script></main></body></html>

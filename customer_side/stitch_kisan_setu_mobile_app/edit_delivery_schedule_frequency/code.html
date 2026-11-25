@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#584200", "on-surface": "#151e18", "on-tertiary": "#ffffff", "surface-dim": "#d2ddd3", "tertiary-container": "#755900", "on-error-container": "#93000a", "primary": "#005128", "on-primary-fixed-variant": "#005229", "surface-container": "#e6f1e7", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#00210d", "error-container": "#ffdad6", "error": "#ba1a1a", "tertiary-fixed-dim": "#f4bf1b", "secondary": "#006d36", "on-tertiary-fixed": "#251a00", "on-primary": "#ffffff", "outline-variant": "#bfc9be", "primary-container": "#146b3a", "secondary-container": "#8ff9aa", "on-background": "#151e18", "inverse-on-surface": "#e9f3e9", "inverse-primary": "#87d89c", "on-secondary-fixed-variant": "#005227", "surface-tint": "#166c3b", "outline": "#6f7a70", "surface-container-low": "#ecf6ec", "primary-fixed": "#a2f5b6", "surface-container-highest": "#dbe5db", "background": "#f2fcf2", "tertiary-fixed": "#ffdf95", "secondary-fixed": "#8ff9aa", "on-secondary": "#ffffff", "secondary-fixed-dim": "#73dc90", "primary-fixed-dim": "#87d89c", "surface-bright": "#f2fcf2", "surface": "#f2fcf2", "surface-container-high": "#e1ebe1", "on-primary-container": "#97e9ab", "on-tertiary-fixed-variant": "#594400", "on-secondary-container": "#00743a", "on-secondary-fixed": "#00210c", "surface-variant": "#dbe5db", "inverse-surface": "#29332c", "on-tertiary-container": "#ffd158", "on-surface-variant": "#3f4940", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-space-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go back" class="w-11 h-11 shrink-0 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors active:bg-surface-container" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Kisan Setu Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDzHuC4euPWV5eDEArFluoF3FJqz_I96RysK7z-niTV8n6_HxI0NKYbw1OCietqgnnQUs-w-e66SbGSGMXKqB6CtkB9yDCG7-42pONgd5O7IxrP7zvNd5R2f3fxhLUW7Y8Gm2wK74NaI3gB9u19KbCIJI858vA4KmLiJvN0LG0oEy4pYEfiFyMeAzSQwT9QWfk5f8Z5iaPb34fRjtmasOOylTnFGlfpq2h5wADKc6f_EQ"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Edit Delivery Schedule &amp; Frequency</h1></div><div class="flex items-center gap-space-xs shrink-0"><div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-primary"><span class="material-symbols-outlined text-[16px]">verified_user</span><span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">100% Secure</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface flex-grow min-h-screen"><div class="flex flex-col w-full">
+<!-- Content Container -->
+<div class="px-margin-mobile pb-space-xl flex flex-col gap-space-lg">
+<!-- Subscription Mini Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Close up shot of fresh organic farm milk bottle with dew drops and crisp spinach leaves freshly harvested from a rural Sahyadri valley farm, natural soft morning light, rustic earthy green tones, agricultural documentary aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAArWP7Wwt1tjG2pL1e9CZstzzCYQ500WY1az18iRN2bTnjlVPvZkHzT_o5KAhGtrmicJ3odyYvVhRrRCZxKocBqyeFNHUPTjo6VxcSBKAF98uC4V0eGeIGoV83cuGRwwYj1uaWiWn4vdH_GMDqRLngIc_GweR6reBmeeYSyt-n-m6He-OFU_fp3vAB5H6T3ac06vXiMFfWNhsofF99DGFYGaMvjAB8c9WHct5SgFpu"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="inline-flex items-center gap-1.5 mb-0.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Active Subscription</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Mulshi Daily Farm Fresh Milk &amp; Greens</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="truncate">Sahyadri Dairy FPO • Batch #MS-402</span>
+</p>
+</div>
+</div>
+<!-- Frequency Selection -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Delivery Frequency</h2>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wide">3 Modes</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Choose how often Sahyadri farmers dispatch to your door</p>
+<!-- Segmented Frequency Cards -->
+<div class="flex flex-col gap-space-sm mt-1" id="freq-group" role="radiogroup">
+<!-- Daily Option -->
+<div class="freq-option cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all duration-200 flex items-start gap-space-md" data-freq="daily">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5 option-indicator">
+<span class="material-symbols-outlined text-[16px] text-outline">circle</span>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Daily Morning Drop</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">7 days</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Every day at dawn 6:00 AM – 7:30 AM</p>
+</div>
+</div>
+<!-- Alternate Days (Selected) -->
+<div class="freq-option cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all duration-200 flex items-start gap-space-md relative overflow-hidden bg-gradient-to-r from-surface-container-low to-surface-container-lowest" data-freq="alternate">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5 option-indicator shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-bold">Alternate Days</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">Active Plan</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Mon, Wed, Fri, Sun</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Balanced replenishment rhythm directly from harvest batches</p>
+</div>
+</div>
+<!-- Custom Days Selection -->
+<div class="freq-option cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all duration-200 flex items-start gap-space-md" data-freq="custom">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5 option-indicator">
+<span class="material-symbols-outlined text-[16px] text-outline">circle</span>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Custom Days Selection</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">Flexible</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pick specific days tailored to your kitchen routine</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom Days Pill Matrix Module -->
+<section class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_view_week</span>
+<span class="font-label-lg text-label-lg text-on-surface">Active Delivery Days</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-bold">4 of 7 Active</span>
+</div>
+<!-- Days Grid -->
+<div class="grid grid-cols-7 gap-1.5" id="day-chips">
+<!-- Mon (Active) -->
+<button class="day-chip active py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-primary-container text-on-primary shadow-sm" data-day="Mon" type="button">
+<span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">Mon</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</button>
+<!-- Tue (Inactive) -->
+<button class="day-chip py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-day="Tue" type="button">
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">Tue</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant my-1"></span>
+</button>
+<!-- Wed (Active) -->
+<button class="day-chip active py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-primary-container text-on-primary shadow-sm" data-day="Wed" type="button">
+<span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">Wed</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</button>
+<!-- Thu (Inactive) -->
+<button class="day-chip py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-day="Thu" type="button">
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">Thu</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant my-1"></span>
+</button>
+<!-- Fri (Active) -->
+<button class="day-chip active py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-primary-container text-on-primary shadow-sm" data-day="Fri" type="button">
+<span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">Fri</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</button>
+<!-- Sat (Inactive) -->
+<button class="day-chip py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-day="Sat" type="button">
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">Sat</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant my-1"></span>
+</button>
+<!-- Sun (Active) -->
+<button class="day-chip active py-2.5 rounded-lg flex flex-col items-center justify-center gap-1 transition-all bg-primary-container text-on-primary shadow-sm" data-day="Sun" type="button">
+<span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">Sun</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</button>
+</div>
+<!-- Billing Projection Note -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">receipt_long</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">4 deliveries per week</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">₹340 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/ week</span></span>
+</div>
+</section>
+<!-- Morning Time Slot Preference -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Morning Time Slot Preference</h2>
+<span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full font-bold">Chilled Transit</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-1" id="slot-group">
+<!-- Dawn Dew Slot (Selected) -->
+<label class="slot-option cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md transition-all duration-200">
+<input checked="" class="sr-only" name="slot" type="radio" value="dawn"/>
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 radio-dot shadow-sm">
+<span class="material-symbols-outlined text-[16px]">radio_button_checked</span>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Dawn Dew Slot</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">6:00 AM – 7:30 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Coldest ambient transit, guarantees crispiest field greens</p>
+<div class="inline-flex items-center gap-1.5 mt-2 bg-surface-container px-2 py-1 rounded-md w-fit text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">ac_unit</span>
+<span>Farm chilling van arrives by 06:15 AM</span>
+</div>
+</div>
+</label>
+<!-- Early Morning Slot -->
+<label class="slot-option cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md transition-all duration-200">
+<input class="sr-only" name="slot" type="radio" value="morning"/>
+<div class="w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0 mt-0.5 radio-dot">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Early Morning</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">7:30 AM – 9:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Delivered before breakfast prep, insulated thermal crate bag</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Delivery Instructions & Doorstep Notes -->
+<section class="flex flex-col gap-space-xs">
+<label class="font-headline-sm text-headline-sm text-on-surface flex items-center justify-between" for="doorstep-notes">
+<span>Delivery Instructions &amp; Doorstep Notes</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Optional</span>
+</label>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-2 mt-1">
+<div class="flex items-start gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5">doorbell</span>
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-outline" id="doorstep-notes" placeholder="Add specific notes for morning delivery runner..." rows="2">Silent doorstep bag hook, do not ring bell before 7:00 AM</textarea>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+            Runner briefed via app notification
+          </span>
+<span class="font-label-sm text-label-sm">54 / 120</span>
+</div>
+</div>
+</section>
+<!-- Producer Lock Cutoff Advisory Card -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-tertiary font-bold flex items-center gap-1.5">
+          Harvest Cutoff Advisory
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+          Schedule changes take effect from day after tomorrow. Tomorrow's <span class="font-semibold text-on-surface">5:00 AM harvest</span> is already locked with producer <span class="font-semibold text-primary">Ramesh Shinde</span> at Sahyadri farm to avoid vegetable wastage.
+        </p>
+</div>
+</div>
+<!-- Bottom Actions Container -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Primary Save Button -->
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-transform" id="save-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Update Delivery Schedule</span>
+</button>
+<!-- Secondary Discard Action -->
+<button class="w-full h-11 bg-transparent hover:bg-surface-container text-on-surface-variant rounded-lg font-label-md text-label-md flex items-center justify-center transition-colors" onclick="history.back()" type="button">
+<span>Discard Changes</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for frequency & day chips
+  (function() {
+    const dayChips = document.querySelectorAll('.day-chip');
+    dayChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isActive = chip.classList.contains('active');
+        if (isActive) {
+          chip.classList.remove('active', 'bg-primary-container', 'text-on-primary', 'shadow-sm');
+          chip.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+          chip.innerHTML = `
+            <span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">${chip.dataset.day}</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-outline-variant my-1"></span>
+          `;
+        } else {
+          chip.classList.add('active', 'bg-primary-container', 'text-on-primary', 'shadow-sm');
+          chip.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+          chip.innerHTML = `
+            <span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">${chip.dataset.day}</span>
+            <span class="material-symbols-outlined text-[14px]">check_circle</span>
+          `;
+        }
+      });
+    });
+
+    const slotRadios = document.querySelectorAll('.slot-option');
+    slotRadios.forEach(opt => {
+      opt.addEventListener('click', () => {
+        slotRadios.forEach(s => {
+          const dot = s.querySelector('.radio-dot');
+          dot.className = 'w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0 mt-0.5 radio-dot';
+          dot.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>';
+        });
+        const currentDot = opt.querySelector('.radio-dot');
+        currentDot.className = 'w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 radio-dot shadow-sm';
+        currentDot.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_checked</span>';
+      });
+    });
+
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        saveBtn.classList.add('opacity-90');
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Saving Schedule...</span>';
+        setTimeout(() => {
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Schedule Updated!</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">save</span><span>Update Delivery Schedule</span>';
+            saveBtn.classList.remove('opacity-90');
+          }, 1500);
+        }, 600);
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#ecf6ec","on-secondary-fixed":"#00210c","secondary-fixed":"#8ff9aa","inverse-on-surface":"#e9f3e9","outline":"#6f7a70","surface-tint":"#166c3b","background":"#f2fcf2","on-secondary-container":"#00743a","on-surface":"#151e18","on-tertiary-fixed-variant":"#594400","on-surface-variant":"#3f4940","primary-container":"#146b3a","outline-variant":"#bfc9be","primary-fixed":"#a2f5b6","secondary-fixed-dim":"#73dc90","error-container":"#ffdad6","on-error":"#ffffff","on-primary-fixed-variant":"#005229","surface-container-lowest":"#ffffff","surface":"#f2fcf2","on-tertiary-container":"#ffd158","on-tertiary-fixed":"#251a00","surface-bright":"#f2fcf2","surface-container":"#e6f1e7","on-error-container":"#93000a","secondary":"#006d36","surface-dim":"#d2ddd3","surface-container-high":"#e1ebe1","tertiary-fixed-dim":"#f4bf1b","on-primary-container":"#97e9ab","on-secondary-fixed-variant":"#005227","tertiary-fixed":"#ffdf95","tertiary":"#584200","inverse-primary":"#87d89c","primary":"#005128","tertiary-container":"#755900","on-secondary":"#ffffff","secondary-container":"#8ff9aa","surface-variant":"#dbe5db","surface-container-highest":"#dbe5db","inverse-surface":"#29332c","error":"#ba1a1a","on-primary-fixed":"#00210d","primary-fixed-dim":"#87d89c","on-primary":"#ffffff","on-background":"#151e18","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-xl":"2rem","space-xs":"0.25rem","gutter":"1rem","margin-mobile":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter-mobile":"0.75rem","space-md":"1rem","margin-tablet":"1.5rem"},"fontFamily":{"headline-md":["Inter"],"display-lg":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"display-lg-mobile":["Inter"]},"fontSize":{"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0.015em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-hidden"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[22px]">eco</span></div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">Kisan Setu</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">ADMIN • Enterprise HQ</span></div></div><button aria-label="Collapse sidebar" class="text-on-surface-variant hover:text-on-surface p-space-xs rounded transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="overflow-y-auto flex-1 px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics-reports" href="#"><span class="font-label-lg text-label-lg">Analytics &amp; Reports</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Stakeholders</div><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="font-label-lg text-label-lg">Customers</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmers" href="#"><span class="font-label-lg text-label-lg">Farmers</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="fpos" href="#"><span class="font-label-lg text-label-lg">FPOs</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="kyc-verification" href="#"><span class="font-label-lg text-label-lg">KYC Verification</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Supply Chain &amp; Catalog</div><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-catalogue" href="#"><span class="font-label-lg text-label-lg">Product Catalogue</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="produce-listings" href="#"><span class="font-label-lg text-label-lg">Produce Listings</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="order-management" href="#"><span class="font-label-lg text-label-lg">Order Management</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="collection-points" href="#"><span class="font-label-lg text-label-lg">Collection Points</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="quality-inspection" href="#"><span class="font-label-lg text-label-lg">Quality Inspection</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="font-label-lg text-label-lg">Warehouses</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="font-label-lg text-label-lg">Inventory</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="logistics-fleet" href="#"><span class="font-label-lg text-label-lg">Logistics &amp; Fleet</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Finance &amp; Statutory Ledgers</div><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="payments-escrow" href="#"><span class="font-label-lg text-label-lg">Payments &amp; Escrow</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-settlements" href="#"><span class="font-label-lg text-label-lg">Farmer Settlements</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="platform-financial-pnl-revenue-engine" href="#"><span class="font-label-lg text-label-lg">Platform Financial P&amp;L &amp; Revenue Engine</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="gst-tax-reconciliation-sno-54-exemption-ledger" href="#"><span class="font-label-lg text-label-lg">GST Tax Reconciliation &amp; S.No 54 Exemption Ledger</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="apmc-market-cess-state-statutory-audit-desk" href="#"><span class="font-label-lg text-label-lg">APMC Market Cess &amp; State Statutory Audit Desk</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm" data-path="apeda-agri-export-compliance-traceability-audit" href="#"><span class="font-label-lg text-label-lg">APEDA Agri-Export Compliance &amp; Traceability Audit</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Governance</div><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="support-grievances" href="#"><span class="font-label-lg text-label-lg">Support &amp; Grievances</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-users-roles" href="#"><span class="font-label-lg text-label-lg">Admin Users &amp; Roles</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><span class="font-label-lg text-label-lg">System Settings</span></a></nav></div></div><div class="p-space-sm bg-surface-container-low shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center justify-between p-space-xs rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col truncate"><span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Rajesh Kulkarni</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Super Admin • Pune HQ</span></div></div><button aria-label="Quick log out or actions" class="text-on-surface-variant hover:text-on-surface p-space-xs rounded transition-colors shrink-0" type="button"><span class="material-symbols-outlined text-[20px]">more_vert</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-2.5 py-1.5 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-surface-container-high cursor-pointer transition-colors"><span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span><div class="flex flex-col"><span class="font-label-sm text-[10px] uppercase text-outline font-semibold leading-none">Agro-Cluster</span><span class="font-label-md text-label-md text-on-surface font-medium leading-tight">Western Maharashtra Agro-Cluster</span></div><span class="material-symbols-outlined text-[16px] text-outline ml-1">expand_more</span></div><div class="flex items-center gap-space-xs px-2.5 py-1.5 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-surface-container-high cursor-pointer transition-colors"><span class="material-symbols-outlined text-[18px] text-tertiary-container">energy_savings_leaf</span><div class="flex flex-col"><span class="font-label-sm text-[10px] uppercase text-outline font-semibold leading-none">Active Season</span><span class="font-label-md text-label-md text-on-surface font-medium leading-tight">Rabi 2024-25</span></div><span class="material-symbols-outlined text-[16px] text-outline ml-1">expand_more</span></div></div><div class="flex-1 max-w-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-12 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none placeholder:text-outline shadow-sm focus:ring-1 focus:ring-primary transition-all" placeholder="Search ledgers, GST exemptions, APMC cess, export batches, invoices... (Ctrl+K)" type="text"/><span class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">⌘K</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Statutory Audit Engine Live</span></div><button class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>Export Audit File</span></button><div class="relative"><button aria-label="Notifications" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-1.5 right-1.5 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-[10px] font-bold leading-none">4</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer shadow-sm" title="Rajesh Kulkarni (Super Admin)"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Breadcrumb & Action Banner -->
+<div class="px-space-lg pt-space-md pb-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mb-space-xs">
+<span class="hover:text-primary cursor-pointer transition-colors">Finance &amp; Commerce</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Analytics &amp; Reports</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">APEDA Export Compliance &amp; Traceability Audit</span>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mt-1">
+<div class="max-w-4xl">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            APEDA Agri-Export Compliance &amp; Traceability Audit Desk
+          </h1>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-bold">
+            GrapeNet • HortiNet Live
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          International export phytosanitary documentation, NABL lab chemical residue limits (MRL), GlobalGAP compliance, and farm-to-shipping container cryptographic chain of custody.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
+<span>Issue Phytosanitary Clearance</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">description</span>
+<span>Generate APEDA RCMC Return</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-md transition-all cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Create Consignment Dossier</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key KPI Ribbon (4 Cards) -->
+<div class="px-space-lg pt-space-sm pb-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Total Export Shipments (YTD)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold leading-none">184</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Shipments</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">directions_boat</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-transparent">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface font-medium">
+<span>Volume: <strong class="text-primary font-bold">4,620 MT</strong></span>
+<span>Value: <strong class="text-primary font-bold">₹42.80 Cr</strong></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-1">
+            EU (Rotterdam, Hamburg), Gulf GCC (Dubai, Jeddah), UK
+          </p>
+</div>
+<div class="absolute -right-4 -bottom-4 w-16 h-16 rounded-full bg-primary/5 pointer-events-none"></div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">GlobalGAP &amp; NABL Certified Lots</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold leading-none">98.4%</span>
+<span class="font-label-md text-label-md text-secondary font-bold">Compliant</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 98.4%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+<span>Zero rejection across 3 consecutive harvest seasons</span>
+</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Residue Limit (MRL) Clearance</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-primary font-bold leading-none">100%</span>
+<span class="font-label-md text-label-md text-primary font-bold">Passed</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">science</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">LC-MS/MS Screen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">240 agro-chemicals</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">
+            EU EFSA Regulation (EC) No 396/2005 Compliant
+          </p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Cold Chain Reefer Telematics</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold leading-none">-0.5°C to +1.5°C</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">ac_unit</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Real-time Dual-Probe Active Telemetry</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">
+            Farm Packhouse to JNPT Port Nhava Sheva
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Body Grid: 66% Left / 34% Right -->
+<div class="px-space-lg grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (8 of 12 columns = ~66%) -->
+<div class="xl:col-span-8 space-y-space-lg">
+<!-- Section 1: Active Export Shipments & Container Queue -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Active Export Shipments &amp; Container Traceability Queue</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live telemetry with integrated APEDA GrapeNet / HortiNet verification</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">4 Active Lots</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<th class="py-3 px-space-md">Consignment &amp; Commodity</th>
+<th class="py-3 px-space-md">Destination &amp; Consignee</th>
+<th class="py-3 px-space-md">Container &amp; Logistics</th>
+<th class="py-3 px-space-md">Phyto Cert</th>
+<th class="py-3 px-space-md text-right">Live Status</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<!-- Shipment 1: Rotterdam Grapes -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-sm px-space-md align-top">
+<div class="flex items-start gap-space-xs">
+<div class="w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-surface-container mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Close up high quality agricultural photo of premium Thompson Seedless green table grapes packed cleanly inside fresh ventilated carton boxes ready for European export" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCsQxpe6PWBJTQfyqaOHkBHi1d6HGHSrNWzU2S-t-cB9gYepPMRcOZPoyb-12NyANmZ92-mvNcyzk6qm2Mpt5AC1OPBKDC3hWDkv08qD8v4Ja4lsu-9O8rVYsFvpC5guN8u1aMzhfAZ0b9t0muQo091BFNeUN7fxzxyXhUjbWH6JoydggckIqMbJT9Iwb7FnNEDw7afYuPoyHfSxpkG0iHPwF51mUGifBdXJq7p539"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-primary font-bold block">#EXP-2024-NL-084</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold block">Thompson Seedless Grapes</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">18.0 MT (3,600 punnets) • Pimpalgaon #02</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Nature's Pride BV</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Rotterdam, Netherlands (EU)</span>
+<span class="font-label-sm text-label-sm text-outline">Vessel: Maersk Mc-Kinney Moller</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-medium block">#MSKU-982144-8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">40ft High Cube Reefer</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">JNPT Nhava Sheva Berth #03</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold inline-block">
+                    #PSC-MH-2024-8841
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary block mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+<span>e-Phyto Valid</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md align-top text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Transit • 0.8°C OK</span>
+</span>
+<span class="block font-label-sm text-label-sm text-outline mt-1">ETA JNPT: 2 hrs 14 min</span>
+</td>
+</tr>
+<!-- Shipment 2: Dubai Pomegranates -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-sm px-space-md align-top">
+<div class="flex items-start gap-space-xs">
+<div class="w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-surface-container mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Vibrant rich red Bhagwa pomegranates displayed in export quality corrugated cardboard packaging with foam mesh protection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF-TNKF1D8LQSl2xl2BkiTRszIaWBneCCD-CknI1YqAknY7ceU4cQdwsyOu0h1bomMjvHgVAoB28KpT_cb3eF7lrPDxqvQs51Bhr_paGPAECa-h2X4BJRJoKVfPA5b99do3X7LBjOiP-QG-9wUUCB2GJXd2HKPPpfGsGUJvgMnoRaskeSwBcvqAdbg0T8V0nxy_0iTi-gf43PJOYHIZOSww_OMfrKX-VtUpUHAWHIL"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-primary font-bold block">#EXP-2024-AE-085</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold block">Bhagwa Pomegranates (Aryl Ruby)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14.5 MT (2,900 cartons) • Rahata Depot</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">LuLu Group International</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Dubai Wholesale Market (GCC)</span>
+<span class="font-label-sm text-label-sm text-outline">Vessel: CMA CGM Callao</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-medium block">#CMAU-482011-3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">40ft Reefer (+4.5°C)</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Mumbai Port Trust (MbPT)</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold inline-block">
+                    #PSC-MH-2024-8842
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary block mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>GCC Phytosanitary Passed</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md align-top text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px] text-primary">anchor</span>
+<span>Loaded Onboard</span>
+</span>
+<span class="block font-label-sm text-label-sm text-outline mt-1">Sailed: 08:30 AM</span>
+</td>
+</tr>
+<!-- Shipment 3: London Air Freight -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-sm px-space-md align-top">
+<div class="flex items-start gap-space-xs">
+<div class="w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-surface-container mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Fresh tender green okra ladies finger and hot green chilies packaged neatly in export standard crates with clear labeling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf5Hv09sgs5nU_mOr05LJKo-ePrCc9MjuIfRcVuukT8VDYJ1EHNiQ4N0zj8WJPkUO2J5JT0JFJr3wzfxZOfDj6IUpzKXD6BdRcxTV7RWlT5MLhROBr5e87tdJA1KvdSo4uAx8mQovOHVB5SEMekbdNQZrfNrMo3vVwcj8T4whDXTt48r3PFswQ1E14XtSv7BUBhqL6H08YDlZsbXP3JOzjqNbQhMN0y22h2PyZc-xw"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-primary font-bold block">#EXP-2024-UK-086</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold block">Fresh Okra &amp; G4 Green Chili</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6.2 MT • Shirol Intake Hub</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">TRS Foods UK</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">London Gateway, United Kingdom</span>
+<span class="font-label-sm text-label-sm text-outline">Flight: Air India Cargo AI-131</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Air Cargo Pallet #AKE-491</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Direct Air-Hub Dispatch</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">BOM Chhatrapati Shivaji T2</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold inline-block">
+                    #PSC-MH-2024-8843
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary block mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">done_all</span>
+<span>DEFRA Notified</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md align-top text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">flight_takeoff</span>
+<span>Cold Vault Staging • 8.0°C</span>
+</span>
+<span class="block font-label-sm text-label-sm text-outline mt-1">ETD BOM: 23 Nov 02:40</span>
+</td>
+</tr>
+<!-- Shipment 4: Singapore Exotics -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-sm px-space-md align-top">
+<div class="flex items-start gap-space-xs">
+<div class="w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-surface-container mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Vibrant yellow and red bell peppers with fresh peeled baby corn sorted in clean room agri packaging facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQU3VZtAF7QyxO_b74cFxDERKgB7R03KvcCkGQS9jt_keD6s6z1RzGQpYGv92c0ke0QaHx54bze8hB66zfirkVMZRj_jHK9dazZH8NRb1vKowXi9tRFzQmDTg1x8kkAmxlimmCtOodZ06tBF5dBPBvQBUrMBv3PB-zFoq51R3MF3P4_qLfk5JWTDSpqCttmQ7JwyKRCqKyrNiGM950sskX9zffYG_g-wMeaVVHW1PU"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-primary font-bold block">#EXP-2024-SG-087</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold block">Greenhouse Capsicum &amp; Baby Corn</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8.4 MT • Paud Road Exotics Center</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">FairPrice Supermarkets</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Singapore Hub (SFA Gate)</span>
+<span class="font-label-sm text-label-sm text-outline">Vessel: ONE Apus V.019</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="font-label-md text-label-md text-on-surface font-medium block">#ONEU-182940-0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">40ft Reefer (+7.0°C)</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">JNPT Nhava Sheva Terminal 4</span>
+</td>
+<td class="py-space-sm px-space-md align-top">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary-container font-label-sm text-label-sm font-bold inline-block">
+                    In Testing
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">
+                    92% Complete
+                  </span>
+</td>
+<td class="py-space-sm px-space-md align-top text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Lab Assay In Progress</span>
+</span>
+<span class="block font-label-sm text-label-sm text-outline mt-1">Est. Release: 45 min</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section 2: NABL Lab Residue Assay & MRL Multi-Compound Screen Dossier -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-sm border-b border-transparent gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+                NABL Residue Assay &amp; MRL Screen Dossier: Lot #LOT-GRP-6031
+              </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Accredited Laboratory: <strong>National Referral Laboratory (NRL) - ICAR National Research Centre for Grapes, Pune</strong> (NABL Cert #TC-5481)
+            </p>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>240 Compounds Screened • Zero Violations</span>
+</span>
+</div>
+</div>
+<!-- MRL Chemical Limit Breakdown Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-md">
+<!-- Chemical 1: Imidacloprid -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Imidacloprid (Neonicotinoid)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Systemic Insecticide Screen • LC-MS/MS</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                PASS - SAFE
+              </span>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Detected: <strong class="text-on-surface font-semibold">&lt;0.002 mg/kg</strong></span>
+<span>EU MRL Ceiling: <strong>0.010 mg/kg</strong></span>
+</div>
+<!-- Visual Bar Chart -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
+<div class="bg-secondary h-2 rounded-full" style="width: 20%"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">80% below maximum permissible threshold</span>
+</div>
+</div>
+<!-- Chemical 2: Azoxystrobin -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Azoxystrobin (Strobilurin)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Broad Spectrum Fungicide • GC-MS/MS</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                PASS - SAFE
+              </span>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Detected: <strong class="text-on-surface font-semibold">0.040 mg/kg</strong></span>
+<span>EU MRL Ceiling: <strong>0.500 mg/kg</strong></span>
+</div>
+<!-- Visual Bar Chart -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
+<div class="bg-secondary h-2 rounded-full" style="width: 8%"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">92% buffer margin under European Annex III limit</span>
+</div>
+</div>
+<!-- Chemical 3: Mancozeb (Dithiocarbamates) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Mancozeb (CS2 Dithiocarbamates)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Surface Protective Agent • Spectrophotometry</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                PASS - SAFE
+              </span>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Detected: <strong class="text-on-surface font-semibold">&lt;0.010 mg/kg</strong></span>
+<span>EU MRL Ceiling: <strong>0.050 mg/kg</strong></span>
+</div>
+<!-- Visual Bar Chart -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
+<div class="bg-secondary h-2 rounded-full" style="width: 15%"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Trace quantity strictly within safety tolerance</span>
+</div>
+</div>
+<!-- Chemical 4: Glyphosate -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Glyphosate &amp; AMPA Metabolites</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Non-selective Herbicide Residue Screen</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                ORGANIC COMPLIANT
+              </span>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Detected: <strong class="text-secondary font-bold">0.000 mg/kg (Nil)</strong></span>
+<span>EU MRL Ceiling: <strong>0.050 mg/kg</strong></span>
+</div>
+<!-- Visual Bar Chart -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
+<div class="bg-secondary h-2 rounded-full" style="width: 0%"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Zero chemical detection (100% compliant)</span>
+</div>
+</div>
+</div>
+<!-- Chemo-Analytical Validation Footer -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label-lg shrink-0">
+              AS
+            </div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">
+                Chief Agronomic Chemist: Dr. A.K. Sengupta, Ph.D.
+              </span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block font-mono">
+                SHA-256 Sig: <span class="text-primary font-bold">e7fa4189dc9103bc4a72d9b62a...e9010</span> • GrapeNet APEDA Verified
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors shadow-sm cursor-pointer flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download NABL Assay (PDF)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 of 12 columns = ~34%) -->
+<div class="xl:col-span-4 space-y-space-lg">
+<!-- Section 1: Cryptographic Chain of Custody Timeline -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-transparent">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">timeline</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Farm-to-Port Custody</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Lot #EXP-2024-NL-084</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">
+            Tamper-Proof
+          </span>
+</div>
+<!-- Vertical Interactive Audit Timeline -->
+<div class="relative pl-6 mt-space-md space-y-space-md before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Step 1 -->
+<div class="relative group cursor-pointer">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Farmstead Harvest &amp; Geo-Tag</span>
+<span class="font-label-sm text-label-sm text-outline">22 Nov 04:30</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Dindori Cluster • Farmer Sanjay Deshmukh (Plot #412/A). APEDA GrapeNet Geo-Fenced origin registered.
+            </p>
+<span class="inline-block mt-1 font-label-sm text-[10px] font-mono text-primary bg-surface-container px-1.5 py-0.5 rounded">
+              GPS: 20.2014° N, 73.8421° E
+            </span>
+</div>
+<!-- Step 2 -->
+<div class="relative group cursor-pointer">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Packhouse SO2 Fumigation</span>
+<span class="font-label-sm text-label-sm text-outline">22 Nov 08:00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Pimpalgaon Hub (Barcode #PK-8819). Forced-air pre-cooling to 2°C with automated sulfur pad placement.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="relative group cursor-pointer">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">NABL Phytosanitary Assay</span>
+<span class="font-label-sm text-label-sm text-outline">22 Nov 14:30</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              ICAR-NRC Grapes Pune cleared 240 MRL markers. Certificate #NABL-TC5481-2024 generated.
+            </p>
+</div>
+<!-- Step 4 -->
+<div class="relative group cursor-pointer">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Reefer Stuffing &amp; Electronic Seal</span>
+<span class="font-label-sm text-label-sm text-outline">22 Nov 18:15</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Reefer #MSKU-982144-8 armed with APEDA electronic tamper RFID seal #APEDA-SEAL-9012.
+            </p>
+</div>
+<!-- Step 5 (Current active) -->
+<div class="relative group p-2 rounded-lg bg-surface-container-low">
+<div class="absolute -left-6 top-3 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm animate-pulse">
+<span class="material-symbols-outlined text-[12px]">sensors</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Highway AIS-140 GPS Corridor</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">LIVE TRANSIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 font-medium">
+              Mumbai-Nashik Expressway • Speed: 52 km/h • Core Temp: 0.8°C sustained
+            </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-[11px] font-mono">
+                Sensor Probe A: +0.7°C
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-[11px] font-mono">
+                Sensor Probe B: +0.9°C
+              </span>
+</div>
+</div>
+<!-- Step 6 (Scheduled) -->
+<div class="relative opacity-60">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">JNPT CFS Gate Pass &amp; Stacking</span>
+<span class="font-label-sm text-label-sm text-outline">23 Nov 04:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Automated Customs ICEGATE export clearance • Vessel loading berth #03.
+            </p>
+</div>
+</div>
+</div>
+<!-- Section 2: Statutory Export Certifications & International Standards -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span>Statutory Certifications &amp; Standards</span>
+</h3>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold block">APEDA RCMC Certificate</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">#APEDA/REG/MKT/2023/19842</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">
+              Valid 2028
+            </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold block">GlobalGAP GGN Register</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">#405988310924 (Option 2)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">
+              Audited
+            </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold block">FSSAI Export Food Safety</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">#10019022009841</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">
+              Active
+            </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold block">Food Safety Management System</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">ISO 22000:2018 Certified</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">
+              DNV Verified
+            </span>
+</div>
+</div>
+</div>
+<!-- Section 3: Quick Export Actions -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-xs">
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-bold mb-space-xs">
+          Consignment Administrative Actions
+        </h3>
+<button class="w-full flex items-center justify-between p-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors cursor-pointer group" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">archive</span>
+<span class="font-label-md text-label-md font-semibold">Download Complete Shipping Dossier</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-on-surface transition-colors">download</span>
+</button>
+<button class="w-full flex items-center justify-between p-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors cursor-pointer group" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">cloud_upload</span>
+<span class="font-label-md text-label-md font-semibold">Transmit e-Phyto to Dutch Customs API</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-on-surface transition-colors">send</span>
+</button>
+<button class="w-full flex items-center justify-between p-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors cursor-pointer group" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">receipt_long</span>
+<span class="font-label-md text-label-md font-semibold">Generate Bill of Lading &amp; Packing List</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-on-surface transition-colors">print</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#97e9ab",
+          "surface-container-high": "#e1ebe1",
+          "on-secondary-fixed-variant": "#005227",
+          "surface-container-highest": "#dbe5db",
+          "on-background": "#151e18",
+          "secondary-fixed-dim": "#73dc90",
+          "surface-tint": "#166c3b",
+          "surface": "#f2fcf2",
+          "primary-container": "#146b3a",
+          "on-error": "#ffffff",
+          "inverse-surface": "#29332c",
+          "inverse-on-surface": "#e9f3e9",
+          "on-primary-fixed-variant": "#005229",
+          "tertiary-fixed-dim": "#f4bf1b",
+          "on-secondary-fixed": "#00210c",
+          "on-surface-variant": "#3f4940",
+          "primary-fixed-dim": "#87d89c",
+          "on-secondary": "#ffffff",
+          "inverse-primary": "#87d89c",
+          "secondary-fixed": "#8ff9aa",
+          "on-surface": "#151e18",
+          "error-container": "#ffdad6",
+          "primary-fixed": "#a2f5b6",
+          "tertiary": "#584200",
+          "tertiary-container": "#755900",
+          "surface-bright": "#f2fcf2",
+          "surface-container": "#e6f1e7",
+          "on-tertiary": "#ffffff",
+          "surface-dim": "#d2ddd3",
+          "outline-variant": "#bfc9be",
+          "secondary-container": "#8ff9aa",
+          "secondary": "#006d36",
+          "on-secondary-container": "#00743a",
+          "on-error-container": "#93000a",
+          "on-tertiary-fixed": "#251a00",
+          "outline": "#6f7a70",
+          "on-primary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-primary-fixed": "#00210d",
+          "tertiary-fixed": "#ffdf95",
+          "primary": "#005128",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#dbe5db",
+          "background": "#f2fcf2",
+          "on-tertiary-container": "#ffd158",
+          "surface-container-low": "#ecf6ec",
+          "on-tertiary-fixed-variant": "#594400"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "margin-tablet": "1.5rem",
+          "margin": "1rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.015em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(20,40,25,0.06)] overflow-y-auto"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest sticky top-0 z-10"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[22px]">agriculture</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Kisan Setu</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Portal</span></div></div><nav class="flex-1 px-space-md py-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics-reports" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-md text-label-md">Analytics &amp; Reports</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Stakeholders</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmers" href="#"><span class="material-symbols-outlined text-[20px]">nature_people</span><span class="font-label-md text-label-md">Farmers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-360-profile" href="#"><span class="material-symbols-outlined text-[20px]">contact_page</span><span class="font-label-md text-label-md">Farmer 360° Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="fpos" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">FPOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="register-fpo" href="#"><span class="material-symbols-outlined text-[20px]">domain_add</span><span class="font-label-md text-label-md">Register FPO</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg" data-path="kyc-verification" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">KYC Verification</span></div><span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">14</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Supply Chain &amp; Catalog</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-catalogue" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Product Catalogue</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="produce-listings" href="#"><span class="material-symbols-outlined text-[20px]">potted_plant</span><span class="font-label-md text-label-md">Produce Listings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="demand-matching" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span class="font-label-md text-label-md">Demand Matching</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="order-management" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Order Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="collection-points" href="#"><span class="material-symbols-outlined text-[20px]">location_on</span><span class="font-label-md text-label-md">Collection Points</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="quality-inspection" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-md text-label-md">Quality Inspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span class="font-label-md text-label-md">Warehouses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">shelves</span><span class="font-label-md text-label-md">Inventory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="logistics-fleet" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-md text-label-md">Logistics &amp; Fleet</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Finance &amp; Commerce</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="payments-escrow" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-label-md text-label-md">Payments &amp; Escrow</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-settlements" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Farmer Settlements</span></a></div><div class="space-y-space-xs pb-space-lg"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="support-grievances" href="#"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Support &amp; Grievances</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a></div></nav></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(20,40,25,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span>Stakeholders</span><span>/</span><span class="text-primary font-label-md text-label-md">KYC Verification Desk</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Services: Operational</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant w-72"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm flex-1 text-outline">Search farmer, FPO, document ID...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Ctrl+K</kbd></div><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-sm text-label-sm">Today: Nov 22, 2024</span></div><button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">Quick Action</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Rajesh Kulkarni</span><span class="font-label-sm text-label-sm text-outline leading-tight">Super Admin</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Command Header & Breadcrumb Meta -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest shadow-sm flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Stakeholders</span>
+<span>/</span>
+<a class="text-secondary hover:underline font-label-sm text-label-sm" href="#">KYC Verification</a>
+<span>/</span>
+<span class="font-label-md text-label-md text-on-surface">#KYC-MH-2024-9941</span>
+<span class="inline-flex items-center gap-1 ml-space-xs px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          In Review — Tier-1 Agricultural Producer
+        </span>
+</div>
+<div class="flex items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Farmer 7/12 &amp; Identity Document Audit Desk
+        </h1>
+</div>
+</div>
+<!-- Quick Action Ribbon -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        Back to Queue
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+        Re-assign
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-tertiary transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+        Request Docs
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-error-container text-on-error-container hover:opacity-90 transition-opacity font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+        Reject
+      </button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-md transition-all font-label-lg text-label-lg" id="top-approve-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+        Approve &amp; Verify Farmer
+      </button>
+</div>
+</div>
+<!-- Main Split-Screen Workspace (45% Left / 55% Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md p-space-md xl:p-space-lg">
+<!-- LEFT COLUMN (45% ~ 5 of 12 cols on desktop) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- 1. Farmer Summary Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-36 h-36 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-xl object-cover shadow-sm bg-surface-container-high" data-alt="Close up realistic portrait photo of a respected Indian farmer with a warm smiling expression wearing a pristine white Gandhi topi cap and traditional crisp kurta outdoors in Pune Maharashtra farm setting with morning sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xVQU3DebPd9ffuO20eSdt_AixN54pikdAFiLFu4XHCji_KWH1XxjQaG_uUAj1CV8RrWxtdagv32e8tK4-RPd7K8tP64Fq0eVhpq-et83DnjkETL9xS9EAE6nu8yHhXDCFxgp37fPSZGw4YhF2vkiaODeFMPE-NtgGG2qg35Uv1i8RZ1jpSQSxdclDvWMkAQ-CLCsC8RorPqZfsM-zbCJVfyaURsQ-8pkHTwgdrrV"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary" title="Aadhaar Verified">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Dnyaneshwar Bapu Patil</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Tier-1 Khatedar</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+                FAR: <strong class="text-on-surface font-label-sm text-label-sm">#FAR-MH-PUN-8821</strong>
+</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">hub</span>
+                AgriStack: <strong class="text-on-surface font-label-sm text-label-sm">#AGR-2024-MH-9941</strong>
+</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">location_on</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Geography</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Paud, Mulshi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pune, MH (412108)</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">phone_iphone</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Mobile Verification</span>
+<span class="font-label-md text-label-md text-on-surface truncate">+91 98221 ••••10</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> OTP Authenticated
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high/60">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+</span>
+<div class="truncate">
+<span class="block font-label-sm text-label-sm text-outline uppercase">FPO Cooperative Affiliation</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Mulshi Valley Farmer Producer Co. Ltd.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm shrink-0">CIN-U01409</span>
+</div>
+</div>
+<!-- 2. Cross-Verification Checklist & OCR Data Cards -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md flex-1">
+<!-- Segmented Tab Nav -->
+<div class="flex rounded-lg bg-surface-container p-1 gap-1">
+<button class="flex-1 py-2 px-space-xs rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="tab-btn-1" onclick="switchKycTab('land')" type="button">
+<span class="material-symbols-outlined text-[18px]">landscape</span>
+<span>7/12 Land Record</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="flex-1 py-2 px-space-xs rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="tab-btn-2" onclick="switchKycTab('aadhaar')" type="button">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span>
+<span>Aadhaar e-KYC</span>
+</button>
+<button class="flex-1 py-2 px-space-xs rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="tab-btn-3" onclick="switchKycTab('bank')" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>PFMS &amp; Bank</span>
+</button>
+</div>
+<!-- TAB CONTENT 1: Land Record 7/12 -->
+<div class="flex flex-col gap-space-md" id="tab-content-land">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mahabhulekh State Land Engine</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+              OCR Match 99.4%
+            </div>
+</div>
+<!-- Structured Verification Fields -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Survey / Gut Number</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary">Gut 142/2A</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Certified by Talathi Mulshi</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Total Certified Area</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">4.80 Acres</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">1.94 H.R.</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3.20 Ac Irrigated + 1.60 Ac Rainfed</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Ownership Type</span>
+<span class="font-label-md text-label-md text-on-surface">Single Owner (Khatedar)</span>
+<span class="font-body-sm text-body-sm text-secondary">Mutation #8419 (Approved 12/2023)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Soil &amp; Irrigation Source</span>
+<span class="font-label-md text-label-md text-on-surface">Black Cotton Soil</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Open Well + Solar Micro-Drip</span>
+</div>
+</div>
+<!-- Government Sync Metadata Pill Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-high/40 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Revenue Dept Registry Hash</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cloud_done</span> Live Synchronized
+              </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface font-mono bg-surface-container-lowest p-2 rounded-lg truncate">
+              SHA256: 7f8a91c2b53e410f9910d6a4c2810a7b45811c0f73db16e
+            </div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Talathi Signature ID: TAL-MUL-0914</span>
+<span>Village Form VII-XII Ver 3.2</span>
+</div>
+</div>
+<!-- Encumbrance Status Alert -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">No Active Lien or Bank Hypothecation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Land Title unencumbered; suitable for Kisan Credit &amp; warehouse receipt collateralization.</span>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 2: Aadhaar (Hidden initially, togglable via JS) -->
+<div class="hidden flex-col gap-space-md" id="tab-content-aadhaar">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">UIDAI DigiLocker Gateway</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Tokenized XML Valid</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Masked Aadhaar Number</span>
+<span class="font-headline-sm text-headline-sm font-mono text-on-surface">•••• •••• 8841</span>
+<span class="font-body-sm text-body-sm text-secondary">Aadhaar Paperless Offline e-KYC</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Phonetic Name Score</span>
+<span class="font-headline-sm text-headline-sm text-primary">100% Match</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dnyaneshwar Bapu Patil</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Date of Birth / Gender</span>
+<span class="font-label-md text-label-md text-on-surface">14/08/1976 (Male)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Age: 48 Years</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Permanent Address</span>
+<span class="font-label-md text-label-md text-on-surface truncate">At Post Paud, Mulshi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PIN: 412108 (Pune Rural)</span>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 3: Bank & PFMS (Hidden initially) -->
+<div class="hidden flex-col gap-space-md" id="tab-content-bank">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">NPCI &amp; PFMS Mandate Engine</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">DBT Seeding Active</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Bank &amp; Branch</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">HDFC Bank Ltd</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Paud Village Branch</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">IFSC Code &amp; A/C</span>
+<span class="font-headline-sm text-headline-sm font-mono text-primary">HDFC0001842</span>
+<span class="font-body-sm text-body-sm font-mono text-on-surface-variant">A/c: •••• •••• 4091</span>
+</div>
+<div class="col-span-2 p-space-sm rounded-lg bg-secondary-container/30 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface">Aadhaar Payment Bridge System (APBS)</span>
+<span class="block font-body-sm text-body-sm text-secondary">Verified on 18 Nov 2024 via NPCI Mapper</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (55% ~ 7 of 12 cols on desktop) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- 1. Document Viewer Toolbar -->
+<div class="rounded-xl bg-surface-container-lowest p-space-sm shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Document Picker Dropdown -->
+<div class="flex items-center gap-space-sm flex-1 min-w-[240px]">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="relative flex-1">
+<select class="w-full bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg py-2 pl-3 pr-8 appearance-none focus:outline-none focus:bg-surface-container-high transition-colors cursor-pointer" id="doc-select">
+<option selected="">7-12_Extract_Gut142_2A_Paud.pdf (Active Inspection)</option>
+<option>Aadhaar_Front_Back_Masked.pdf (Verified)</option>
+<option>HDFC_Passbook_Cancelled_Cheque.jpg (Verified)</option>
+</select>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-2.5 top-2.5 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Canvas Inspection Controls -->
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="adjustZoom(-10)" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-sm text-label-sm px-2 text-on-surface font-mono min-w-[42px] text-center" id="zoom-indicator">100%</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="adjustZoom(10)" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<div class="w-[1px] h-4 bg-outline-variant mx-1"></div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="rotateCanvas()" title="Rotate 90deg" type="button">
+<span class="material-symbols-outlined text-[18px]">rotate_right</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="resetZoom()" title="Fit to Container" type="button">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" id="contrast-btn" onclick="toggleContrast()" title="Invert Scan Mode" type="button">
+<span class="material-symbols-outlined text-[18px]">contrast</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary flex items-center justify-center transition-colors" title="Download Original PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- 2. Interactive Document Canvas & Rendered 7/12 Extract -->
+<div class="rounded-xl bg-inverse-surface text-inverse-on-surface p-space-md shadow-md min-h-[520px] max-h-[640px] overflow-auto relative flex items-center justify-center transition-all" id="viewer-container">
+<!-- Live Watermark Banner -->
+<div class="absolute top-3 left-4 z-20 flex items-center gap-2 px-2.5 py-1 rounded bg-inverse-surface/80 backdrop-blur-md text-surface-container-highest font-label-sm text-label-sm border border-outline/30">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>MAHABHULEKH DIGITAL SECURE ARCHIVE • CERTIFIED</span>
+</div>
+<div class="absolute top-3 right-4 z-20 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">qr_code_scanner</span>
+            QR Verified
+          </span>
+</div>
+<!-- Rendered Document Page (High-Fidelity 7/12 Maharashtra Land Record Representation) -->
+<div class="w-full max-w-[580px] bg-surface-container-lowest text-on-surface p-6 rounded-lg shadow-2xl relative my-auto transition-transform duration-200" id="rendered-doc">
+<!-- Government Header -->
+<div class="text-center pb-3 border-b border-surface-variant relative">
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[32px]">account_balance</span>
+<div class="text-center">
+<div class="font-headline-sm text-headline-sm text-on-surface leading-snug">महाराष्ट्र शासन — महसूल व वन विभाग</div>
+<div class="font-label-md text-label-md text-on-surface-variant font-serif">गाव नमुना ७ / १२ (अधिकार अभिलेख पत्रक)</div>
+</div>
+</div>
+<div class="mt-3 grid grid-cols-4 gap-1 text-center bg-surface-container-low p-2 rounded text-xs font-label-sm">
+<div><span class="text-outline block">गाव:</span> <strong>पौड (Paud)</strong></div>
+<div><span class="text-outline block">तालुका:</span> <strong>मुळशी (Mulshi)</strong></div>
+<div><span class="text-outline block">जिल्हा:</span> <strong>पुणे (Pune)</strong></div>
+<div><span class="text-outline block">अभिलेख वर्ष:</span> <strong>२०२३-२४</strong></div>
+</div>
+</div>
+<!-- 7/12 Core Table Simulation with OCR Bounding Highlights -->
+<div class="mt-4 space-y-3 text-xs">
+<!-- Row 1: Survey/Gut & Area -->
+<div class="grid grid-cols-12 gap-2 p-2 bg-surface-container-low rounded items-center">
+<div class="col-span-5 relative p-1.5 rounded bg-secondary-container/40 ring-2 ring-secondary">
+<span class="text-[10px] font-mono text-secondary uppercase block font-semibold">OCR Bounding [GUT_NO] 99.8%</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">गट क्र. १४२ / २अ</span>
+<span class="text-[10px] text-on-surface-variant block">(Gut No. 142/2A)</span>
+</div>
+<div class="col-span-4 relative p-1.5 rounded bg-secondary-container/40 ring-2 ring-secondary">
+<span class="text-[10px] font-mono text-secondary uppercase block font-semibold">OCR [AREA_HR] 99.4%</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">४.८० हे.आर.</span>
+<span class="text-[10px] text-on-surface-variant block">4.80 Total Cultivable Acres</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="text-[10px] text-outline block">आकारणी (रुपये)</span>
+<span class="font-label-md text-label-md font-mono text-on-surface">१४.५० रु.</span>
+</div>
+</div>
+<!-- Row 2: Khatedar / Landholder Identification -->
+<div class="p-2.5 rounded bg-surface-container-low relative ring-2 ring-secondary">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-mono text-secondary uppercase font-semibold">OCR Bounding [KHATEDAR_NAME] 99.7%</span>
+<span class="text-[10px] bg-secondary text-on-secondary px-1.5 py-0.2 rounded font-mono">DIGITALLY SIGNED</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                ज्ञानेश्वर बापू पाटील (Dnyaneshwar Bapu Patil)
+              </div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant mt-1">
+<span>खाते क्रमांक: <strong>#७४२९</strong></span>
+<span>फेरफार नोंद क्र.: <strong>#८४१९</strong></span>
+<span>वारसदार स्थिती: <strong>एकुलता मालक</strong></span>
+</div>
+</div>
+<!-- Row 3: Crops & Water Matrix -->
+<div class="grid grid-cols-3 gap-2 text-[11px]">
+<div class="p-2 bg-surface-container-high/60 rounded">
+<span class="text-outline text-[10px] block">हंगाम / पीक प्रकार</span>
+<strong class="text-on-surface text-xs">खरीप भात + सोयाबीन</strong>
+<span class="text-[10px] text-on-surface-variant block">Indrayani Paddy</span>
+</div>
+<div class="p-2 bg-surface-container-high/60 rounded">
+<span class="text-outline text-[10px] block">पाणीपुरवठा साधने</span>
+<strong class="text-on-surface text-xs">विहीर व ठिबक</strong>
+<span class="text-[10px] text-on-surface-variant block">Drip Irrigation Enabled</span>
+</div>
+<div class="p-2 bg-surface-container-high/60 rounded">
+<span class="text-outline text-[10px] block">इतर हक्क व बोजा</span>
+<strong class="text-secondary text-xs">निरंक (Unencumbered)</strong>
+<span class="text-[10px] text-secondary block">Zero active debt lien</span>
+</div>
+</div>
+<!-- Official Seal & Digital Barcode Simulation -->
+<div class="pt-3 border-t border-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-12 h-12 rounded border border-outline-variant p-1 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-on-surface">qr_code_2</span>
+</div>
+<div class="text-[10px] text-on-surface-variant leading-tight">
+<span>Digitally Validated by Land Engine</span><br/>
+<span class="font-mono text-outline">Cert No: MH-PUN-MUL-2024-8841</span>
+</div>
+</div>
+<!-- Official Digital Talathi Stamp -->
+<div class="text-right border-2 border-primary/40 rounded p-1.5 bg-primary/5">
+<span class="block text-[9px] text-primary font-bold uppercase tracking-wider">ई-महाभूमी डिजिटल स्वाक्षरी</span>
+<span class="block text-[11px] font-bold text-on-surface">तलाठी कार्यालय, पौड</span>
+<span class="block text-[9px] text-outline font-mono">Date: 12-Nov-2024 16:42 IST</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Officer Audit Notes & Decision Panel -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Verification Officer Evaluation &amp; Verdict</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Desk Inspector: Rajesh Kulkarni (ID: #ADM-441)</span>
+</div>
+<!-- Fast Canned Remarks -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quick Annotations:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="appendRemark('Valid 7/12 &amp; clear boundary confirmed.')" type="button">
+            + Valid 7/12 &amp; clear boundary
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="appendRemark('Land unencumbered by secondary liens.')" type="button">
+            + Land unencumbered
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="appendRemark('PFMS direct seeding verified.')" type="button">
+            + PFMS active
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="appendRemark('Geofence match with Paud Agri Cluster.')" type="button">
+            + Cluster Geofence OK
+          </button>
+</div>
+<!-- Reviewer Text Input Area -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="audit-notes">Audit Observations &amp; Registry Comments</label>
+<textarea class="w-full rounded-lg bg-surface-container-low p-3 font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors resize-none" id="audit-notes" rows="2">Inspected digitally signed e-mutation certificate. Boundary aligns with Junnar Agro cluster geofence. Ready for Level-1 approval.</textarea>
+</div>
+<!-- Dual Regulatory Compliance Checkboxes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<label class="flex items-start gap-2.5 p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">State Registry Conformity</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">I confirm 7/12 authenticity matches live Mahabhulekh records.</span>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Escrow &amp; DBT Enablement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Enable automated weekly escrow payouts &amp; input subsidies.</span>
+</div>
+</label>
+</div>
+<!-- Big Execution Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-end gap-space-sm pt-space-xs">
+<button class="w-full sm:w-auto px-space-lg py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-tertiary transition-colors font-label-md text-label-md flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+            Raise Discrepancy Ticket
+          </button>
+<button class="w-full sm:w-auto px-space-xl py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-md transition-all font-label-lg text-label-lg flex items-center justify-center gap-2" id="approve-smart-id-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+            Approve &amp; Issue Smart Kisan ID
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+    // Tab Switching for Cross-Verification Matrix
+    function switchKycTab(tabKey) {
+      const tabs = ['land', 'aadhaar', 'bank'];
+      tabs.forEach((key, index) => {
+        const content = document.getElementById('tab-content-' + key);
+        const btn = document.getElementById('tab-btn-' + (index + 1));
+        if (key === tabKey) {
+          content.classList.remove('hidden');
+          content.classList.add('flex');
+          btn.classList.add('bg-surface-container-lowest', 'shadow-sm', 'text-primary');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          content.classList.add('hidden');
+          content.classList.remove('flex');
+          btn.classList.remove('bg-surface-container-lowest', 'shadow-sm', 'text-primary');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+    }
+
+    // Document Canvas Controls (Zoom, Rotation, High Contrast)
+    let currentZoom = 100;
+    let currentRotation = 0;
+    let isContrast = false;
+
+    function adjustZoom(delta) {
+      currentZoom = Math.min(Math.max(currentZoom + delta, 60), 160);
+      updateCanvasTransform();
+    }
+
+    function resetZoom() {
+      currentZoom = 100;
+      currentRotation = 0;
+      updateCanvasTransform();
+    }
+
+    function rotateCanvas() {
+      currentRotation = (currentRotation + 90) % 360;
+      updateCanvasTransform();
+    }
+
+    function updateCanvasTransform() {
+      const doc = document.getElementById('rendered-doc');
+      const indicator = document.getElementById('zoom-indicator');
+      doc.style.transform = `scale(${currentZoom / 100}) rotate(${currentRotation}deg)`;
+      indicator.textContent = `${currentZoom}%`;
+    }
+
+    function toggleContrast() {
+      const doc = document.getElementById('rendered-doc');
+      const btn = document.getElementById('contrast-btn');
+      isContrast = !isContrast;
+      if (isContrast) {
+        doc.classList.add('filter', 'invert', 'hue-rotate-180');
+        btn.classList.add('bg-surface-container-lowest', 'text-primary');
+      } else {
+        doc.classList.remove('filter', 'invert', 'hue-rotate-180');
+        btn.classList.remove('bg-surface-container-lowest', 'text-primary');
+      }
+    }
+
+    // Quick annotation appender
+    function appendRemark(text) {
+      const notes = document.getElementById('audit-notes');
+      if (notes.value.trim().length > 0) {
+        notes.value += ' ' + text;
+      } else {
+        notes.value = text;
+      }
+    }
+
+    // Interactive Approval Feedback
+    document.getElementById('approve-smart-id-btn').addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Processing Smart ID Issuance...';
+      this.classList.add('opacity-80', 'pointer-events-none');
+      
+      setTimeout(() => {
+        this.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span> Kisan ID #FAR-MH-PUN-8821 Activated!';
+        this.classList.remove('bg-primary', 'hover:bg-primary-container');
+        this.classList.add('bg-secondary', 'text-on-secondary');
+      }, 900);
+    });
+
+    document.getElementById('top-approve-btn').addEventListener('click', function() {
+      document.getElementById('approve-smart-id-btn').click();
+    });
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline-variant": "#bfc9be", "secondary-fixed-dim": "#73dc90", "background": "#f2fcf2", "error-container": "#ffdad6", "on-primary-container": "#97e9ab", "tertiary-fixed-dim": "#f4bf1b", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#594400", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "on-primary-fixed-variant": "#005229", "primary-container": "#146b3a", "surface-container-highest": "#dbe5db", "primary": "#005128", "on-surface": "#151e18", "on-background": "#151e18", "on-tertiary-fixed": "#251a00", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "surface": "#f2fcf2", "inverse-surface": "#29332c", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#005227", "on-primary-fixed": "#00210d", "secondary-fixed": "#8ff9aa", "primary-fixed": "#a2f5b6", "tertiary-container": "#755900", "surface-variant": "#dbe5db", "on-error": "#ffffff", "primary-fixed-dim": "#87d89c", "on-tertiary-container": "#ffd158", "inverse-on-surface": "#e9f3e9", "on-secondary-container": "#00743a", "surface-dim": "#d2ddd3", "on-secondary": "#ffffff", "tertiary": "#584200", "surface-tint": "#166c3b", "secondary": "#006d36", "on-secondary-fixed": "#00210c", "on-surface-variant": "#3f4940", "outline": "#6f7a70", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "surface-container-low": "#ecf6ec", "tertiary-fixed": "#ffdf95" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "margin-mobile": "1rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Notification Preferences</h1></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full px-margin-mobile pb-space-xl">
+<!-- Subtle Trust Banner -->
+<div class="mt-space-md mb-space-sm p-space-md bg-surface-container-low rounded-xl flex items-center gap-space-sm shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Zero Spam Guarantee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Only essential harvest dispatches and account activity.</p>
+</div>
+</div>
+<!-- SECTION 1: Overall Channel Toggles -->
+<div class="mt-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-space-xs px-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Delivery Channels</span>
+<span class="font-label-sm text-label-sm text-primary">3 Channels Active</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Push Notifications -->
+<div class="p-space-md flex items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 mt-0.5 text-primary">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Push Notifications</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Real-time alerts on your device lock screen</p>
+</div>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- WhatsApp Updates -->
+<div class="p-space-md flex items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<p class="font-label-lg text-label-lg text-on-surface">WhatsApp Updates</p>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-label-sm uppercase">Official</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Direct harvest bills, invoice PDFs, and driver coordinates via official WhatsApp verified business account</p>
+</div>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- SMS Alerts -->
+<div class="p-space-md flex items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 mt-0.5 text-outline">
+<span class="material-symbols-outlined text-[20px]">sms</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">SMS Alerts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Critical transactional SMS for OTP and unserviceable slot alerts</p>
+</div>
+</div>
+<button aria-checked="false" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-surface-variant focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-0"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Notification Categories -->
+<!-- Group A: Orders & Delivery -->
+<div class="mb-space-md">
+<div class="flex items-center gap-space-xs mb-space-xs px-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider text-[12px]">Orders &amp; Delivery (High Priority)</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Order Status -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Order Status &amp; Milestones</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Harvest start, FPO aggregation, and dispatch</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- Doorstep Photo -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<p class="font-label-lg text-label-lg text-on-surface">Morning Doorstep Drop Alerts</p>
+<span class="material-symbols-outlined text-[15px] text-secondary">photo_camera</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Silent drop ring, doorstep insulated bag photo confirmation</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- Rescheduling (Locked) -->
+<div class="p-space-md flex items-center justify-between gap-space-md bg-surface-container-low/50">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<p class="font-label-lg text-label-lg text-on-surface">Delivery Rescheduling &amp; Delays</p>
+<span class="material-symbols-outlined text-[15px] text-outline">lock</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Weather or traffic transit notices (Mandatory safety alert)</p>
+</div>
+<div class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-not-allowed rounded-full p-0.5 bg-primary/60 opacity-80" title="Essential alert cannot be disabled">
+<span class="inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md translate-x-5"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Group B: Subscriptions & Weekly Planner -->
+<div class="mb-space-md">
+<div class="flex items-center gap-space-xs mb-space-xs px-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider text-[12px]">Subscriptions &amp; Weekly Planner</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Cutoff Reminder -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Weekly Cart Modification Cutoff</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Reminder 2 hours before 9:00 PM lock</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- Milk & Routine -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Daily Milk / Routine Reminders</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Morning bottle collection &amp; count alerts</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- AutoPay -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">AutoPay &amp; Mandate Billing</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Upcoming UPI AutoPay debits 24 hours prior</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Group C: Farm Story & Seasonal Produce -->
+<div class="mb-space-md">
+<div class="flex items-center gap-space-xs mb-space-xs px-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider text-[12px]">Farm Story &amp; Seasonal Produce</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Seasonal Harvest -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<p class="font-label-lg text-label-lg text-on-surface">Seasonal Harvest Arrivals</p>
+<span class="px-1.5 py-0.2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-label-sm">Bestseller</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Rare batches (Ratnagiri Hapus, Nashik Grapes, Nagpur Oranges)</p>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- Collective Updates -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Farmer Collective Updates</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Stories and impact reports from partner FPOs</p>
+</div>
+<button aria-checked="false" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-surface-variant focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-0"></span>
+</button>
+</div>
+<div class="h-[1px] bg-surface-container-high mx-space-md"></div>
+<!-- Promotions -->
+<div class="p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Promotions &amp; Discounts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Exclusive festival basket credits and FPO coupons</p>
+</div>
+<button aria-checked="false" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-surface-variant focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-0"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Quiet Hours / Do Not Disturb Setting -->
+<div class="mb-space-lg">
+<div class="flex items-center gap-space-xs mb-space-xs px-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider text-[12px]">Rest &amp; Quiet Hours</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">notifications_paused</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Mute Non-Essential Alerts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Between 10:00 PM and 5:30 AM daily</p>
+</div>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out bg-primary focus:outline-none" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="mt-space-sm pt-space-sm flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+          Current window:
+        </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">10:00 PM - 05:30 AM</span>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Save Preferences Button -->
+<div class="sticky bottom-4 z-20 mt-auto pt-space-xs">
+<button class="w-full h-12 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-md hover:bg-primary-container active:scale-[0.99] transition-all flex items-center justify-center gap-space-xs" id="save-btn" onclick="handleSavePreferences()">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Save Notification Preferences</span>
+</button>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-full shadow-xl flex items-center gap-space-xs opacity-0 pointer-events-none transition-all duration-300 z-50" id="toast">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">verified</span>
+<span class="font-label-md text-label-md">Preferences updated successfully</span>
+</div>
+</div>
+<script>
+  function toggleSwitch(element) {
+    const isChecked = element.getAttribute('aria-checked') === 'true';
+    const thumb = element.querySelector('span');
+
+    if (isChecked) {
+      element.setAttribute('aria-checked', 'false');
+      element.classList.remove('bg-primary');
+      element.classList.add('bg-surface-variant');
+      thumb.classList.remove('translate-x-5');
+      thumb.classList.add('translate-x-0');
+    } else {
+      element.setAttribute('aria-checked', 'true');
+      element.classList.remove('bg-surface-variant');
+      element.classList.add('bg-primary');
+      thumb.classList.remove('translate-x-0');
+      thumb.classList.add('translate-x-5');
+    }
+  }
+
+  function handleSavePreferences() {
+    const btn = document.getElementById('save-btn');
+    const toast = document.getElementById('toast');
+
+    // Button feedback
+    btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Saving changes...</span>`;
+    
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Save Notification Preferences</span>`;
+      
+      // Show confirmation toast
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+      }, 2400);
+    }, 450);
+  }
+</script></main></body></html>

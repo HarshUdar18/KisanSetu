@@ -1,0 +1,22 @@
+# Kisan Setu — Farmer Design Analysis
+
+> **Primary Source of Truth**: `farmer app ui/` (57 Stitch screen designs + `kisan_setu/DESIGN.md`)
+
+## 1. Executive Summary
+The Google Stitch Farmer App design for **Kisan Setu** is an agricultural producer, FPO, and agri-supply-chain management application built with Material Design 3. It prioritizes outdoor high-glare readability (`#F2FCF2` sage canvas, `#005128` deep field green, `#FFFFFF` elevated cards), bilingual English + Marathi (`EN / मरा`) labels, minimum 48×48dp touch targets, transparent escrow/DBT settlement tracking, and lot-level traceability from farmstead to weighbridge to APMC lab.
+
+## 2. Shell & Layout Architecture
+Inspection of the 57 Stitch `code.html` files reveals three shell archetypes:
+1. **`mobile_tab` (20 screens)**
+   - Top-level & feed destinations: `farmer_dashboard`, `my_produce_management`, `market_demand_orders`, `weekly_settlements_passbook`, `farmer_profile_farmstead_overview`, `surplus_produce_management`, `cold_chain_logistics_overview`, `live_transporter_gps_tracking`, `temperature_and_humidity_telemetry`, `settlement_passbook_statements`, `dbt_escrow_payouts_transit_ledger`, `kisan_wallet_financial_overview`, `bank_withdrawal_instant_transfer`, `annual_farm_balance_sheet_p_l_statement`, `daily_apmc_mandi_rates_live_spot_ticker`, `weather_intelligence_micro_climate`, `agronomic_advisory_crop_calendar`, `ai_drone_scouting_multispectral_map`, `pest_outbreak_ai_diagnosis`, `voice_ai_multilingual_farming_assistant_soil_diagnosis`, `government_schemes_subsidies_dashboard`, `fpo_collective_input_marketplace`, `community_fpo_forum_feed`, `success_stories_farmer_knowledge_hub`.
+   - Sticky Top Header: Kisan Setu emblem, greeting + cluster (`Namaste, Ramesh • Mulshi FPO Cluster`), bilingual `EN / मरा` toggle pill, Notification bell, Profile avatar.
+   - 5-Tab Bottom Navigation Bar: `Dashboard`, `My Produce`, `Demand`, `Settlements`, `Profile`.
+2. **`mobile_stack` (36 screens)**
+   - Focused workflows: KYC (`farmer_kyc_digital_identity`, `land_record_verification_7_12`, `kyc_verification_smart_certificate`, `bank_account_dbt_setup`), Produce creation (`add_new_produce_crop_category`, `add_new_produce_quantity_price_harvest`, `crop_portfolio_sowing_schedule`, `produce_lot_details_qr_stamping`), Surplus (`list_surplus_batch`), Collection & QC (`collection_center_slot_booking_gate_pass`, `mandi_arrival_pre_registration_gate_slot_pass`, `farmgate_dispatch_handover`, `weighbridge_intake_tare_slip`, `apmc_lab_assay_grade_card`, `qc_grade_dispute_re_sampling_request`, `bulk_escrow_agreement_dispatch`), Finance (`gst_exempt_farmer_tax_invoice_sales_receipt`, `kisan_credit_card_kcc_limit_loan_interest_subvention_tracker`, `crop_wise_cost_of_cultivation_profit_margin`), Advisory/Mandi (`ai_crop_price_forecast_selling_recommendation`, `multi_mandi_price_comparison_distance_matrix`, `ask_agronomist_share_field_tip`, `farmer_audio_voice_note_q_a_discussion`), Schemes & Store (`pm_kisan_dbt_installment_tracker`, `crop_insurance_pmfby_claim_settlement`, `fpo_agri_input_store_subsidized_bio_fertilizer_booking`, `input_group_purchase_pool_bulk_discount`, `fpo_input_order_summary_subsidized_billing`, `farm_machinery_custom_hiring_center_chc`), Farm & Support (`farm_plots_soil_health_management`, `fpo_affiliation_land_settings`, `farmer_helpdesk_ticket_redressal_taluka_csc_centers`).
+3. **`mobile_blank` (1 screen)**
+   - `offline_mode_local_sync_vault` ("काळजी नको! काम चालू ठेवा." — Offline queue & local sync vault).
+   - Plus standard `mobile_blank` entry/onboarding/auth/location/notification primer screens designed with the exact same `DESIGN.md` system.
+
+## 3. Existing Workspace Assessment
+- `apps/farmer-app` currently has a minimal Phase 0/1 skeleton (15 files) using `flutter_riverpod` and `#1B5E20` theme, with only `splash_screen`, `login_screen`, `register_screen`, `farmer_dashboard_screen`, and `profile_screen`.
+- **Target State**: Upgrade `apps/farmer-app` to the complete **Kisan Setu Farmer** Stitch Design System (`#005128` / `#146B3A` / `#F2FCF2` / `#F4BF1B` / `Inter`), migrate state management to **`provider`** (`MultiProvider` + `ChangeNotifier`), add **`flutter_secure_storage`**, **`shared_preferences`**, **`image_picker`**, implement all 19 modules (all 57 Stitch designs + 290 checklist items/states), enforce `ROLE_FARMER` separation, and keep `apps/customer-app` untouched.

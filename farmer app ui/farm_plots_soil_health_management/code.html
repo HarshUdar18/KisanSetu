@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#73dc90", "surface-container": "#e6f1e7", "on-surface": "#151e18", "secondary": "#006d36", "tertiary-container": "#755900", "tertiary": "#584200", "surface-container-highest": "#dbe5db", "on-secondary-container": "#00743a", "on-primary-fixed": "#00210d", "secondary-fixed": "#8ff9aa", "surface-tint": "#166c3b", "primary-fixed-dim": "#87d89c", "on-tertiary-fixed-variant": "#594400", "error": "#ba1a1a", "on-tertiary-fixed": "#251a00", "outline-variant": "#bfc9be", "on-tertiary": "#ffffff", "surface": "#f2fcf2", "on-secondary": "#ffffff", "inverse-on-surface": "#e9f3e9", "on-primary-fixed-variant": "#005229", "primary": "#005128", "on-error": "#ffffff", "tertiary-fixed-dim": "#f4bf1b", "surface-container-high": "#e1ebe1", "secondary-container": "#8ff9aa", "outline": "#6f7a70", "surface-variant": "#dbe5db", "on-primary-container": "#97e9ab", "primary-fixed": "#a2f5b6", "on-secondary-fixed-variant": "#005227", "inverse-primary": "#87d89c", "surface-container-low": "#ecf6ec", "primary-container": "#146b3a", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#00210c", "inverse-surface": "#29332c", "on-tertiary-container": "#ffd158", "on-surface-variant": "#3f4940", "background": "#f2fcf2", "on-primary": "#ffffff", "on-background": "#151e18", "on-error-container": "#93000a", "surface-dim": "#d2ddd3", "surface-bright": "#f2fcf2", "tertiary-fixed": "#ffdf95", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-md": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs min-w-0"><button class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Farm Plot Details</h1></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[24px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Top Agro-Telemetry / Summary Hero Banner -->
+<div class="mt-space-sm bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary font-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Mahabhulekh & AgriStack Synced</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs">3.4 Acres <span class="font-body-md text-body-md text-on-surface-variant font-normal">(1.37 Ha)</span></h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">3 Geotagged Parcels • Mulshi Cluster, Pune</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[26px]">landscape</span>
+</div>
+</div>
+<!-- Telemetry status pills -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soil Vitality</span>
+<span class="font-label-md text-label-md text-secondary mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">eco</span> 88%
+        </span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg Moisture</span>
+<span class="font-label-md text-label-md text-primary mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">water_drop</span> 24%
+        </span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Drip</span>
+<span class="font-label-md text-label-md text-secondary mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">solar_power</span> Normal
+        </span>
+</div>
+</div>
+<!-- Primary Quick Action -->
+<button class="mt-space-xs w-full h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-sm active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Add New Plot / Survey No. (नवीन गट जोडा)</span>
+</button>
+</div>
+<!-- Interactive Plot Selector & Switcher -->
+<div class="mt-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Registered Survey Plots</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Active Parcels</span>
+</div>
+<!-- Plot Cards Stack -->
+<div class="flex flex-col gap-space-md mt-space-sm">
+<!-- Plot A-1 Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col transition-all">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">Active Cultivation</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Gat 142/2B</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Plot A-1: Mutha Riverbed North</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">1.5 Acres • High Organic Loam</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">potted_plant</span>
+</div>
+</div>
+<!-- Crop & Harvest Snapshot -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shrink-0" data-alt="Close-up crisp photo of vibrant lush green baby spinach leaves growing in fertile organic dark brown loam soil under bright morning sunlight, macro agricultural photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAz58UmR6lQtdmmRiuS9Zl2f3jajhVkK0H9Eu-rQTjoJexvZ-gJGvK0wmmmJ9H0AgxTujD8LtfBiu8RXnXnDfCeTCMBDMO4CZafaLhtWA2uh6ZprfjAs8NRFiDR-Vr53shMpgcabLbMyycReS_RLJNLGHCIGXddUo4tpfaT-k-kmTklTUA0CUyRSFA_pEz-cK0jHErjf17n-4YoRAveozJXaPoBoy9AG9K5SCgtxu7"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface truncate">Standing Crop: Baby Spinach</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full shrink-0">2 days left</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Plucking ready for APMC Market Hub</p>
+</div>
+</div>
+<!-- Soil Parameters Grid -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soil Type & pH</span>
+<span class="font-label-md text-label-md text-on-surface mt-0.5">Alluvial Loam • pH 6.8</span>
+<span class="font-body-sm text-body-sm text-secondary">Optimal (Neutral)</span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Organic Carbon</span>
+<span class="font-label-md text-label-md text-on-surface mt-0.5">0.78% (High Vitality)</span>
+<span class="font-body-sm text-body-sm text-secondary">+0.12% vs last cycle</span>
+</div>
+</div>
+<!-- Detailed Soil & System Metrics -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">scale</span> NPK Composition</span>
+<span class="font-label-sm text-label-sm text-on-surface">140 : 45 : 210 kg/ha</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-secondary">water_ph</span> Irrigation Network</span>
+<span class="font-label-sm text-label-sm text-on-surface">Micro-drip (Solar, 12,000 L/d)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-tertiary">science</span> Micro-nutrients</span>
+<span class="font-label-sm text-label-sm text-secondary">Zinc & Boron Adequate</span>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Last tested: 12 Sep 2024</span>
+<span class="text-primary">APMC Soil Testing Lab</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Plot B-2 Card (With Health Alert) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">Active Cultivation</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Gat 142/3A</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Plot B-2: Hillside Terraced South</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">1.2 Acres • Black Cotton Loam (काळी माती)</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">nest_eco_leaf</span>
+</div>
+</div>
+<!-- Standing Crop Details -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shrink-0" data-alt="Agricultural shot of heavy clusters of ripe red tomatoes growing in stepped terrace farm beds with black cotton soil under clear skies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh9qiLDTmNSMHcoQuJG99HFGpkwqwq14U4dZKA36hH9KmslehNDxxoOG4ZVP65lgOIBSeLpgwFZ-iCnmm5yAw3loxkxyMcrkLHdrXKOWV2_Z-YJRGOIsr7yfLwahJXBsgns5D0uE3ZgykU5RGxK-c2tCvhCSTbLGVnJdWSw8pN3Gsj2n-ewJuLDGk-BsgWPzlQtVQFPrzxMRPVo6AgZTVoGVCGdWeerLvwkiSsQkp5"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface truncate">Desi Red Tomatoes</span>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full shrink-0">Fruiting Stage</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Drip pipeline via borewell pump</p>
+</div>
+</div>
+<!-- Soil Parameters Grid -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soil Reaction</span>
+<span class="font-label-md text-label-md text-on-surface mt-0.5">pH 7.2 (Slight Alkaline)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Clay fraction 48%</span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Organic Carbon</span>
+<span class="font-label-md text-label-md text-on-surface mt-0.5">0.65% (Optimal)</span>
+<span class="font-body-sm text-body-sm text-secondary">Good moisture lock</span>
+</div>
+</div>
+<!-- Attention Banner / Soil Health Alert -->
+<div class="bg-error-container rounded-lg p-space-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-error-container font-semibold">Soil Health Alert: Low Sulfur (8.2 ppm)</span>
+<p class="font-body-sm text-body-sm text-on-error-container mt-0.5">
+              Organic gypsum dressing (40 kg/acre) recommended prior to next post-harvest sowing to restore natural soil porosity.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Plot C-3 Card (Soil Preparation & Green Cover) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full">Soil Preparation</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Gat 143/1</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Plot C-3: Nursery & Green Bed</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">0.7 Acres • Sandy Loam • pH 6.5</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">grass</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shrink-0" data-alt="Dense green Dhaincha Sesbania green manure crop planted on sandy loam farm plot with furrow irrigation lines in rural Maharashtra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGUQYU34FsBArOu4USikb4nee0eSfEW1Q0igSt2kw533edNZXaKlCUlPoQ22rkGJKftFbKaiLGatcuFFa0CM0QSInk11NtA5NdJIKzc5ydY2IKtGezDOTZlqBoJVIxFoIJKF-Ky7QmlS_VlJoK_c6mrPHpsm0bQq-Wmk2U2U5wySFNLT3zMm-6yVr1CnhUH6a3O9mStfr-xcpo845oQP3Vw-G9D1ODP7NQN9-StpXx"/>
+<div class="flex-1 min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate block">Dhaincha (Sesbania) Cover Crop</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">
+              Natural biological nitrogen fixation in progress. Scheduled for Coriander seed sowing next Monday.
+            </p>
+</div>
+</div>
+<!-- Nitrogen Bio-fixation Metric -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychiatry</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Estimated Bio-Nitrogen Addition</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+28 kg N/acre naturally infused</span>
+</div>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Government Soil Health Card (SHC) Hub -->
+<div class="mt-space-lg bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Soil Health Card (SHC)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Govt of Maharashtra • AgriStack ID</span>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified
+      </span>
+</div>
+<!-- Card Badge & Reference -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Certificate Registration No.</span>
+<span class="font-label-md text-label-md text-on-surface">SHC-MH-2024-8812</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valid Until</span>
+<span class="font-label-md text-label-md text-on-surface">Aug 2026</span>
+</div>
+</div>
+<!-- Action Buttons for SHC -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-sm active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download Soil Card (PDF)</span>
+</button>
+<button class="w-full h-12 bg-surface-container text-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-surface-container-high active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+<span>Book Soil Testing Sample Pickup</span>
+</button>
+</div>
+</div>
+<!-- Agronomist Expert Advisory Card -->
+<div class="mt-space-md bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="Portrait photo of an experienced Indian agricultural scientist wearing formal khadi shirt with spectacles smiling warmly against rural foliage background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0r-ObuUYk2r8egvXG0-n53bzT1eYD4jqInvxZNcM1rGYtu32grMD1Lqe3EXfL37ycKz3wD-39EreW2Ho6TnFpPTsti_Ial9CBvtf2bnHHn7ZZzEkZy4cK3b8KPkzqm4laeX-NZWsSiQOEAj__btdLhsRvaPZz87fxXuAKYEojsXhUA94-TALkcSTulZM6lCPKiwvG092a5cPU9ilNvv22UTTLVxOAw8q_mKdJAwRG"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Dr. Sandeep More</span>
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Chief Agronomist • Mulshi Kisan FPO</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm">
+<div class="flex items-center gap-1 text-tertiary font-label-sm mb-1">
+<span class="material-symbols-outlined text-[16px]">tips_and_updates</span>
+<span>Expert Recommendation (सल्ला)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        "Plot A-1 spinach is in peak vegetative condition for harvest. Before sowing subsequent coriander or leafy greens on Plot C-3, apply well-decomposed vermicompost at 2.5 tonnes/ha with Trichoderma culture to maintain microbial balance and avoid root-rot during rainfall shifts."
+      </p>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-0.5">
+<span>Advisory issued today, 08:30 AM</span>
+<button class="text-primary font-label-md text-label-md flex items-center gap-0.5">
+<span>Request Call</span>
+<span class="material-symbols-outlined text-[16px]">call</span>
+</button>
+</div>
+</div>
+</div></main></body></html>

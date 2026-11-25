@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#bfc9be","on-secondary-container":"#00743a","on-surface":"#151e18","on-secondary":"#ffffff","surface-container-highest":"#dbe5db","error-container":"#ffdad6","error":"#ba1a1a","surface-bright":"#f2fcf2","primary-fixed-dim":"#87d89c","on-primary-fixed":"#00210d","surface-container":"#e6f1e7","background":"#f2fcf2","tertiary-container":"#755900","on-secondary-fixed-variant":"#005227","secondary-fixed-dim":"#73dc90","on-error":"#ffffff","surface-dim":"#d2ddd3","on-primary-fixed-variant":"#005229","primary":"#005128","secondary-fixed":"#8ff9aa","on-background":"#151e18","tertiary-fixed":"#ffdf95","on-surface-variant":"#3f4940","inverse-primary":"#87d89c","surface-container-lowest":"#ffffff","inverse-surface":"#29332c","primary-container":"#146b3a","secondary":"#006d36","inverse-on-surface":"#e9f3e9","surface-tint":"#166c3b","on-primary":"#ffffff","surface-variant":"#dbe5db","secondary-container":"#8ff9aa","tertiary":"#584200","on-tertiary":"#ffffff","tertiary-fixed-dim":"#f4bf1b","on-secondary-fixed":"#00210c","on-error-container":"#93000a","surface":"#f2fcf2","surface-container-low":"#ecf6ec","on-tertiary-fixed-variant":"#594400","on-tertiary-fixed":"#251a00","on-primary-container":"#97e9ab","primary-fixed":"#a2f5b6","surface-container-high":"#e1ebe1","outline":"#6f7a70","on-tertiary-container":"#ffd158"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","margin":"1rem","gutter-mobile":"0.75rem","space-xl":"2rem","space-lg":"1.5rem","space-xs":"0.25rem","margin-tablet":"1.5rem","space-sm":"0.5rem","space-md":"1rem","gutter":"1rem"},"fontFamily":{"headline-sm":["Inter"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"display-lg":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"label-lg":["Inter"]},"fontSize":{"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0.015em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-hidden"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-high/60"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[24px]">agriculture</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg text-primary tracking-tight">Kisan Setu</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Agro-Portal</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg shadow-sm"><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Main</p><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span>Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="analytics-reports" href="#"><span>Analytics &amp; Reports</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stakeholders</p><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="customers" href="#"><span>Customers</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="farmers" href="#"><span>Farmers</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="farmer-360-profile" href="#"><span>Farmer 360° Profile</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fpos" href="#"><span>FPOs</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="register-fpo" href="#"><span>Register FPO</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="kyc-verification" href="#"><span>KYC Verification</span></a></div><div class="space-y-space-xs rounded-xl bg-surface-container/70 p-1.5"><div class="flex items-center justify-between px-space-sm py-1"><p class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Supply Chain &amp; Catalog</p><span class="w-1.5 h-1.5 rounded-full bg-primary"></span></div><a class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-body-md shadow-sm transition-colors" data-path="product-catalogue" href="#"><span>Product Catalogue</span><span class="px-1.5 py-0.5 rounded-full font-label-sm text-[10px] bg-primary text-on-primary font-bold">Live</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg shadow-sm" data-path="produce-listings" href="#"><span>Produce Listings</span><span class="px-1.5 py-0.5 rounded-full font-label-sm text-[10px] bg-secondary text-on-secondary font-bold">Active</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="demand-matching" href="#"><span>Demand Matching</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="order-management" href="#"><span>Order Management</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="collection-points" href="#"><span>Collection Points</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quality-inspection" href="#"><span>Quality Inspection</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="warehouses" href="#"><span>Warehouses</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inventory" href="#"><span>Inventory</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="logistics-fleet" href="#"><span>Logistics &amp; Fleet</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Finance &amp; Commerce</p><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payments-escrow" href="#"><span>Payments &amp; Escrow</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="farmer-settlements" href="#"><span>Farmer Settlements</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subscriptions" href="#"><span>Subscriptions</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="farmer-agri-store" href="#"><span>Farmer Agri-Store</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="coupons-offers" href="#"><span>Coupons &amp; Offers</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System &amp; Governance</p><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="support-grievances" href="#"><span>Support &amp; Grievances</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span>Settings</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-logs" href="#"><span>Audit Logs</span></a></div></nav></div><div class="p-space-sm bg-surface-container-high/80 border-t border-outline-variant/30 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm font-bold text-on-surface">Live Sync v2.4.0</span></div><span class="font-label-sm text-label-sm text-secondary font-semibold">Stable</span></div><div class="flex items-center justify-between text-on-surface-variant"><span class="font-body-sm text-body-sm">AgriStack / PFMS Gateway</span><span class="font-label-sm text-label-sm text-primary font-bold">ACTIVE</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1"><nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-on-surface-variant"><a class="font-body-sm text-body-sm hover:text-primary transition-colors" data-path="dashboard" href="#">Home</a><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="font-label-sm text-label-sm font-semibold text-primary">Supply Chain &amp; Catalog</span></nav><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/40"><span class="material-symbols-outlined text-primary text-[18px]">hub</span><span class="font-label-sm text-label-sm font-bold text-primary">Western Maharashtra Agro-Cluster</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="relative flex-1 max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-12 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary" placeholder="Search produce, batch ID, farmers, FPO (Ctrl+K)" type="text"/><div class="absolute right-2 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">Ctrl+K</div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-sm text-label-sm font-semibold text-on-surface">Today: Rabi 2024–25</span><span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></div><button class="relative p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors" title="Notifications"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">Rajesh Kulkarni</span><span class="font-label-sm text-label-sm text-on-surface-variant">Super Admin</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-space-lg py-space-md min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Top Dossier Action Header -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container font-semibold">Live Certified Audit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">HASH: 0x9f81...a38b</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Produce Lot Dossier, QR Stamping &amp; Dispatch Audit</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">Cryptographic lot genesis, farmstead origin, optical AI defect analysis, cold-chain handover, and buyer allocation ledger.</p>
+</div>
+<!-- Header Action Controls -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-all flex items-center gap-1.5 shadow-sm active:scale-95" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="font-label-md text-label-md">Print Thermal Slip</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-all flex items-center gap-1.5 shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">call_split</span>
+<span class="font-label-md text-label-md">Split / Re-assign</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-error-container hover:bg-error/20 text-on-error-container transition-all flex items-center gap-1.5 shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span class="font-label-md text-label-md">Flag QC Re-assay</span>
+</button>
+<button class="h-10 px-4 rounded-lg bg-primary hover:bg-primary/90 text-on-primary transition-all flex items-center gap-2 shadow-md active:scale-95">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-md text-label-md">Authorize Dispatch &amp; Escrow (₹1,09,200)</span>
+</button>
+</div>
+</div>
+<!-- Status Overview Bar -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-md items-center">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lot Identifier</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-mono truncate">#LOT-2024-TM-8419</span>
+<span class="material-symbols-outlined text-[16px] text-primary cursor-pointer hover:opacity-80" title="Copy Lot Hash">content_copy</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Hybrid Tomato 1057 (Abhinav)</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gate &amp; QC Status</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-secondary font-bold truncate">Ready for Dispatch</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage 2 QC Complete</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Producer Origin</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate mt-0.5">Dnyaneshwar B. Patil</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Mulshi Valley FPO, Paud</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verified Volume</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">4,200 kg <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Net</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">150 Plastic Crates (28kg avg)</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Axis Escrow Valuation</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">₹1,09,200.00</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Locked in Nodal Escrow</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Target Fulfillment</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate mt-0.5">Star Bazaar Mega-DC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Thane Logistics Park</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main 3-Column Dossier Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md items-start">
+<!-- COLUMN 1: Farmstead Genesis & Cultivation Traceability -->
+<div class="flex flex-col gap-space-md">
+<!-- Farmer Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">person_pin_circle</span>
+<span class="font-label-lg text-label-lg text-on-surface">Farmstead Genesis</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+            AgriStack Linked
+          </span>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up photographic portrait of Dnyaneshwar Bapu Patil, a confident middle-aged Indian farmer smiling in an open sunlit tomato greenhouse wearing a white Nehru kurta with lush foliage in soft blur behind him in crisp morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTiDBJy0P7MWHLN7zmPaYvHSaHOe4aGl3yk1gtosLudoHcDPZEI54s4GyGIbWo1DOaco9I5NPfFZIhjgVGJR_SIGgWbcq5nVowNdJlynMiC9w-Ez92HZcOHTw7GkXDKDETr9qYv4z_OyHicX39etMBShxblyRmo13De3Kv0760bO9QM2x2pTYzgnOuMQbE2c3f22rCuGm4I8tGia8iQLRADmlSaEOU4OKHY__4RuO_"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Dnyaneshwar Bapu Patil</h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span>AgriStack UID:</span>
+<span class="font-mono text-on-surface font-medium">#AGR-MH-2024-99214</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">phone</span>
+<span>+91 98221 ****10</span>
+<span class="text-secondary font-semibold text-[11px]">Aadhaar e-KYC Tier 3</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm space-y-1.5">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Affiliated Collective</span>
+<span class="font-medium text-on-surface">Mulshi Valley Farmer Co-op Ltd.</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">FPO Registration #</span>
+<span class="font-mono text-on-surface">MH-PUN-FPO-2021-088</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Historical Fulfillment Score</span>
+<span class="font-bold text-secondary">99.4% (38 Dispatches)</span>
+</div>
+</div>
+</div>
+<!-- Land Parcel & Geospatial Map -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">map</span>
+<span class="font-label-lg text-label-lg text-on-surface">Cadastral &amp; GPS Boundary</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gut No 142/2A</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Mahabhulekh 7/12 Land Registry verified. Survey parcel 4.5 Acres, Paud, Mulshi Taluka, Pune District.
+        </p>
+<!-- Static Cadastral Map View -->
+<div class="w-full h-44 rounded-lg bg-cover bg-center relative overflow-hidden shadow-inner" data-location="Paud, Mulshi Taluka, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0Mp6irGvJFtBTFaN9OPs-wFe0Wzf3M5OUn2oUtzwyGvUKNiNENvuHoV1WHFGHe1dp1F_jPzxKedCXVSRGzobRV7bfQ_hGl-KvQVWXdZx17ZX_87WA3T0NsFlk-auaZ3O0WCq0uU8DqFjmg3o8qgdI4dJVt3JQaI44uTjX5fq7C51T2-Q83mA7L5KGb4c-z8C_O0rGiTpXqAjzmIlV5iqqYbDVckD_v_MJes7ba9Q5')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-sm justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-inverse-on-surface font-mono">18.5284° N, 73.5124° E</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80">Altitude: 618m MSL • Soil: Red Clay Loam</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">Polygon Locked</span>
+</div>
+</div>
+<div class="mt-space-sm grid grid-cols-2 gap-space-xs text-body-sm">
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="text-on-surface-variant text-[11px]">Irrigation Infrastructure</span>
+<span class="font-medium text-on-surface mt-0.5">Drip &amp; Mulching Film</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="text-on-surface-variant text-[11px]">Water Source</span>
+<span class="font-medium text-on-surface mt-0.5">Pavana Dam Borewell Reservoir</span>
+</div>
+</div>
+</div>
+<!-- Sowing & Agronomic Field Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="font-label-lg text-label-lg text-on-surface">Field Timeline &amp; Inputs</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-bold">Zero-Residue Bio</span>
+</div>
+<div class="relative pl-6 space-y-space-sm">
+<!-- Timeline Vertical Marker -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Event 1 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface">Dew Harvest Completed</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">22 Nov • 05:30 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hand-picked at 75% pink blush stage to preserve transit firmness.</span>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface">Bio-Foliar Nutrition Spray</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">08 Nov • 06:15 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fermented Jeevamrut + Dashaparni Kashayam (Zero synthetic pesticide).</span>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-variant ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface">Flowering &amp; Trellising Setup</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">14 Oct • 09:00 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Wire stake trellising with anti-fungal copper hydroxide preventive dusting.</span>
+</div>
+<!-- Event 4 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-variant ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface">Nursery Transplanting</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">20 Sep • 07:00 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seminis Syngenta Hybrid 1057 certified F1 hybrid seedling plugs.</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-body-sm bg-surface-container-low p-2 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span>
+<span class="font-medium text-on-surface">NPOP Organic Compliance</span>
+</div>
+<span class="font-mono text-primary font-semibold">CERT-NPOP-24-9122</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 2: Lab Assay, Weighbridge Tare & Grade Certification -->
+<div class="flex flex-col gap-space-md">
+<!-- Statutory Quality Grade Stamp Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="font-label-lg text-label-lg text-on-surface">Statutory Quality Certification</span>
+</div>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">Assay #QA-8910</span>
+</div>
+<div class="my-space-sm p-space-md rounded-xl bg-gradient-to-r from-secondary-container/40 to-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Assayed Grade</span>
+<span class="font-display-lg text-display-lg text-primary font-bold tracking-tight">Grade A+</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Export &amp; Premium Supermarket Retail Spec</span>
+</div>
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[36px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</div>
+<!-- Weighbridge Tare Slip -->
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Certified Intake Weighment</span>
+<span class="font-mono text-label-sm text-label-sm text-secondary">Berth #4 Load-Cell</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center py-1">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gross Weight</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-mono">4,500 kg</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tare (150 Crates)</span>
+<span class="font-headline-sm text-headline-sm text-error font-mono">- 300 kg</span>
+</div>
+<div class="flex flex-col bg-surface-container rounded p-1">
+<span class="font-body-sm text-body-sm text-primary font-semibold">Net Settlement</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold font-mono">4,200 kg</span>
+</div>
+</div>
+</div>
+<!-- Chemical & Physical Attributes Table -->
+<div class="space-y-space-xs mb-space-sm">
+<div class="flex justify-between items-center p-2 rounded hover:bg-surface-container-low text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">water_drop</span>
+<span class="text-on-surface">Sweetness / Sugar Level</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface font-mono">4.8° Brix</span>
+<span class="text-secondary text-[11px] font-semibold">(Opt: 4.5° - 5.2°)</span>
+</div>
+</div>
+<div class="flex justify-between items-center p-2 rounded hover:bg-surface-container-low text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">fitness_center</span>
+<span class="text-on-surface">Pulp Firmness (Penetrometer)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface font-mono">4.2 kg/cm²</span>
+<span class="text-secondary text-[11px] font-semibold">(High Transit Resilience)</span>
+</div>
+</div>
+<div class="flex justify-between items-center p-2 rounded hover:bg-surface-container-low text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">straighten</span>
+<span class="text-on-surface">Equatorial Caliber (Diameter)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface font-mono">51.4 mm avg</span>
+<span class="text-secondary text-[11px] font-semibold">(Uniform Medium-Plus)</span>
+</div>
+</div>
+<div class="flex justify-between items-center p-2 rounded hover:bg-surface-container-low text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">pest_control</span>
+<span class="text-on-surface">Pesticide Residue (MRL Screen)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-secondary font-mono">0.00 mg/kg</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold">100% CLEAN</span>
+</div>
+</div>
+<div class="flex justify-between items-center p-2 rounded hover:bg-surface-container-low text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+<span class="text-on-surface">Surface Blemish / Blotchy Ripening</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface font-mono">1.2%</span>
+<span class="text-secondary text-[11px] font-semibold">(Below 3.0% threshold)</span>
+</div>
+</div>
+</div>
+<!-- Inspector Digital Endorsement -->
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Dr. Shalini Deshmukh</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">APMC Zonal Agronomist • Lic #APMC-AGR-4029</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono text-[11px] text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SHA-256 SIGNED
+            </span>
+<span class="text-[10px] text-on-surface-variant font-mono">22-Nov-2024 07:15 IST</span>
+</div>
+</div>
+</div>
+<!-- Optical AI Inspection Visualizer -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">document_scanner</span>
+<span class="font-label-lg text-label-lg text-on-surface">Optical AI Computer Vision Grading</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">98.8% Defect Free</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Conveyor pass snapshot with bounding-box color sorting and skin integrity verification.</p>
+<!-- Simulated Computer Vision Image Container -->
+<div class="relative w-full h-48 rounded-lg overflow-hidden bg-inverse-surface shadow-inner">
+<img class="w-full h-full object-cover" data-alt="High-resolution overhead close-up shot of freshly packed bright red round hybrid tomatoes in a heavy duty green plastic agricultural crate illuminated by crisp inspection station laboratory lighting showing uniform glossy skin texture with subtle dew droplets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFGJB_r0R285_H9JaxvXDatBPC_CHn2ZE3JrqSHEATiDcZbBTHLco3u7TcYjrKhnBW0NCfexoYfyFM5EDHG6V6AfCCnWR268dpJ6WsEXJ0Etg8l74OnjFCyi1L1kN78AXjfvRkec_pyIT10pT3V0tHfcDOwkEk3kBHKUK0rxcySqgkcVY5W96dKuNVVi8D9jW1KjAIempwz77bNQ9tksiqrLWDA-_1hCjXw1cJcEzh"/>
+<!-- Green Bounding Boxes Overlay (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 400 200">
+<rect fill="rgba(0,109,54,0.15)" height="70" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="70" x="25" y="20"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="30" y="35">AI: 99.4% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="75" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="75" x="110" y="25"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="115" y="40">AI: 98.9% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="80" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="80" x="200" y="15"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="205" y="30">AI: 99.1% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="70" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="70" x="295" y="30"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="300" y="45">AI: 97.8% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="75" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="75" x="65" y="105"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="70" y="120">AI: 98.6% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="80" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="80" x="160" y="100"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="165" y="115">AI: 99.2% A+</text>
+<rect fill="rgba(0,109,54,0.15)" height="75" rx="6" stroke="#73dc90" stroke-dasharray="4 2" stroke-width="2" width="75" x="255" y="105"></rect>
+<text fill="#73dc90" font-family="monospace" font-size="10" font-weight="bold" x="260" y="120">AI: 98.4% A+</text>
+</svg>
+<div class="absolute bottom-2 left-2 right-2 bg-surface-container-highest/90 backdrop-blur-sm rounded px-2.5 py-1 flex items-center justify-between text-[11px] font-mono">
+<span class="text-on-surface">Models: YOLOv8-AgriSort • Crate Scan #084</span>
+<span class="text-primary font-bold">144/145 Samples OK</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>RGB Chromatic Variance: <strong class="text-on-surface">±2.1%</strong></span>
+<span>Shape Roundness Index: <strong class="text-on-surface">0.94</strong></span>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: QR Stamping, Cold-Chain Telemetry & Escrow Financials -->
+<div class="flex flex-col gap-space-md">
+<!-- Interactive Farm-to-Fork Traceability QR Code -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">qr_code_scanner</span>
+<span class="font-label-lg text-label-lg text-on-surface">Dynamic Traceability QR Stamp</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">GS1 India Certified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Printed on all 150 crates. Publicly auditable by Star Bazaar retail consumers via mobile scanner.</p>
+<div class="flex flex-col sm:flex-row items-center gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<!-- Standalone High-Contrast SVG QR Pattern -->
+<div class="w-36 h-36 bg-surface-container-lowest p-2 rounded-xl shadow-md shrink-0 flex items-center justify-center">
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Corner Marker Top-Left -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="5"></rect>
+<rect height="14" rx="1" width="14" x="11" y="11"></rect>
+<!-- Corner Marker Top-Right -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="69" y="5"></rect>
+<rect height="14" rx="1" width="14" x="75" y="11"></rect>
+<!-- Corner Marker Bottom-Left -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="69"></rect>
+<rect height="14" rx="1" width="14" x="11" y="75"></rect>
+<!-- Dense Stylized Micro Data Bits -->
+<rect height="5" width="5" x="36" y="8"></rect>
+<rect height="9" width="5" x="46" y="8"></rect>
+<rect height="5" width="8" x="56" y="12"></rect>
+<rect height="5" width="9" x="8" y="36"></rect>
+<rect height="8" width="5" x="22" y="45"></rect>
+<rect height="6" width="6" x="12" y="56"></rect>
+<rect height="8" width="8" x="36" y="24"></rect>
+<rect height="6" width="6" x="48" y="24"></rect>
+<rect height="6" width="6" x="58" y="28"></rect>
+<rect height="12" width="6" x="36" y="38"></rect>
+<rect height="8" width="8" x="46" y="44"></rect>
+<rect height="6" width="8" x="58" y="40"></rect>
+<rect height="6" width="6" x="70" y="36"></rect>
+<rect height="12" width="6" x="80" y="42"></rect>
+<rect height="6" width="6" x="88" y="36"></rect>
+<rect height="8" width="8" x="36" y="58"></rect>
+<rect height="14" width="6" x="48" y="56"></rect>
+<rect height="6" width="6" x="58" y="62"></rect>
+<rect height="6" width="10" x="70" y="58"></rect>
+<rect height="8" width="8" x="84" y="60"></rect>
+<rect height="14" width="6" x="36" y="76"></rect>
+<rect height="6" width="8" x="46" y="76"></rect>
+<rect height="14" width="6" x="58" y="76"></rect>
+<rect height="6" width="12" x="72" y="76"></rect>
+<rect height="14" width="6" x="88" y="76"></rect>
+<rect height="6" width="8" x="72" y="86"></rect>
+</svg>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Embedded Public URL</span>
+<span class="font-mono text-label-md text-label-md text-primary font-bold break-all">https://trace.kisansetu.in/lot/TM-8419</span>
+<div class="mt-space-xs space-y-1 text-body-sm text-on-surface">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">shield</span>
+<span>Tamper-proof HMAC SHA-256</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">cloud_done</span>
+<span>Sync with State AgStack Registry</span>
+</div>
+</div>
+<button class="mt-space-sm h-8 px-3 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 w-fit transition-colors">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+<span>Test Public Customer View</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Financial Realization Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<span class="font-label-lg text-label-lg text-on-surface">Direct Escrow Financials</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-secondary font-bold">PFMS 2.0 Live</span>
+</div>
+<div class="space-y-space-xs py-space-xs text-body-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Base APMC Mandi Benchmark (Narayangaon)</span>
+<span class="font-mono text-on-surface font-medium">₹22.00 / kg</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+              Quality Incentive (Grade A+ Premium)
+            </span>
+<span class="font-mono text-secondary font-semibold">+ ₹4.00 / kg</span>
+</div>
+<div class="flex justify-between items-center font-label-md text-label-md pt-1">
+<span class="text-on-surface">Net Realized Farmer Gate Price</span>
+<span class="font-mono text-primary font-bold">₹26.00 / kg</span>
+</div>
+<div class="h-px bg-surface-container my-1"></div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Total Gross Pay-Weight (4,200 kg @ ₹26.00)</span>
+<span class="font-mono text-on-surface font-semibold">₹1,09,200.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>APMC Statutory Cess (Direct FPO Exemption)</span>
+<span class="font-mono text-secondary">₹0.00 (Waived)</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>FPO Logistics &amp; Crate Fee (Buyer Funded)</span>
+<span class="font-mono text-on-surface">+ ₹546.00</span>
+</div>
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Direct Benefit Transfer (DBT)</span>
+<span class="font-body-sm text-body-sm text-on-surface">HDFC Bank A/C ••••4091</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm text-primary font-bold font-mono">₹1,09,200.00</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">T+0 Automatic Release</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cold-Chain Telemetry & Transit Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">ac_unit</span>
+<span class="font-label-lg text-label-lg text-on-surface">Cold-Chain Reefer Telemetry</span>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Live Sensor Feed
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mb-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reefer Truck Fleet</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono font-semibold mt-0.5">#MH-12-QB-8419</span>
+<span class="text-[11px] text-on-surface-variant">Carrier: Sahyadri Agro-Cold Express</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Core Temperature</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-mono font-bold">4.2°C</span>
+<span class="text-[11px] text-secondary font-medium">Pre-cooled (Target 4-6°C)</span>
+</div>
+<span class="text-[11px] text-on-surface-variant">Relative Humidity: 91%</span>
+</div>
+</div>
+<!-- Buyer PO Allocation Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">storefront</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Star Bazaar Mega-DC (PO #PO-SB-9912)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dock Window: 22 Nov • 06:00 PM - 07:30 PM</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Bay 12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Comprehensive Audit Sign-Off Bar -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" id="check1" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface cursor-pointer select-none" for="check1">Weighment &amp; Tare Validated</label>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" id="check2" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface cursor-pointer select-none" for="check2">MRL Residue Negative Assay</label>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" id="check3" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface cursor-pointer select-none" for="check3">150 Crate Barcodes Verified</label>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" id="check4" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface cursor-pointer select-none" for="check4">Reefer Pre-Cool Temperature Reached (&lt;5°C)</label>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full lg:w-auto justify-end">
+<button class="h-11 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors font-label-md text-label-md">
+        Download PDF Certificate
+      </button>
+<button class="h-11 px-6 rounded-lg bg-primary hover:bg-primary/90 text-on-primary transition-all font-label-md text-label-md flex items-center gap-2 shadow-md active:scale-95" onclick="this.innerHTML='&lt;span class=\'material-symbols-outlined text-[18px]\'&gt;check_circle&lt;/span&gt; Gate Pass Issued'; this.classList.remove('bg-primary'); this.classList.add('bg-secondary');">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span>Approve Outbound Gate Pass</span>
+</button>
+</div>
+</div>
+</div></main></div></body></html>

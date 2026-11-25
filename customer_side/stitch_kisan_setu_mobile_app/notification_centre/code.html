@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline-variant": "#bfc9be", "secondary-fixed-dim": "#73dc90", "background": "#f2fcf2", "error-container": "#ffdad6", "on-primary-container": "#97e9ab", "tertiary-fixed-dim": "#f4bf1b", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#594400", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "on-primary-fixed-variant": "#005229", "primary-container": "#146b3a", "surface-container-highest": "#dbe5db", "primary": "#005128", "on-surface": "#151e18", "on-background": "#151e18", "on-tertiary-fixed": "#251a00", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "surface": "#f2fcf2", "inverse-surface": "#29332c", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#005227", "on-primary-fixed": "#00210d", "secondary-fixed": "#8ff9aa", "primary-fixed": "#a2f5b6", "tertiary-container": "#755900", "surface-variant": "#dbe5db", "on-error": "#ffffff", "primary-fixed-dim": "#87d89c", "on-tertiary-container": "#ffd158", "inverse-on-surface": "#e9f3e9", "on-secondary-container": "#00743a", "surface-dim": "#d2ddd3", "on-secondary": "#ffffff", "tertiary": "#584200", "surface-tint": "#166c3b", "secondary": "#006d36", "on-secondary-fixed": "#00210c", "on-surface-variant": "#3f4940", "outline": "#6f7a70", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "surface-container-low": "#ecf6ec", "tertiary-fixed": "#ffdf95" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "margin-mobile": "1rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Notification Centre</h1></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full pb-8">
+<!-- Interactive Filter Chips Shelf -->
+<div class="sticky top-0 z-30 bg-surface/95 backdrop-blur-md px-margin-mobile py-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1" id="filterContainer">
+<button class="filter-chip active flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm transition-all duration-200" onclick="selectFilter(this, 'all')">
+<span class="material-symbols-outlined text-[16px]">done</span>
+<span>All</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]">5</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high active:scale-95 transition-all duration-200" onclick="selectFilter(this, 'delivery')">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Deliveries &amp; Orders</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">3</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high active:scale-95 transition-all duration-200" onclick="selectFilter(this, 'harvest')">
+<span class="material-symbols-outlined text-[16px] text-primary">agriculture</span>
+<span>Farm Harvest</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">1</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high active:scale-95 transition-all duration-200" onclick="selectFilter(this, 'subscription')">
+<span class="material-symbols-outlined text-[16px] text-tertiary">calendar_month</span>
+<span>Subscriptions</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">1</span>
+</button>
+</div>
+</div>
+<!-- Notification Feed Header / Mark All Action -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">2 unread updates</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:opacity-80 active:opacity-60 transition-opacity" onclick="markAllAsRead()">
+<span class="material-symbols-outlined text-[15px]">done_all</span>
+<span>Mark all read</span>
+</button>
+</div>
+<!-- Notification List -->
+<div class="px-margin-mobile flex flex-col gap-space-sm mt-1" id="notificationsList">
+<!-- Card 1: Delivery In-Transit (Unread) -->
+<div class="notification-item delivery relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 hover:shadow-md">
+<div class="flex items-start gap-space-sm">
+<!-- Category Glyph Indicator -->
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">electric_moped</span>
+</div>
+<span class="absolute -top-0.5 -right-0.5 w-3 h-3 bg-secondary rounded-full shadow-sm ring-2 ring-surface-container-lowest"></span>
+</div>
+<!-- Body Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-1 mb-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Out for Morning Dew Delivery</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">6:42 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-2.5">
+            Delivery partner <strong class="text-on-surface font-semibold">Rahul Patil</strong> is on the route to Kothrud with your Mulshi cluster farm basket (<span class="font-mono text-primary font-medium">#KS-84920</span>). Expected arrival: <strong>7:15 AM</strong>.
+          </p>
+<!-- Badges & EV Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+<span>EV Delivery Pilot Assigned</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+<span>33 min away</span>
+</span>
+</div>
+<!-- Action Button Strip -->
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md active:bg-primary-container active:text-on-primary-container transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">navigation</span>
+<span>Track Live Delivery</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Fresh Harvest (Unread) -->
+<div class="notification-item harvest relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 hover:shadow-md">
+<div class="flex items-start gap-space-sm">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<span class="absolute -top-0.5 -right-0.5 w-3 h-3 bg-secondary rounded-full shadow-sm ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-1 mb-1">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Fresh Harvest at Baramati</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">5:10 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2.5">
+            Farmer Ramesh Shinde completed your Pure A2 Gir Cow Milk collection and 500g Palak harvest. Cold-chain lot <span class="font-mono text-primary font-semibold">#BM-902</span> sealed.
+          </p>
+<!-- Visual Proof Grid / Thumbnail Preview -->
+<div class="flex items-center gap-2 mb-3">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shadow-xs flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of freshly harvested dew-sprinkled bright green organic spinach leaves tied with natural jute twine in a rustic bamboo basket, early morning golden sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy3BuKG2EvYDtj8d2bifDhUSyw2i10QcjUz0yYJ25xGpgQWgqP-UCB0Dv2IJ3jHuXBTgEm6wrScZATNtjrtD_t4YEncQ7SRZ_TTA5qv9d5K8fPOMuudk2e6ptnOodCb53m4Ut8tQVyHMQropc9kH2a1zQDo4ANilKWI7NvdLjtZ6tY8zE6np0CnuNnJBX8s-vD629lDJ5XSdJzgcH-FWvCG6LhYX2Ppw72J_bfvKLf"/>
+<div class="absolute bottom-0 inset-x-0 bg-black/40 backdrop-blur-xs py-0.5 px-1 text-center">
+<span class="text-[9px] text-white font-medium">Palak</span>
+</div>
+</div>
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shadow-xs flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional glass milk bottle filled with pure organic white A2 cow milk, sealed with fresh gold foil stamped with a farm seal, resting on wooden milking crate in morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC99t5V8kIrWL6ahufkc3W0OWZYfXVBdU4W2Wf4IPmImhoCJqw-l6jjFJI9yAvT5Hf9EbPG3r_pS5bC7mqOYUUELOKf1eEBWwqAo2geJXKJL7kYEUguJsLPI2hHecx0onJmHq7xyMaluRwyjiM0Tzp_EVCFshjVBX6Ht3IKrDDpiQ57BuNkljwo2WTpZ5-39pKACWg_7H87QSDvuNyehpeQUwkzzzmPoBKhVo01-rEd"/>
+<div class="absolute bottom-0 inset-x-0 bg-black/40 backdrop-blur-xs py-0.5 px-1 text-center">
+<span class="text-[9px] text-white font-medium">A2 Milk</span>
+</div>
+</div>
+<div class="px-2.5 py-1.5 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Chilled to 4°C</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cold Chain Transit</span>
+</div>
+</div>
+<!-- Action -->
+<div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span>View Farm Batch Info</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Weekly Basket Reminder (Read) -->
+<div class="notification-item delivery relative bg-surface-container-low/70 rounded-xl p-space-md transition-all duration-200">
+<div class="flex items-start gap-space-sm">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-1 mb-1">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Kitchen Basket Cutoff in 2h</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2.5">
+            Your Wednesday basket closes at 9:00 PM. 4 items currently scheduled (₹245). Tap to swap veggies or add seasonal fruits.
+          </p>
+<div class="flex items-center gap-2 mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px] text-tertiary">timer</span>
+<span>Closes 9:00 PM</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">₹245 scheduled</span>
+</div>
+<div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Edit Wednesday Basket</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Subscription Renewal (Read) -->
+<div class="notification-item subscription relative bg-surface-container-low/70 rounded-xl p-space-md transition-all duration-200">
+<div class="flex items-start gap-space-sm">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">autorenew</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-1 mb-1">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">A2 Milk AutoPay Renewed</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">21 Oct</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2.5">
+            Weekly AutoPay of ₹595 via Google Pay successful. Next 7 daily deliveries scheduled through 28 Oct.
+          </p>
+<div class="flex items-center justify-between bg-surface-container-lowest/80 rounded-lg p-2.5 mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Daily 1L Gir Cow Milk</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Slot: 6:00 AM – 7:30 AM</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary font-bold">₹595</span>
+</div>
+<div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">calendar_view_week</span>
+<span>View Milk Schedule</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: Community & Seasonal Alert (Read) -->
+<div class="notification-item harvest delivery relative bg-surface-container-low/70 rounded-xl p-space-md transition-all duration-200">
+<div class="flex items-start gap-space-sm">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-1 mb-1">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Ratnagiri Mango Blossom Alert</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">20 Oct</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2.5">
+            Pre-order bookings opened for GI-tagged Alphonso mangoes directly from Pawas coastal orchard collective.
+          </p>
+<div class="relative w-full h-24 rounded-lg overflow-hidden mb-3 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sunlit Konkan Alphonso mango orchard in Ratnagiri with flowering mango blossoms on mature lush trees, tranquil blue sea in the distant background, warm tropical atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0J68FzMCBB_dmD7lmHOGhZJyl7Wp9PO84rtF5prGdcSWVWpNPY9Q7Tjw5A-KLL4YCYJCi7MEKCaQ-n7jJE8I7B8klI3uBf69i3IcesTwSnJxjWUnhZ210uMCk8CJ7kZh4X99StPhjuMUAHmZNJhdNFNBF90TGMqMmOQec6zwR4EBG-BXtrt4COriYlHb3wz9jCoSPVa_mS4HVQyKHwAEWULDuCCG6fmX6cQ0CmSWe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-2">
+<span class="text-white font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">star</span>
+                GI Tag Certified Batch #RT-2024
+              </span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+<span>Reserve First Harvest Crate</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Preference Card -->
+<div class="px-margin-mobile mt-space-lg">
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-sm shadow-xs">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-lg text-label-lg text-on-surface">Fine-tune your farm alerts?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Customize instant morning WhatsApp dispatch updates, SMS alerts, or quiet hours for your home.
+          </p>
+</div>
+</div>
+<div class="pt-2 flex justify-end">
+<button class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-xs active:bg-primary-container transition-colors">
+<span>Notification Preferences</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectFilter(button, category) {
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+      chip.classList.remove('bg-primary', 'text-on-primary', 'active');
+      chip.classList.add('bg-surface-container', 'text-on-surface');
+      const checkIcon = chip.querySelector('.material-symbols-outlined');
+      if (checkIcon && checkIcon.innerText === 'done') {
+        checkIcon.remove();
+      }
+    });
+
+    button.classList.remove('bg-surface-container', 'text-on-surface');
+    button.classList.add('bg-primary', 'text-on-primary', 'active');
+
+    const checkmark = document.createElement('span');
+    checkmark.className = 'material-symbols-outlined text-[16px]';
+    checkmark.innerText = 'done';
+    button.prepend(checkmark);
+
+    const items = document.querySelectorAll('.notification-item');
+    items.forEach(item => {
+      if (category === 'all' || item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function markAllAsRead() {
+    const dots = document.querySelectorAll('.notification-item .rounded-full.bg-secondary.ring-2');
+    dots.forEach(dot => dot.remove());
+
+    const unreadPill = document.querySelector('.pt-space-sm span.animate-pulse');
+    if (unreadPill) {
+      unreadPill.classList.remove('bg-primary', 'animate-pulse');
+      unreadPill.classList.add('bg-outline');
+      const textLabel = unreadPill.nextElementSibling;
+      if (textLabel) {
+        textLabel.textContent = 'All caught up';
+        textLabel.classList.remove('text-secondary');
+        textLabel.classList.add('text-on-surface-variant');
+      }
+    }
+  }
+</script></main></body></html>

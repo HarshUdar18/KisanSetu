@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#594400", "background": "#f2fcf2", "surface-container-highest": "#dbe5db", "on-primary-container": "#97e9ab", "on-error-container": "#93000a", "on-secondary-container": "#00743a", "primary": "#005128", "surface-dim": "#d2ddd3", "on-tertiary-fixed": "#251a00", "on-primary-fixed-variant": "#005229", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "outline": "#6f7a70", "on-tertiary": "#ffffff", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "tertiary-fixed-dim": "#f4bf1b", "surface-variant": "#dbe5db", "primary-container": "#146b3a", "on-secondary-fixed": "#00210c", "surface-container-low": "#ecf6ec", "on-primary-fixed": "#00210d", "on-background": "#151e18", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "outline-variant": "#bfc9be", "on-tertiary-container": "#ffd158", "on-surface": "#151e18", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "tertiary": "#584200", "primary-fixed-dim": "#87d89c", "tertiary-fixed": "#ffdf95", "inverse-on-surface": "#e9f3e9", "primary-fixed": "#a2f5b6", "surface-tint": "#166c3b", "secondary": "#006d36", "surface": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-secondary-fixed-variant": "#005227" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container shrink-0 transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Farmer Audio Voice Note & Q&A Discussion</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Share or Bookmark" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">bookmark_border</span></button><button aria-label="Call Agronomist or Helpline" class="w-11 h-11 flex items-center justify-center rounded-full text-primary-container hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">call</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full pb-24">
+<!-- Status & Category Breadcrumb Strip -->
+<div class="px-gutter pt-space-sm pb-space-xs flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        सक्रिय चर्चा (Active Q&A)
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm truncate">
+        टोमॅटो फळबाग (Tomato Hort.)
+      </span>
+</div>
+<span class="shrink-0 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+      FPO गट #४४२
+    </span>
+</div>
+<!-- SECTION 1: Farmer's Original Question Card -->
+<section class="px-gutter py-space-xs">
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Farmer Profile Header -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a confident elderly Indian farmer wearing a white topi and Nehru jacket, smiling warmly in a sunlit green agricultural farm field in Maharashtra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDifPBNASNxQrHRwgKJIGjdT5zMpHaw5JyOuC-d54rGCymeCwSF_tWTO3fGvprcyM34qc_Rz9iu4-I_ij8VwJS4Rxb8EzOjVC3ELYPioictFOgpNwfqTbewC1kyn8Jr1eKez2iwgTWZ62eaqKQ1bWzR9mJK8Pvy-1FpVFeHbxmYBEljPYwiFjQqbxnZmp_XO6MjWbgBeOt5PMIv-81tNcvUlM2lrSOlM-HCRAzfuHeJ"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">बबनराव जाधव</h2>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">गट क्र. ११८, पौड (Paud) • ४५ मि. पूर्वी</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Question Title -->
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">
+          टोमॅटो फळांवर काळे डाग (Blossom End Rot) पडत आहेत, कॅल्शियमची कमतरता आहे का?
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Black sunken spots on tomato fruit base after rain. Is this severe Calcium deficiency?
+        </p>
+</div>
+<!-- Attached Crop Photos (2 images) -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="relative rounded-lg overflow-hidden h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Macro close-up shot of a ripening green tomato fruit with prominent dark brownish black blossom-end rot scar at bottom base, showing cellular plant tissue texture under bright outdoor sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkLn_g-6kG0RC5QdO-f-QPLF_b111VQ7maBLtwxavKy5QO7XBQMCO_J6O0vnkAxdKmHo2IWBpmkP-xGryp0OCEggrv83ktNYI1fe2K58M4Wn1pLKRn8foCJ9zNqZtZ9RxIK38te5gl13U5KnQ9lGEn3DQBmfplEnuZlLH4P5VeHUmyMJ92gmR3Fk34GuM1ooQl2iHtiACMxJcd7WTKNxCPYT1vb9x9H3XQLMVH1qVf"/>
+<span class="absolute bottom-1.5 left-1.5 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full">
+            फळाचा डाग (Fruit Base)
+          </span>
+</div>
+<div class="relative rounded-lg overflow-hidden h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of tomato plant green leaves displaying slight yellow marginal chlorosis and curled leaf tips in a loamy soil drip irrigated farm field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy8Ksm5pJDw7rWcR6MY_QmwT2Yeg021B1fQT_b2ltcgI2La8cMmH8Gg2GENPOc1Q9cxb2qlO4BtSAdZoYmtV64nzRdEC_c4oJUkg0Jf_A0IPrV7hoKAysthB-iQGlpHDT-jWsMBAfjlidYtmgIZv9bP0vDJ2uDdfxI43Meo8NqnfoEy3S8lEewB6Q8LCdgOoGtvKta1LNJm025jzSGM43SVC4EHEJUMX4xF4Lf5gZj"/>
+<span class="absolute bottom-1.5 left-1.5 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full">
+            पानांची स्थिती (Foliage)
+          </span>
+</div>
+</div>
+<!-- Field Environmental Tags -->
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">grid_view</span>
+          प्लॉट B-२
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">terrain</span>
+          मध्यम काळी जमीन (Loamy Soil)
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">water_drop</span>
+          ठिबक सिंचन (Drip Irrigated)
+        </span>
+</div>
+<!-- Farmer Primary Audio Voice Note Player -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="font-label-md text-label-md text-primary font-semibold">बबनरावांची मूळ ऑडिओ नोंद (Farmer's Voice Note)</span>
+</div>
+<button class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm" id="farmer-speed-btn" onclick="togglePlaybackSpeed(this)">
+            1.0x
+          </button>
+</div>
+<!-- Audio waveform & playback scrubber bar -->
+<div class="flex items-center gap-space-sm">
+<button class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0 active:scale-95 transition-transform" id="farmer-audio-play-btn" onclick="togglePlayState('farmer-audio-play-btn', 'farmer-waveform-progress')">
+<span class="material-symbols-outlined text-[28px]" id="farmer-play-icon">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1.5">
+<!-- Simulated Waveform Bars -->
+<div class="h-8 flex items-center gap-0.5 px-1 bg-surface-container rounded-lg overflow-hidden relative cursor-pointer" onclick="scrubAudio(event, 'farmer-waveform-progress', 'farmer-time-label')">
+<div class="absolute left-0 top-0 bottom-0 bg-secondary-fixed/40 transition-all pointer-events-none" id="farmer-waveform-progress" style="width: 50%;"></div>
+<!-- Waveform rods -->
+<span class="w-1 bg-primary/70 rounded-full h-3"></span>
+<span class="w-1 bg-primary/70 rounded-full h-5"></span>
+<span class="w-1 bg-primary/70 rounded-full h-7"></span>
+<span class="w-1 bg-primary/70 rounded-full h-4"></span>
+<span class="w-1 bg-primary/70 rounded-full h-6"></span>
+<span class="w-1 bg-primary/70 rounded-full h-8"></span>
+<span class="w-1 bg-primary/70 rounded-full h-5"></span>
+<span class="w-1 bg-primary/70 rounded-full h-7"></span>
+<span class="w-1 bg-primary/70 rounded-full h-3"></span>
+<span class="w-1 bg-primary/70 rounded-full h-6"></span>
+<span class="w-1 bg-primary/70 rounded-full h-8"></span>
+<span class="w-1 bg-primary/70 rounded-full h-4"></span>
+<span class="w-1 bg-primary/70 rounded-full h-6"></span>
+<span class="w-1 bg-primary/70 rounded-full h-7"></span>
+<span class="w-1 bg-primary/70 rounded-full h-3"></span>
+<span class="w-1 bg-primary/70 rounded-full h-5"></span>
+<span class="w-1 bg-primary/70 rounded-full h-6"></span>
+<span class="w-1 bg-primary/70 rounded-full h-8"></span>
+<span class="w-1 bg-primary/70 rounded-full h-4"></span>
+<span class="w-1 bg-primary/70 rounded-full h-2"></span>
+</div>
+<!-- Duration markers -->
+<div class="flex justify-between items-center px-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold" id="farmer-time-label">०:३८ (0:38)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">१:१५ (1:15)</span>
+</div>
+</div>
+</div>
+<!-- Speech-to-Text Transcription Accordion -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+              AI मराठी ऑडिओ भाषांतर (Transcript)
+            </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline" onclick="document.getElementById('transcript-text').classList.toggle('hidden')">
+              पहा / लपवा
+            </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed" id="transcript-text">
+            “काल रात्रीच्या पावसानंतर टोमॅटोच्या देठाजवळ फळांवर काळे खड्डे पडले आहेत. आठवड्यापूर्वी बोरॉन दिले होते, आता कॅल्शियम नायट्रेट द्यावे की चुना पाणी?”
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Certified Agronomist Pinned Answer -->
+<section class="px-gutter pt-space-md">
+<div class="rounded-xl bg-surface-container-low shadow-md overflow-hidden relative">
+<!-- Top Certified Accent Banner -->
+<div class="bg-primary px-space-md py-2 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-lg text-label-lg">प्रमाणित कृषी सल्लागार तोडगा (Certified Solution)</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary-container px-2 py-0.5 rounded-full text-on-primary-container">
+          २८ शेतकरी पसंती
+        </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Agronomist Profile Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Professional headshot portrait of a distinguished Indian male agricultural scientist wearing formal shirt and spectacles with a research institute background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuTYnW8z3eZb0XqpvOewKKT0em8SpCXTD2lBPgeRN8xyX12UZ2RJq5snhqkEpxO0D7lnUWTtZcykxSlzWfxtCOAXE5r4Ygoz7gaLSMyb9JUeYkmsR4tNgkxllqsVFptt0Mf_Uf_18tChEkR3HFHnYNcj92W-UZQ9vkW0ZHpzxnK2LSy6sZtAy9FB_qed0js7qRy1kJtKC3E7FI_KPXInDdO_UbkGqQuHExNdb4tvNB"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">डॉ. वसंतराव देशमुख</h4>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">वरिष्ठ फलोत्पादन शास्त्रज्ञ, MPKV राहुरी • ऑनलाईन</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-sm text-label-sm hover:bg-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span>
+            सल्ला
+          </button>
+</div>
+<!-- Agronomist Voice Note Component -->
+<div class="rounded-xl bg-surface-container-lowest p-space-sm flex items-center gap-space-sm shadow-sm">
+<button class="w-11 h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 active:scale-95 transition-transform" id="doc-audio-play-btn" onclick="togglePlayState('doc-audio-play-btn', 'doc-waveform-progress')">
+<span class="material-symbols-outlined text-[24px]" id="doc-play-icon">play_arrow</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+                डॉक्टरांचा ऑडिओ सल्ला ऐका (१:४५ मि.)
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1:45</span>
+</div>
+<!-- Progress strip -->
+<div class="h-2 bg-surface-container rounded-full overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 bg-secondary rounded-full" id="doc-waveform-progress" style="width: 25%;"></div>
+</div>
+</div>
+</div>
+<!-- Structured Action Plan Steps -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface">शिफारस केलेली कृती योजना (Recommended Plan):</span>
+<!-- Step 1 -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">१</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface">पाणी व्यवस्थापन (Water Regulation)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">भारी पाणी देणे थांबवा. जमिनीमध्ये ओलावा अचानक बदलल्याने झाड कॅल्शियम शोषू शकत नाही. ठिबक सिंचनाद्वारे ६०% एकसमान ओलावा राखा.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">२</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface">चिलेटेड कॅल्शियम फवारणी (Foliar Calcium)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">चुना पाणी सध्या देऊ नका. त्वरित परिणामासाठी <strong>EDTA Chelated Calcium @ १.५ ग्रॅम प्रति लिटर</strong> पाणी घेऊन पहाटेच्या वेळी पानांवर व फळांवर फवारणी करा.</p>
+</div>
+</div>
+</div>
+<!-- Direct FPO Store Order Integration Tile -->
+<div class="rounded-xl bg-surface-container-lowest p-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Agricultural fertilizer pouch pack labelled Chelated Calcium EDTA 500 grams product package standing on wooden rustic shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGT6PGNxkYVUstd9gfCWgek_lc414AmpMFZz-o9iz3Dap9MdwGiDguq26Ftlu9WWg5SEg8N600uYmj8WLIY5PneousxtveDDwPI10gMD7Df0B_2smEDnbASigHrAgsVyFgp5Y3Fo3WCUZhMmr_gfhonORfJOMl7ZjdBYKW7FvzuTnIXvZUtA3T52Qo8UPimwteR7kCoThUy0AhuUiSbxHgSazoHL5H9w73pgHzuDc"/>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Chelated Calcium EDTA (५०० ग्रॅम)</p>
+<p class="font-headline-sm text-headline-sm text-primary">₹२१० <span class="font-body-sm text-body-sm text-on-surface-variant line-through">₹२८०</span></p>
+</div>
+</div>
+<button class="px-3 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shrink-0 flex items-center gap-1 active:bg-primary-container">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+            मागवा (Order)
+          </button>
+</div>
+<!-- Social Proof Footer of Answer -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>२८ शेतकऱ्यांना उपयुक्त वाटले</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[16px]">share</span>
+            सल्ला शेअर करा
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Community Peer Farmer Responses -->
+<section class="px-gutter pt-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span>इतर शेतकऱ्यांचे अनुभव</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">३ उत्तरे</span>
+</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ताज्या नोंदी (Latest)</span>
+</div>
+<!-- Peer Reply 1 (With voice note) -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Indian farmer in traditional saffron turban and white kurta standing in sugarcane farm smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3EGERapnauBIHLnbu-F87QjpSP2ww-EdReIThpm2Z9dCWaOu0YfZbOCSIiJ8piIcZO4UWklwb_jJWYKnckxT318fV7JTR12T6aeppONZNIq6ZWQkfyIxeh3kITL570CZaQHbJxU366cG_KiVdkfUtQAezJOomAZRUFW8XyyDelZWFc09uhscRRX_wl0PlvzNNr4mHRrdZZHkukWHcRCdGglVsznmVoHO80sfFDRk-"/>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface truncate">रमेश शिंदे (तुकाराम गरूड गट)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">जुन्नर क्लस्टर • २५ मि. पूर्वी</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">record_voice_over</span>
+          ऑडिओ मत
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        “मी गेल्या वर्षी अशीच अडचण असताना देशी गाईचे आंबट ताक आणि गूळ द्रावण फवारले होते, ८०% फरक पडला होता. सोबत ठिबकमधून कॅल्शियम दिल्यास नवीन फळांवर डाग येत नाहीत.”
+      </p>
+<!-- Mini Voice Note Strip -->
+<div class="rounded-lg bg-surface-container-low px-space-sm py-2 flex items-center gap-space-sm">
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 40%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">०:२८</span>
+</div>
+<div class="flex items-center gap-space-md pt-1">
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+          १४ लाईक्स
+        </button>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+          उत्तर द्या
+        </button>
+</div>
+</div>
+<!-- Peer Reply 2 (Text advice) -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Profile photo of young Indian progressive farmer in modern shirt looking at camera outdoors with polyhouse in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm4mOsurM040QU7SIgvAGLUCsXEl9JRJyGx5bquZaI3QT63pEg8V1nyHUEzWo0lvo3JRD3TdrAoTie5A6035zAlokk-Q3A5VeSQtX7uQ4ZDzGqFttzhXpNwa9FI6uLkt9ovpZTxxqFDwe_UDslc8CqyjwF7Rw7gI203akjXiD7Olwkb5t7aK_D7C2DwKC-FzzjfZdCctjrrI-frNINDdbtVQ7RI1NV-luxH5NU_9tq"/>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface truncate">विठ्ठल मोरे</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">सासवड • १० मि. पूर्वी</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+          शेतकरी सल्ला
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        “दुपारच्या कडक उन्हात फवारणी करू नका. पानांवर स्कॉर्चिंग (करपा) येऊ शकतो. सकाळी ७ पूर्वी किंवा संध्याकाळी ५ नंतरच कॅल्शियम मारा.”
+      </p>
+<div class="flex items-center gap-space-md pt-1">
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+          ८ लाईक्स
+        </button>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+          उत्तर द्या
+        </button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Interactive Sticky Bottom Voice & Text Reply Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-lg shadow-[0_-4px_16px_rgba(20,40,25,0.08)] px-gutter py-space-sm flex flex-col gap-2">
+<!-- Recording Status Bar (Hidden until recording active) -->
+<div class="hidden items-center justify-between bg-error-container px-3 py-1.5 rounded-lg text-on-error-container animate-pulse" id="recording-status-strip">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-md text-label-md font-semibold">व्हॉईस नोंद सुरू आहे... (Recording: <span id="record-timer">0:00</span>)</span>
+</div>
+<span class="font-label-sm text-label-sm">सोडून द्या किंवा पाठवा</span>
+</div>
+<!-- Main Input Row -->
+<div class="flex items-center gap-space-sm">
+<!-- Camera / Image Attach Button -->
+<button aria-label="फोटो जोडा (Attach Photo)" class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high shrink-0">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+</button>
+<!-- Text Reply Input -->
+<div class="flex-1 relative flex items-center">
+<input class="w-full h-11 pl-3.5 pr-10 rounded-full bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="reply-input" placeholder="उत्तर लिहा किंवा प्रश्न विचारा... (Reply)" type="text"/>
+<button aria-label="गॅलरी मधून निवडा" class="absolute right-2 w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+</div>
+<!-- Large Prominent Voice Recording Button -->
+<button aria-label="दाबून बोला (Hold to Record Voice)" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shrink-0 active:scale-90 active:bg-error transition-all" id="record-mic-btn" onmousedown="startRecording()" onmouseup="stopRecording()" ontouchend="stopRecording()" ontouchstart="startRecording()">
+<span class="material-symbols-outlined text-[26px]" id="mic-icon">mic</span>
+</button>
+<!-- Send Text Arrow Button -->
+<button aria-label="पाठवा (Send Reply)" class="w-11 h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 active:scale-95 shadow-sm" onclick="submitReply()">
+<span class="material-symbols-outlined text-[22px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let isRecording = false;
+  let recordInterval = null;
+  let secondsCount = 0;
+
+  function togglePlaybackSpeed(btn) {
+    const speeds = ['1.0x', '1.2x', '1.5x'];
+    let current = btn.innerText.trim();
+    let nextIdx = (speeds.indexOf(current) + 1) % speeds.length;
+    btn.innerText = speeds[nextIdx];
+  }
+
+  function togglePlayState(buttonId, progressId) {
+    const btn = document.getElementById(buttonId);
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isPlaying = icon.innerText === 'pause';
+    
+    if (isPlaying) {
+      icon.innerText = 'play_arrow';
+    } else {
+      icon.innerText = 'pause';
+      // subtle visual feedback
+      const progress = document.getElementById(progressId);
+      if (progress) {
+        let widthVal = parseInt(progress.style.width) || 30;
+        progress.style.width = ((widthVal + 15) % 100) + '%';
+      }
+    }
+  }
+
+  function scrubAudio(event, progressId, timeLabelId) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const pct = Math.max(0, Math.min(100, Math.round((clickX / rect.width) * 100)));
+    document.getElementById(progressId).style.width = pct + '%';
+    
+    const totalSecs = 75; // 1:15
+    const currentSecs = Math.round((pct / 100) * totalSecs);
+    const m = Math.floor(currentSecs / 60);
+    const s = currentSecs % 60;
+    const formatted = m + ':' + (s < 10 ? '0' : '') + s;
+    document.getElementById(timeLabelId).innerText = formatted;
+  }
+
+  function startRecording() {
+    isRecording = true;
+    const statusStrip = document.getElementById('recording-status-strip');
+    const micIcon = document.getElementById('mic-icon');
+    const recordBtn = document.getElementById('record-mic-btn');
+    
+    statusStrip.classList.remove('hidden');
+    statusStrip.classList.add('flex');
+    micIcon.innerText = 'mic_external_on';
+    recordBtn.classList.remove('bg-primary');
+    recordBtn.classList.add('bg-error');
+    
+    secondsCount = 0;
+    document.getElementById('record-timer').innerText = '0:00';
+    clearInterval(recordInterval);
+    recordInterval = setInterval(() => {
+      secondsCount++;
+      const m = Math.floor(secondsCount / 60);
+      const s = secondsCount % 60;
+      document.getElementById('record-timer').innerText = m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+  }
+
+  function stopRecording() {
+    if (!isRecording) return;
+    isRecording = false;
+    clearInterval(recordInterval);
+    
+    const statusStrip = document.getElementById('recording-status-strip');
+    const micIcon = document.getElementById('mic-icon');
+    const recordBtn = document.getElementById('record-mic-btn');
+    
+    statusStrip.classList.add('hidden');
+    statusStrip.classList.remove('flex');
+    micIcon.innerText = 'mic';
+    recordBtn.classList.add('bg-primary');
+    recordBtn.classList.remove('bg-error');
+
+    if (secondsCount > 1) {
+      alert('व्हॉईस नोट रेकॉर्ड झाली (' + secondsCount + ' सेकंद). शेतकरी चर्चेमध्ये समाविष्ट केली गेली आहे!');
+    }
+  }
+
+  function submitReply() {
+    const input = document.getElementById('reply-input');
+    if (input.value.trim() !== '') {
+      alert('तुमचे उत्तर पाठवले गेले: "' + input.value + '"');
+      input.value = '';
+    } else {
+      input.focus();
+    }
+  }
+</script></main></body></html>

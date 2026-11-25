@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary": "#584200",
+            "on-surface": "#151e18",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d2ddd3",
+            "tertiary-container": "#755900",
+            "on-error-container": "#93000a",
+            "primary": "#005128",
+            "on-primary-fixed-variant": "#005229",
+            "surface-container": "#e6f1e7",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#00210d",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#f4bf1b",
+            "secondary": "#006d36",
+            "on-tertiary-fixed": "#251a00",
+            "on-primary": "#ffffff",
+            "outline-variant": "#bfc9be",
+            "primary-container": "#146b3a",
+            "secondary-container": "#8ff9aa",
+            "on-background": "#151e18",
+            "inverse-on-surface": "#e9f3e9",
+            "inverse-primary": "#87d89c",
+            "on-secondary-fixed-variant": "#005227",
+            "surface-tint": "#166c3b",
+            "outline": "#6f7a70",
+            "surface-container-low": "#ecf6ec",
+            "primary-fixed": "#a2f5b6",
+            "surface-container-highest": "#dbe5db",
+            "background": "#f2fcf2",
+            "tertiary-fixed": "#ffdf95",
+            "secondary-fixed": "#8ff9aa",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#73dc90",
+            "primary-fixed-dim": "#87d89c",
+            "surface-bright": "#f2fcf2",
+            "surface": "#f2fcf2",
+            "surface-container-high": "#e1ebe1",
+            "on-primary-container": "#97e9ab",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-secondary-container": "#00743a",
+            "on-secondary-fixed": "#00210c",
+            "surface-variant": "#dbe5db",
+            "inverse-surface": "#29332c",
+            "on-tertiary-container": "#ffd158",
+            "on-surface-variant": "#3f4940",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Inter"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }],
+            "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }],
+            "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+        min-height: max(884px, 100dvh);
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased">
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.06)]">
+<div class="h-16 px-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<button aria-label="Go back" class="w-11 h-11 shrink-0 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors active:bg-surface-container" onclick="history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<img alt="Kisan Setu Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDzHuC4euPWV5eDEArFluoF3FJqz_I96RysK7z-niTV8n6_HxI0NKYbw1OCietqgnnQUs-w-e66SbGSGMXKqB6CtkB9yDCG7-42pONgd5O7IxrP7zvNd5R2f3fxhLUW7Y8Gm2wK74NaI3gB9u19KbCIJI858vA4KmLiJvN0LG0oEy4pYEfiFyMeAzSQwT9QWfk5f8Z5iaPb34fRjtmasOOylTnFGlfpq2h5wADKc6f_EQ"/>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Catalog Filter &amp; Produce Selection</h1>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-primary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">100% Secure</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-16 bg-surface flex-grow min-h-screen pb-safe">
+<div class="flex flex-col w-full pb-32">
+<!-- Modal Context & Navigation Summary -->
+<div class="px-space-md pt-space-sm pb-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Filter &amp; Refine Produce</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-label-md text-label-md text-secondary font-semibold hover:opacity-80 active:scale-95 transition-all px-2.5 py-1.5 rounded-full hover:bg-secondary-container/40" id="resetBtn" type="button">
+          Reset All
+        </button>
+<button aria-label="Close filters" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Context Agricultural Banner -->
+<div class="mt-space-xs bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Active Harvest Hub</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Updated 14m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1 font-medium">Filtering 84 Seasonal Items in Western Maharashtra FPO Harvests</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-lg px-space-md">
+<!-- Filter Section 1: Sort By -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">swap_vert</span>
+          Sort By
+        </h3>
+<span class="font-label-sm text-label-sm text-outline">Priority Order</span>
+</div>
+<div aria-label="Sort options" class="flex flex-wrap gap-space-xs" role="radiogroup">
+<!-- Selected Option -->
+<button aria-checked="true" class="sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95" role="radio" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-primary">check_circle</span>
+<span>Harvest Freshness (Plucked &lt; 6 hrs)</span>
+</button>
+<button aria-checked="false" class="sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all active:scale-95" role="radio" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">location_on</span>
+<span>Popular in Kothrud</span>
+</button>
+<button aria-checked="false" class="sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all active:scale-95" role="radio" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">handshake</span>
+<span>Farmer Payout % (High to Low)</span>
+</button>
+<button aria-checked="false" class="sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all active:scale-95" role="radio" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">arrow_upward</span>
+<span>Price: Low to High</span>
+</button>
+<button aria-checked="false" class="sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all active:scale-95" role="radio" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">arrow_downward</span>
+<span>Price: High to Low</span>
+</button>
+</div>
+</section>
+<!-- Filter Section 2: Farming Practices & Certifications -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+          Farming Practices &amp; Certifications
+        </h3>
+<span class="font-label-sm text-label-sm text-secondary font-medium">2 Active</span>
+</div>
+<div class="grid grid-cols-1 gap-space-xs">
+<!-- Selected Checkbox Item -->
+<label class="toggle-card flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none transition-all active:bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">100% Certified Organic (NPOP)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Traced via Jaivik Bharat QR seal</span>
+</div>
+</div>
+<input checked="" class="practice-checkbox w-6 h-6 rounded accent-[#146b3a] shrink-0" type="checkbox"/>
+</label>
+<!-- Selected Checkbox Item 2 -->
+<label class="toggle-card flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none transition-all active:bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/40 flex items-center justify-center text-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">psychiatry</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Natural / Desi Cow Based (ZBNF)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Zero-budget regenerative soil practices</span>
+</div>
+</div>
+<input checked="" class="practice-checkbox w-6 h-6 rounded accent-[#146b3a] shrink-0" type="checkbox"/>
+</label>
+<!-- Unselected 1 -->
+<label class="toggle-card flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none transition-all active:bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">water_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Hydroponic &amp; Residue-Free</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Protected polyhouse leafy greens</span>
+</div>
+</div>
+<input class="practice-checkbox w-6 h-6 rounded accent-[#146b3a] shrink-0" type="checkbox"/>
+</label>
+<!-- Unselected 2 -->
+<label class="toggle-card flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none transition-all active:bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">GI Tagged Regional Produce</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Purandar figs, Jalgaon bananas &amp; more</span>
+</div>
+</div>
+<input class="practice-checkbox w-6 h-6 rounded accent-[#146b3a] shrink-0" type="checkbox"/>
+</label>
+</div>
+</section>
+<!-- Filter Section 3: Regional FPO Clusters -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+          Regional FPO Clusters
+        </h3>
+<span class="font-label-sm text-label-sm text-outline">Pune &amp; Nashik Belt</span>
+</div>
+<div class="flex flex-wrap gap-space-xs" id="clusterContainer">
+<!-- Selected Cluster -->
+<button class="cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Mulshi Organic Guild</span>
+<span class="bg-surface-container-lowest/25 text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-bold">24</span>
+</button>
+<!-- Selected Cluster 2 -->
+<button class="cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Baramati Farmer Collective</span>
+<span class="bg-surface-container-lowest/25 text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-bold">18</span>
+</button>
+<!-- Non-selected Clusters -->
+<button class="cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Purandar Fig &amp; Veg Guild</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-semibold">12</span>
+</button>
+<button class="cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Junnar Valley Agro</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-semibold">16</span>
+</button>
+<button class="cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Nashik Grape &amp; Anar Hub</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-semibold">14</span>
+</button>
+</div>
+</section>
+<!-- Filter Section 4: Delivery & Availability Window -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">local_shipping</span>
+          Delivery &amp; Availability Window
+        </h3>
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold bg-tertiary-fixed px-2 py-0.5 rounded-full">Cold Chain Route</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Selected Delivery Option -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">wb_twilight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Ready for Dawn Dew Delivery</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Tomorrow 6:30 AM Slot Guaranteed</span>
+</div>
+</div>
+<!-- Native Toggle Visual -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Weekly Basket Eligible -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Weekly Basket Eligible</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recurring CSA box discounts</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Flash Seasonal Batch -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Flash Seasonal Batch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Limited harvest lots from smallholders</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Filter Section 5: Price Range Slider / Selector -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">currency_rupee</span>
+          Price Range / Kg or Bundle
+        </h3>
+<div class="bg-surface-container-high px-2.5 py-1 rounded-full">
+<span class="font-label-md text-label-md text-primary font-bold" id="rangeDisplay">₹30 – ₹250</span>
+</div>
+</div>
+<!-- Slider Container Card -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Interactive Range Slider Track Simulator -->
+<div class="flex flex-col gap-space-xs pt-2 px-1">
+<div class="relative w-full h-2 bg-surface-container-highest rounded-full flex items-center">
+<!-- Active range bar (approx 6% to 52%) -->
+<div class="absolute left-[6%] right-[48%] h-2 bg-primary-container rounded-full"></div>
+<!-- Min thumb indicator -->
+<div class="absolute left-[6%] -translate-x-1/2 w-5 h-5 bg-surface-container-lowest rounded-full shadow-md flex items-center justify-center border-2 border-primary cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+</div>
+<!-- Max thumb indicator -->
+<div class="absolute right-[48%] translate-x-1/2 w-5 h-5 bg-surface-container-lowest rounded-full shadow-md flex items-center justify-center border-2 border-primary cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm mt-1">
+<span>₹20 (Farm Floor)</span>
+<span>₹500 (Bulk/Specialty)</span>
+</div>
+</div>
+<!-- Quick Select Segment Pills -->
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<button class="quick-price py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+            Under ₹50
+          </button>
+<button class="quick-price py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md text-center font-semibold shadow-sm active:scale-95 transition-all" type="button">
+            ₹50 – ₹150
+          </button>
+<button class="quick-price py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+            ₹150+
+          </button>
+</div>
+</div>
+</section>
+<!-- Visual Transparency Teaser Card -->
+<div class="bg-surface-container-high/60 rounded-xl p-space-md flex items-center gap-space-sm mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">100% Direct Farmer Remittance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Selected filters maintain an 82% minimum direct farm-gate price guarantee.</span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Floating Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(20,40,25,0.08)] px-space-md py-3 pb-safe">
+<div class="max-w-md mx-auto flex items-center justify-between gap-space-md">
+<!-- Status Count -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold">3 Filters Applied</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">32 Items Match Criteria</span>
+</div>
+<!-- Main CTA Button -->
+<button class="shrink-0 flex items-center justify-center gap-2 bg-primary-container hover:bg-[#0f522c] active:bg-[#0f522c] text-on-primary px-5 py-3.5 rounded-xl font-label-lg text-label-lg font-bold shadow-md transition-all active:scale-[0.98]" id="applyFiltersBtn" type="button">
+<span>Show 32 Farm Products</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</aside>
+</div>
+<script>
+  // Simple interactions for sort options & quick prices
+  document.querySelectorAll('.sort-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sort-option').forEach(b => {
+        b.className = 'sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all active:scale-95';
+        b.setAttribute('aria-checked', 'false');
+        const icon = b.querySelector('.material-symbols-outlined');
+        if (icon && icon.textContent === 'check_circle') {
+          icon.textContent = 'radio_button_unchecked';
+          icon.className = 'material-symbols-outlined text-[18px] text-outline';
+        }
+      });
+      btn.className = 'sort-option group flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95';
+      btn.setAttribute('aria-checked', 'true');
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.textContent = 'check_circle';
+        icon.className = 'material-symbols-outlined text-[18px] text-on-primary';
+      }
+    });
+  });
+
+  // Cluster tag toggling
+  document.querySelectorAll('.cluster-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const isSelected = tag.getAttribute('data-selected') === 'true';
+      if (isSelected) {
+        tag.setAttribute('data-selected', 'false');
+        tag.className = 'cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm';
+        const icon = tag.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'add';
+          icon.className = 'material-symbols-outlined text-[16px] text-outline';
+        }
+        const badge = tag.querySelector('span:last-child');
+        if (badge) {
+          badge.className = 'bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-semibold';
+        }
+      } else {
+        tag.setAttribute('data-selected', 'true');
+        tag.className = 'cluster-tag flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-95 shadow-sm';
+        const icon = tag.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'check';
+          icon.className = 'material-symbols-outlined text-[16px] text-on-primary';
+        }
+        const badge = tag.querySelector('span:last-child');
+        if (badge) {
+          badge.className = 'bg-surface-container-lowest/25 text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full font-bold';
+        }
+      }
+    });
+  });
+
+  // Quick Price selection
+  document.querySelectorAll('.quick-price').forEach(qp => {
+    qp.addEventListener('click', () => {
+      document.querySelectorAll('.quick-price').forEach(p => {
+        p.className = 'quick-price py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high active:scale-95 transition-all';
+      });
+      qp.className = 'quick-price py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md text-center font-semibold shadow-sm active:scale-95 transition-all';
+    });
+  });
+
+  // Reset All Feedback
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    document.querySelectorAll('.practice-checkbox').forEach(cb => cb.checked = false);
+    const rangeDisplay = document.getElementById('rangeDisplay');
+    if (rangeDisplay) rangeDisplay.textContent = '₹20 – ₹500';
+  });
+
+  // Apply Button Trigger
+  document.getElementById('applyFiltersBtn').addEventListener('click', () => {
+    history.back();
+  });
+</script>
+</main>
+</body></html>

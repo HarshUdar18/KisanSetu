@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#005227", "outline-variant": "#bfc9be", "on-background": "#151e18", "on-primary-container": "#97e9ab", "inverse-on-surface": "#e9f3e9", "tertiary-fixed": "#ffdf95", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#594400", "secondary-container": "#8ff9aa", "background": "#f2fcf2", "on-primary-fixed": "#00210d", "surface-container-highest": "#dbe5db", "primary-fixed-dim": "#87d89c", "outline": "#6f7a70", "surface-bright": "#f2fcf2", "on-surface": "#151e18", "on-tertiary-container": "#ffd158", "on-tertiary-fixed": "#251a00", "on-primary": "#ffffff", "surface-variant": "#dbe5db", "on-error": "#ffffff", "surface": "#f2fcf2", "surface-tint": "#166c3b", "inverse-primary": "#87d89c", "primary-container": "#146b3a", "surface-dim": "#d2ddd3", "surface-container-high": "#e1ebe1", "on-primary-fixed-variant": "#005229", "on-secondary-container": "#00743a", "primary": "#005128", "error-container": "#ffdad6", "secondary-fixed": "#8ff9aa", "tertiary-container": "#755900", "secondary": "#006d36", "on-secondary-fixed": "#00210c", "error": "#ba1a1a", "on-surface-variant": "#3f4940", "surface-container-lowest": "#ffffff", "inverse-surface": "#29332c", "tertiary": "#584200", "primary-fixed": "#a2f5b6", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#73dc90", "tertiary-fixed-dim": "#f4bf1b", "surface-container": "#e6f1e7", "surface-container-low": "#ecf6ec" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-tablet": "1.5rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "margin": "1rem", "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-sm": ["Inter"], "display-lg-mobile": ["Inter"], "body-md": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"] }, fontSize: { "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex flex-col justify-center min-w-0 flex-1"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">agriculture</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary truncate max-w-[170px]">Mulshi Valley Organic FPO</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">Fpo Collective Input Marketplace</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin"><div class="flex flex-col w-full pb-28">
+<!-- Top Sub-Bar & Pooled Power Banner -->
+<div class="flex flex-col gap-space-sm pt-space-xs mb-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-primary font-semibold">FPO Collective Procurement</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">शेतकरी गट घाऊक खरेदी</span>
+</div>
+<!-- Collective Power Pill Container -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-secondary to-primary text-on-primary p-space-md shadow-md">
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-lg text-label-lg tracking-tight font-bold text-surface-container-lowest">₹4.8 Lakh Pooled This Rabi Cycle</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm text-surface-bright font-medium">142 Farmers</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low opacity-95">
+          142 Mulshi Valley members sourcing direct from certified manufacturers. Save up to 38% vs local retail dealers!
+        </p>
+</div>
+<!-- Decorative Agrarian Accent Shape in SVG -->
+<svg class="absolute -right-4 -bottom-6 w-28 h-28 text-surface-container-lowest/10 pointer-events-none" fill="currentColor" viewbox="0 0 100 100">
+<path d="M50 0 C70 30 90 40 100 70 C90 95 60 100 50 100 C30 95 10 70 0 50 C20 40 30 20 50 0 Z"></path>
+</svg>
+</div>
+<!-- Vernacular Search Input -->
+<div class="relative flex items-center mt-space-xs">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[22px]">search</span>
+<input class="w-full h-12 pl-11 pr-24 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none" placeholder="Search certified seeds, bio-inputs, drip tape..." type="text"/>
+<div class="absolute right-2 flex items-center gap-1 text-on-surface-variant">
+<button aria-label="Scan Batch QR" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</button>
+<button aria-label="Voice Search in Marathi or Hindi" class="w-8 h-8 rounded-lg flex items-center justify-center text-primary bg-secondary-container/50 active:bg-secondary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Horizontal Scrollable Category Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 -mx-margin px-margin no-scrollbar">
+<button class="shrink-0 h-9 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">compost</span>
+<span>All Inputs</span>
+</button>
+<button class="shrink-0 h-9 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm hover:bg-surface-container">
+<span>Bio-Fertilizers (सेंद्रिय खते)</span>
+</button>
+<button class="shrink-0 h-9 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm hover:bg-surface-container">
+<span>Certified Seeds (बियाणे)</span>
+</button>
+<button class="shrink-0 h-9 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm hover:bg-surface-container">
+<span>Bio-Pesticides</span>
+</button>
+<button class="shrink-0 h-9 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm hover:bg-surface-container">
+<span>Mulching & Drip</span>
+</button>
+<button class="shrink-0 h-9 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm hover:bg-surface-container">
+<span>Farm Tools</span>
+</button>
+</div>
+<!-- Hero Card: Active Group Buying Deal of the Week -->
+<section class="mt-space-md flex flex-col">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest shadow-md p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">
+              🔥 Deal of the Week • आठवड्याची मोठी सवलत
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Rabi Sowing Mega Pool</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fortified Neem Cake & Enriched Vermicompost (गट घाऊक)</p>
+</div>
+<div class="shrink-0 text-right">
+<span class="inline-block px-2.5 py-1 rounded-xl bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm font-bold">35% OFF</span>
+</div>
+</div>
+<!-- Visual Image & Quick Detail Tag -->
+<div class="relative h-44 w-full rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A clean photorealistic stack of certified organic neem cake and rich brown granular vermicompost bags labeled with NPOP Indian organic seal in a modern agrarian cooperative warehouse with warm natural morning sunlight and green field background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_4-CtMOBzv-nT5v1wJuqTLLBgaA_MqQj2WygnCGlCKNUuiPNozsmLeeQdj8p6wAsYtNbipsp6cwKKDKTr4lHBf51PVglMZWw47uZyz9izDTs3odAs7ssJHDcW4NznlI_x4_2ujLIXJ00_-N5Q3IEUL36kqjblTJ3hinMTil7_1I4g6F2z2ZJmgDI-GSrQv4aEMCfDhGci08rcUOwhAnnrKCb6fME5fedKviqNyAB7"/>
+<div class="absolute bottom-2.5 left-2.5 px-3 py-1 rounded-lg bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span>
+<span>NPOP Certified 100% Organic</span>
+</div>
+</div>
+<!-- Pricing Stack -->
+<div class="flex items-baseline justify-between mt-1 pt-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-primary font-bold">₹420</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 50kg Bag</span>
+<span class="font-body-sm text-body-sm line-through text-outline">₹650 MRP</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-surface-container-high px-2 py-1 rounded-md">Save ₹160 vs Retail</span>
+</div>
+<!-- Real-time Group Pool Fill Progress -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">groups</span>
+<span>850 / 1000 Bags Committed</span>
+</span>
+<span class="text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>18 hrs left</span>
+</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 85%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Tier 3 Wholesale Unlocked (Min. 750 bags)</span>
+<span class="font-bold text-primary">85% Filled</span>
+</div>
+</div>
+<!-- Primary Action CTA -->
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+<span>Join Sourcing Pool (गटात सामील व्हा)</span>
+</button>
+</div>
+</section>
+<!-- Sourcing Catalog Section Header -->
+<div class="flex items-center justify-between mt-space-lg mb-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">FPO Verified Inputs</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">थेट प्रमाणित बियाणे आणि बायो-इनपुट्स</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">3 Active Pools</span>
+</div>
+<!-- Sourcing Catalog Cards List -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1: Certified Seeds -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex gap-space-sm">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="High quality sealed agricultural seed packet of Desi Spinach Palak with official certification stamp, lush green leafy crop illustration on pack, sitting on a rustic wooden table with fresh spinach leaves nearby." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGa7gquFgSySGZLxhGgCZSAp-24O1awMy2zGgyV8ZYFhabnpX0G-uk4T_Hx32dDGg1W9QUrrrSqywT3ZjJ9dcQrr2z4kJJ0HBSs2M8R4nierCbW1oK0QFqfxA-56Q5zqGnZl4kRhrTB_0uwnxZ-rKQHmtqAbtqGpCgjflzFWd_rdKyApG8eWce_02AuTTV3Qy7oT3jNMvh-tdOk2bGFX8rUR4zIw9EADEEOYQTg7jw"/>
+<span class="absolute top-1 left-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold">Seed</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 justify-between">
+<div>
+<div class="flex items-center gap-1">
+<span class="inline-block px-1.5 py-0.2 rounded text-[10px] uppercase tracking-wide bg-secondary-container text-on-secondary-container font-semibold">Mahabeej Grade 1</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate mt-0.5">Desi Spinach (Palak) Seeds</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">1 kg Pack • 94% Germination NABL</p>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹210</span>
+<span class="font-body-sm text-body-sm line-through text-outline">₹310</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">32% OFF</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+<span>Delivery: <strong>31 Oct</strong> @ Mulshi Dawn Hub</span>
+</span>
+<span class="text-outline">Min: 2 kg</span>
+</div>
+<!-- Action Stepper & Add to Pool -->
+<div class="flex items-center justify-between gap-space-sm pt-1">
+<!-- Quantity Stepper -->
+<div class="flex items-center rounded-xl bg-surface-container-high px-1 py-0.5 shadow-sm">
+<button aria-label="Decrease quantity" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface active:bg-surface-variant">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-9 text-center font-label-lg text-label-lg text-on-surface font-bold">2 kg</span>
+<button aria-label="Increase quantity" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface active:bg-surface-variant">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="flex-1 h-11 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm active:bg-primary">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Pool Order</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Bio-Pesticide -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex gap-space-sm">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A 1-litre amber bio-fungicide liquid bottle labelled Trichoderma Viride ICAR verified organic formula sitting proudly on clean surface surrounded by healthy tomato plant foliage in bright natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC7eWYadidbKUeaAdDyKd9QSUmjZNlAkFeGMPZpqIWXBkmqvcfMSroVJM5UI3O573mL3atueUZdJNJYZtHLhPhXTSCSF849fJ1I2e0L1TipyorJKiQ2qWyWUn52r5XW9Oz8qXDHTAaTWWgUQX9kQVoG7fFeH1SRot0i_p9l65b-NJex2SdXeIW-40pQqH4JJsbdyqr4ts1foi9FFk6BWFVeHfkJrEnqZqhclIOJBo6"/>
+<span class="absolute top-1 left-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-bold">Organic</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 justify-between">
+<div>
+<div class="flex items-center gap-1">
+<span class="inline-block px-1.5 py-0.2 rounded text-[10px] uppercase tracking-wide bg-surface-container-highest text-on-surface-variant font-semibold">ICAR Verified</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate mt-0.5">Trichoderma Viride Bio-Fungicide</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">1 L Liquid • Prevents Root Rot</p>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹280</span>
+<span class="font-body-sm text-body-sm line-through text-outline">₹420</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">33% OFF</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">inventory_2</span>
+<span>In-Stock at Central Godown (180 units)</span>
+</span>
+<span class="text-secondary font-semibold">Immediate</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-1">
+<button class="w-full h-11 px-4 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm active:bg-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add to Cart (₹280 / L)</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Mulching Film & Horticulture DBT -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex gap-space-sm">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="High quality roll of embossed silver and black UV stabilized agricultural plastic mulching film displayed on farm bed with drip pipes beneath under crisp outdoor sunshine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzhMEs79oC7klKipOMp2soOq4ZMbFbKtpbwyZjcn3Rq59imJSr2L8CQxVTdwMyGxR-ouieQN8JmfyDj5fDxnvFmmiqG_GEYbvnR3u3sHyEq8DEIrafqnCwXvDjKA2cAFDnQK6PohfMu7UGh7-CkX3EL5sb1nl4SMs6z0sgfDjTvM4eAgztStrTcxm6SpLk11eD8WlMKqiAZ-nLn_L4QvJ_gVjKb-62QMbRXQ7otuto"/>
+<span class="absolute top-1 left-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold">DBT 30%</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 justify-between">
+<div>
+<div class="flex items-center gap-1">
+<span class="inline-block px-1.5 py-0.2 rounded text-[10px] uppercase tracking-wide bg-tertiary-fixed text-on-tertiary-fixed font-semibold">MahaDBT Approved</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate mt-0.5">25 Micron Silver-Black Mulch Film</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">400m Roll (4 ft width) • 1 Yr Warranty</p>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹1,450</span>
+<span class="font-body-sm text-body-sm line-through text-outline">₹1,950</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">Save ₹500</span>
+</div>
+</div>
+</div>
+<!-- Subsidy Notification Tag -->
+<div class="flex items-start gap-2 p-2.5 rounded-lg bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">account_balance</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">MahaDBT Horticulture Scheme Active</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Eligible members get additional 30% direct benefit transfer rebate into linked Aadhaar bank account.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<button class="w-full h-11 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm active:bg-primary-container">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Reserve with Subsidy (सबसिडीसह राखून ठेवा)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FPO Sourcing Safeguards Card (Trust Architecture) -->
+<section class="mt-space-lg rounded-2xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">shield_with_heart</span>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Mulshi FPO Collective Safeguards</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">शेतकरी हमी आणि विश्वास</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Safeguard 1 -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">100% Genuine Lab-Tested Quality</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero spurious seeds guarantee. Every chemical batch verified for active ingredient potency by FPO agronomists.</span>
+</div>
+</div>
+<!-- Safeguard 2 -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Direct Farmgate / Village Hub Drop</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Consolidated bulk vehicle drops at Mulshi Dawn Collection Hub, eliminating middleman transport markups.</span>
+</div>
+</div>
+<!-- Safeguard 3 -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Deferred Harvest Settlement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pay zero advance. Option to deduct input costs directly from upcoming harvest sales payout via escrow.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Summary Bar -->
+<div class="fixed bottom-16 left-0 right-0 z-40 px-margin pb-2 pt-2 bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(20,40,25,0.08)]">
+<div class="max-w-md mx-auto flex items-center justify-between gap-space-sm p-3 rounded-2xl bg-surface-container-lowest shadow-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">2 Items • 120 kg Pool</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹2,080</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">(Save ₹860)</span>
+</div>
+</div>
+<button class="h-12 px-5 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-md active:bg-primary-container shrink-0">
+<span>Proceed</span>
+<span class="font-medium text-surface-container-highest">(ऑर्डर करा)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.08)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 transition-colors text-primary font-bold" data-path="fpo-collective-input-marketplace" href="#"><span class="material-symbols-outlined text-[24px]">storefront</span><span class="font-label-sm text-label-sm">Inputs</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant transition-colors" data-path="input-group-purchase-pool-&-bulk-discount" href="#"><span class="material-symbols-outlined text-[24px]">groups_3</span><span class="font-label-sm text-label-sm">Group Pool</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant transition-colors" data-path="farm-machinery-&-custom-hiring-center-(chc)" href="#"><span class="material-symbols-outlined text-[24px]">precision_manufacturing</span><span class="font-label-sm text-label-sm">Machinery</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant transition-colors" data-path="fpo-input-order-summary-&-subsidized-billing" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-sm text-label-sm">Billing</span></a></div></nav></body></html>

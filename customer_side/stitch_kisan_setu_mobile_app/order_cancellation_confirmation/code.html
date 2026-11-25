@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary": "#584200",
+            "on-surface": "#151e18",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d2ddd3",
+            "tertiary-container": "#755900",
+            "on-error-container": "#93000a",
+            "primary": "#005128",
+            "on-primary-fixed-variant": "#005229",
+            "surface-container": "#e6f1e7",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#00210d",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#f4bf1b",
+            "secondary": "#006d36",
+            "on-tertiary-fixed": "#251a00",
+            "on-primary": "#ffffff",
+            "outline-variant": "#bfc9be",
+            "primary-container": "#146b3a",
+            "secondary-container": "#8ff9aa",
+            "on-background": "#151e18",
+            "inverse-on-surface": "#e9f3e9",
+            "inverse-primary": "#87d89c",
+            "on-secondary-fixed-variant": "#005227",
+            "surface-tint": "#166c3b",
+            "outline": "#6f7a70",
+            "surface-container-low": "#ecf6ec",
+            "primary-fixed": "#a2f5b6",
+            "surface-container-highest": "#dbe5db",
+            "background": "#f2fcf2",
+            "tertiary-fixed": "#ffdf95",
+            "secondary-fixed": "#8ff9aa",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#73dc90",
+            "primary-fixed-dim": "#87d89c",
+            "surface-bright": "#f2fcf2",
+            "surface": "#f2fcf2",
+            "surface-container-high": "#e1ebe1",
+            "on-primary-container": "#97e9ab",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-secondary-container": "#00743a",
+            "on-secondary-fixed": "#00210c",
+            "surface-variant": "#dbe5db",
+            "inverse-surface": "#29332c",
+            "on-tertiary-container": "#ffd158",
+            "on-surface-variant": "#3f4940",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Inter"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }],
+            "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }],
+            "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+        min-height: max(884px, 100dvh);
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased">
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_2px_8px_rgba(20,40,25,0.06)]">
+<div class="h-16 px-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<button aria-label="Go back" class="w-11 h-11 shrink-0 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors active:bg-surface-container" onclick="history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<img alt="Kisan Setu Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDzHuC4euPWV5eDEArFluoF3FJqz_I96RysK7z-niTV8n6_HxI0NKYbw1OCietqgnnQUs-w-e66SbGSGMXKqB6CtkB9yDCG7-42pONgd5O7IxrP7zvNd5R2f3fxhLUW7Y8Gm2wK74NaI3gB9u19KbCIJI858vA4KmLiJvN0LG0oEy4pYEfiFyMeAzSQwT9QWfk5f8Z5iaPb34fRjtmasOOylTnFGlfpq2h5wADKc6f_EQ"/>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Order Cancellation Confirmation</h1>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-primary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">100% Secure</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-16 bg-surface flex-grow min-h-screen pb-safe">
+<div class="flex flex-col w-full pb-8">
+<div class="px-margin flex flex-col gap-space-lg pt-space-md">
+<!-- Section 1: Pre-Harvest Cancellation Warning -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 bg-on-tertiary-fixed/10 rounded-full shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px] text-tertiary-container animate-pulse" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider bg-tertiary-container text-on-tertiary px-2 py-0.5 rounded-full font-bold">100% Refundable</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Window Closes in 3h 42m</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-tertiary-fixed mt-1">Pre-Harvest Window Active</h2>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-1 leading-relaxed">
+            Order <span class="font-semibold text-on-tertiary-fixed">#KS-84920</span> is scheduled for tomorrow dawn delivery. Nighttime plucking begins at <span class="font-semibold text-on-tertiary-fixed">11:00 PM tonight</span>. You can cancel with full refund before plucking commences.
+          </p>
+</div>
+</div>
+</div>
+<!-- Section 2: Cancellation Reason Selection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Order Feedback</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Reason for Cancellation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Helps us improve our farm logistics and packaging allocation.</p>
+</div>
+<div class="flex flex-col gap-space-xs" id="cancellation-reasons">
+<!-- Radio Option 1 (Default Selected) -->
+<label class="reason-card flex items-start gap-space-sm p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all duration-200">
+<input checked="" class="mt-1 w-5 h-5 accent-primary text-primary focus:ring-0 cursor-pointer" name="cancel_reason" type="radio" value="mistake"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Ordered duplicate items / Mistake in basket</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Accidental order or double payment entry</span>
+</div>
+</label>
+<!-- Radio Option 2 -->
+<label class="reason-card flex items-start gap-space-sm p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-all duration-200">
+<input class="mt-1 w-5 h-5 accent-primary text-primary focus:ring-0 cursor-pointer" name="cancel_reason" type="radio" value="address"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Need to change delivery address / slot</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shift location or preferred drop timing</span>
+</div>
+</label>
+<!-- Radio Option 3 -->
+<label class="reason-card flex items-start gap-space-sm p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-all duration-200">
+<input class="mt-1 w-5 h-5 accent-primary text-primary focus:ring-0 cursor-pointer" name="cancel_reason" type="radio" value="vacation"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Going out of town / Vacation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cannot accept perishable deliveries this week</span>
+</div>
+</label>
+<!-- Radio Option 4 -->
+<label class="reason-card flex items-start gap-space-sm p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-all duration-200">
+<input class="mt-1 w-5 h-5 accent-primary text-primary focus:ring-0 cursor-pointer" name="cancel_reason" type="radio" value="surplus"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Found surplus vegetables at home</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pantry already well-stocked</span>
+</div>
+</label>
+<!-- Radio Option 5 (Expandable Notes) -->
+<label class="reason-card flex flex-col p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-all duration-200" id="other-reason-container">
+<div class="flex items-start gap-space-sm w-full">
+<input class="mt-1 w-5 h-5 accent-primary text-primary focus:ring-0 cursor-pointer" id="reason-other-input" name="cancel_reason" type="radio" value="other"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Other reason</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tell us what happened</span>
+</div>
+</div>
+<div class="hidden mt-space-sm w-full pl-7" id="other-notes-field">
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm placeholder-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Please tell us why you are cancelling (optional)..." rows="2"></textarea>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 3: Instant Refund Breakdown -->
+<div class="bg-secondary-container/30 text-on-secondary-container rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Instant Refund Guarantee</h3>
+<span class="font-label-sm text-label-sm text-secondary">Zero Cancellation Penalties</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-center py-1">
+<span class="font-body-md text-body-md text-on-surface-variant">Total Paid (5 Fresh Produce Items)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹530.00</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-md text-body-md text-on-surface-variant">Cancellation &amp; Handling Fee</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">₹0.00</span>
+</div>
+<div class="w-full h-px bg-surface-variant my-1"></div>
+<div class="flex justify-between items-center py-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Refund Amount</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">₹530.00</span>
+</div>
+<div class="mt-space-xs p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Destination: Google Pay UPI</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono pl-6">ramesh.joshi@oksbi</p>
+<div class="flex items-center gap-2 pl-6 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Timeline: Instant to 15 mins (NPCI Fast Reversal)</span>
+</div>
+</div>
+</div>
+<!-- Farmer Protection Pledge -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest/80 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">eco</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wide">Farmer Protection Pledge</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Farmers are alerted before harvesting fresh crops from the soil, preventing post-harvest spoilage and food loss.
+          </p>
+</div>
+</div>
+</div>
+<!-- Section 4: Postpone Alternative Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 bg-primary-container text-on-primary-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-[24px]">event_repeat</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Prefer to postpone instead?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Shift tomorrow's basket to <span class="font-semibold text-on-surface">Wednesday</span> or <span class="font-semibold text-on-surface">Thursday</span> with 1 tap. Your harvest reservation stays active without cancelling.
+          </p>
+</div>
+</div>
+<button class="mt-2 w-full py-3 px-4 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-container transition-colors shadow-sm active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Reschedule Delivery Instead</span>
+</button>
+</div>
+<!-- Section 5: Action Controls -->
+<div class="flex flex-col gap-space-sm mt-space-sm">
+<button class="w-full min-h-[52px] py-3.5 px-space-md bg-error-container text-on-error-container rounded-lg font-headline-sm text-headline-sm flex items-center justify-center gap-2 hover:bg-error hover:text-on-error transition-all shadow-sm active:scale-[0.98]" id="btn-confirm-cancel" type="button">
+<span class="material-symbols-outlined text-[22px]">cancel</span>
+<span>Confirm Order Cancellation</span>
+</button>
+<button class="w-full min-h-[48px] py-2.5 px-space-md bg-transparent text-primary hover:text-primary-container font-label-lg text-label-lg flex items-center justify-center gap-1.5 transition-colors" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Never mind, Keep My Fresh Produce</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const radioInputs = document.querySelectorAll('input[name="cancel_reason"]');
+    const reasonCards = document.querySelectorAll('.reason-card');
+    const otherNotes = document.getElementById('other-notes-field');
+
+    function updateActiveReason() {
+      radioInputs.forEach((radio, index) => {
+        const card = reasonCards[index];
+        if (radio.checked) {
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-surface-container-low');
+          if (radio.value === 'other') {
+            otherNotes.classList.remove('hidden');
+          } else {
+            otherNotes.classList.add('hidden');
+          }
+        } else {
+          card.classList.add('bg-surface-container-lowest');
+          card.classList.remove('bg-surface-container-low');
+        }
+      });
+    }
+
+    radioInputs.forEach(radio => {
+      radio.addEventListener('change', updateActiveReason);
+    });
+
+    const cancelBtn = document.getElementById('btn-confirm-cancel');
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', function() {
+        if (confirm("Are you sure you want to cancel order #KS-84920? Your ₹530.00 will be instantly refunded to your UPI account.")) {
+          cancelBtn.disabled = true;
+          cancelBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Processing Refund...</span>';
+          setTimeout(() => {
+            alert("Order #KS-84920 Cancelled. Refund initiated to ramesh.joshi@oksbi via UPI Fast Reversal.");
+            history.back();
+          }, 1200);
+        }
+      });
+    }
+  })();
+</script>
+</main>
+</body></html>

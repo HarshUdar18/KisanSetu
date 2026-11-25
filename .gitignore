@@ -1,0 +1,77 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+!.env.example
+**/.env
+**/.env.*
+!**/env.example
+**/*service-account*.json
+**/*firebase-adminsdk*.json
+**/*credentials*.json
+**/google-services.json
+**/GoogleService-Info.plist
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pem
+**/*.key
+**/key.properties
+**/local.properties
+**/.gradle/
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.fleet/
+.DS_Store
+Thumbs.db
+
+# Java & Spring Boot
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.log
+
+# Flutter & Dart
+**/.dart_tool/
+**/build/
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/coverage/
+**/*.lock
+!apps/**/pubspec.lock
+**/*.flutter-plugins
+**/*.flutter-plugins-dependencies
+
+# Node & React
+**/node_modules/
+**/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python & AI
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache/
+**/.venv/
+**/venv/
+**/env/
+**/*.egg-info/
+
+# Docker & local storage
+data/
+uploads/
+postgres_data/
+redis_data/
+rabbitmq_data/

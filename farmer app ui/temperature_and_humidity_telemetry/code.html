@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#ffdf95", "on-primary-fixed-variant": "#005229", "surface-container-highest": "#dbe5db", "error-container": "#ffdad6", "surface-container": "#e6f1e7", "on-secondary-fixed-variant": "#005227", "secondary-container": "#8ff9aa", "on-background": "#151e18", "tertiary-fixed-dim": "#f4bf1b", "inverse-on-surface": "#e9f3e9", "inverse-primary": "#87d89c", "inverse-surface": "#29332c", "surface-container-low": "#ecf6ec", "surface-dim": "#d2ddd3", "primary": "#005128", "on-primary-container": "#97e9ab", "on-primary": "#ffffff", "primary-fixed-dim": "#87d89c", "surface-container-lowest": "#ffffff", "secondary": "#006d36", "primary-fixed": "#a2f5b6", "surface-container-high": "#e1ebe1", "error": "#ba1a1a", "secondary-fixed": "#8ff9aa", "outline-variant": "#bfc9be", "on-primary-fixed": "#00210d", "tertiary": "#584200", "surface-variant": "#dbe5db", "surface-bright": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-error-container": "#93000a", "on-surface": "#151e18", "on-secondary-fixed": "#00210c", "on-tertiary": "#ffffff", "background": "#f2fcf2", "on-tertiary-fixed-variant": "#594400", "on-secondary-container": "#00743a", "tertiary-container": "#755900", "on-secondary": "#ffffff", "surface": "#f2fcf2", "outline": "#6f7a70", "on-error": "#ffffff", "on-tertiary-fixed": "#251a00", "primary-container": "#146b3a", "on-surface-variant": "#3f4940", "surface-tint": "#166c3b", "on-tertiary-container": "#ffd158" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>body { min-height: max(884px, 100dvh); }</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm"><span class="material-symbols-outlined text-[20px]">ac_unit</span></div><div class="flex flex-col min-w-0"><span class="inline-flex items-center gap-1 font-label-sm text-[10px] uppercase tracking-wide text-primary"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Cold-Chain Active</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Temperature And Humidity Telemetry</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Telemetry Alerts" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-xl gap-space-md">
+<!-- Top Navigation & Sync Notification Bar -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Reefer Telemetry &amp; Log</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">कंटेनर तापमान व आर्द्रता नोंदी • Lot #LOT-SP-9021</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button aria-label="Export or Share Log" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Real-Time Sync Status Chip Strip -->
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">Live BLE Sync: 4s ago</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Sensitech Hub</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span>
+<span class="font-label-sm text-label-sm font-semibold">4G Solid</span>
+</div>
+</div>
+<!-- Primary Metric Cards (Temperature & Humidity Bento) -->
+<div class="flex flex-col gap-space-sm">
+<!-- Card 1: Chamber Temperature -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-primary-fixed/20 pointer-events-none blur-2xl"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">thermostat</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Chamber Temperature</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">शीतगृह तापमान</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Optimal • 0% Breach
+        </span>
+</div>
+<div class="flex items-baseline justify-between pt-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-display-lg text-primary tracking-tight font-bold">6.4</span>
+<span class="font-headline-md text-headline-md text-primary font-semibold">°C</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Trip Record</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Min 5.8°C <span class="text-outline-variant">|</span> Max 7.1°C</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[15px]">eco</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Target Band: 4.0°C – 8.0°C (Baby Spinach Freshness)</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Relative Humidity -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">humidity_percentage</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Relative Humidity</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">सापेक्ष आर्द्रता</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+          Dew-Lock Active
+        </span>
+</div>
+<div class="flex items-baseline justify-between pt-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-display-lg text-secondary tracking-tight font-bold">89.2</span>
+<span class="font-headline-md text-headline-md text-secondary font-semibold">% RH</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Moisture Quality</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">पानांची ताजी चमक कायम</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 89%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Sub-Optimal (&lt;80%)</span>
+<span class="text-primary font-semibold">Safe Window: 85% – 95%</span>
+<span>Saturation (100%)</span>
+</div>
+</div>
+<!-- Card 3: Airflow & Security Status -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">mode_fan</span>
+<span class="font-label-sm text-label-sm">Circulation</span>
+</div>
+<div class="mt-2">
+<p class="font-label-lg text-label-lg font-bold text-on-surface">180 CFM</p>
+<p class="font-label-sm text-label-sm text-secondary font-medium">Micro-flow Active</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm">Reefer Seal</span>
+</div>
+<div class="mt-2">
+<p class="font-label-lg text-label-lg font-bold text-primary">Sealed Locked</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">0 Unscheduled Opens</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Telemetry Trend Chart -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Telemetry Trend (मागील ६० मिनिटे)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">04:45 AM – 05:45 AM • Multi-curve sync</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="w-2.5 h-0.5 bg-primary rounded-full"></span> Temp (°C)
+        </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="w-2.5 h-0.5 bg-secondary rounded-full"></span> RH (%)
+        </span>
+</div>
+</div>
+<!-- Inline SVG Dual-Axis Chart -->
+<div class="w-full relative pt-1">
+<svg class="w-full h-36 overflow-visible" fill="none" viewbox="0 0 340 135" xmlns="http://www.w3.org/2000/svg">
+<!-- Target Optimal Band (4.0 - 8.0°C mapped vertically) -->
+<rect fill="#e6f1e7" height="48" opacity="0.8" rx="4" width="340" x="0" y="32"></rect>
+<text fill="#005128" font-family="Inter" font-size="8" font-weight="600" text-anchor="end" x="336" y="44">8.0°C Target Limit</text>
+<text fill="#005128" font-family="Inter" font-size="8" font-weight="600" text-anchor="end" x="336" y="76">4.0°C Target Floor</text>
+<!-- Horizontal Guide Lines -->
+<line stroke="#bfc9be" stroke-dasharray="2 2" stroke-width="0.75" x1="0" x2="340" y1="32" y2="32"></line>
+<line stroke="#bfc9be" stroke-dasharray="2 2" stroke-width="0.75" x1="0" x2="340" y1="80" y2="80"></line>
+<line stroke="#e1ebe1" stroke-width="1" x1="0" x2="340" y1="110" y2="110"></line>
+<!-- Humidity % RH Curve (Normalized around 85-92%) -->
+<path d="M 0,95 C 40,94 70,88 110,87 C 150,86 190,84 240,82 C 280,80 310,81 340,81" fill="none" opacity="0.85" stroke="#006d36" stroke-linecap="round" stroke-width="2"></path>
+<!-- Temperature Curve (°C: 11.2C early down to 6.4C stable) -->
+<path d="M 0,20 C 35,28 70,62 110,54 C 150,48 190,56 240,51 C 280,50 310,52 340,52" fill="none" stroke="#005128" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Milestone Markers -->
+<!-- Milestone 1: 04:45 Pluck Complete -->
+<circle cx="20" cy="24" fill="#ffffff" r="3.5" stroke="#005128" stroke-width="2"></circle>
+<line stroke="#6f7a70" stroke-dasharray="2 2" stroke-width="0.5" x1="20" x2="20" y1="28" y2="110"></line>
+<!-- Milestone 2: 05:00 Pre-chill -->
+<circle cx="110" cy="54" fill="#ffffff" r="3.5" stroke="#005128" stroke-width="2"></circle>
+<line stroke="#6f7a70" stroke-dasharray="2 2" stroke-width="0.5" x1="110" x2="110" y1="58" y2="110"></line>
+<!-- Milestone 3: 05:15 Farmgate Loaded -->
+<circle cx="200" cy="54" fill="#ffffff" r="3.5" stroke="#005128" stroke-width="2"></circle>
+<line stroke="#6f7a70" stroke-dasharray="2 2" stroke-width="0.5" x1="200" x2="200" y1="58" y2="110"></line>
+<!-- Milestone 4: Current Reading -->
+<circle cx="330" cy="52" fill="#005128" r="4.5"></circle>
+<circle cx="330" cy="52" opacity="0.4" r="7" stroke="#005128" stroke-width="1.5"></circle>
+</svg>
+</div>
+<!-- Milestone Events Bar below Graph -->
+<div class="grid grid-cols-4 gap-1 pt-1 text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">04:45</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant leading-tight">Pluck Done</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">05:00</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant leading-tight">Pre-Chill</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">05:15</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant leading-tight">Loaded</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-primary font-bold">05:35 Now</span>
+<span class="font-body-sm text-[10px] text-primary leading-tight font-medium">In Transit</span>
+</div>
+</div>
+</div>
+<!-- Multi-Zone Sensor Health Grid -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Multi-Zone Sensors (सेन्सर स्थिती)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mesh Protocol • 3 Actives Connected</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Sensor 1 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-md bg-surface-container flex items-center justify-center text-on-surface font-label-sm text-label-sm font-bold">
+            S1
+          </div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Front Bulkhead</h4>
+<span class="font-body-sm text-[11px] text-on-surface-variant">TempTale BLE • ID #9481</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">6.1°C</span>
+<div class="flex items-center gap-0.5 justify-end text-primary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px]">battery_5_bar</span>
+<span>94%</span>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+</div>
+<!-- Sensor 2 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-md bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm text-label-sm font-bold">
+            S2
+          </div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Core Cargo Mass (गाभा)</h4>
+<span class="font-body-sm text-[11px] text-primary font-medium">Critical Control Point</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="text-right">
+<span class="font-label-md text-label-md text-primary font-bold">6.4°C</span>
+<div class="flex items-center gap-0.5 justify-end text-primary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px]">battery_full</span>
+<span>98%</span>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+</div>
+<!-- Sensor 3 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-md bg-surface-container flex items-center justify-center text-on-surface font-label-sm text-label-sm font-bold">
+            S3
+          </div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Rear Door Seal</h4>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Thermal Perimeter • ID #9489</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">6.8°C</span>
+<div class="flex items-center gap-0.5 justify-end text-primary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px]">battery_5_bar</span>
+<span>91%</span>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Automated Cold-Chain Compliance Audit Trail -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">FSSAI &amp; APMC Validated</span>
+<h4 class="font-label-lg text-label-lg text-on-surface leading-tight">Perishable Integrity Compliant</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">शासकीय मानकांनुसार शून्य तापमान भंग (Zero Cold-Chain Violation)</p>
+</div>
+</div>
+<!-- Security Hash Capsule -->
+<div class="p-space-xs px-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] shrink-0">fingerprint</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-mono truncate">SHA256: 7f8a92b1...38d4a9f9</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-semibold shrink-0 uppercase tracking-wider">Tamper-Proof</span>
+</div>
+</div>
+<!-- Bottom Action Controls -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-md active:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download Certificate (PDF • 140 KB)</span>
+</button>
+<button class="w-full h-11 bg-surface-container-low text-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Calibrate / Refresh Sensors (पुन्हा तपासा)</span>
+</button>
+</div>
+</div></main><nav aria-label="Primary Logistics Navigation" class="fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-xl pb-safe shadow-[0_-2px_12px_rgba(20,40,25,0.08)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="cold-chain-logistics-overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm text-center leading-none">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="live-transporter-gps-tracking" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm text-center leading-none">Live GPS</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 transition-colors text-primary font-semibold" data-path="temperature-and-humidity-telemetry" href="#"><span class="material-symbols-outlined text-[22px]">thermostat</span><span class="font-label-sm text-label-sm text-center leading-none">Sensors</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="collection-center-slot-booking-and-gate-pass" href="#"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm text-center leading-none">Gate Pass</span></a></div></nav></body></html>

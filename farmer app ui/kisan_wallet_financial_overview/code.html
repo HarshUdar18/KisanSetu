@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f2fcf2", "on-tertiary": "#ffffff", "background": "#f2fcf2", "tertiary-fixed-dim": "#f4bf1b", "on-secondary-fixed": "#00210c", "on-primary-container": "#97e9ab", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface-bright": "#f2fcf2", "on-primary": "#ffffff", "on-primary-fixed-variant": "#005229", "on-tertiary-fixed": "#251a00", "inverse-on-surface": "#e9f3e9", "surface-dim": "#d2ddd3", "error-container": "#ffdad6", "surface-tint": "#166c3b", "on-surface": "#151e18", "surface-container-low": "#ecf6ec", "surface-container-highest": "#dbe5db", "secondary": "#006d36", "primary-fixed-dim": "#87d89c", "on-tertiary-fixed-variant": "#594400", "primary-fixed": "#a2f5b6", "outline": "#6f7a70", "on-error-container": "#93000a", "secondary-fixed-dim": "#73dc90", "on-primary-fixed": "#00210d", "surface-container-high": "#e1ebe1", "on-secondary-fixed-variant": "#005227", "on-tertiary-container": "#ffd158", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "on-background": "#151e18", "error": "#ba1a1a", "surface-variant": "#dbe5db", "on-secondary": "#ffffff", "secondary-container": "#8ff9aa", "tertiary": "#584200", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "primary-container": "#146b3a", "on-secondary-container": "#00743a", "outline-variant": "#bfc9be", "tertiary-fixed": "#ffdf95", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "primary": "#005128" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, "fontFamily": { "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f2fcf2;color:#151e18;font-family:'Inter',sans-serif;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[22px]">account_balance_wallet</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Kisan Wallet Overview</h1><span class="material-symbols-outlined text-secondary text-[16px] shrink-0" title="Verified Ag-Tech Account">verified</span></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>DBT Escrow Active</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[22px]">notifications</span></button><a aria-label="Farmer Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Live Sync Bar & Government Verification Status -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-2 h-2 rounded-full bg-secondary animate-ping"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">
+        AgriStack • NPCI DBT Synced • <span id="sync-time">Just now</span>
+</span>
+</div>
+<button aria-label="Refresh Balances" class="flex items-center gap-1 px-space-xs py-1 rounded-full text-primary hover:bg-surface-container active:scale-95 transition-transform" id="refresh-btn">
+<span class="material-symbols-outlined text-[16px]" id="refresh-icon">sync</span>
+<span class="font-label-sm text-label-sm font-semibold">Sync</span>
+</button>
+</div>
+<!-- Main Content Container with standard 8dp rhythm -->
+<div class="px-margin-mobile flex flex-col gap-space-md pb-space-xl">
+<!-- Hero Wallet Card (High-Elevation Agro-Financial Tonal Surface) -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-secondary text-on-primary p-space-md shadow-xl">
+<!-- Ambient Decorative Organic Leaves SVG Background -->
+<svg class="absolute -right-10 -bottom-10 w-48 h-48 opacity-15 pointer-events-none text-surface" fill="currentColor" viewbox="0 0 200 200">
+<path d="M42.7,-64.5C54.6,-57.4,63.2,-44.7,68.9,-30.9C74.6,-17.1,77.3,-2.2,73.8,11.5C70.3,25.2,60.5,37.7,49.1,48.5C37.7,59.3,24.7,68.4,10.1,71.2C-4.5,74,-20.7,70.5,-34.5,62.8C-48.3,55.1,-59.7,43.2,-67.2,29.1C-74.7,15,-78.3,-1.3,-74.6,-16.1C-70.9,-30.9,-59.9,-44.2,-46.8,-51C-33.7,-57.8,-18.5,-58.1,-2.4,-54.3C13.7,-50.5,27.4,-42.6,42.7,-64.5Z" transform="translate(100 100)"></path>
+</svg>
+<!-- Header row within Card -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-space-xs bg-surface/15 backdrop-blur-md px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[15px] text-primary-fixed">verified_user</span>
+<span class="font-label-sm text-label-sm text-surface tracking-wide">Farmer Direct DBT Wallet</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest/20 backdrop-blur-md px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-surface font-medium">Auto-Sweep Active</span>
+</div>
+</div>
+<!-- Main Balance Display -->
+<div class="mt-space-md relative z-10">
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md text-surface-variant opacity-90">Available Withdrawable Balance (शेतकरी पाकीट शिल्लक)</span>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-on-primary font-bold tracking-tight">₹48,920.50</span>
+<span class="font-label-sm text-label-sm text-surface-container-highest opacity-75">INR</span>
+</div>
+</div>
+<!-- Action Button Area inside Card -->
+<div class="mt-space-md flex gap-space-sm relative z-10">
+<a class="flex-1 flex items-center justify-center gap-space-xs py-3 px-space-md rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold shadow-md active:scale-98 transition-all" data-path="bank-withdrawal" href="#">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Withdraw to Bank (खात्यात जमा करा)</span>
+</a>
+</div>
+<!-- Secondary Escrow Breakdown Strip -->
+<div class="mt-space-md pt-space-sm border-t border-surface/20 grid grid-cols-2 gap-space-sm relative z-10">
+<div class="bg-surface/10 rounded-lg p-space-xs flex flex-col">
+<div class="flex items-center gap-1 text-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span class="font-label-sm text-label-sm truncate">Locked in Escrow</span>
+</div>
+<span class="font-label-lg text-label-lg text-surface font-semibold mt-0.5">₹23,850.00</span>
+<span class="font-label-sm text-label-sm text-surface-variant opacity-75 text-[10px]">Under QC &amp; Dispatch</span>
+</div>
+<div class="bg-surface/10 rounded-lg p-space-xs flex flex-col">
+<div class="flex items-center gap-1 text-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label-sm text-label-sm truncate">Friday Cycle Payout</span>
+</div>
+<span class="font-label-lg text-label-lg text-surface font-semibold mt-0.5">₹18,460.00</span>
+<span class="font-label-sm text-label-sm text-surface-variant opacity-75 text-[10px]">Auto-settles 18 Oct</span>
+</div>
+</div>
+</div>
+<!-- Quick Agro Actions Grid -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Actions</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Instant Payout Utilities</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs">
+<!-- Transfer to Bank -->
+<a class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow active:scale-95 transition-all text-center" data-path="bank-withdrawal" href="#">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/30 text-secondary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">send_to_mobile</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Transfer to Bank</span>
+</a>
+<!-- Escrow Status -->
+<a class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow active:scale-95 transition-all text-center" data-path="dbt-escrow-payouts" href="#">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Escrow Status</span>
+</a>
+<!-- Statement Download -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow active:scale-95 transition-all text-center" id="download-stmt-btn">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Passbook (PDF)</span>
+</button>
+<!-- KCC Working Capital -->
+<a class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow active:scale-95 transition-all text-center" data-path="kcc-credit" href="#">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">agriculture</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">KCC Credit</span>
+</a>
+</div>
+</div>
+<!-- Verified Bank Account Primary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">State Bank of India</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-1.5 py-0.2 rounded">Primary</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mulshi Rural Branch (Pune)</span>
+</div>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="#">Manage</a>
+</div>
+<!-- Account Specifics Box -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">A/C Number</span>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wider">•••• •••• 4201</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">IFSC Code</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold">SBIN0001245</p>
+</div>
+</div>
+<!-- Trust Tags Inside Account Card -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">fingerprint</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aadhaar-NPCI Seeded</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Instant 24x7 IMPS</span>
+</div>
+</div>
+</div>
+<!-- Financial Health & Kisan Credit Pulse -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">speed</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Kisan Credit Pulse</h2>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">Excellent</span>
+</div>
+<!-- Radial Indicator Simulation & Score -->
+<div class="flex items-center gap-space-md py-1">
+<!-- SVG Gauge -->
+<div class="relative w-20 h-20 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="87, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-none">785</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">/ 900</span>
+</div>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Zero-NPA Verified Producer</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eligible for collateral-free seasonal crop working capital via NABARD-linked partner banks.</p>
+</div>
+</div>
+<!-- Pre-Approved Credit Banner -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold">PRE-APPROVED HARVEST LINE</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">₹1,50,000</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@ 4% Subsidized Annual Interest</span>
+</div>
+<button class="px-space-sm py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-fixed-variant active:scale-95 transition-all">
+          Avail Now
+        </button>
+</div>
+</div>
+<!-- Settlement Activity / Recent Passbook Ledger -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Settlements</h2>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-0.5" data-path="settlement-passbook" href="#">
+<span>View Passbook</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Item 1: Direct Mandi Settlement (Success) -->
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Nashik Onion Mandi Lot #402</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct Mandi Payout • 14 Oct, 02:40 PM</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-lg text-label-lg text-secondary font-bold">+₹14,280.00</span>
+<div class="flex items-center justify-end gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Success</span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container mx-space-sm"></div>
+<!-- Item 2: Organic Tomato Batch (Escrow Locked) -->
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Pune Urban FPO - Tomato Crate (200kg)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quality Check In-Progress • 13 Oct</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹9,570.00</span>
+<div class="flex items-center justify-end gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">In Escrow</span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container mx-space-sm"></div>
+<!-- Item 3: Direct DBT Subsidy (Processing) -->
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">autorenew</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">PM Solar Pump DBT Subsidy</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aadhaar Bridge PFMS • 11 Oct</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-lg text-label-lg text-primary font-bold">+₹6,000.00</span>
+<div class="flex items-center justify-end gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Processing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Government & RBI Compliance Guarantee Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">100% Zero-Commission DBT Guarantee</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Kisan Setu operates under RBI Payments Framework &amp; Digital AgriMission guidelines. All agricultural settlements are routed through authorized Escrow Accounts. Funds are directly deposited into the registered farmer bank account with zero middleman deductions.
+      </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">NPCI Certified</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">PM-KISAN Integrated</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Client Micro-Script -->
+<script>
+    (function initKisanWallet() {
+      const refreshBtn = document.getElementById('refresh-btn');
+      const refreshIcon = document.getElementById('refresh-icon');
+      const syncTime = document.getElementById('sync-time');
+      const downloadBtn = document.getElementById('download-stmt-btn');
+
+      if (refreshBtn && refreshIcon) {
+        refreshBtn.addEventListener('click', () => {
+          refreshIcon.classList.add('animate-spin');
+          syncTime.textContent = 'Updating...';
+          
+          setTimeout(() => {
+            refreshIcon.classList.remove('animate-spin');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            syncTime.textContent = `${hours}:${minutes}`;
+          }, 850);
+        });
+      }
+
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+          const originalText = downloadBtn.querySelector('span.font-label-sm');
+          if (originalText) {
+            originalText.textContent = 'Preparing...';
+            setTimeout(() => {
+              originalText.textContent = 'Passbook (PDF)';
+              alert('Passbook Statement for recent financial cycle has been generated and queued for download.');
+            }, 600);
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.06)]" data-active-classes="text-primary font-label-md font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-12 transition-colors text-primary font-label-md font-bold" data-path="kisan-wallet-overview" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Wallet</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="dbt-escrow-payouts" href="#"><span class="material-symbols-outlined text-[22px]">assured_workload</span><span class="font-label-sm text-label-sm">Escrow</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="settlement-passbook" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">Passbook</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="bank-withdrawal" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm">Transfer</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#00210d", "outline": "#6f7a70", "on-primary-fixed-variant": "#005229", "on-error": "#ffffff", "surface-container-high": "#e1ebe1", "surface-container-highest": "#dbe5db", "secondary-fixed": "#8ff9aa", "surface": "#f2fcf2", "secondary": "#006d36", "background": "#f2fcf2", "primary-fixed": "#a2f5b6", "secondary-fixed-dim": "#73dc90", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#594400", "inverse-primary": "#87d89c", "primary": "#005128", "on-secondary-container": "#00743a", "primary-container": "#146b3a", "tertiary-container": "#755900", "tertiary-fixed": "#ffdf95", "inverse-on-surface": "#e9f3e9", "tertiary": "#584200", "surface-container": "#e6f1e7", "on-secondary": "#ffffff", "on-tertiary-container": "#ffd158", "surface-container-low": "#ecf6ec", "on-primary-container": "#97e9ab", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "inverse-surface": "#29332c", "primary-fixed-dim": "#87d89c", "on-secondary-fixed-variant": "#005227", "on-tertiary-fixed": "#251a00", "surface-variant": "#dbe5db", "on-surface": "#151e18", "on-primary": "#ffffff", "surface-tint": "#166c3b", "tertiary-fixed-dim": "#f4bf1b", "on-surface-variant": "#3f4940", "on-background": "#151e18", "surface-dim": "#d2ddd3", "secondary-container": "#8ff9aa", "outline-variant": "#bfc9be", "error": "#ba1a1a", "on-error-container": "#93000a", "on-secondary-fixed": "#00210c", "surface-bright": "#f2fcf2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem" }, "fontFamily": { "display-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest shrink-0"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[20px]">agriculture</span></div><div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary">Kisan Setu</span><span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">ADMIN</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">FPO Agri-Marketplace</p></div></div></div><nav class="flex-1 overflow-y-auto px-space-sm py-space-md flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg"><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-and-reports" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Analytics &amp; Reports</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Stakeholders</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">storefront</span><span>Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="farmers" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Farmers</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="farmer-360-profile" href="#"><span class="material-symbols-outlined text-[20px]">contact_page</span><span>Farmer 360 Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="fpos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>FPOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="register-fpo" href="#"><span class="material-symbols-outlined text-[20px]">app_registration</span><span>Register FPO</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="kyc-verification" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>KYC Verification</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Supply Chain &amp; Catalog</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="product-catalogue" href="#"><span class="material-symbols-outlined text-[20px]">category</span><span>Product Catalogue</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="produce-listings" href="#"><span class="material-symbols-outlined text-[20px]">eco</span><span>Produce Listings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="demand-matching" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>Demand Matching</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="order-management" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Order Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="collection-points" href="#"><span class="material-symbols-outlined text-[20px]">location_on</span><span>Collection Points</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="quality-inspection" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Quality Inspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span>Warehouses</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Inventory</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="logistics-and-fleet" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Logistics &amp; Fleet</span></div><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">ACTIVE</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Finance &amp; Commerce</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="payments-and-escrow" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Payments &amp; Escrow</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="farmer-settlements" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Farmer Settlements</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[20px]">loyalty</span><span>Subscriptions</span></a></div></nav><div class="p-space-md bg-surface-container-low shrink-0 flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><div><p class="font-label-sm text-label-sm text-on-surface font-semibold">AgriStack / PFMS</p><p class="font-body-sm text-body-sm text-on-surface-variant">SYNC LIVE</p></div></div><span class="material-symbols-outlined text-primary text-[18px]">cloud_done</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md w-96"><div class="flex items-center w-full bg-surface-container-lowest px-space-sm py-1.5 rounded-lg shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-outline text-[20px] mr-space-xs">search</span><input class="w-full bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="Search produce, farmers, FPO id..." type="text"/><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Ctrl+K</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span><span class="font-label-md text-label-md text-on-surface">Western Maharashtra Agro-Cluster</span><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">grain</span><span class="font-label-sm text-label-sm font-semibold">Rabi 2024-25</span></div><button class="relative w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right"><p class="font-label-md text-label-md text-on-surface">Rajesh Kulkarni</p><p class="font-body-sm text-body-sm text-on-surface-variant">Super Admin</p></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Command Dashboard Container -->
+<div class="px-space-lg py-space-md flex flex-col gap-space-lg">
+<!-- Breadcrumb & System Realtime Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Supply Chain &amp; Catalog</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Logistics &amp; Fleet</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Live Fleet Telematics &amp; GIS Geofencing</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Live Reefer Fleet Telematics &amp; GIS Geofencing Command</h1>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+            LIVE 1.2s INTERVAL
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Real-time dual-probe IoT sensor monitoring, cold-chain temperature excursion alerts, geofence boundary trigger logs, and continuous driver safety tracking across highway corridors.
+        </p>
+</div>
+<!-- Action Buttons Bar -->
+<div class="flex flex-wrap items-center gap-space-xs self-start md:self-auto">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:bg-surface-container shadow-sm font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Telemetry Log (CSV)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:bg-surface-container shadow-sm font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Geofence Rules</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim shadow-sm font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">severe_cold</span>
+<span>Aux Chiller Override</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+<span>Broadcast Warning</span>
+</button>
+</div>
+</div>
+<!-- Executive KPI Ribbon (4 Metric Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -top-3 w-20 h-20 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Active Trucks on Radar</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span> 100% Lock
+          </span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-lg text-display-lg text-primary tracking-tight">48 Reefer Convoys</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">18 Linehaul Trailers, 24 Intermediate Reefers, 6 EV Vans</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> 47 On Motion</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span> 1 Idling Padgha</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -top-3 w-20 h-20 bg-secondary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Thermal Corridor Adherence</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+            46 Nominal (2°-5°C)
+          </span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-lg text-display-lg text-on-surface tracking-tight">97.9% <span class="font-label-lg text-label-lg text-secondary">Compliant</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">1 Excursion Warning, 1 Defrost Cycle Scheduled</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-error">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">warning</span> MH-15-EG-2204 +6.8°C</span>
+<span class="text-on-surface-variant">Kasara Pass</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Avg Corridor Speed</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+            Within Safety Norms
+          </span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-lg text-display-lg text-on-surface tracking-tight">54 <span class="font-headline-md text-headline-md font-normal text-on-surface-variant">km/h</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Live congestion index tracking along Mumbai-Pune &amp; Nashik highways</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>NH-60: Flowing (62 km/h)</span>
+<span class="text-tertiary">NH-160: Heavy (+14m)</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Active Geofence Corridors</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+            APMC &amp; Packhouses
+          </span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-lg text-display-lg text-primary-container tracking-tight">14 Zones</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Automated gate entry timestamping and tare weighbridge triggering</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Gate Sync: Auto-RFID Active</span>
+<span class="text-primary font-semibold">100% Precision</span>
+</div>
+</div>
+</div>
+<!-- Main Two-Column Layout (60% Map GIS / 40% Telemetry Feed & Ledger) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Interactive GIS Telematics Map Simulation (60% -> col-span-7) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- GIS Map Control Surface -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Map Toolbar / Switchers -->
+<div class="p-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded-lg shadow-sm">
+<button class="px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">conversion_path</span>
+                Agro-Corridors
+              </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">thermostat</span>
+                Thermal Heatmap
+              </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">radar</span>
+                Depot Radii
+              </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">air</span>
+                Live Weather
+              </button>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Layers: Vector v4.8</span>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary shadow-sm" title="Satellite Toggle">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary shadow-sm" title="Center Focus">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary shadow-sm" title="Expand Fullscreen">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Simulated High-Precision GIS Map Canvas (Western Maharashtra Agro-Cluster) -->
+<div class="relative w-full h-[580px] bg-surface-container overflow-hidden select-none">
+<!-- Simulated GIS Vector Grid and Cartographic Terrain Base (SVG Layer) -->
+<svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#dbe5db" stroke-dasharray="2,3" stroke-width="0.75"></path>
+</pattern>
+<!-- Radial Gradients for Geofence Corridors -->
+<radialgradient cx="50%" cy="50%" id="geofence-narayangaon" r="50%">
+<stop offset="0%" stop-color="#146b3a" stop-opacity="0.25"></stop>
+<stop offset="70%" stop-color="#146b3a" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#146b3a" stop-opacity="0.0"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="geofence-jnpt" r="50%">
+<stop offset="0%" stop-color="#584200" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#584200" stop-opacity="0.0"></stop>
+</radialgradient>
+<filter height="140%" id="glow-green" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<rect fill="#ecf6ec" height="100%" width="100%"></rect>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<!-- Western Ghats Mountain Ridge Topology Contour (Stylized Agro-Topography) -->
+<path d="M 140,0 Q 210,130 180,240 T 130,420 T 170,580" fill="none" opacity="0.6" stroke="#d2ddd3" stroke-linecap="round" stroke-width="28"></path>
+<path d="M 140,0 Q 210,130 180,240 T 130,420 T 170,580" fill="none" opacity="0.8" stroke="#bfc9be" stroke-dasharray="4,6" stroke-width="4"></path>
+<!-- Western Highway Arteries (NH-60 Nashik-Pune, NH-160 Mumbai-Nashik, Mumbai-Pune Expressway) -->
+<!-- NH-160: Nashik to Thane -->
+<path d="M 440,70 L 320,160 L 190,250 L 120,340" fill="none" stroke="#bfc9be" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 440,70 L 320,160 L 190,250 L 120,340" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="4"></path>
+<!-- NH-60: Nashik to Narayangaon to Pune -->
+<path d="M 440,70 L 410,180 L 350,280 L 310,480" fill="none" stroke="#bfc9be" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 440,70 L 410,180 L 350,280 L 310,480" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="4"></path>
+<!-- Narayangaon to Padgha / Kalyan Cut Corridor -->
+<path d="M 350,280 L 220,320 L 120,340" fill="none" stroke="#bfc9be" stroke-linecap="round" stroke-width="6"></path>
+<path d="M 350,280 L 220,320 L 120,340" fill="none" stroke="#a2f5b6" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- Mumbai - Pune Expressway -->
+<path d="M 100,410 L 140,430 L 210,450 L 310,480" fill="none" stroke="#bfc9be" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 100,410 L 140,430 L 210,450 L 310,480" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="4"></path>
+<!-- Geofence 1: Narayangaon Packhouse Hub 15km Catchment Ring -->
+<circle cx="350" cy="280" fill="url(#geofence-narayangaon)" r="68" stroke="#146b3a" stroke-dasharray="4,4" stroke-width="1.5"></circle>
+<!-- Geofence 2: JNPT Export Port Marine Gateway 5km Ring -->
+<circle cx="85" cy="460" fill="url(#geofence-jnpt)" r="44" stroke="#755900" stroke-dasharray="3,3" stroke-width="1.5"></circle>
+<!-- Active Animated Route Line (MH-12-QB-8419 from Narayangaon to Thane) -->
+<path d="M 350,280 L 250,310 L 185,332" fill="none" stroke="#146b3a" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- Trailing Pulse Dash -->
+<path d="M 350,280 L 250,310 L 185,332" fill="none" stroke="#8ff9aa" stroke-dasharray="8,12" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<!-- Map Nodes: Major Logistics Nodes & Packhouses -->
+<!-- 1. Nashik Export Belt & Pimpalgaon -->
+<div class="absolute top-[50px] left-[420px] -translate-x-1/2 flex flex-col items-center group cursor-pointer z-10">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest shadow-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">warehouse</span>
+<span class="font-label-sm text-label-sm font-semibold">Nashik Grape Belt</span>
+</div>
+<span class="font-body-sm text-[10px] text-on-surface-variant bg-surface-container-high px-1 rounded mt-0.5">Cap: 450 MT</span>
+</div>
+<!-- 2. Kasara Ghat Pass (Critical Elevation Incline) -->
+<div class="absolute top-[180px] left-[245px] -translate-x-1/2 flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-[16px] text-tertiary">terrain</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant bg-surface-container-lowest/80 px-1 rounded">Kasara Pass (Elev 585m)</span>
+</div>
+<!-- 3. Narayangaon Central Packhouse (Hub) -->
+<div class="absolute top-[260px] left-[350px] -translate-x-1/2 flex flex-col items-center group cursor-pointer z-10">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-primary-container text-on-primary shadow-md">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span class="font-label-md text-label-md">Narayangaon Hub</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-lowest text-primary font-label-sm text-[10px] shadow-sm font-semibold">15km Geofence Active</span>
+</div>
+</div>
+<!-- 4. Padgha Consolidation Toll Station -->
+<div class="absolute top-[315px] left-[180px] -translate-x-1/2 flex flex-col items-center z-10">
+<div class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[13px] text-outline">toll</span>
+<span class="font-label-sm text-[11px]">Padgha Toll Plaza</span>
+</div>
+</div>
+<!-- 5. Thane Mega Distribution Center -->
+<div class="absolute top-[340px] left-[90px] -translate-x-1/2 flex flex-col items-center z-10">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">local_convenience_store</span>
+<span class="font-label-sm text-label-sm">Thane Mega-DC</span>
+</div>
+<span class="font-body-sm text-[10px] text-secondary font-medium">ETA Gate Slot #04</span>
+</div>
+<!-- 6. Vashi APMC & JNPT Port -->
+<div class="absolute top-[410px] left-[70px] -translate-x-1/2 flex items-center gap-1 z-10">
+<div class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface text-[11px] font-label-sm shadow-sm">
+                Vashi APMC Cold Vault
+              </div>
+</div>
+<div class="absolute top-[455px] left-[80px] -translate-x-1/2 flex flex-col items-center z-10">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary text-on-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">anchor</span>
+<span class="font-label-sm text-label-sm">JNPT Port Berth 3</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary-fixed font-medium">Reefer Stacking Yard</span>
+</div>
+<!-- 7. Pune Central Agro Hub -->
+<div class="absolute top-[470px] left-[310px] -translate-x-1/2 flex flex-col items-center z-10">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+<span class="font-label-sm text-label-sm">Pune Central DC</span>
+</div>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Khadki Yard #2</span>
+</div>
+<!-- ACTIVE VEHICLE MARKERS -->
+<!-- Marker 1: MH-12-QB-8419 (Nominal Green Pulsing Dot at Padgha) -->
+<div class="absolute top-[324px] left-[180px] -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-secondary-fixed-dim opacity-75"></span>
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+</div>
+<!-- Floating Card Tooltip on Vehicle -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 rounded-lg bg-inverse-surface text-inverse-on-surface shadow-xl pointer-events-none group-hover:pointer-events-auto transition-transform">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary-fixed">
+<span class="font-bold">MH-12-QB-8419</span>
+<span class="px-1 rounded bg-secondary/30">3.4°C</span>
+</div>
+<p class="font-body-sm text-[11px] text-surface-variant mt-0.5">Padgha Corridor • 58 km/h</p>
+<div class="mt-1 flex items-center justify-between text-[10px] text-outline-variant border-t border-surface-variant/20 pt-1">
+<span>Chamber: 100% OK</span>
+<span>Driver: S. Tambe</span>
+</div>
+</div>
+</div>
+<!-- Marker 2: MH-15-EG-2204 (Amber Warning at Kasara Ghat) -->
+<div class="absolute top-[165px] left-[265px] -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-error-container opacity-80"></span>
+<div class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+</div>
+<!-- Tooltip Warning -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-2 rounded-lg bg-surface-container-lowest text-on-surface shadow-xl z-30">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-error">MH-15-EG-2204</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[10px] font-semibold">Excursion +6.8°C</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1">Kasara Ghat Incline • 32 km/h</p>
+<p class="font-label-sm text-[10px] text-tertiary mt-0.5">Compressor Head Pressure Hi</p>
+</div>
+</div>
+<!-- Marker 3: EV-Reefer MH-14-CW-1108 (Pune City Last-Mile Run) -->
+<div class="absolute top-[490px] left-[328px] -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">electric_bolt</span>
+</div>
+</div>
+<!-- Tooltip -->
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-44 p-1.5 rounded-md bg-surface-container-lowest text-on-surface shadow-md">
+<span class="font-label-sm text-label-sm font-semibold text-primary">MH-14-CW-1108 (EV)</span>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Pune HoReCa • 4.0°C (Bat: 78%)</p>
+</div>
+</div>
+<!-- Interactive Map Floating Bottom Legend & Scale -->
+<div class="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 p-space-xs px-space-sm rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm text-[11px] font-label-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface uppercase">Cold Thresholds:</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span> &lt;2°C Chilled</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> 2°C–5°C Optimal</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span> &gt;5°C Warning</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-error"></span> &gt;8°C Breach</span>
+</div>
+<div class="flex items-center gap-2 text-[10px] font-label-sm text-outline">
+<span>Scale: 1:250,000</span>
+<span>•</span>
+<span>GIS Datum: WGS 84</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Driver Fatigue & TPMS Diagnostic Strip -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row gap-space-md justify-between items-center">
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">airline_seat_recline_normal</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Continuous Driving Watch</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">Sachin Tambe</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2h 45m elapsed of 4h 30m max allowed shift</p>
+</div>
+</div>
+<div class="w-full md:w-48 flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Drive Cycle</span>
+<span class="font-semibold text-primary">61% of Limit</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 61%;"></div>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container-high hidden md:block"></div>
+<!-- TPMS -->
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">tire_repair</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">IoT TPMS Fleet Status</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[10px]">ALL NOMINAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">10/10 Reefer Wheels at 110 PSI (Sensor ID #TP-44)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Incident Alert, Vehicle Telemetry Inspection, Geofence Ledger (40% -> col-span-5) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- High-Urgency Excursion Alert Banner -->
+<div class="bg-error-container/30 border-l-4 border-error p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[22px] animate-bounce">warning</span>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-error-container font-bold">Cold Excursion Warning: MH-15-EG-2204</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chamber reached +6.8°C on Kasara Ghat 12% incline</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm font-semibold">URGENT</span>
+</div>
+<!-- Quick Action Controls for Ops Manager -->
+<div class="grid grid-cols-3 gap-1.5 mt-1">
+<button class="px-2 py-1.5 rounded-lg bg-error text-on-error hover:bg-on-error-container font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm transition-all text-center">
+<span class="material-symbols-outlined text-[14px]">severe_cold</span>
+<span>Aux Chiller Boost</span>
+</button>
+<button class="px-2 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm transition-all text-center">
+<span class="material-symbols-outlined text-[14px]">phone_in_talk</span>
+<span>Call Pilot</span>
+</button>
+<button class="px-2 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm transition-all text-center">
+<span class="material-symbols-outlined text-[14px]">alt_route</span>
+<span>Divert Padgha</span>
+</button>
+</div>
+</div>
+<!-- Live Vehicle Detailed Telemetry Card 1: MH-12-QB-8419 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<!-- Card Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">MH-12-QB-8419</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">IN-TRANSIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Linehaul Reefer 24T • Pilot: Sachin Tambe</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline">ETA Destination</span>
+<p class="font-label-md text-label-md text-primary font-bold">08:45 AM (58 km)</p>
+</div>
+</div>
+<!-- Route Segment -->
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Narayangaon Packhouse
+            </span>
+<span class="material-symbols-outlined text-outline text-[16px]">trending_flat</span>
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Thane Mega-DC Dock #4
+            </span>
+</div>
+<!-- Dual IoT Sensor Probe Grid -->
+<div class="grid grid-cols-3 gap-2">
+<div class="p-space-xs px-2.5 rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Probe 1 (Center)</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">3.4°C</span>
+<span class="material-symbols-outlined text-[13px] text-secondary">check_circle</span>
+</div>
+<span class="font-body-sm text-[10px] text-outline">Target: 3.5°C</span>
+</div>
+<div class="p-space-xs px-2.5 rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Probe 2 (Door)</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">3.8°C</span>
+<span class="material-symbols-outlined text-[13px] text-primary">sensors</span>
+</div>
+<span class="font-body-sm text-[10px] text-outline">Seal Intact</span>
+</div>
+<div class="p-space-xs px-2.5 rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Relative Hum.</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">88%</span>
+<span class="material-symbols-outlined text-[13px] text-primary">water_drop</span>
+</div>
+<span class="font-body-sm text-[10px] text-outline">Optimal Moisture</span>
+</div>
+</div>
+<!-- Unbroken 6-Hour Temperature Sparkline SVG Visualizer -->
+<div class="p-space-xs px-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">6-Hour Temperature Thermal Stability Profile</span>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Min 3.1°C / Max 3.6°C</span>
+</div>
+<!-- Inline SVG Sparkline -->
+<div class="h-10 w-full relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 300 40">
+<!-- Safe Band 2C-5C Background Zone -->
+<rect fill="#a2f5b6" height="24" opacity="0.25" width="300" x="0" y="8"></rect>
+<line stroke="#6f7a70" stroke-dasharray="2,2" stroke-width="0.5" x1="0" x2="300" y1="20" y2="20"></line>
+<!-- Temperature Trend Line -->
+<path d="M 0,22 Q 25,24 50,21 T 100,23 T 150,19 T 200,22 T 250,20 T 300,21" fill="none" stroke="#146b3a" stroke-width="2"></path>
+<!-- Current Datapoint Dot -->
+<circle cx="300" cy="21" fill="#006d36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+</svg>
+</div>
+<div class="flex justify-between text-[9px] font-label-sm text-outline">
+<span>02:30 AM</span>
+<span>04:30 AM</span>
+<span>06:30 AM</span>
+<span>08:30 AM LIVE</span>
+</div>
+</div>
+<!-- Compressor Status & Hardware Diagnostic -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">mode_fan</span>
+              Primary Screw Chiller: <strong class="text-on-surface font-semibold">72% Run Duty</strong>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">local_gas_station</span>
+              Diesel Aux Tank: <strong class="text-on-surface font-semibold">84%</strong>
+</span>
+<span class="flex items-center gap-1 text-primary font-semibold text-[11px]">
+<span class="material-symbols-outlined text-[15px]">lock</span> Tamper Active
+            </span>
+</div>
+</div>
+<!-- Live Vehicle Card 2: MH-14-CW-1108 (EV Last-Mile) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">electric_car</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">MH-14-CW-1108</span>
+<span class="px-1.5 rounded bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-semibold">EV-REEFER</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Paud Rd → Koregaon Park (Direct HoReCa)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">4.0°C</span>
+<p class="font-body-sm text-[10px] text-outline">Target 4.0°C</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high text-[11px] font-label-sm">
+<span class="text-on-surface-variant">Battery Reserve: <strong class="text-primary font-semibold">78% (120 km range)</strong></span>
+<span class="text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">energy_savings_leaf</span> Eco-Chiller Mode Active
+            </span>
+<span class="text-outline">Pilot: Anil Deshmukh</span>
+</div>
+</div>
+<!-- Geofence Automated Trigger Ledger -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Geofence Automated Event Ledger</h4>
+</div>
+<span class="font-label-sm text-[11px] text-outline">Live Trigger Log</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="px-space-md py-2.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm font-mono text-outline">08:02 AM</span>
+</td>
+<td class="px-space-sm py-2.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">MH-15-EG-3312</div>
+<div class="text-[11px] text-on-surface-variant">Entered Padgha Toll Corridor</div>
+</td>
+<td class="px-space-md py-2.5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface text-[10px] font-medium">
+                      FASTag Auto-Cleared
+                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="px-space-md py-2.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm font-mono text-outline">07:42 AM</span>
+</td>
+<td class="px-space-sm py-2.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">MH-16-AZ-9901</div>
+<div class="text-[11px] text-on-surface-variant">Entered Sangamner APMC Zone</div>
+</td>
+<td class="px-space-md py-2.5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-medium">
+                      Dock Master Notified
+                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="px-space-md py-2.5 whitespace-nowrap">
+<span class="font-label-sm text-label-sm font-mono text-outline">07:15 AM</span>
+</td>
+<td class="px-space-sm py-2.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">MH-12-QB-8419</div>
+<div class="text-[11px] text-on-surface-variant">Exited Narayangaon Hub Radius</div>
+</td>
+<td class="px-space-md py-2.5 text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-semibold">
+                      Pass #GP-8841 Closed
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for map mode buttons and action clicks
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Quick visual ripple/press feedback
+        btn.classList.add('scale-95');
+        setTimeout(() => btn.classList.remove('scale-95'), 120);
+      });
+    });
+  });
+</script></main></div></body></html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f2fcf2", "on-tertiary": "#ffffff", "background": "#f2fcf2", "tertiary-fixed-dim": "#f4bf1b", "on-secondary-fixed": "#00210c", "on-primary-container": "#97e9ab", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface-bright": "#f2fcf2", "on-primary": "#ffffff", "on-primary-fixed-variant": "#005229", "on-tertiary-fixed": "#251a00", "inverse-on-surface": "#e9f3e9", "surface-dim": "#d2ddd3", "error-container": "#ffdad6", "surface-tint": "#166c3b", "on-surface": "#151e18", "surface-container-low": "#ecf6ec", "surface-container-highest": "#dbe5db", "secondary": "#006d36", "primary-fixed-dim": "#87d89c", "on-tertiary-fixed-variant": "#594400", "primary-fixed": "#a2f5b6", "outline": "#6f7a70", "on-error-container": "#93000a", "secondary-fixed-dim": "#73dc90", "on-primary-fixed": "#00210d", "surface-container-high": "#e1ebe1", "on-secondary-fixed-variant": "#005227", "on-tertiary-container": "#ffd158", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "on-background": "#151e18", "error": "#ba1a1a", "surface-variant": "#dbe5db", "on-secondary": "#ffffff", "secondary-container": "#8ff9aa", "tertiary": "#584200", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "primary-container": "#146b3a", "on-secondary-container": "#00743a", "outline-variant": "#bfc9be", "tertiary-fixed": "#ffdf95", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "primary": "#005128" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, "fontFamily": { "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f2fcf2;color:#151e18;font-family:'Inter',sans-serif;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[22px]">account_balance_wallet</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Bank Withdrawal</h1><span class="material-symbols-outlined text-secondary text-[16px] shrink-0" title="Verified Ag-Tech Account">verified</span></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>DBT Escrow Active</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[22px]">notifications</span></button><a aria-label="Farmer Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Status Tracker / Confidence Banner -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">DBT Payout Channel</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">NPCI e-Kisan Rapid Rails Active</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-medium">Zero Fee</span>
+</div>
+</div>
+<!-- Available Balance Card -->
+<div class="px-margin-mobile py-space-xs">
+<div class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-space-md shadow-md">
+<!-- Ambient Decorative Backdrop SVG -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 opacity-15 pointer-events-none">
+<svg class="w-full h-full text-surface" fill="none" viewbox="0 0 120 120">
+<circle cx="60" cy="60" r="50" stroke="currentColor" stroke-dasharray="6 6" stroke-width="8"></circle>
+<path d="M60 20V100M20 60H100" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md text-on-primary-container tracking-wider uppercase">Withdrawable Balance • उपलब्ध रक्कम</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed bg-surface/10 px-2 py-0.5 rounded-full">Kisan Escrow Verified</span>
+</div>
+<div class="flex items-baseline justify-between gap-space-sm mt-1">
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight text-on-primary">
+              ₹48,920<span class="text-secondary-fixed font-normal text-headline-sm">.50</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-0.5">Harvest Proceeds from Nashik Onion Cluster</p>
+</div>
+<button class="shrink-0 bg-surface-container-lowest text-primary active:bg-surface-container font-label-md text-label-md px-space-md py-2.5 rounded-lg shadow-sm flex items-center gap-1 transition-all" id="btn-withdraw-all" type="button">
+<span>Withdraw All</span>
+<span class="font-body-sm text-body-sm opacity-80">(सर्व)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Amount Input Section -->
+<div class="px-margin-mobile pt-space-md pb-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant font-semibold" for="withdrawal-input">
+          Enter Amount to Withdraw (रक्कम प्रविष्ट करा)
+        </label>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">speed</span> Instant Limit: ₹2,00,000
+        </span>
+</div>
+<!-- Currency Field -->
+<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-md py-2">
+<span class="font-headline-lg text-headline-lg text-primary font-bold mr-1">₹</span>
+<input aria-label="Withdrawal amount in Indian Rupees" class="w-full bg-transparent font-headline-lg text-headline-lg font-bold text-on-surface focus:outline-none tracking-tight" id="withdrawal-input" placeholder="0" type="number" value="25000"/>
+<button aria-label="Clear amount" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="btn-clear-amount">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Quick Preset Chips -->
+<div class="grid grid-cols-4 gap-space-xs pt-1">
+<button class="chip-preset h-9 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container-high active:scale-95 transition-all text-center" data-add="5000" type="button">
+          +₹5,000
+        </button>
+<button class="chip-preset h-9 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container-high active:scale-95 transition-all text-center" data-add="10000" type="button">
+          +₹10,000
+        </button>
+<button class="chip-preset h-9 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container-high active:scale-95 transition-all text-center" data-add="25000" type="button">
+          +₹25,000
+        </button>
+<button class="h-9 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold active:scale-95 transition-all text-center" id="chip-max" type="button">
+          Max All
+        </button>
+</div>
+</div>
+</div>
+<!-- Receiving Bank Account Selector -->
+<div class="px-margin-mobile pt-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Receiving Bank Account</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">खाते निवडा</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Primary Account (Selected) -->
+<label class="account-card relative block rounded-xl bg-surface-container-lowest p-space-md shadow-sm cursor-pointer transition-all">
+<input checked="" class="peer sr-only" name="bank_account" type="radio" value="sbi"/>
+<!-- Selection Highlight Bar -->
+<div class="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-primary"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[26px]">domain</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">State Bank of India</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Primary DBT
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">भारतीय स्टेट बँक • Mulshi Rural Branch</span>
+<div class="flex items-center gap-space-sm mt-1 text-on-surface font-label-md text-label-md">
+<span class="tracking-widest">•••• 4201</span>
+<span class="text-on-surface-variant">|</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">IFSC: SBIN0001245</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</label>
+<!-- Secondary Account -->
+<label class="account-card relative block rounded-xl bg-surface-container-lowest p-space-md shadow-sm cursor-pointer transition-all opacity-90">
+<input class="peer sr-only" name="bank_account" type="radio" value="bom"/>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[26px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Bank of Maharashtra</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded-full">
+                  KCC Linked
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">बँक ऑफ महाराष्ट्र • Paud Branch</span>
+<div class="flex items-center gap-space-sm mt-1 text-on-surface font-label-md text-label-md">
+<span class="tracking-widest">•••• 8812</span>
+<span class="text-on-surface-variant">|</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">IFSC: MAHB0000312</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="w-2.5 h-2.5 rounded-full bg-transparent"></span>
+</div>
+</div>
+</label>
+<!-- Add Account Button -->
+<button class="w-full py-space-sm px-space-md rounded-xl bg-surface-container-low text-primary font-label-md text-label-md flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Add Another Bank Account (दुसरे बँक खाते जोडा)</span>
+</button>
+</div>
+</div>
+<!-- Transfer Mode Options -->
+<div class="px-margin-mobile pt-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">sync_alt</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Select Transfer Mode</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">100% Free</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Instant IMPS (Selected) -->
+<label class="relative block rounded-xl bg-surface-container-lowest p-space-md shadow-sm cursor-pointer transition-all">
+<input checked="" class="sr-only" name="transfer_mode" type="radio" value="imps"/>
+<div class="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-secondary"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[22px]">flash_on</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Instant IMPS Transfer</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">&lt;60 Sec</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">झटपट जमा • 24x7x365 Available even on Bank Holidays</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1 font-semibold">₹0 Transfer Fee (FPO Subsidized)</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</label>
+<!-- Standard NEFT/RTGS -->
+<label class="relative block rounded-xl bg-surface-container-lowest p-space-md shadow-sm cursor-pointer opacity-85 transition-all">
+<input class="sr-only" name="transfer_mode" type="radio" value="neft"/>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">NEFT / RTGS Settlement</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">2-4 Hours</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सामान्य जमा • Business Banking Hours Only</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 font-semibold">₹0 Transfer Fee</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="w-2.5 h-2.5 rounded-full bg-transparent"></span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Transfer Breakdown Module -->
+<div class="px-margin-mobile pt-space-md">
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Transfer Breakdown (तपशील)</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">security</span> Verified Calculation
+        </span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span>Amount Requested (मागणी केलेली रक्कम)</span>
+<span class="text-on-surface font-medium" id="breakdown-requested">₹25,000.00</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+          Platform Processing Fee
+          <span class="text-secondary font-label-sm text-label-sm bg-surface-container px-1 rounded">100% Off</span>
+</span>
+<span class="text-secondary font-semibold">₹0.00</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Applicable GST (0%)</span>
+<span class="text-on-surface">₹0.00</span>
+</div>
+<!-- Accent Total Highlight -->
+<div class="mt-2 pt-2 bg-surface-container rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Net Credited to Bank</span>
+<span class="font-label-sm text-label-sm text-secondary">बँक खात्यात जमा होणारी रक्कम</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="breakdown-credited">₹25,000.00</span>
+</div>
+</div>
+</div>
+<!-- Security Mandate & MPIN Switch -->
+<div class="px-margin-mobile pt-space-md">
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">fingerprint</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Aadhaar Biometric &amp; MPIN</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Use Fingerprint or 4-digit Kisan MPIN for auth</span>
+</div>
+</div>
+<!-- Native-feel switch toggle -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="security-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Trust Seal / Assurance Row -->
+<div class="px-margin-mobile pt-space-md pb-space-sm">
+<div class="flex items-center justify-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm text-center">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+<span>256-bit Encrypted DBT Gateway • Protected by RBI &amp; NPCI Safeguards</span>
+</div>
+</div>
+<!-- Floating Sticky Action Trigger Wrapper -->
+<div class="sticky bottom-0 w-full px-margin-mobile pt-space-sm pb-space-sm bg-surface/90 backdrop-blur-md shadow-lg mt-auto">
+<button class="w-full min-h-[52px] py-space-sm px-space-lg rounded-xl bg-primary text-on-primary hover:bg-on-primary-fixed-variant active:scale-[0.99] font-label-lg text-label-lg flex items-center justify-between shadow-md transition-all" id="btn-confirm-transfer" type="button">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span id="cta-button-text">Confirm &amp; Transfer ₹25,000 to SBI</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm bg-on-primary/10 px-2 py-1 rounded">
+<span>रक्कम पाठवा</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+<script>
+  (function initWithdrawalScreen() {
+    const amountInput = document.getElementById('withdrawal-input');
+    const breakdownRequested = document.getElementById('breakdown-requested');
+    const breakdownCredited = document.getElementById('breakdown-credited');
+    const ctaButtonText = document.getElementById('cta-button-text');
+    const clearBtn = document.getElementById('btn-clear-amount');
+    const withdrawAllBtn = document.getElementById('btn-withdraw-all');
+    const chipMax = document.getElementById('chip-max');
+    const presetButtons = document.querySelectorAll('.chip-preset');
+    const bankRadios = document.querySelectorAll('input[name="bank_account"]');
+
+    const MAX_BALANCE = 48920.50;
+    let selectedBankName = 'SBI';
+
+    function formatINR(val) {
+      return new Intl.NumberFormat('en-IN', {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: val % 1 === 0 ? 0 : 2
+      }).format(val);
+    }
+
+    function updateUi(val) {
+      const numericVal = Math.min(Math.max(0, val || 0), MAX_BALANCE);
+      const formatted = formatINR(numericVal);
+      
+      if (breakdownRequested) breakdownRequested.textContent = '₹' + formatted;
+      if (breakdownCredited) breakdownCredited.textContent = '₹' + formatted;
+      if (ctaButtonText) {
+        ctaButtonText.textContent = `Confirm & Transfer ₹${formatted} to ${selectedBankName}`;
+      }
+    }
+
+    if (amountInput) {
+      amountInput.addEventListener('input', (e) => {
+        let val = parseFloat(e.target.value) || 0;
+        if (val > MAX_BALANCE) {
+          val = MAX_BALANCE;
+          e.target.value = MAX_BALANCE;
+        }
+        updateUi(val);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (amountInput) {
+          amountInput.value = '';
+          amountInput.focus();
+        }
+        updateUi(0);
+      });
+    }
+
+    presetButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const addAmount = parseFloat(btn.getAttribute('data-add') || '0');
+        let current = parseFloat(amountInput.value) || 0;
+        let nextVal = Math.min(current + addAmount, MAX_BALANCE);
+        amountInput.value = nextVal;
+        updateUi(nextVal);
+      });
+    });
+
+    function setMax() {
+      if (amountInput) {
+        amountInput.value = MAX_BALANCE;
+      }
+      updateUi(MAX_BALANCE);
+    }
+
+    if (withdrawAllBtn) withdrawAllBtn.addEventListener('click', setMax);
+    if (chipMax) chipMax.addEventListener('click', setMax);
+
+    bankRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        selectedBankName = e.target.value === 'sbi' ? 'SBI' : 'BOM';
+        const currentVal = parseFloat(amountInput.value) || 0;
+        updateUi(currentVal);
+      });
+    });
+
+    const confirmBtn = document.getElementById('btn-confirm-transfer');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        const amt = parseFloat(amountInput.value) || 0;
+        if (amt <= 0) {
+          alert('कृपया वैध रक्कम प्रविष्ट करा (Please enter a valid amount to withdraw).');
+          return;
+        }
+        // Micro-interaction: momentary tactile feedback
+        confirmBtn.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          confirmBtn.style.transform = '';
+          alert(`₹${formatINR(amt)} हस्तांतरण प्रक्रिया सुरू झाली (Transfer initiated to ${selectedBankName}). Reference ID: KSN-${Math.floor(100000 + Math.random() * 900000)}`);
+        }, 150);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.06)]" data-active-classes="text-primary font-label-md font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="kisan-wallet-overview" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Wallet</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="dbt-escrow-payouts" href="#"><span class="material-symbols-outlined text-[22px]">assured_workload</span><span class="font-label-sm text-label-sm">Escrow</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="settlement-passbook" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">Passbook</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-12 transition-colors text-primary font-label-md font-bold" data-path="bank-withdrawal" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm">Transfer</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

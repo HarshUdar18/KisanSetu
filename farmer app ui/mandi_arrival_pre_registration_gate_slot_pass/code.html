@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#594400", "background": "#f2fcf2", "surface-container-highest": "#dbe5db", "on-primary-container": "#97e9ab", "on-error-container": "#93000a", "on-secondary-container": "#00743a", "primary": "#005128", "surface-dim": "#d2ddd3", "on-tertiary-fixed": "#251a00", "on-primary-fixed-variant": "#005229", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "outline": "#6f7a70", "on-tertiary": "#ffffff", "surface-container-high": "#e1ebe1", "surface-bright": "#f2fcf2", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "tertiary-fixed-dim": "#f4bf1b", "surface-variant": "#dbe5db", "primary-container": "#146b3a", "on-secondary-fixed": "#00210c", "surface-container-low": "#ecf6ec", "on-primary-fixed": "#00210d", "on-background": "#151e18", "secondary-container": "#8ff9aa", "error": "#ba1a1a", "outline-variant": "#bfc9be", "on-tertiary-container": "#ffd158", "on-surface": "#151e18", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "tertiary": "#584200", "primary-fixed-dim": "#87d89c", "tertiary-fixed": "#ffdf95", "inverse-on-surface": "#e9f3e9", "primary-fixed": "#a2f5b6", "surface-tint": "#166c3b", "secondary": "#006d36", "surface": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-secondary-fixed-variant": "#005227" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, fontFamily: { "display-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container shrink-0 transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Mandi Arrival Pre Registration &amp; Gate Slot Pass</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Refresh Rates" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">sync</span></button><button aria-label="Share Mandi Intel" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full">
+<!-- Top Animated Status Banner (High Glare Optimized) -->
+<div class="px-gutter pt-space-md pb-space-sm">
+<div class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-space-md shadow-md">
+<!-- Ambient Graphic Glow -->
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary-fixed/15 pointer-events-none blur-2xl"></div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span>ग्रीन कॉरिडॉर पास • LIVE</span>
+</div>
+<span class="font-label-md text-label-md tracking-wider text-primary-fixed-dim">#PUN-GT-88419</span>
+</div>
+<div class="flex items-start justify-between gap-space-xs mt-1">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-bold">गेट पास मंजूर व आरक्षित</h2>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5">Approved &amp; Fast-Track Priority Entry</p>
+</div>
+<div class="w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest/10 p-2.5 flex items-center gap-space-sm backdrop-blur-sm mt-1">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px] shrink-0">alarm_on</span>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-on-primary">आज, २८ ऑक्टोबर • पहाटे ०३:३० ते ०५:०० AM</p>
+<p class="font-body-sm text-body-sm text-surface-container-highest truncate">वेळेत पोहोचल्यास थेट लिलाव शेड प्रवेश</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-lg text-label-lg text-tertiary-fixed font-mono px-2 py-0.5 rounded bg-black/20" id="countdownTimer">01:42:15</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Digital QR Code Token Card (The Hero Action for Scanner) -->
+<div class="px-gutter py-space-xs">
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col items-center text-center relative overflow-hidden">
+<!-- Mandi Location Tag -->
+<div class="w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm mb-space-md">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="truncate font-semibold">पुणे APMC, गुलटेकडी • प्रवेशद्वार क्र. ४ (नाशवंत शेतीमाल)</span>
+</div>
+<!-- Scannable QR Container -->
+<div class="relative p-3.5 bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(20,40,25,0.08)] flex items-center justify-center">
+<!-- SVG Vector QR Code -->
+<svg class="w-52 h-52 text-on-surface" fill="currentColor" viewbox="0 0 200 200">
+<!-- Outer Corners & Alignment Squares -->
+<rect fill="currentColor" height="55" rx="6" width="55" x="10" y="10"></rect>
+<rect fill="#ffffff" height="39" rx="3" width="39" x="18" y="18"></rect>
+<rect fill="currentColor" height="23" rx="2" width="23" x="26" y="26"></rect>
+<rect fill="currentColor" height="55" rx="6" width="55" x="135" y="10"></rect>
+<rect fill="#ffffff" height="39" rx="3" width="39" x="143" y="18"></rect>
+<rect fill="currentColor" height="23" rx="2" width="23" x="151" y="26"></rect>
+<rect fill="currentColor" height="55" rx="6" width="55" x="10" y="135"></rect>
+<rect fill="#ffffff" height="39" rx="3" width="39" x="18" y="143"></rect>
+<rect fill="currentColor" height="23" rx="2" width="23" x="26" y="151"></rect>
+<!-- High-density Data Matrix Blocks -->
+<rect height="10" rx="1.5" width="10" x="75" y="14"></rect>
+<rect height="10" rx="1.5" width="10" x="90" y="24"></rect>
+<rect height="10" rx="1.5" width="10" x="110" y="14"></rect>
+<rect height="10" rx="1.5" width="10" x="75" y="44"></rect>
+<rect height="10" rx="1.5" width="10" x="95" y="44"></rect>
+<rect height="10" rx="1.5" width="10" x="115" y="44"></rect>
+<rect height="10" rx="1.5" width="10" x="15" y="75"></rect>
+<rect height="10" rx="1.5" width="10" x="35" y="75"></rect>
+<rect height="10" rx="1.5" width="10" x="15" y="95"></rect>
+<rect height="10" rx="1.5" width="10" x="35" y="95"></rect>
+<rect height="10" rx="1.5" width="10" x="15" y="115"></rect>
+<rect height="10" rx="1.5" width="10" x="45" y="115"></rect>
+<rect height="10" rx="1.5" width="10" x="145" y="75"></rect>
+<rect height="10" rx="1.5" width="10" x="165" y="75"></rect>
+<rect height="10" rx="1.5" width="10" x="175" y="95"></rect>
+<rect height="10" rx="1.5" width="10" x="145" y="115"></rect>
+<rect height="10" rx="1.5" width="10" x="165" y="115"></rect>
+<rect height="10" rx="1.5" width="10" x="75" y="135"></rect>
+<rect height="10" rx="1.5" width="10" x="95" y="135"></rect>
+<rect height="10" rx="1.5" width="10" x="115" y="155"></rect>
+<rect height="10" rx="1.5" width="10" x="75" y="175"></rect>
+<rect height="10" rx="1.5" width="10" x="105" y="175"></rect>
+<rect height="10" rx="1.5" width="10" x="145" y="145"></rect>
+<rect height="10" rx="1.5" width="10" x="165" y="165"></rect>
+<rect height="10" rx="1.5" width="10" x="175" y="145"></rect>
+<!-- Official Stamp Center Shield -->
+<rect fill="#ffffff" height="44" rx="22" width="44" x="78" y="78"></rect>
+<circle cx="100" cy="100" fill="#146b3a" r="18"></circle>
+</svg>
+<!-- Center Seal Icon Overlaid -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-on-primary text-[22px]">agriculture</span>
+</div>
+<!-- Laser Scanning Target Indicator -->
+<div class="absolute inset-0 border-2 border-primary/20 rounded-xl pointer-events-none flex items-center justify-center">
+<div class="w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse"></div>
+</div>
+</div>
+<!-- High-Legibility OTP Fallback for Security Guard -->
+<div class="mt-space-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant">कॅमेऱ्याने स्कॅन न झाल्यास गेटमनला हा कोड सांगा:</p>
+<div class="mt-1 flex items-center justify-center gap-1.5 font-headline-md text-headline-md tracking-widest text-primary font-mono font-bold bg-surface-container px-4 py-1.5 rounded-lg">
+<span>७</span><span>४</span><span>२</span>
+<span class="text-outline-variant font-normal">-</span>
+<span>९</span><span>१</span><span>८</span>
+</div>
+</div>
+<!-- Green Channel Guarantee -->
+<div class="mt-space-md w-full rounded-lg bg-surface-container-low p-2.5 flex items-center gap-space-sm text-left">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+<strong class="text-secondary font-semibold">झिरो वेटिंग गॅरंटी:</strong> मुख्य द्वारावर कॅमेऱ्यासमोर हा QR धरताच बूम बॅरियर आपोआप उघडेल.
+        </p>
+</div>
+</div>
+</div>
+<!-- Consignment Manifest & Driver Profile -->
+<div class="px-gutter pt-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span>वाहन व मालाचा तपशील</span>
+</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">FPO थेट शेतकरी</span>
+</div>
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Produce Block with Image Thumbnail -->
+<div class="flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fresh organic green spinach leaves packed neatly in plastic harvest crates at sunrise, bright agricultural harvest photography with natural morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQfzZjSFfdkEhZ6OD5PemRXf8iLXHI1BNI7Kz-lQOigZ9_UPGHvbwGeMoJgsB8fSJGrgE8M8NnHQJdo_yNEM-6D6BGH7AU51Km19D6OQLb9210InQpGTWfXNSRrJ3W_XNfqlKTHnIYIw4SQon7Ooo0WTxKip3ZtEhLyJaZCHdZEG9FN0NBUCyg4A3XPawd9iq78ZMYjRjdiw2057mMnhd_P6HOBnFDItGpxbMDuOg"/>
+<span class="absolute bottom-0 inset-x-0 bg-primary/80 text-on-primary text-[9px] font-bold text-center py-0.5">GRADE A</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface truncate">गावरान ताजी पालक (Desi Palak)</h4>
+<span class="font-label-md text-label-md text-primary font-bold">१०० क्रेट्स</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">अंदाजे वजन: ~१,५०० किलो (१५ क्विंटल)</p>
+<div class="inline-flex items-center gap-1 mt-1 text-[11px] font-medium text-secondary-container bg-primary px-2 py-0.5 rounded-full">
+<span>कापणी: काल सायंकाळी ६:०० वा.</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Farmer & Bay Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="rounded-lg bg-surface-container-low p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">नोंदणीकृत शेतकरी</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold mt-0.5 truncate">रमेश बाळू शिंदे</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">FPO: #MUL-8842 (मुळशी)</p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">नियोजित अडत्या / गाळा</span>
+<p class="font-label-md text-label-md text-primary font-bold mt-0.5 truncate">गाळा क्र. १२-बी</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">श्री. मारुती मोरे (थेट शेड)</p>
+</div>
+</div>
+<!-- Driver & Vehicle Quick Contact -->
+<div class="flex items-center justify-between rounded-lg bg-surface-container p-2.5">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">badge</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">तुकाराम गरूड (वाहन चालक)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">MH-12-QB-8419 • बोलेरो मॅक्सी</p>
+</div>
+</div>
+<a class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 hover:bg-primary transition-colors shadow-sm" href="tel:+919822400000">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Terminal Route & Wayfinding inside Mandi Yard -->
+<div class="px-gutter pt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">alt_route</span>
+<span>मंडी आवक अंतर्गत मार्गदर्शक</span>
+</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">४ सोप्या पायऱ्या</span>
+</div>
+<!-- Stepper Pipeline -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm">
+<div class="relative pl-6 space-y-space-md">
+<!-- Vertical Timeline Path -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Step 1 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold shadow-sm ring-4 ring-surface-container-lowest">
+            १
+          </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">गेट क्र. ४ स्कॅनर प्रवेश</h4>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">हिरवा दिवा</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">हा डिजिटल QR कॅमेऱ्यासमोर दाखवून थेट प्रवेश मिळवा.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px] font-bold ring-4 ring-surface-container-lowest">
+            २
+          </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">इलेक्ट्रॉनिक वजनकाटा #२ (Gross)</h4>
+<span class="font-label-sm text-label-sm text-primary">फास्ट टॅग संलग्न</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">वाहनाचे भरलेले वजन मोजले जाईल. वजन पावती मोबाइलवर प्राप्त होईल.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px] font-bold ring-4 ring-surface-container-lowest">
+            ३
+          </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">लिलाव शेड #१२ (FPO थेट लिलाव)</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">सकाळी ५:१५ वा.</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">गाळा क्र. १२-बी येथे क्रेट्स खाली करा व थेट खुल्या बोलीत सहभागी व्हा.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px] font-bold ring-4 ring-surface-container-lowest">
+            ४
+          </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">रिकामे वजन (Tare) व थेट DBT जमा</h4>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">झटपट DBT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">वाहनाचे रिकामे वजन झाल्यावर लिलाव रक्कम थेट बँक खात्यात ट्रान्सफर होईल.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Zero Toll & Mandi Cess Exemption Certificate -->
+<div class="px-gutter pt-space-md">
+<div class="rounded-xl bg-surface-container p-space-md flex items-start gap-space-sm relative overflow-hidden">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">१००% मंडी सेस व गेट फी माफी</h4>
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+          महाराष्ट्र कृषी पणन मंडळ नियमानुसार थेट नोंदणीकृत FPO वाहनांना प्रवेश कर व मध्यस्थ दलाली पूर्णपणे माफ आहे. पावती क्रमांक: <span class="font-mono font-semibold text-primary">MSAMB-EX-24-918</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Yard Location Visual Tile -->
+<div class="px-gutter pt-space-md pb-space-lg">
+<div class="relative rounded-xl overflow-hidden shadow-sm">
+<div class="w-full h-36 bg-cover bg-center" data-location="APMC Market Gultekdi Gate 4 Pune Maharashtra" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCq2P4ZGDQZg0l9GNdBEzxah_X56gy1Shx68Obz9T0qjetT0qwznuClhc_BIuW0a_eBBlAkveDMyUtz5TXFv7t_pkkyuwYWz_QoLdX-NbHxBkQpOGQQxcAedPrqJPei_A4fQsvqj3v56uKyb63-vrQMwW4HHJ5EkftyoqnAlATDPxv0NxRnAWpShDVoDWLCsruSjupYLihdvWomiyvk4xEUJ5a3rXBGoM5GjiS7gbHF')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-space-md">
+<div class="flex items-center justify-between w-full text-white">
+<div>
+<p class="font-label-sm text-label-sm opacity-90">थेट दिशादर्शन (Live GPS Routing)</p>
+<p class="font-label-lg text-label-lg font-bold">गुलटेकडी मुख्य गेट ४ (नाशवंत लेन)</p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-white text-primary font-label-md text-label-md flex items-center gap-1 shadow-md" id="btnNavigate">
+<span class="material-symbols-outlined text-[16px]">turn_right</span>
+<span>मॅप उघडा</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Quick Actions (Comfortable Touch Ergonomics) -->
+<div class="sticky bottom-0 inset-x-0 bg-surface/95 backdrop-blur-md p-gutter shadow-[0_-4px_16px_rgba(20,40,25,0.06)] flex flex-col gap-space-xs z-30">
+<div class="flex items-center gap-space-sm w-full">
+<!-- WhatsApp Transporter Dispatch Button -->
+<button class="flex-1 h-12 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-container-high active:scale-[0.98] transition-all" id="btnWhatsappShare">
+<span class="material-symbols-outlined text-[20px] text-secondary">send_to_mobile</span>
+<span>चालकाला पाठवा</span>
+</button>
+<!-- Turn-by-Turn Navigation Trigger -->
+<button class="flex-1 h-12 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary-container active:scale-[0.98] transition-all shadow-md" id="btnStartNav">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+<span>नेव्हिगेशन सुरू करा</span>
+</button>
+</div>
+<!-- Secondary PDF Download Link -->
+<button class="w-full py-2 text-center text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 hover:underline" id="btnDownloadPdf">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>अधिकृत डिजिटल गेट पास (PDF डाउनलोड)</span>
+</button>
+</div>
+<!-- Toast Notification Modal for Micro-delight -->
+<div class="fixed bottom-24 inset-x-gutter z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-4" id="toastNotification">
+<div class="rounded-xl bg-inverse-surface text-inverse-on-surface p-space-md shadow-xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">task_alt</span>
+<p class="font-label-md text-label-md flex-1" id="toastMessage">गेट पास चालकाच्या व्हॉट्सअॅपवर पाठवला आहे!</p>
+</div>
+</div>
+</div>
+<script>
+  // Countdown simulation for entry slot
+  (function initTimer() {
+    var timerEl = document.getElementById('countdownTimer');
+    if (!timerEl) return;
+    var totalSeconds = 1 * 3600 + 42 * 60 + 15;
+    setInterval(function() {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        var hrs = Math.floor(totalSeconds / 3600);
+        var mins = Math.floor((totalSeconds % 3600) / 60);
+        var secs = totalSeconds % 60;
+        timerEl.textContent = 
+          (hrs < 10 ? '0' : '') + hrs + ':' +
+          (mins < 10 ? '0' : '') + mins + ':' +
+          (secs < 10 ? '0' : '') + secs;
+      }
+    }, 1000);
+  })();
+
+  // Toast micro-interaction helper
+  function showToast(message) {
+    var toast = document.getElementById('toastNotification');
+    var msgEl = document.getElementById('toastMessage');
+    if (!toast || !msgEl) return;
+    msgEl.textContent = message;
+    toast.classList.remove('opacity-0', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(function() {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-4');
+    }, 3200);
+  }
+
+  // Interactive hooks
+  var btnWhatsapp = document.getElementById('btnWhatsappShare');
+  if (btnWhatsapp) {
+    btnWhatsapp.addEventListener('click', function() {
+      showToast('चालक तुकाराम गरूड (+91 98224...) यांना WhatsApp वर गेट पास पाठवला!');
+    });
+  }
+
+  var btnPdf = document.getElementById('btnDownloadPdf');
+  if (btnPdf) {
+    btnPdf.addEventListener('click', function() {
+      showToast('अधिकृत APMC ई-गेट पास डाऊनलोड सुरू झाले (#PUN-GT-88419)');
+    });
+  }
+
+  var btnNav = document.getElementById('btnStartNav');
+  var btnMap = document.getElementById('btnNavigate');
+  var openNavigation = function() {
+    showToast('पुणे APMC गेट ४ थेट मार्ग उघडत आहे...');
+  };
+  if (btnNav) btnNav.addEventListener('click', openNavigation);
+  if (btnMap) btnMap.addEventListener('click', openNavigation);
+</script></main></body></html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#d2ddd3", "on-secondary-fixed-variant": "#005227", "surface-tint": "#166c3b", "on-tertiary-container": "#ffd158", "secondary-fixed": "#8ff9aa", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "primary-fixed": "#a2f5b6", "surface-container-low": "#ecf6ec", "on-error": "#ffffff", "tertiary-fixed": "#ffdf95", "surface": "#f2fcf2", "on-primary-fixed-variant": "#005229", "inverse-primary": "#87d89c", "on-primary-container": "#97e9ab", "on-surface-variant": "#3f4940", "on-secondary-fixed": "#00210c", "on-tertiary-fixed-variant": "#594400", "surface-variant": "#dbe5db", "primary": "#005128", "on-primary": "#ffffff", "tertiary": "#584200", "tertiary-container": "#755900", "background": "#f2fcf2", "secondary": "#006d36", "secondary-fixed-dim": "#73dc90", "secondary-container": "#8ff9aa", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "outline": "#6f7a70", "on-tertiary-fixed": "#251a00", "on-background": "#151e18", "primary-fixed-dim": "#87d89c", "on-surface": "#151e18", "surface-bright": "#f2fcf2", "on-secondary": "#ffffff", "on-primary-fixed": "#00210d", "surface-container": "#e6f1e7", "inverse-on-surface": "#e9f3e9", "surface-container-high": "#e1ebe1", "error": "#ba1a1a", "surface-container-highest": "#dbe5db", "primary-container": "#146b3a", "inverse-surface": "#29332c", "outline-variant": "#bfc9be", "on-secondary-container": "#00743a", "tertiary-fixed-dim": "#f4bf1b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin-mobile": "1rem", "gutter": "1rem", "margin": "1rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-primary"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[22px]">agriculture</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight leading-tight">Kisan Setu</span><span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Enterprise Supply</span></div></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim">Supply Chain Core</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="order-management" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Order Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="collection-points" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>Collection Points</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="quality-inspection" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Quality Inspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span>Warehouses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="logistics-fleet" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Logistics & Fleet</span></a></nav><div class="px-space-md pt-space-lg"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim">Catalog & Registry</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="produce-catalog" href="#"><span class="material-symbols-outlined text-[20px]">potted_plant</span><span>Produce Catalog</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="fpo-networks" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>FPO Networks</span></a></nav></div><div class="p-space-md m-space-md rounded-xl bg-primary-container"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span><span class="font-label-sm text-label-sm text-primary-fixed">Live Sync</span></div><span class="font-label-sm text-label-sm text-primary-fixed-dim">v2.4.0</span></div><div class="mt-space-xs font-body-sm text-body-sm text-on-primary">Mandis Active: 142</div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-md z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">corporate_fare</span><span>Enterprise Admin</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-primary font-label-md text-label-md">Supply Chain & Catalog</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm min-w-[280px]"><span class="material-symbols-outlined text-[18px]">search</span><span class="flex-1">Search lots, batches, mandis...</span><kbd class="px-space-xs py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant">Ctrl K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Today (Rabi Harvest)</span></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface">Rajesh Kulkarni</div><div class="font-label-sm text-label-sm text-on-surface-variant">Super Admin</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Operational Alert Banner & Action Strip -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest shadow-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Supply Chain & Catalog</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Logistics & Fleet</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-label-md text-label-md">Cold-Chain Telematics Hub</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Live Reefer Fleet Command & Transit Telematics</h1>
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span>86 Reefer Trucks Live • IoT Telemetry 99.8% Sync</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">cloud_done</span> Aggregated Sampling: 15s</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">thermostat</span> Calibrated Dual-Probe Sensors (NIST Verified)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">cell_tower</span> 4G/5G Cellular Gateway Active</span>
+</div>
+</div>
+<!-- Quick Action Toolbelt -->
+<div class="flex flex-wrap items-center gap-space-xs self-stretch xl:self-auto">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Manifest</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Temp Thresholds</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>Dispatch Backup Reefer</span>
+</button>
+</div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- Real-Time Telematics KPI Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- KPI 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Fleet In Transit</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-display-lg text-display-lg text-on-surface tracking-tight">48</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 100% On-Grid
+          </span>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Active Reefer Corridors</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Temp Tolerance (2°C - 6°C)</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-display-lg text-display-lg text-secondary tracking-tight">46 <span class="font-headline-sm text-headline-sm text-on-surface">/ 48</span></div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container">95.8%</span>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Zero Cold-Break Zone</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-space-md rounded-xl bg-error-container text-on-error-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error">Excursion Warning</span>
+<span class="w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-display-lg text-display-lg text-error tracking-tight">02</div>
+<span class="font-label-sm text-label-sm text-error uppercase font-bold">> 7.0°C Alert</span>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-error">Igatpuri & Lonavala Ghats</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Perishable Freight</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-display-lg text-display-lg text-on-surface tracking-tight">340 <span class="font-headline-sm text-headline-sm text-on-surface-variant">MT</span></div>
+<span class="font-label-sm text-label-sm text-primary font-bold">₹1.84 Cr</span>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Escrow Protected Cargo</div>
+</div>
+<!-- KPI 5 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">On-Time Hub SLA</span>
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-display-lg text-display-lg text-on-surface tracking-tight">98.4%</div>
+<span class="font-label-sm text-label-sm text-secondary">+0.6% vs Avg</span>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">APMC Direct Slot Routing</div>
+</div>
+</div>
+<!-- Active Incident Telemetry Alert Banner -->
+<div class="rounded-xl bg-surface-container-lowest shadow-md overflow-hidden">
+<div class="bg-error text-on-error px-space-md py-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">notification_important</span>
+<span class="font-label-lg text-label-lg uppercase tracking-wider">CRITICAL INCIDENT: REEFER TELEMETRY EXCURSION TRIGGERED</span>
+</div>
+<div class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-on-error/20 text-on-error">Auto Protocol Level 2 Active</div>
+</div>
+<div class="p-space-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]">severe_cold</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">MH-15-EG-2204</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Eicher Pro 3015 Reefer</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-error font-label-sm text-label-sm font-semibold">Sensor 2: 7.8°C (Delay +3.8°C)</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Driver: Dilip Shinde (+91 94220 18392) • Location: NH-160 Igatpuri Ghat (Lat 19.69, Lon 73.56) • Consignment: 5.2 MT Pomegranate & Red Grapes (Nashik Apex FPO)</span>
+</div>
+<div class="font-body-sm text-body-sm text-error mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Root Cause: Reefer compressor thermal cutoff tripped during high-gradient climb. Duty cycle restart pending.
+            </div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs shrink-0 w-full lg:w-auto">
+<button class="flex-1 lg:flex-initial flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-error text-on-error font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity" id="auxCoolingBtn" onclick="triggerAuxUnit()">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+<span>Trigger Aux Diesel Chiller</span>
+</button>
+<button class="flex-1 lg:flex-initial flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="pingDriverCall()">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Emergency Audio Ping</span>
+</button>
+<button class="flex-1 lg:flex-initial flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">alt_route</span>
+<span>Divert to Padgha Cold Hub</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Command Layout: Center/Left GIS Map & Center/Right Reefer Manifest -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Center/Left: Interactive GIS Highway Corridor Map -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">alt_route</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Cold Freight Corridors (GIS Live)</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant">Live Traffic Sync</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Corridor Filter Pills -->
+<div class="flex flex-wrap gap-space-xs mb-space-md">
+<button class="px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Pune-Mumbai Expressway (22)
+            </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">
+              Nashik-Mumbai Corridor (18)
+            </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">
+              Kolhapur-Goa Agro Link (8)
+            </button>
+</div>
+<!-- Styled Map Area Container -->
+<div class="relative w-full h-[480px] rounded-xl overflow-hidden bg-surface-container flex flex-col">
+<!-- Simulated GIS Vector / Route Overlay Layer -->
+<div class="w-full h-full bg-cover bg-center relative" data-location="Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4HNIzXxoNhXGY1TAdzpRMgmiuE35eclVA3P2s2G0RFYOai1L7gKg34IG5U0Z22Gfb8v5x1LC-IMPkY86RBcqrRz9nM7xqlSsSyWIuzI50Qmt6MVSUJE7tzwYfqFKM_bs3VJB3Hpyn9zyZ8Bkit4JEIx0mQCrzsyPLZ1_qfHIYufYWn3WXht8pS2yWxu6UqnXsM4rlOgEWT48JDIQNqgbd05Q2j7ECV3KRwlR8W7_B')">
+<!-- Overlay Scrim for contrast -->
+<div class="absolute inset-0 bg-primary/20 backdrop-brightness-95"></div>
+<!-- Inline Interactive SVG Route Geometry Overlay -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" fill="none" viewbox="0 0 500 480" xmlns="http://www.w3.org/2000/svg">
+<!-- Route Line: Nashik to Mumbai -->
+<path class="opacity-70" d="M 380 40 Q 310 120 220 210 T 110 320" stroke="#005128" stroke-dasharray="6 4" stroke-width="4"></path>
+<!-- Route Line: Pune to Mumbai Expressway -->
+<path class="opacity-90" d="M 390 410 Q 260 380 160 350 T 110 320" stroke="#005128" stroke-width="5"></path>
+<!-- Route Line: Kolhapur to Coastal Gateway -->
+<path class="opacity-60" d="M 430 460 Q 320 440 210 430" stroke="#005128" stroke-dasharray="4 4" stroke-width="3"></path>
+<!-- Route Waypoints -->
+<circle cx="110" cy="320" fill="#146b3a" r="8" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#151e18" font-family="Inter" font-size="11" font-weight="700" x="122" y="324">Vashi APMC Hub</text>
+<circle cx="390" cy="410" fill="#146b3a" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#151e18" font-family="Inter" font-size="10" font-weight="600" x="350" y="430">Pune Cold Central</text>
+<circle cx="380" cy="40" fill="#146b3a" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#151e18" font-family="Inter" font-size="10" font-weight="600" x="330" y="30">Nashik FPO Terminal</text>
+</svg>
+<!-- Dynamic Reefer Truck Markers Placed on Map -->
+<!-- Marker 1: Normal (Green) -->
+<div class="absolute top-[280px] left-[180px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-lowest shadow-md text-secondary">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">3.8°C</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden group-hover:inline">MH-12-QB-8419</span>
+</div>
+<div class="w-3 h-3 bg-secondary rounded-full border-2 border-surface-container-lowest mx-auto -mt-1 shadow-sm"></div>
+</div>
+<!-- Marker 2: Warning/Excursion (Red) -->
+<div class="absolute top-[130px] left-[295px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20">
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-error text-on-error shadow-lg animate-bounce">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span class="font-label-sm text-label-sm font-bold">7.8°C Spike</span>
+</div>
+<div class="w-3.5 h-3.5 bg-error rounded-full border-2 border-surface-container-lowest mx-auto -mt-1 shadow-md"></div>
+</div>
+<!-- Marker 3: Approaching Limit (Yellow) -->
+<div class="absolute top-[375px] left-[310px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-lowest shadow-md text-tertiary">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">5.9°C</span>
+</div>
+<div class="w-3 h-3 bg-tertiary rounded-full border-2 border-surface-container-lowest mx-auto -mt-1 shadow-sm"></div>
+</div>
+<!-- Marker 4: Normal (Green) -->
+<div class="absolute top-[340px] left-[135px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-lowest shadow-md text-secondary">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.1°C</span>
+</div>
+<div class="w-3 h-3 bg-secondary rounded-full border-2 border-surface-container-lowest mx-auto -mt-1 shadow-sm"></div>
+</div>
+<!-- Map Floating Legend Overlay -->
+<div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/95 backdrop-blur-sm rounded-lg p-space-sm shadow-md flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> In-Range (2-6°C)</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span> Warning (6.1-7.0°C)</span>
+<span class="flex items-center gap-1 text-error"><span class="w-2.5 h-2.5 rounded-full bg-error"></span> Spike (>7.0°C)</span>
+</div>
+<div class="text-on-surface-variant hidden md:block">GPS Refresh: 15s</div>
+</div>
+</div>
+</div>
+<!-- Corridor Speed & Transit Integrity Summary -->
+<div class="mt-space-md grid grid-cols-3 gap-space-sm text-center">
+<div class="p-space-xs rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Avg Fleet Speed</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">54 km/h</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Ambient Weather</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">32.4°C High</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Active Compressors</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">97.6% Duty</div>
+</div>
+</div>
+</div>
+<!-- Cold Chain Compliance Analytics Snapshot -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">6-Hour Aggregate Thermal Compliance</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">99.2% Nominal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+            Continuous probe readings aggregated across 48 highway consignments without thermal break.
+          </p>
+<div class="h-28 w-full">
+<svg class="w-full h-full" fill="none" viewbox="0 0 400 90" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="tempZoneGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#8ff9aa" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#8ff9aa" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Safe Target Area Band (2°C - 6°C) -->
+<rect class="text-surface-container-low" fill="currentColor" height="45" width="400" x="0" y="20"></rect>
+<!-- Guideline thresholds -->
+<line stroke="#bfc9be" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="400" y1="20" y2="20"></line>
+<line stroke="#bfc9be" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="400" y1="65" y2="65"></line>
+<!-- Curve Fill -->
+<path d="M 0 42 C 40 40, 80 44, 120 41 C 160 39, 200 45, 240 43 C 280 42, 320 22, 360 38 C 380 40, 400 39, 400 39 L 400 80 L 0 80 Z" fill="url(#tempZoneGrad)"></path>
+<!-- Curve Stroke -->
+<path d="M 0 42 C 40 40, 80 44, 120 41 C 160 39, 200 45, 240 43 C 280 42, 320 22, 360 38 C 380 40, 400 39, 400 39" stroke="#146b3a" stroke-width="2.5"></path>
+<!-- Peak excursion dot for MH-15 at hour 5 -->
+<circle cx="320" cy="22" fill="#ba1a1a" r="4"></circle>
+<text fill="#ba1a1a" font-family="Inter" font-size="9" font-weight="700" x="325" y="18">7.8°C Peak</text>
+<!-- Axis markers -->
+<text fill="#6f7a70" font-family="Inter" font-size="9" x="5" y="85">-6h</text>
+<text fill="#6f7a70" font-family="Inter" font-size="9" x="100" y="85">-4h</text>
+<text fill="#6f7a70" font-family="Inter" font-size="9" x="200" y="85">-2h</text>
+<text fill="#6f7a70" font-family="Inter" font-size="9" x="300" y="85">-1h</text>
+<text fill="#6f7a70" font-family="Inter" font-size="9" x="375" y="85">Now</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Center/Right: Live Reefer Fleet Manifest Table & Telemetry Feeds -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Transit Manifest & Sensor Telemetry</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time status of reefers en route to wholesale terminals</span>
+</div>
+<div class="flex items-center gap-space-xs self-stretch sm:self-auto">
+<div class="flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>All Cargo (48)</span>
+</div>
+<button class="p-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Manifest List of Active Transit Trucks -->
+<div class="flex flex-col gap-space-md">
+<!-- Reefer Unit Card 1: Exemplar (MH-12-QB-8419) -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">mode_fan</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">MH-12-QB-8419</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Cold Nominal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Tata Ultra T.7 Reefer</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                      Driver: <strong class="text-on-surface">Sachin Tambe</strong> (+91 98221 44810) • Clean Driving SLA: 99.4%
+                    </div>
+</div>
+</div>
+<!-- Live Temperature & Humidity Badge -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm self-stretch md:self-auto justify-between md:justify-start">
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Chamber Temp</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">device_thermostat</span> 3.8°C
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Target: 4.0°C</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Relative Hum.</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">humidity_mid</span> 88%
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Ventilation 100%</div>
+</div>
+</div>
+</div>
+<!-- Payload & Route Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs font-body-sm text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Route Vector</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Narayangaon Hub → Vashi Terminal 2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Perishable Consignment</span>
+<span class="font-label-md text-label-md text-on-surface truncate">6.5 MT Strawberries & Exotic Greens</span>
+<span class="font-label-sm text-label-sm text-primary">FPO: Sahyadri Farms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ETA & Remaining Dist</span>
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 11:45 AM (42 km left)
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">On Schedule</span>
+</div>
+<div class="flex flex-col justify-end">
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm text-center">
+                      Ping Driver
+                    </button>
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-center">
+                      Reset Setpoint
+                    </button>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Continuous 6-Hour Cold Compliance Log Bar -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span>Past 6-Hour Reefer Temp Log (Unbroken Cold Chain)</span>
+<span class="text-secondary font-semibold">Min: 3.4°C • Max: 4.1°C • Variance: ±0.35°C</span>
+</div>
+<!-- Inline SVG Sparkline for truck 1 -->
+<div class="h-9 w-full bg-surface-container-lowest rounded-lg p-1">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 500 30">
+<path d="M 0 15 Q 40 18 80 14 T 160 16 T 240 13 T 320 15 T 400 14 T 480 16 L 500 15" stroke="#006d36" stroke-width="2"></path>
+<!-- Points -->
+<circle cx="80" cy="14" fill="#006d36" r="2.5"></circle>
+<circle cx="240" cy="13" fill="#006d36" r="2.5"></circle>
+<circle cx="400" cy="14" fill="#006d36" r="2.5"></circle>
+<circle cx="500" cy="15" fill="#006d36" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Reefer Unit Card 2: Warning Excursion (MH-15-EG-2204) -->
+<div class="p-space-md rounded-xl bg-error-container/40 hover:bg-error-container/60 transition-colors flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[24px]">cloud_download</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">MH-15-EG-2204</span>
+<span class="px-space-xs py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm font-semibold">Temp Alert (7.8°C)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Eicher Pro 3015 Reefer</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                      Driver: <strong class="text-on-surface">Dilip Shinde</strong> (+91 94220 18392) • Location: Igatpuri Ghats
+                    </div>
+</div>
+</div>
+<!-- Live Temperature & Humidity Badge -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm self-stretch md:self-auto justify-between md:justify-start">
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-error">Chamber Temp</div>
+<div class="font-headline-sm text-headline-sm text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">warning</span> 7.8°C
+                    </div>
+<div class="font-label-sm text-label-sm text-error">Exceeded Limit (>6.0)</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Relative Hum.</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">humidity_low</span> 74%
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Compressor Lag</div>
+</div>
+</div>
+</div>
+<!-- Payload & Route Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs font-body-sm text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Route Vector</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Nashik Terminal → Mumbai APMC Cold Dock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Consignment Payload</span>
+<span class="font-label-md text-label-md text-on-surface truncate">5.2 MT Pomegranate & Red Grapes</span>
+<span class="font-label-sm text-label-sm text-primary">FPO: Nashik Apex Agritech</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ETA & Remaining Dist</span>
+<span class="font-label-md text-label-md text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">timer_off</span> 01:20 PM (86 km left)
+                  </span>
+<span class="font-label-sm text-label-sm text-error">Delay Expected (+25 min)</span>
+</div>
+<div class="flex flex-col justify-end">
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 px-space-xs rounded bg-error text-on-error font-label-sm text-label-sm text-center shadow-sm" onclick="triggerAuxUnit()">
+                      Aux Restart
+                    </button>
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container text-on-surface font-label-sm text-label-sm text-center">
+                      Reroute
+                    </button>
+<button class="p-1 rounded bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Excursion Spike Graph -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-error mb-1">
+<span>Reefer Spike Graph • Compressor Disconnect at 10:14 AM</span>
+<span class="font-semibold">Threshold Breach Duration: 18 mins</span>
+</div>
+<div class="h-9 w-full bg-surface-container-lowest rounded-lg p-1">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 500 30">
+<path d="M 0 15 Q 100 15 200 15 T 320 16 T 380 26 T 440 28 L 500 28" stroke="#ba1a1a" stroke-width="2"></path>
+<line stroke="#ffdad6" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="500" y1="20" y2="20"></line>
+<circle cx="380" cy="26" fill="#ba1a1a" r="3"></circle>
+<circle cx="500" cy="28" fill="#ba1a1a" r="3.5"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Reefer Unit Card 3: Normal Transit (MH-14-CW-9023) -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">mode_fan</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">MH-14-CW-9023</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Cold Nominal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• BharatBenz 1217R Reefer</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                      Driver: <strong class="text-on-surface">Santosh Jadhav</strong> (+91 97654 32110) • Clean Driving SLA: 98.7%
+                    </div>
+</div>
+</div>
+<!-- Live Temperature & Humidity Badge -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm self-stretch md:self-auto justify-between md:justify-start">
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Chamber Temp</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">device_thermostat</span> 4.2°C
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Target: 4.0°C</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Relative Hum.</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">humidity_mid</span> 85%
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Ventilation 100%</div>
+</div>
+</div>
+</div>
+<!-- Payload & Route Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs font-body-sm text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Route Vector</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Baramati Dairy Core → Pune Cold Depot</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Perishable Consignment</span>
+<span class="font-label-md text-label-md text-on-surface truncate">8.4 MT Fresh Farm Milk & Paneer</span>
+<span class="font-label-sm text-label-sm text-primary">FPO: Baramati Kisan Sangh</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ETA & Remaining Dist</span>
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 12:10 PM (28 km left)
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">On Schedule</span>
+</div>
+<div class="flex flex-col justify-end">
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm text-center">
+                      Ping Driver
+                    </button>
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-center">
+                      Reset Setpoint
+                    </button>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Compliance Sparkline -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span>Past 6-Hour Reefer Temp Log</span>
+<span class="text-secondary font-semibold">Min: 4.0°C • Max: 4.4°C</span>
+</div>
+<div class="h-9 w-full bg-surface-container-lowest rounded-lg p-1">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 500 30">
+<path d="M 0 16 Q 60 14 120 16 T 240 15 T 360 17 T 480 15 L 500 16" stroke="#006d36" stroke-width="2"></path>
+<circle cx="120" cy="16" fill="#006d36" r="2.5"></circle>
+<circle cx="360" cy="17" fill="#006d36" r="2.5"></circle>
+<circle cx="500" cy="16" fill="#006d36" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Reefer Unit Card 4: Approaching Threshold (MH-09-FL-4412) -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant shrink-0">
+<span class="material-symbols-outlined text-[24px]">thermostat</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">MH-09-FL-4412</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Approaching Threshold (5.9°C)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Mahindra Furio 14 Reefer</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                      Driver: <strong class="text-on-surface">Vikas Thorat</strong> (+91 99701 54930) • Location: Kolhapur Bypass
+                    </div>
+</div>
+</div>
+<!-- Live Temperature & Humidity Badge -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm self-stretch md:self-auto justify-between md:justify-start">
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Chamber Temp</div>
+<div class="font-headline-sm text-headline-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">device_thermostat</span> 5.9°C
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Limit: 6.0°C Max</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Relative Hum.</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">humidity_mid</span> 81%
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Chiller Load 94%</div>
+</div>
+</div>
+</div>
+<!-- Payload & Route Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs font-body-sm text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Route Vector</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Sangli Grape Cluster → Goa Cold Terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Perishable Consignment</span>
+<span class="font-label-md text-label-md text-on-surface truncate">7.0 MT Export Green Grapes</span>
+<span class="font-label-sm text-label-sm text-primary">FPO: Krishna Valley Farmers</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ETA & Remaining Dist</span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 03:30 PM (118 km left)
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">On Schedule</span>
+</div>
+<div class="flex flex-col justify-end">
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm text-center">
+                      Auto-Boost Fan
+                    </button>
+<button class="flex-1 py-1 px-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-center">
+                      Monitor Probe
+                    </button>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Manifest Pagination & Bulk Operations -->
+<div class="mt-space-md pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Displaying 4 of 48 active transit units • 86 total fleet tracked
+            </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high disabled:opacity-50" disabled="">Previous</button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm">1</button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">3</button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Operational Bar: Protocol Automation Logs & Driver Dispatch Queue -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Protocol Log 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<span class="font-label-lg text-label-lg text-on-surface">Smart Contract Escrow Status</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          FPO temperature compliance SLA locked: ₹1.84 Cr freight held in automated cold-chain escrow. Unbroken seal bonus unlocks at delivery terminal.
+        </p>
+<div class="mt-auto flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">46 / 48 Qualifying for 100% Payout</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+<!-- Protocol Log 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<span class="font-label-lg text-label-lg text-on-surface">Emergency Reefer Staging Hubs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          3 standby reefers idling at Ghoti Depot (Nashik entry) and 2 at Khalapur Toll plaza for rapid transshipment in event of critical breakdown.
+        </p>
+<div class="mt-auto flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Mean Intervention Time: 34 mins</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+<!-- Protocol Log 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">sensors</span>
+<span class="font-label-lg text-label-lg text-on-surface">Firmware & Calibration Health</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Dual digital PT100 thermistor sensors verified for all active lots. Bluetooth backup logger activated on reefer door-open sensors.
+        </p>
+<div class="mt-auto flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Door Seal Integrity: 100% Secured</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function triggerAuxUnit() {
+    const btn = document.getElementById('auxCoolingBtn');
+    if (btn) {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Transmitting Restart Command...</span>`;
+      btn.classList.remove('bg-error');
+      btn.classList.add('bg-tertiary');
+      
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Aux Unit Engaged (3.9°C Target)</span>`;
+        btn.classList.remove('bg-tertiary');
+        btn.classList.add('bg-secondary');
+      }, 1600);
+    }
+  }
+
+  function pingDriverCall() {
+    alert("Initiating secure audio broadcast to MH-15-EG-2204 cab unit (Dilip Shinde)...");
+  }
+</script></main></div></body></html>

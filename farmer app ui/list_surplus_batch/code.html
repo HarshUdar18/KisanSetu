@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#3f4940", "surface-container-low": "#ecf6ec", "primary-container": "#146b3a", "tertiary-fixed-dim": "#f4bf1b", "on-tertiary-fixed": "#251a00", "on-primary-fixed": "#00210d", "on-error": "#ffffff", "on-secondary-fixed": "#00210c", "surface-container-highest": "#dbe5db", "secondary": "#006d36", "on-background": "#151e18", "on-primary-container": "#97e9ab", "inverse-surface": "#29332c", "surface-container-lowest": "#ffffff", "background": "#f2fcf2", "on-secondary-fixed-variant": "#005227", "primary": "#005128", "secondary-fixed-dim": "#73dc90", "error": "#ba1a1a", "inverse-on-surface": "#e9f3e9", "on-primary-fixed-variant": "#005229", "surface-bright": "#f2fcf2", "primary-fixed-dim": "#87d89c", "on-error-container": "#93000a", "outline-variant": "#bfc9be", "on-secondary-container": "#00743a", "on-tertiary": "#ffffff", "surface": "#f2fcf2", "on-tertiary-fixed-variant": "#594400", "on-tertiary-container": "#ffd158", "surface-dim": "#d2ddd3", "secondary-fixed": "#8ff9aa", "surface-container": "#e6f1e7", "error-container": "#ffdad6", "secondary-container": "#8ff9aa", "on-secondary": "#ffffff", "on-surface": "#151e18", "tertiary": "#584200", "surface-tint": "#166c3b", "tertiary-container": "#755900", "surface-variant": "#dbe5db", "surface-container-high": "#e1ebe1", "outline": "#6f7a70", "primary-fixed": "a2f5b6", "inverse-primary": "#87d89c", "tertiary-fixed": "#ffdf95", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter-mobile": "0.75rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "label-lg": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "display-lg": ["Inter"], "display-lg-mobile": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-gutter-mobile"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors -ml-2 shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">List Surplus Batch</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Help and Support" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[22px]">support_agent</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Content Container -->
+<div class="px-margin-mobile pt-space-sm pb-36 flex flex-col gap-space-lg">
+<!-- Header Description Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">List Surplus Batch</span>
+<span class="font-label-md text-label-md text-primary bg-surface-container px-2 py-0.5 rounded-full">शिल्लक शेतीमाल</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Instant bulk liquidation directly to food processors, caterers &amp; institutional buyers.</p>
+</div>
+</div>
+</div>
+<!-- 1. Visual Inventory Validator & Crop Selection -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Lot &amp; Capacity Validation</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-low px-2 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Live Sync
+        </span>
+</div>
+<!-- Crop Selector Trigger -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">nutrition</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Selected Harvest Plot</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Desi Red Tomatoes (Plot B-2)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shinde Farmstead • Solapur Rd</span>
+</div>
+</div>
+<button aria-label="Change plot" class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<!-- Inventory Breakdown Stack -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total Harvested Today</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">1,500 kg</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest/80 px-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-error">lock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Committed: Consumer Retail</span>
+</div>
+<span class="font-label-md text-label-md text-error font-semibold">-600 kg</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest/80 px-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-error">lock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Farmstead Direct Retention</span>
+</div>
+<span class="font-label-md text-label-md text-error font-semibold">-100 kg</span>
+</div>
+<!-- Max Surplus Highlight Shield Card -->
+<div class="mt-1 bg-primary text-on-primary rounded-lg p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[22px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-primary-container">Anti-Double Booking Guard</span>
+<span class="font-label-lg text-label-lg text-on-primary">Eligible Surplus Ceiling</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-white" id="maxAvailable">800</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">kg max</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Surplus Quantity Input -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-on-surface">Surplus Volume to List</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Min. Lot: 100 kg</span>
+</div>
+<!-- Unit Selector Segmented Chips -->
+<div aria-label="Units" class="grid grid-cols-3 gap-space-xs bg-surface-container p-1 rounded-lg" role="radiogroup">
+<button class="py-2 text-center rounded font-label-md text-label-md transition-colors bg-primary text-on-primary shadow-xs" id="unit-kg" onclick="setUnit('kg')" type="button">
+          Kilograms (kg)
+        </button>
+<button class="py-2 text-center rounded font-label-md text-label-md transition-colors text-on-surface-variant hover:text-on-surface" id="unit-qtl" onclick="setUnit('quintal')" type="button">
+          Quintal (100kg)
+        </button>
+<button class="py-2 text-center rounded font-label-md text-label-md transition-colors text-on-surface-variant hover:text-on-surface" id="unit-crate" onclick="setUnit('crates')" type="button">
+          Crates (15kg)
+        </button>
+</div>
+<!-- Interactive Stepper -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-low rounded-xl p-space-sm">
+<button aria-label="Decrease quantity" class="w-14 h-14 rounded-lg bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center hover:bg-surface-container transition-transform active:scale-95" onclick="adjustQty(-50)" type="button">
+<span class="material-symbols-outlined text-[28px]">remove</span>
+</button>
+<div class="flex flex-col items-center justify-center flex-1">
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold tracking-tight" id="qtyDisplay">500</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-semibold" id="unitDisplay">kg</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="conversionSubtext">≈ 5.0 Quintals (33.3 Crates)</span>
+</div>
+<button aria-label="Increase quantity" class="w-14 h-14 rounded-lg bg-primary text-on-primary shadow-sm flex items-center justify-center hover:bg-primary-container transition-transform active:scale-95" onclick="adjustQty(50)" type="button">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- Quick Preset Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-secondary-container transition-colors shrink-0" onclick="setExactQty(200)" type="button">
+          200 kg
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-secondary-container transition-colors shrink-0" onclick="setExactQty(400)" type="button">
+          400 kg
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md shrink-0" onclick="setExactQty(500)" type="button">
+          500 kg (Suggested)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-secondary-container transition-colors shrink-0" onclick="setExactQty(800)" type="button">
+          All 800 kg
+        </button>
+</div>
+<!-- Guard Validation Alert -->
+<div class="flex items-start gap-space-xs p-space-sm rounded-lg bg-surface-container text-on-surface-variant" id="validationNote">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm">
+          Quantity is protected. Cannot exceed <strong>800 kg</strong> available uncommitted balance.
+        </span>
+</div>
+</section>
+<!-- 3. Quality & Grading Declaration -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<h2 class="font-label-lg text-label-lg text-on-surface">Grading Declaration</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded-full">FSSAI Batch Ready</span>
+</div>
+<!-- Grade Option Cards -->
+<div class="flex flex-col gap-space-xs">
+<!-- Grade A -->
+<label class="cursor-pointer">
+<input class="peer sr-only" name="produce_grade" onchange="updateGrade()" type="radio" value="A"/>
+<div class="p-space-sm rounded-xl bg-surface-container-low peer-checked:bg-secondary-container transition-all flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="font-label-md text-label-md text-primary font-bold">A</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-label-lg text-label-lg text-on-surface">Grade A • Table &amp; Retail Premium</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Crisp, unblemished, uniform shape (55-65mm). Direct shelf grade.</span>
+</div>
+</div>
+</label>
+<!-- Grade B (Selected) -->
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="produce_grade" onchange="updateGrade()" type="radio" value="B"/>
+<div class="p-space-sm rounded-xl bg-secondary-container text-on-secondary-container shadow-sm transition-all flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-secondary-container">Grade B • Processing &amp; Puree (Selected)</span>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded">High Demand</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Deep red, fully ripe, small superficial marks allowed. Ideal for pulping, pastes, and catering gravy base.</span>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">compost</span>
+<span class="font-label-sm text-label-sm">Includes Zero Waste Assurance certificate</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Grade C -->
+<label class="cursor-pointer">
+<input class="peer sr-only" name="produce_grade" onchange="updateGrade()" type="radio" value="C"/>
+<div class="p-space-sm rounded-xl bg-surface-container-low peer-checked:bg-secondary-container transition-all flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="font-label-md text-label-md text-on-surface-variant font-bold">C</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-label-lg text-label-lg text-on-surface">Grade C • Industrial &amp; Dehydration Mash</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Overripe lots, skin splits. Fit for solar drying flakes or bio-mash feeds.</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Batch Photo Proof Slot -->
+<div class="rounded-xl overflow-hidden bg-surface-container p-space-sm flex items-center gap-space-sm">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up crate of freshly picked deep red Indian processing tomatoes resting in bright afternoon sunlight, high agricultural texture and farm background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNxo1IQIhIfyY5irJXRULqHWJPd27c4lcd6q8DzDdeT3O7SIVHOb1e1nqt6NqLTS7V4pIUaKoUTeEoijVjtz6KjX2sV7WEcLM0gqd87icin5CzaI4-Ja7aihKnwUXPD8wvBdmprHnIVdnAGUCm5rMkgoPR4C7yKi77Q9rZYbPVfSiljVVBBwLnxGmvD47UFfL3u7eiutzb_3HLOtWgxHweP7tyifXFjlJrPCRaNR6C"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface">Auto-linked Crop Photo</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Captured today 08:30 AM at Plot B-2</span>
+<button class="text-primary font-label-sm text-label-sm text-left mt-0.5 underline" type="button">Replace with live snapshot</button>
+</div>
+</div>
+</section>
+<!-- 4. Pricing & Floor Setup -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+<h2 class="font-label-lg text-label-lg text-on-surface">Surplus Pricing Floor</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold px-2 py-0.5 rounded-full">Reverse Bidding</span>
+</div>
+<!-- Mandi Benchmark Card -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pune APMC Mandi Spot Benchmark</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-lg text-label-lg text-on-surface">₹ 18.50 / kg</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-surface-container-lowest px-1.5 py-0.5 rounded">+19% Higher</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">trending_up</span>
+</div>
+<!-- Price Inputs Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Floor Price Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="floorPrice">
+            Min. Floor Price *
+          </label>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹</span>
+<input class="w-16 bg-transparent font-headline-sm text-headline-sm text-on-surface text-right focus:outline-none font-bold" id="floorPrice" max="60" min="10" oninput="calcTotals()" type="number" value="22"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bids start here</span>
+</div>
+<!-- Buy-it-now Instant Price -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="instantPrice">
+            Instant Buyout (Opt.)
+          </label>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary">₹</span>
+<input class="w-16 bg-transparent font-headline-sm text-headline-sm text-primary text-right focus:outline-none font-bold" id="instantPrice" max="80" min="15" oninput="calcTotals()" type="number" value="26"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Skips 4hr auction</span>
+</div>
+</div>
+<!-- Estimated Gross Earnings Bar -->
+<div class="bg-surface-container-high rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Est. Surplus Realization</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="grossEst">₹11,000 – ₹13,000</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm bg-surface-container-lowest text-primary px-2 py-1 rounded font-semibold">Instant Escrow</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">₹0 Platform Commission</p>
+</div>
+</div>
+</section>
+<!-- 5. Bulk Logistics & Collection -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<h2 class="font-label-lg text-label-lg text-on-surface">Pickup &amp; Handover Mechanics</h2>
+</div>
+<!-- Pickup Mode Selectors -->
+<div class="flex flex-col gap-space-xs">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="logistics_mode" type="radio"/>
+<div class="p-space-sm rounded-xl bg-surface-container-low peer-checked:bg-secondary-container transition-all flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">done</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Buyer Fleet Farmgate Pickup</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Zero Farmer Travel</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Buyer dispatches 1.5T payload pickup (Bolero/Tata Ace) directly to your field gate.</span>
+</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="logistics_mode" type="radio"/>
+<div class="p-space-sm rounded-xl bg-surface-container-low peer-checked:bg-secondary-container transition-all flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Self-Drop at Mulshi Dawn Collection Hub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">5.2 km away • +₹0.75/kg transit incentive credited on gate scan.</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Time Window Slot -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready for Pickup Window</span>
+<span class="font-label-md text-label-md text-on-surface">Today, 02:00 PM – 06:00 PM</span>
+</div>
+</div>
+<button class="text-primary font-label-sm text-label-sm font-semibold" type="button">Modify</button>
+</div>
+<!-- Crate Returnable Guarantee -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg p-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">swap_horizontal_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Returnable Crates Allocation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sanitized, food-grade crates exchanged at loading</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold px-2 py-1 bg-surface-container-lowest rounded">34 Crates</span>
+</div>
+</section>
+<!-- 6. Expiry & Auto-Mandi Sweep -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">timer</span>
+<h2 class="font-label-lg text-label-lg text-on-surface">Liquidation Timeline</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Urgent Tomato Lot</span>
+</div>
+<!-- Duration Selection -->
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="py-2.5 px-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md text-center flex flex-col items-center gap-0.5" onclick="setDuration(this)" type="button">
+<span>4 Hours</span>
+<span class="text-[10px] opacity-80">Best match</span>
+</button>
+<button class="py-2.5 px-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center flex flex-col items-center gap-0.5 hover:bg-surface-container-high" onclick="setDuration(this)" type="button">
+<span>8 Hours</span>
+<span class="text-[10px] text-on-surface-variant">Extended</span>
+</button>
+<button class="py-2.5 px-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center flex flex-col items-center gap-0.5 hover:bg-surface-container-high" onclick="setDuration(this)" type="button">
+<span>End of Day</span>
+<span class="text-[10px] text-on-surface-variant">Until 09 PM</span>
+</button>
+</div>
+<!-- Auto Mandi Sweep Toggle -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-start gap-space-sm">
+<div class="flex-1 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">Auto-Mandi Sweep Safeguard</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 rounded font-semibold">Zero Spoilage</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            If any volume remains unsold by 07:00 PM, automatically route remaining weight to Pune APMC mandi evening bulk floor.
+          </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="autoSweepToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</section>
+<!-- Trust & Verification Footer Badge -->
+<div class="flex items-center justify-center gap-space-xs text-on-surface-variant py-2">
+<span class="material-symbols-outlined text-[18px] text-primary">security</span>
+<span class="font-label-sm text-label-sm">NABARD &amp; FPO Certified Farmer Protection Guarantee</span>
+</div>
+</div>
+<!-- 7. Bottom Sticky Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/95 backdrop-blur-md px-margin-mobile pt-3 pb-safe shadow-[0_-4px_16px_rgba(20,40,25,0.08)] z-40">
+<div class="max-w-md mx-auto flex flex-col gap-1.5 pb-2">
+<!-- Summary Bar in Bar -->
+<div class="flex items-center justify-between px-1 text-on-surface font-label-md text-label-md">
+<span class="text-on-surface-variant">Batch Payload: <strong class="text-on-surface" id="barQty">500 kg</strong></span>
+<span>Min Return: <strong class="text-primary font-bold" id="barAmount">₹11,000</strong></span>
+</div>
+<!-- Action Button -->
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded-lg flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.99]" onclick="submitSurplusBatch()" type="button">
+<span>Publish Surplus Auction Batch</span>
+<span class="font-body-sm text-body-sm opacity-90">(लिलाव सुरू करा)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Trust Subtext -->
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant text-center">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span class="font-label-sm text-label-sm">Zero listing fee • 100% Escrow deposit before truck gate release</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentKg = 500;
+  const maxAllowedKg = 800;
+  let activeUnit = 'kg';
+
+  function updateDisplay() {
+    const qtyDisplay = document.getElementById('qtyDisplay');
+    const unitDisplay = document.getElementById('unitDisplay');
+    const conversionSubtext = document.getElementById('conversionSubtext');
+    const barQty = document.getElementById('barQty');
+
+    if (activeUnit === 'kg') {
+      qtyDisplay.textContent = currentKg;
+      unitDisplay.textContent = 'kg';
+      conversionSubtext.textContent = '≈ ' + (currentKg / 100).toFixed(1) + ' Quintals (' + (currentKg / 15).toFixed(1) + ' Crates)';
+      barQty.textContent = currentKg + ' kg';
+    } else if (activeUnit === 'quintal') {
+      const qtl = (currentKg / 100).toFixed(1);
+      qtyDisplay.textContent = qtl;
+      unitDisplay.textContent = 'Qtl';
+      conversionSubtext.textContent = '= ' + currentKg + ' kg (' + (currentKg / 15).toFixed(1) + ' Crates)';
+      barQty.textContent = qtl + ' Quintals';
+    } else {
+      const crates = Math.round(currentKg / 15);
+      qtyDisplay.textContent = crates;
+      unitDisplay.textContent = 'crates';
+      conversionSubtext.textContent = '= ' + currentKg + ' kg (' + (currentKg / 100).toFixed(1) + ' Quintals)';
+      barQty.textContent = crates + ' Crates (' + currentKg + ' kg)';
+    }
+
+    calcTotals();
+  }
+
+  function adjustQty(amount) {
+    let nextVal = currentKg + amount;
+    if (nextVal < 100) nextVal = 100;
+    if (nextVal > maxAllowedKg) {
+      nextVal = maxAllowedKg;
+      triggerCeilingWiggle();
+    }
+    currentKg = nextVal;
+    updateDisplay();
+  }
+
+  function setExactQty(val) {
+    if (val > maxAllowedKg) val = maxAllowedKg;
+    currentKg = val;
+    updateDisplay();
+  }
+
+  function setUnit(unit) {
+    activeUnit = unit;
+    const kgBtn = document.getElementById('unit-kg');
+    const qtlBtn = document.getElementById('unit-qtl');
+    const crateBtn = document.getElementById('unit-crate');
+
+    [kgBtn, qtlBtn, crateBtn].forEach(btn => {
+      btn.className = 'py-2 text-center rounded font-label-md text-label-md transition-colors text-on-surface-variant hover:text-on-surface';
+    });
+
+    const activeEl = unit === 'kg' ? kgBtn : (unit === 'quintal' ? qtlBtn : crateBtn);
+    activeEl.className = 'py-2 text-center rounded font-label-md text-label-md transition-colors bg-primary text-on-primary shadow-xs';
+
+    updateDisplay();
+  }
+
+  function calcTotals() {
+    const floor = parseFloat(document.getElementById('floorPrice').value) || 22;
+    const instant = parseFloat(document.getElementById('instantPrice').value) || 26;
+
+    const minGross = Math.round(currentKg * floor);
+    const maxGross = Math.round(currentKg * instant);
+
+    const grossEst = document.getElementById('grossEst');
+    const barAmount = document.getElementById('barAmount');
+
+    const formattedMin = '₹' + minGross.toLocaleString('en-IN');
+    const formattedMax = '₹' + maxGross.toLocaleString('en-IN');
+
+    grossEst.textContent = formattedMin + ' – ' + formattedMax;
+    barAmount.textContent = formattedMin;
+  }
+
+  function triggerCeilingWiggle() {
+    const note = document.getElementById('validationNote');
+    note.classList.add('bg-error-container', 'text-on-error-container');
+    setTimeout(() => {
+      note.classList.remove('bg-error-container', 'text-on-error-container');
+    }, 1200);
+  }
+
+  function setDuration(selectedBtn) {
+    const buttons = selectedBtn.parentElement.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.className = 'py-2.5 px-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center flex flex-col items-center gap-0.5 hover:bg-surface-container-high';
+      const sub = btn.querySelector('span:last-child');
+      if (sub) sub.className = 'text-[10px] text-on-surface-variant';
+    });
+
+    selectedBtn.className = 'py-2.5 px-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md text-center flex flex-col items-center gap-0.5';
+    const sub = selectedBtn.querySelector('span:last-child');
+    if (sub) sub.className = 'text-[10px] opacity-80';
+  }
+
+  function updateGrade() {
+    // Dynamic pricing suggestions could be nudged here based on grade
+    calcTotals();
+  }
+
+  function submitSurplusBatch() {
+    alert('Surplus Batch of ' + currentKg + ' kg listed! Liquidation auction is now live to 48 verified buyers.');
+  }
+
+  // Initialize
+  calcTotals();
+</script></main></body></html>

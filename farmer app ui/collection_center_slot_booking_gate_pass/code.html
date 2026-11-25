@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#ffdf95", "on-primary-fixed-variant": "#005229", "surface-container-highest": "#dbe5db", "error-container": "#ffdad6", "surface-container": "#e6f1e7", "on-secondary-fixed-variant": "#005227", "secondary-container": "#8ff9aa", "on-background": "#151e18", "tertiary-fixed-dim": "#f4bf1b", "inverse-on-surface": "#e9f3e9", "inverse-primary": "#87d89c", "inverse-surface": "#29332c", "surface-container-low": "#ecf6ec", "surface-dim": "#d2ddd3", "primary": "#005128", "on-primary-container": "#97e9ab", "on-primary": "#ffffff", "primary-fixed-dim": "#87d89c", "surface-container-lowest": "#ffffff", "secondary": "#006d36", "primary-fixed": "a2f5b6", "surface-container-high": "#e1ebe1", "error": "#ba1a1a", "secondary-fixed": "#8ff9aa", "outline-variant": "#bfc9be", "on-primary-fixed": "#00210d", "tertiary": "#584200", "surface-variant": "#dbe5db", "surface-bright": "#f2fcf2", "secondary-fixed-dim": "#73dc90", "on-error-container": "#93000a", "on-surface": "#151e18", "on-secondary-fixed": "#00210c", "on-tertiary": "#ffffff", "background": "#f2fcf2", "on-tertiary-fixed-variant": "#594400", "on-secondary-container": "#00743a", "tertiary-container": "#755900", "on-secondary": "#ffffff", "surface": "#f2fcf2", "outline": "#6f7a70", "on-error": "#ffffff", "on-tertiary-fixed": "#251a00", "primary-container": "#146b3a", "on-surface-variant": "#3f4940", "surface-tint": "#166c3b", "on-tertiary-container": "#ffd158" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(20,40,25,0.06)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors -ml-1" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0 pr-space-xs"><div class="flex items-center gap-space-xs"><span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container text-primary font-label-sm text-[10px] tracking-wide uppercase leading-tight"><span class="material-symbols-outlined text-[12px]">verified</span>APMC / FPO Verified</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Collection Center Slot Booking &amp; Gate Pass</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Kisan Helpdesk" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">support_agent</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Hub Location & Live Queue Telemetry Banner -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-start gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">warehouse</span>
+<div class="min-w-0">
+<span class="inline-block font-label-sm text-primary tracking-wide uppercase">Designated APMC / FPO Hub</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Mulshi Dawn Hub (मुळशी डाऊन केंद्र)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+              5.2 km from Gat 142/2B, Paud Road
+            </p>
+</div>
+</div>
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Gate 2 Open
+        </span>
+</div>
+<!-- Live Intake Ribbon -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Active Intake • Express Bay</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Queue: 3 mini-trucks ahead (~7 mins wait)</p>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container-high mx-1"></div>
+<div class="text-right shrink-0">
+<span class="font-label-sm text-primary block">Dew Index</span>
+<span class="font-label-lg text-label-lg text-on-surface">94% Optimal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Produce Lot Selection Section -->
+<section class="px-margin-mobile mt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">eco</span>
+        Select Produce Lot for Drop-off
+      </h3>
+<span class="font-label-sm text-label-sm text-primary">1 Selected</span>
+</div>
+<!-- Active Produce Lot Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/10 via-transparent to-transparent pointer-events-none rounded-tr-xl"></div>
+<div class="flex items-start gap-space-sm">
+<div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photograph of fresh organic baby spinach leaves with morning dew droplets in green plastic harvest crate under soft dawn sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD4Y3at1AaEXBeYhEaaWtuUq12sqnY654_bMZgcVqws8VQN6DT0QJaP1NFyCPO-fdiiDsAZgC9N-5sJ6VRhS6AqY9nhBnbP_u7gqqEKvLm7cN9ldeJSZl4SndIBD7r9rnzQvipGc16ptYs0ooTbmCDA5PiriznR_JtJwfL3HYLf-hibb68t8dmUs3gdAAmnxiYh8a3k2ShkQcLH3jONqdEA95Ip2HAE8o3M6YPHExi"/>
+<span class="absolute bottom-0 inset-x-0 bg-primary/90 text-on-primary text-[9px] font-label-sm text-center py-0.5">150 KG</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-primary tracking-wider uppercase">#LOT-SP-9021</span>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Baby Spinach (पालक)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">10 Crate units • Harvested 04:30 AM Today</p>
+</div>
+</div>
+<!-- Lot Attributes & Micro-Tags -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          NPOP Organic
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm">
+<span class="material-symbols-outlined text-[13px]">ac_unit</span>
+          Pre-chilled at 8°C
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[13px]">balance</span>
+          Tare Wt. Calibrated
+        </span>
+</div>
+</div>
+<!-- Add Additional Lot Trigger Button -->
+<button class="w-full mt-space-xs py-space-sm px-space-md rounded-xl bg-surface-container-low text-primary flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="font-label-lg text-label-lg">+ Add Another Lot for Combined Transit</span>
+</button>
+</section>
+<!-- Delivery Mode & Vehicle Selection -->
+<section class="px-margin-mobile mt-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">local_shipping</span>
+        Delivery Mode &amp; Vehicle
+      </h3>
+<span class="font-label-sm text-on-surface-variant">Gate Weighbridge Enabled</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Self Drop (Selected) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-center justify-between pl-1">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">agriculture</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">Self Drop (Farmer Transport)</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px]">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Mahindra Bolero Pickup • MH-12-PA-4419</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+</div>
+<!-- FPO Cluster Reefer Van -->
+<div class="bg-surface-container-low rounded-xl p-space-md opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">mode_fan</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">FPO Cluster Shared Reefer</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">+₹0.75/kg pooled logistics • Leaves Gat 140 at 06:15 AM</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest shrink-0"></div>
+</div>
+</div>
+<!-- Buyer Farmgate Fleet -->
+<div class="bg-surface-container-low rounded-xl p-space-md opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">rv_hookup</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Buyer Farmgate Pickup Fleet</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Direct dispatch from farm • Requires min 500 kg lot</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest shrink-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Time Slot Booking Grid -->
+<section class="px-margin-mobile mt-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+          Intake Time Slot (Dawn Freshness Window)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Arrival window for immediate cold-chain transfer</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm">Today, 28 Oct</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<!-- Slot 1 (Selected & High Priority) -->
+<div class="bg-primary text-on-primary rounded-xl p-space-sm relative shadow-md cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-bold">05:00 – 06:00</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<p class="font-label-sm text-on-primary-container leading-tight">Fast-Track Dew Window</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[10px] font-semibold">2 SLOTS LEFT</span>
+<span class="text-[11px] font-label-sm">AM Slot</span>
+</div>
+</div>
+<!-- Slot 2 -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-space-sm shadow-sm cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm">06:00 – 07:00</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+<p class="font-label-sm text-on-surface-variant leading-tight">Regular Morning Influx</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">5 SLOTS LEFT</span>
+<span class="text-[11px] font-label-sm text-outline">AM Slot</span>
+</div>
+</div>
+<!-- Slot 3 -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-space-sm shadow-sm cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm">07:00 – 08:30</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+<p class="font-label-sm text-tertiary font-semibold leading-tight">Filling Fast</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[10px]">1 SLOT LEFT</span>
+<span class="text-[11px] font-label-sm text-outline">AM Slot</span>
+</div>
+</div>
+<!-- Slot 4 -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-space-sm shadow-sm cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm">08:30 – 10:00</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+<p class="font-label-sm text-on-surface-variant leading-tight">Standard Intake</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">8 SLOTS LEFT</span>
+<span class="text-[11px] font-label-sm text-outline">AM Slot</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Digital Gate Pass & Live QR Token Card -->
+<section class="px-margin-mobile mt-space-lg">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-md overflow-hidden relative">
+<!-- Top Ticket Header -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-gradient-to-r from-primary-container to-secondary p-space-sm -mx-space-md -mt-space-md text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+<div>
+<span class="font-label-sm block text-[10px] tracking-widest uppercase opacity-90">Digital Fast-Track Token</span>
+<span class="font-label-lg text-label-lg tracking-wide">GATE PASS #GP-MUL-9021</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm font-bold shadow-sm">BAY 03</span>
+</div>
+<!-- Scannable Code and Gate Metadata -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md my-space-xs">
+<!-- SVG Generated High-Fidelity APMC QR Matrix Mockup -->
+<div class="p-2 bg-surface-bright rounded-xl shadow-inner shrink-0 flex flex-col items-center">
+<svg class="w-32 h-32" fill="none" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<!-- QR Pattern Blocks -->
+<rect fill="#FFFFFF" height="120" width="120"></rect>
+<!-- Top-Left Finder Pattern -->
+<rect fill="#005128" height="32" width="32" x="8" y="8"></rect>
+<rect fill="#FFFFFF" height="20" width="20" x="14" y="14"></rect>
+<rect fill="#005128" height="12" width="12" x="18" y="18"></rect>
+<!-- Top-Right Finder Pattern -->
+<rect fill="#005128" height="32" width="32" x="80" y="8"></rect>
+<rect fill="#FFFFFF" height="20" width="20" x="86" y="14"></rect>
+<rect fill="#005128" height="12" width="12" x="90" y="18"></rect>
+<!-- Bottom-Left Finder Pattern -->
+<rect fill="#005128" height="32" width="32" x="8" y="80"></rect>
+<rect fill="#FFFFFF" height="20" width="20" x="14" y="86"></rect>
+<rect fill="#005128" height="12" width="12" x="18" y="90"></rect>
+<!-- Timing & Random Agricultural Payload Data Dots -->
+<rect fill="#005128" height="6" width="6" x="46" y="12"></rect>
+<rect fill="#005128" height="6" width="6" x="58" y="12"></rect>
+<rect fill="#005128" height="6" width="6" x="66" y="18"></rect>
+<rect fill="#005128" height="6" width="6" x="46" y="28"></rect>
+<rect fill="#005128" height="6" width="6" x="60" y="28"></rect>
+<rect fill="#005128" height="6" width="6" x="12" y="46"></rect>
+<rect fill="#005128" height="6" width="6" x="22" y="46"></rect>
+<rect fill="#005128" height="6" width="6" x="30" y="54"></rect>
+<rect fill="#005128" height="6" width="6" x="12" y="60"></rect>
+<rect fill="#146b3a" height="10" width="10" x="44" y="44"></rect>
+<rect fill="#005128" height="8" width="8" x="56" y="44"></rect>
+<rect fill="#005128" height="8" width="8" x="66" y="54"></rect>
+<rect fill="#005128" height="6" width="10" x="48" y="66"></rect>
+<rect fill="#146b3a" height="8" width="8" x="60" y="70"></rect>
+<rect fill="#005128" height="6" width="6" x="80" y="48"></rect>
+<rect fill="#005128" height="6" width="6" x="92" y="48"></rect>
+<rect fill="#005128" height="6" width="6" x="102" y="56"></rect>
+<rect fill="#005128" height="8" width="8" x="86" y="64"></rect>
+<rect fill="#005128" height="8" width="8" x="96" y="70"></rect>
+<rect fill="#005128" height="6" width="6" x="46" y="86"></rect>
+<rect fill="#005128" height="6" width="6" x="56" y="94"></rect>
+<rect fill="#005128" height="6" width="6" x="68" y="86"></rect>
+<rect fill="#005128" height="8" width="8" x="84" y="88"></rect>
+<rect fill="#005128" height="6" width="6" x="98" y="88"></rect>
+<rect fill="#005128" height="8" width="8" x="90" y="100"></rect>
+<circle cx="60" cy="60" fill="#ffdf95" r="4"></circle>
+</svg>
+<span class="font-label-sm text-[10px] text-primary mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">sensors</span> Gate 2 Auto-Barrier Optical
+          </span>
+</div>
+<!-- Token Credentials & Bay Direction -->
+<div class="flex-1 w-full space-y-2">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase block">Designated Unloading Bay</span>
+<p class="font-label-lg text-label-lg text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">conveyor_belt</span>
+              Bay 3: Hydro-Cooling &amp; Leafy Line
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase block">Driver</span>
+<p class="font-label-md text-label-md text-on-surface truncate">R. B. Shinde</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase block">Vehicle No.</span>
+<p class="font-label-md text-label-md text-on-surface">MH-12-PA-4419</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Grace Period Timer Notice -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-primary font-label-sm">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+          Valid slot arrival + 30m grace
+        </span>
+<span class="font-label-sm text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface">Valid until 06:30 AM</span>
+</div>
+</div>
+</section>
+<!-- Pre-Intake Quality & Crate Compliance Checklist -->
+<section class="px-margin-mobile mt-space-lg mb-space-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-1 mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">fact_check</span>
+      Gate Intake Readiness Checklist
+    </h3>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface">Kisan Setu Sanitized Crates (10 Crates)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Uniform 15 kg net tara crates tagged with barcoded RFID.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface">Dew Moisture Balance Protocol</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tarpaulin shaded transit; no exposure to direct morning sun heat.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface">Aadhaar Linked Smart Farmer ID</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant DBT bank transfer routing active for Gat 142 account.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Confirmation & Pass Download Bottom Action Bar -->
+<div class="fixed bottom-0 inset-x-0 bg-surface/95 backdrop-blur-md shadow-xl p-margin-mobile z-40 pb-safe">
+<div class="max-w-md mx-auto flex flex-col gap-1.5">
+<button class="w-full h-12 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md active:bg-primary-container transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span>Confirm Slot &amp; Download Gate Pass (गेट पास डाऊनलोड करा)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">chat</span>
+        1-Tap SMS &amp; WhatsApp Token sent to +91 98231••••
+      </p>
+</div>
+</div>
+</div></main></body></html>

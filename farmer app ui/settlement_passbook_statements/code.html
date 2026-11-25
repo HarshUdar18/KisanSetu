@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f2fcf2", "on-tertiary": "#ffffff", "background": "#f2fcf2", "tertiary-fixed-dim": "#f4bf1b", "on-secondary-fixed": "#00210c", "on-primary-container": "#97e9ab", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface-bright": "#f2fcf2", "on-primary": "#ffffff", "on-primary-fixed-variant": "#005229", "on-tertiary-fixed": "#251a00", "inverse-on-surface": "#e9f3e9", "surface-dim": "#d2ddd3", "error-container": "#ffdad6", "surface-tint": "#166c3b", "on-surface": "#151e18", "surface-container-low": "#ecf6ec", "surface-container-highest": "#dbe5db", "secondary": "#006d36", "primary-fixed-dim": "#87d89c", "on-tertiary-fixed-variant": "#594400", "primary-fixed": "#a2f5b6", "outline": "#6f7a70", "on-error-container": "#93000a", "secondary-fixed-dim": "#73dc90", "on-primary-fixed": "#00210d", "surface-container-high": "#e1ebe1", "on-secondary-fixed-variant": "#005227", "on-tertiary-container": "#ffd158", "secondary-fixed": "#8ff9aa", "inverse-surface": "#29332c", "on-background": "#151e18", "error": "#ba1a1a", "surface-variant": "#dbe5db", "on-secondary": "#ffffff", "secondary-container": "#8ff9aa", "tertiary": "#584200", "tertiary-container": "#755900", "on-surface-variant": "#3f4940", "primary-container": "#146b3a", "on-secondary-container": "#00743a", "outline-variant": "#bfc9be", "tertiary-fixed": "#ffdf95", "inverse-primary": "#87d89c", "surface-container": "#e6f1e7", "primary": "#005128" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem" }, "fontFamily": { "body-md": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f2fcf2;color:#151e18;font-family:'Inter',sans-serif;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[22px]">account_balance_wallet</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Settlement Passbook</h1><span class="material-symbols-outlined text-secondary text-[16px] shrink-0" title="Verified Ag-Tech Account">verified</span></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>DBT Escrow Active</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[22px]">notifications</span></button><a aria-label="Farmer Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Top Passbook Banner & Live Filter Ribbon -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex flex-col gap-space-sm">
+<!-- Month Selector & Passbook Verification Capsule -->
+<div class="flex items-center justify-between gap-space-xs">
+<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors shadow-sm" id="monthPickerBtn">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface">Oct 2024 (आश्विन-कार्तिक)</span>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</button>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">CBI-Audited Passbook</span>
+</div>
+</div>
+<!-- Category Filter Chips (Single Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto py-1 no-scrollbar -mx-margin-mobile px-margin-mobile">
+<button class="filter-tab shrink-0 h-9 px-3.5 rounded-lg font-label-md text-label-md flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" data-filter="all">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+<span>All Settlements (सर्व जमा-खर्च)</span>
+</button>
+<button class="filter-tab shrink-0 h-9 px-3.5 rounded-lg font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm" data-filter="payouts">
+<span class="material-symbols-outlined text-[16px] text-primary">eco</span>
+<span>Produce Payouts (शेतमाल विक्री)</span>
+</button>
+<button class="filter-tab shrink-0 h-9 px-3.5 rounded-lg font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm" data-filter="dbt">
+<span class="material-symbols-outlined text-[16px] text-tertiary">assured_workload</span>
+<span>Subsidies &amp; DBT (अनुदान)</span>
+</button>
+<button class="filter-tab shrink-0 h-9 px-3.5 rounded-lg font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm" data-filter="fpo">
+<span class="material-symbols-outlined text-[16px] text-secondary">groups</span>
+<span>FPO Dividends (लाभांश)</span>
+</button>
+</div>
+</div>
+<!-- Monthly Realization & Value Unlock Bento Card -->
+<div class="px-margin-mobile py-space-xs">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-secondary text-on-primary p-space-md shadow-md">
+<!-- Background Ambient Leaf Pattern Motif -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-on-primary/10 blur-xl pointer-events-none"></div>
+<div class="absolute right-3 top-3 opacity-15">
+<span class="material-symbols-outlined text-[88px] text-on-primary pointer-events-none">receipt_long</span>
+</div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span> ऑक्टोबर २०२४ एकूण प्राप्ती
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-on-primary/20 text-on-primary font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +22% vs Sep
+          </span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile tracking-tight font-bold text-on-primary">₹1,24,680.00</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">Net Realized</span>
+</div>
+<!-- 2-Column Metrics Bento -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div class="rounded-lg bg-surface-container-lowest/15 backdrop-blur-sm p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">price_check</span> Avg Price Realized
+            </span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold mt-0.5">₹38.40 <span class="font-label-sm text-label-sm font-normal">/kg</span></span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim text-[10px] mt-0.5">+₹4.20 over APMC mandi</span>
+</div>
+<div class="rounded-lg bg-tertiary-fixed text-on-tertiary-fixed p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">savings</span> Zero Commission Saved
+            </span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-tertiary-fixed mt-0.5">₹8,720.00</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant text-[10px] mt-0.5">0% Dalaal Cut (थेट बचत)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Verified Ledger Timeline Stream -->
+<div class="px-margin-mobile pt-space-sm pb-space-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Verified Ledger (डिजिटल पासबुक नोंद)</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5 Entries</span>
+</div>
+<!-- ENTRY 1: Baby Spinach (Mulshi Hub) -->
+<div class="ledger-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm transition-all duration-200" data-category="payouts">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap- space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">psychiatry</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Grade-A+ Baby Spinach (पालक)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">हिरवा शेरा (Cleared)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Mulshi Dawn Hub • Lot #LOT-SP-9021</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">+₹6,312.60</span>
+<span class="font-label-sm text-label-sm text-outline">28 Oct • 06:15 AM</span>
+</div>
+</div>
+<!-- Quick breakdown row -->
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">scale</span> 148.5 kg @ ₹42.00/kg</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-[14px] text-secondary">account_balance</span> SBI A/C ••4201</span>
+</div>
+<!-- Expandable Accordion Drawer Trigger -->
+<button class="drawer-trigger flex items-center justify-between pt-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-target="drawer-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">receipt</span> View Tare Slip &amp; Quality Audit
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 transform">keyboard_arrow_down</span>
+</button>
+<!-- Expandable Content Drawer -->
+<div class="hidden flex-col gap-3 pt-2" id="drawer-1">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>UTR / Ref No:</span>
+<span class="font-mono text-on-surface font-semibold select-all">TXN-DBT-99214-MSH</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Moisture &amp; Brix Level:</span>
+<span class="text-secondary font-medium">9.2% Brix (Grade-A+ Verified)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Tare Gross / Net:</span>
+<span class="text-on-surface">156.0 kg Gross / 148.5 kg Net</span>
+</div>
+<!-- Document Snapshots Horizontal Grid -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="doc-preview flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-center shadow-sm hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-label-sm text-label-sm mt-1 text-on-surface font-medium text-[10px]">Tax Invoice</span>
+<span class="font-label-sm text-label-sm text-outline text-[9px]">PDF • 84KB</span>
+</button>
+<button class="doc-preview flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-center shadow-sm hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-secondary text-[20px]">monitor_weight</span>
+<span class="font-label-sm text-label-sm mt-1 text-on-surface font-medium text-[10px]">Tare Slip</span>
+<span class="font-label-sm text-label-sm text-outline text-[9px]">Digital Weigher</span>
+</button>
+<button class="doc-preview flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-center shadow-sm hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-tertiary text-[20px]">biotech</span>
+<span class="font-label-sm text-label-sm mt-1 text-on-surface font-medium text-[10px]">Lab Assay</span>
+<span class="font-label-sm text-label-sm text-outline text-[9px]">Zero Residue</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ENTRY 2: Bulk Desi Tomatoes (Kalyani Agro) -->
+<div class="ledger-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm transition-all duration-200" data-category="payouts">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[24px]">nutrition</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Bulk Desi Tomatoes (टोमॅटो)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Completed</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Kalyani Agro Mart • Lot #SUR-TOM-98</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">+₹34,800.00</span>
+<span class="font-label-sm text-label-sm text-outline">26 Oct • 05:40 PM</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">scale</span> 1,450 kg @ ₹24.00/kg</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span> Escrow Released</span>
+</div>
+<button class="drawer-trigger flex items-center justify-between pt-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-target="drawer-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">receipt</span> View Crates Weighment &amp; Escrow Cert
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 transform">keyboard_arrow_down</span>
+</button>
+<div class="hidden flex-col gap-3 pt-2" id="drawer-2">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Escrow Settlement Ref:</span>
+<span class="font-mono text-on-surface font-semibold select-all">TXN-ESC-98412-KLY</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Crate Count &amp; Deduction:</span>
+<span class="text-on-surface">58 Plastic Crates (Zero Cull / 100% Accepted)</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="doc-preview flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">receipt_long</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">B2B GST Invoice</span>
+</button>
+<button class="doc-preview flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Weighbridge Receipt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ENTRY 3: PM-KISAN 17th Installment DBT -->
+<div class="ledger-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm transition-all duration-200" data-category="dbt">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">PM-KISAN 17th Installment DBT</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">शासकीय DBT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">केंद्र शासन सन्मान निधी • Aadhaar Bridge</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">+₹2,000.00</span>
+<span class="font-label-sm text-label-sm text-outline">25 Oct • 11:30 AM</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">fingerprint</span> Aadhaar Linked Account</span>
+<span class="flex items-center gap-1 text-on-surface font-mono">GOVT-DBT-PMK-7712</span>
+</div>
+<button class="drawer-trigger flex items-center justify-between pt-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-target="drawer-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">assured_workload</span> DBT PFMS Acknowledgement Slip
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 transform">keyboard_arrow_down</span>
+</button>
+<div class="hidden flex-col gap-3 pt-2" id="drawer-3">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>PFMS Transaction ID:</span>
+<span class="font-mono text-on-surface font-semibold">C102409892019842</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>DBT Scheme Portal:</span>
+<span class="text-secondary font-medium">Direct Benefit Transfer • Verified</span>
+</div>
+<button class="doc-preview mt-1 w-full flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">download</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Download PFMS Govt Receipt (PDF)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ENTRY 4: Organic Coriander Lot (Kothrud Consumer Co-op) -->
+<div class="ledger-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm transition-all duration-200" data-category="payouts">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]">grass</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Organic Coriander (कोथिंबीर)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Completed</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Kothrud Consumer Co-op • Lot #LOT-COR-41</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">+₹14,250.00</span>
+<span class="font-label-sm text-label-sm text-outline">22 Oct • 04:15 PM</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">scale</span> 380 kg @ ₹37.50/kg</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-[14px] text-secondary">verified</span> NPOP Certified Organic</span>
+</div>
+<button class="drawer-trigger flex items-center justify-between pt-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-target="drawer-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">receipt</span> Organic Certificate &amp; Settlement Bill
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 transform">keyboard_arrow_down</span>
+</button>
+<div class="hidden flex-col gap-3 pt-2" id="drawer-4">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Co-op Purchase Invoice:</span>
+<span class="font-mono text-on-surface font-semibold">KCC-PUN-OCT-2201</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>APeda Organic Lot ID:</span>
+<span class="text-on-surface font-medium">ORG-MH-PUN-09142</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="doc-preview flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Organic Certificate</span>
+</button>
+<button class="doc-preview flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">download</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Passbook Voucher</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ENTRY 5: Self-Initiated Bank Withdrawal -->
+<div class="ledger-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm transition-all duration-200" data-category="all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[24px]">outbox</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Bank Withdrawal (बँक वर्ग)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Settled</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Instant IMPS to SBI A/C ••4201</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">-₹15,000.00</span>
+<span class="font-label-sm text-label-sm text-outline">18 Oct • 02:00 PM</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bolt</span> Immediate Transfer (0% Fee)</span>
+<span class="font-mono text-on-surface">Ref: WDL-IMPS-4412</span>
+</div>
+<button class="drawer-trigger flex items-center justify-between pt-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-target="drawer-5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">receipt</span> View IMPS Bank Clearance Stamp
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 transform">keyboard_arrow_down</span>
+</button>
+<div class="hidden flex-col gap-3 pt-2" id="drawer-5">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>NPCI RRN:</span>
+<span class="font-mono text-on-surface font-semibold">429188201994</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Beneficiary Account:</span>
+<span class="text-on-surface font-medium">State Bank of India (IFSC: SBIN0001429)</span>
+</div>
+<button class="doc-preview mt-1 w-full flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">file_download</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Download IMPS Advice Slip</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Export & Sharing Command Sheet -->
+<div class="sticky bottom-20 z-40 px-margin-mobile pb-space-sm pt-2">
+<div class="rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-xl p-space-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">CA &amp; ITR Ready Export (आयकर अहवाल)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">ITR-4 Compliant</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- PDF Export -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-primary text-on-primary shadow-sm active:scale-95 transition-transform" id="btnPdfExport">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+<span class="font-label-sm text-label-sm font-semibold mt-1">PDF Passbook</span>
+<span class="text-[9px] opacity-80">मुद्रण योग्य</span>
+</button>
+<!-- CA / Excel Sheet -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface shadow-sm active:scale-95 transition-transform" id="btnExcelExport">
+<span class="material-symbols-outlined text-secondary text-[20px]">table_chart</span>
+<span class="font-label-sm text-label-sm font-semibold mt-1">Excel (CA)</span>
+<span class="font-label-sm text-label-sm text-outline text-[9px]">हिशेब तपासणी</span>
+</button>
+<!-- WhatsApp Statement -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-secondary-container text-on-secondary-container shadow-sm active:scale-95 transition-transform" id="btnWhatsappShare">
+<span class="material-symbols-outlined text-secondary text-[20px]">share</span>
+<span class="font-label-sm text-label-sm font-semibold mt-1">WhatsApp</span>
+<span class="text-[9px] opacity-80">तात्काळ पाठवा</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification / Feedback Popup -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300" id="kisanToast">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="kisanToastMsg">Passbook PDF downloaded successfully!</span>
+</div>
+</div>
+<script>
+  // Accordion drawer toggle logic
+  document.querySelectorAll('.drawer-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const targetId = trigger.getAttribute('data-target');
+      const drawer = document.getElementById(targetId);
+      const icon = trigger.querySelector('.material-symbols-outlined.transform');
+      
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
+        if (icon) icon.classList.add('rotate-180');
+      } else {
+        drawer.classList.add('hidden');
+        drawer.classList.remove('flex');
+        if (icon) icon.classList.remove('rotate-180');
+      }
+    });
+  });
+
+  // Filter chips interaction
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const ledgerItems = document.querySelectorAll('.ledger-item');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary');
+        t.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      });
+
+      tab.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+      tab.classList.add('bg-primary', 'text-on-primary');
+
+      const filter = tab.getAttribute('data-filter');
+
+      ledgerItems.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Toast notification helper
+  const showToast = (message) => {
+    const toast = document.getElementById('kisanToast');
+    const toastMsg = document.getElementById('kisanToastMsg');
+    toastMsg.textContent = message;
+    toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 2800);
+  };
+
+  // Export handlers
+  document.getElementById('btnPdfExport')?.addEventListener('click', () => {
+    showToast('Generating official bilingual Kisan Passbook PDF...');
+  });
+
+  document.getElementById('btnExcelExport')?.addEventListener('click', () => {
+    showToast('ITR-4 Excel Ledger exported for your CA / Sahakar Audit!');
+  });
+
+  document.getElementById('btnWhatsappShare')?.addEventListener('click', () => {
+    showToast('Statement link generated for WhatsApp dispatch!');
+  });
+
+  document.querySelectorAll('.doc-preview').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showToast('Opening verified security document & laboratory assay...');
+    });
+  });
+
+  document.getElementById('monthPickerBtn')?.addEventListener('click', () => {
+    showToast('Settlement period: Oct 2024 (आश्विन-कार्तिक 1946)');
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.06)]" data-active-classes="text-primary font-label-md font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="kisan-wallet-overview" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Wallet</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="dbt-escrow-payouts" href="#"><span class="material-symbols-outlined text-[22px]">assured_workload</span><span class="font-label-sm text-label-sm">Escrow</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-12 transition-colors text-primary font-label-md font-bold" data-path="settlement-passbook" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">Passbook</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="bank-withdrawal" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm">Transfer</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-12 text-on-surface-variant transition-colors" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

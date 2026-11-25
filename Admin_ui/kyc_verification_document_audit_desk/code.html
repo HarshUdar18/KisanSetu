@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#97e9ab",
+          "surface-container-high": "#e1ebe1",
+          "on-secondary-fixed-variant": "#005227",
+          "surface-container-highest": "#dbe5db",
+          "on-background": "#151e18",
+          "secondary-fixed-dim": "#73dc90",
+          "surface-tint": "#166c3b",
+          "surface": "#f2fcf2",
+          "primary-container": "#146b3a",
+          "on-error": "#ffffff",
+          "inverse-surface": "#29332c",
+          "inverse-on-surface": "#e9f3e9",
+          "on-primary-fixed-variant": "#005229",
+          "tertiary-fixed-dim": "#f4bf1b",
+          "on-secondary-fixed": "#00210c",
+          "on-surface-variant": "#3f4940",
+          "primary-fixed-dim": "#87d89c",
+          "on-secondary": "#ffffff",
+          "inverse-primary": "#87d89c",
+          "secondary-fixed": "#8ff9aa",
+          "on-surface": "#151e18",
+          "error-container": "#ffdad6",
+          "primary-fixed": "#a2f5b6",
+          "tertiary": "#584200",
+          "tertiary-container": "#755900",
+          "surface-bright": "#f2fcf2",
+          "surface-container": "#e6f1e7",
+          "on-tertiary": "#ffffff",
+          "surface-dim": "#d2ddd3",
+          "outline-variant": "#bfc9be",
+          "secondary-container": "#8ff9aa",
+          "secondary": "#006d36",
+          "on-secondary-container": "#00743a",
+          "on-error-container": "#93000a",
+          "on-tertiary-fixed": "#251a00",
+          "outline": "#6f7a70",
+          "on-primary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-primary-fixed": "#00210d",
+          "tertiary-fixed": "#ffdf95",
+          "primary": "#005128",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#dbe5db",
+          "background": "#f2fcf2",
+          "on-tertiary-container": "#ffd158",
+          "surface-container-low": "#ecf6ec",
+          "on-tertiary-fixed-variant": "#594400"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "margin-tablet": "1.5rem",
+          "margin": "1rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.015em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(20,40,25,0.06)] overflow-y-auto"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest sticky top-0 z-10"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[22px]">agriculture</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Kisan Setu</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Portal</span></div></div><nav class="flex-1 px-space-md py-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics-reports" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-md text-label-md">Analytics &amp; Reports</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Stakeholders</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmers" href="#"><span class="material-symbols-outlined text-[20px]">nature_people</span><span class="font-label-md text-label-md">Farmers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-360-profile" href="#"><span class="material-symbols-outlined text-[20px]">contact_page</span><span class="font-label-md text-label-md">Farmer 360° Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="fpos" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">FPOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="register-fpo" href="#"><span class="material-symbols-outlined text-[20px]">domain_add</span><span class="font-label-md text-label-md">Register FPO</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg" data-path="kyc-verification" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">KYC Verification</span></div><span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">14</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Supply Chain &amp; Catalog</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-catalogue" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Product Catalogue</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="produce-listings" href="#"><span class="material-symbols-outlined text-[20px]">potted_plant</span><span class="font-label-md text-label-md">Produce Listings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="demand-matching" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span class="font-label-md text-label-md">Demand Matching</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="order-management" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Order Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="collection-points" href="#"><span class="material-symbols-outlined text-[20px]">location_on</span><span class="font-label-md text-label-md">Collection Points</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="quality-inspection" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-md text-label-md">Quality Inspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span class="font-label-md text-label-md">Warehouses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">shelves</span><span class="font-label-md text-label-md">Inventory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="logistics-fleet" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-md text-label-md">Logistics &amp; Fleet</span></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Finance &amp; Commerce</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="payments-escrow" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-label-md text-label-md">Payments &amp; Escrow</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="farmer-settlements" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Farmer Settlements</span></a></div><div class="space-y-space-xs pb-space-lg"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="support-grievances" href="#"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-label-md text-label-md">Support &amp; Grievances</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a></div></nav></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(20,40,25,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span>Stakeholders</span><span>/</span><span class="text-primary font-label-md text-label-md">KYC Verification Desk</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Services: Operational</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant w-72"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm flex-1 text-outline">Search farmer, FPO, document ID...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Ctrl+K</kbd></div><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-sm text-label-sm">Today: Nov 22, 2024</span></div><button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">Quick Action</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Rajesh Kulkarni</span><span class="font-label-sm text-label-sm text-outline leading-tight">Super Admin</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1720px] w-full mx-auto space-y-space-lg">
+<!-- Section 1: Dashboard Context & Command Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs max-w-4xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">gavel</span>
+            Statutory Compliance Desk
+          </span>
+<div class="flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Mahabhulekh Sync: Active (99.4%)
+          </div>
+<div class="flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            UIDAI e-Sign Gateway: Operational
+          </div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          KYC Verification &amp; Document Audit Desk
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Audit, cross-verify, and sanction statutory identities, land records (7/12 &amp; 8-A), and PFMS bank mandates across farmers and FPOs.
+        </p>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Download Audit Report (CSV)
+        </button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_mode</span>
+          + Batch Auto-Verify Eligible
+        </button>
+</div>
+</div>
+<!-- Section 2: KPI Metric Summary Cards (4 Columns) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pending Document Audits</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-outline">Files</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>84 Farmers</span>
+<span class="text-outline">•</span>
+<span>12 FPOs</span>
+<span class="text-outline">•</span>
+<span class="text-secondary font-label-sm text-label-sm">46 Expedited</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>SLA Breaching in &lt;6h: <strong>18 Applications</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Verified &amp; Approved Today</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-secondary">384</span>
+<span class="font-label-sm text-label-sm text-secondary font-label-md text-label-md">+24% vs yday</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs space-y-space-xs">
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 75.5%"></div>
+<div class="bg-secondary-fixed-dim h-full" style="width: 24.5%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Auto-Verified via DigiLocker: <strong class="text-on-surface">290</strong></span>
+<span>Manual: <strong class="text-on-surface">94</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Rejected / Action Required</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-error">28</span>
+<span class="font-label-sm text-label-sm text-error">Requires Resubmission</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">rule_folder</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Disputed Land Gut No:</span>
+<span class="font-label-sm text-label-sm text-error font-bold">14</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Name Mismatch:</span>
+<span class="font-label-sm text-label-sm text-on-surface">9</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Illegible Passbook:</span>
+<span class="font-label-sm text-label-sm text-on-surface">5</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Direct Benefit (DBT) Ready</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-primary">96.8%</span>
+<span class="font-label-sm text-label-sm text-secondary">PFMS Verified</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">assured_workload</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs space-y-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>Escrow Pending Clearing:</span>
+<span class="font-label-md text-label-md text-primary font-bold">₹2.41 Cr</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+<span>Aadhaar-NPCI mapping healthy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Interactive View Tabs & Extended Multi-Facet Filter Bar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Top Level Filter Tabs -->
+<div class="flex items-center overflow-x-auto bg-surface-container-low px-space-md pt-space-xs gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-t-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>All Applications</span>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">142</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-t-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Pending Farmer Audits</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">84</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-t-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span>FPO Statutory Verification</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">12</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-t-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span>Disputed / Flagged</span>
+<span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">28</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-t-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Archived / Approved</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">4,820</span>
+</button>
+</div>
+<!-- Multifacet Search & Dropdown Controls -->
+<div class="p-space-md bg-surface-container-lowest grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Search Field -->
+<div class="lg:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Search by Name / Farmer ID / App # / Aadhaar Hash..." type="text"/>
+</div>
+<!-- District Dropdown -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option value="">All Maharashtra Districts</option>
+<option value="pune">Pune Cluster</option>
+<option value="nashik">Nashik Cluster</option>
+<option value="kolhapur">Kolhapur Hub</option>
+<option value="ahmednagar">Ahmednagar Belt</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Document Type Dropdown -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option value="">Document Type (All)</option>
+<option value="712">7/12 Land Record Extract</option>
+<option value="aadhaar">Aadhaar UID e-Verify</option>
+<option value="bank">Bank Passbook / PFMS Mandate</option>
+<option value="cin">MCA CIN / FPO Incorporation</option>
+<option value="8a">8-A Khata Register</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Tier Dropdown -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option value="">Verification Tier (All)</option>
+<option value="tier1">Tier 1: Marginal Farmer (&lt;2 Ac)</option>
+<option value="tier2">Tier 2: Medium Grower (2-10 Ac)</option>
+<option value="tier3">Tier 3: FPO Federation / SHG</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Reset & Bulk Action Trigger -->
+<div class="lg:col-span-2 flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+            Reset
+          </button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+            More Filters
+          </button>
+</div>
+</div>
+</div>
+<!-- Section 4: High-Density Enterprise Audit Queue Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 pl-space-md pr-2 w-10" scope="col">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-3" scope="col">Application ID &amp; Time</th>
+<th class="py-3.5 px-3" scope="col">Applicant &amp; Stakeholder</th>
+<th class="py-3.5 px-3" scope="col">Taluka &amp; Hub</th>
+<th class="py-3.5 px-3" scope="col">Document Matches &amp; Scores</th>
+<th class="py-3.5 px-3" scope="col">SLA Timer &amp; Risk</th>
+<th class="py-3.5 px-3" scope="col">Assigned Officer</th>
+<th class="py-3.5 pr-space-md pl-3 text-right" scope="col">Audit Desk Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- ROW 1: Dnyaneshwar Bapu Patil -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-4 pl-space-md pr-2 align-top">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer mt-1" type="checkbox"/>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">#KYC-MH-2024-9941</span>
+<span class="font-label-sm text-label-sm text-outline">Nov 22, 10:14 AM</span>
+<span class="mt-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant w-fit">
+                    Biometric eKYC
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold shrink-0">
+                    DP
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dnyaneshwar Bapu Patil</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Small Farmer • 4.8 Acres</span>
+<span class="font-label-sm text-label-sm text-outline">Farmer UID: MH-PUN-88421</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Paud / Mulshi Hub</span>
+<span class="font-label-sm text-label-sm text-outline">Pune District</span>
+<span class="font-label-sm text-label-sm text-secondary">FPO: Mulshi Krushi Vikas</span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>Aadhaar: <strong class="text-secondary">Match 98%</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>7/12 Gut 142/2A: <strong class="text-secondary">Match 99%</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>HDFC Bank: <span class="text-on-surface-variant">PFMS Validated</span></span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    2h 15m remaining
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Low Risk (Cleared)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm">
+                    RS
+                  </div>
+<span class="font-label-sm text-label-sm text-on-surface">Rajesh Sharma</span>
+</div>
+</td>
+<td class="py-4 pr-space-md pl-3 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                    Open Audit Desk
+                  </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Sahyadri Organic FPO Co-op -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-4 pl-space-md pr-2 align-top">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer mt-1" type="checkbox"/>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">#KYC-MH-2024-9938</span>
+<span class="font-label-sm text-label-sm text-outline">Nov 22, 09:42 AM</span>
+<span class="mt-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed w-fit">
+                    Statutory Batch MCA
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sahyadri Organic FPO Co-op</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FPO Aggregator • 500+ Farmers</span>
+<span class="font-label-sm text-label-sm text-outline">CIN: U01409MH2021PTC36214</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Junnar North Hub</span>
+<span class="font-label-sm text-label-sm text-outline">Pune District</span>
+<span class="font-label-sm text-label-sm text-secondary">SFAC Accredited</span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified</span>
+<span>MCA Certificate: <strong class="text-secondary">Active</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">info</span>
+<span>5 DIN KYC: <strong class="text-tertiary">4/5 Verified (1 Pending)</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>Bank Mandate: <span class="text-on-surface-variant">Axis Bank Primary</span></span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    4h 10m remaining
+                  </span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Medium Risk (Board Resolution)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">pan_tool</span>
+                  Claim Review
+                </button>
+</td>
+<td class="py-4 pr-space-md pl-3 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+                    Review Statutory Deck
+                  </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Tukaram Jadhav (Flagged / Disputed) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<td class="py-4 pl-space-md pr-2 align-top">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer mt-1" type="checkbox"/>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-error font-bold">#KYC-MH-2024-9932</span>
+<span class="font-label-sm text-label-sm text-outline">Nov 21, 04:18 PM</span>
+<span class="mt-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-error-container text-on-error-container w-fit">
+                    Disputed Flag
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold shrink-0">
+                    TJ
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tukaram Jadhav</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Farmer • 3.0 Acres</span>
+<span class="font-label-sm text-label-sm text-outline">Farmer UID: MH-NSK-44102</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Lasalgaon / Chandwad</span>
+<span class="font-label-sm text-label-sm text-outline">Nashik Onion Belt</span>
+<span class="font-label-sm text-label-sm text-outline">Gram Panchayat: Lasalgaon</span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-error">
+<span class="material-symbols-outlined text-[15px]">error</span>
+<span>Aadhaar: <strong>Mismatch 'Tukaram' vs 'Tukaramrao'</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-error">
+<span class="material-symbols-outlined text-[15px]">gavel</span>
+<span>7/12: <strong>Disputed Title Mark (Court Stay)</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[15px]">cancel</span>
+<span>Bank PFMS: <span>Blocked on Name</span></span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm w-fit font-bold animate-pulse">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                    SLA Breached (-3h 20m)
+                  </span>
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    High Risk • Red Flag
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm">
+                    PD
+                  </div>
+<span class="font-label-sm text-label-sm text-on-surface">Priya Deshmukh</span>
+</div>
+</td>
+<td class="py-4 pr-space-md pl-3 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+                    Resolve Dispute
+                  </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Sunita Ramesh Khot (Auto-Approval Candidate) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-4 pl-space-md pr-2 align-top">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer mt-1" type="checkbox"/>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">#KYC-MH-2024-9929</span>
+<span class="font-label-sm text-label-sm text-outline">Nov 22, 11:05 AM</span>
+<span class="mt-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container w-fit">
+                    DigiLocker Direct
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold shrink-0">
+                    SK
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sunita Ramesh Khot</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Women Farmer • 1.8 Acres</span>
+<span class="font-label-sm text-label-sm text-outline">Farmer UID: MH-KOL-19034</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Karveer / Kolhapur</span>
+<span class="font-label-sm text-label-sm text-outline">Sugarcane Belt</span>
+<span class="font-label-sm text-label-sm text-secondary">SHG: Mahila Krushi Pragati</span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">fingerprint</span>
+<span>Aadhaar: <strong class="text-secondary">100% Biometric Match</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>8-A Extract: <strong class="text-secondary">Auto-Pulled &amp; Verified</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>Bank of Maharashtra: <span class="text-secondary">DBT Seeded</span></span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    5h 45m remaining
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Eligible for 1-Click Approval
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">smart_toy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-Bot (Digi)</span>
+</div>
+</td>
+<td class="py-4 pr-space-md pl-3 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                    Approve KYC
+                  </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Junnar Kanya Farmers Alliance -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-4 pl-space-md pr-2 align-top">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer mt-1" type="checkbox"/>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">#KYC-MH-2024-9924</span>
+<span class="font-label-sm text-label-sm text-outline">Nov 22, 08:30 AM</span>
+<span class="mt-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant w-fit">
+                    FPO Cooperative
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-[20px]">group_work</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Junnar Kanya Farmers Alliance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FPO Women Group • 120 Members</span>
+<span class="font-label-sm text-label-sm text-outline">Reg: COOP/PUN/2022/889</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Otur Hub</span>
+<span class="font-label-sm text-label-sm text-outline">Pune Northern Cluster</span>
+<span class="font-label-sm text-label-sm text-secondary">NABARD Supported</span>
+</div>
+</td>
+<td class="py-4 px-3 align-top">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>SFAC Grant Deed: <strong class="text-secondary">Validated</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>MOA / AOA: <strong class="text-secondary">Registered</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>Central FSSAI: <span class="text-on-surface-variant">License Active</span></span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    8h 20m remaining
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Low Risk (Standard FPO)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-3 align-top whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm">
+                    RS
+                  </div>
+<span class="font-label-sm text-label-sm text-on-surface">Rajesh Sharma</span>
+</div>
+</td>
+<td class="py-4 pr-space-md pl-3 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                    Open Audit Desk
+                  </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Section 5: Bottom Pagination, Batch Operations & SLA Health Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Pagination Controls -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Showing <strong class="text-on-surface">1–5</strong> of <strong class="text-on-surface">142</strong> applications</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">Items per page:</span>
+<select class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-outline disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center" type="button">
+              1
+            </button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center" type="button">
+              2
+            </button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center" type="button">
+              3
+            </button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center" type="button">
+              15
+            </button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- SLA Compliance Metric Status -->
+<div class="flex items-center gap-space-sm text-right font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Turnaround SLA Target: <strong class="text-on-surface">24 Hours</strong></span>
+</div>
+<span class="text-outline">•</span>
+<div>
+<span>Average Review Time: <strong class="text-secondary">3.4 Hours</strong></span>
+</div>
+<span class="text-outline">•</span>
+<div class="text-outline font-label-sm text-label-sm">
+            Compliance Standard: RBI &amp; AgriStack Framework
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

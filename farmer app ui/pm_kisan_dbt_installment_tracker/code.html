@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Kisan Setu</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;font-family:'Inter',sans-serif;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#3f4940", "error": "#ba1a1a", "secondary-container": "#8ff9aa", "outline": "#6f7a70", "surface-bright": "#f2fcf2", "primary-container": "#146b3a", "surface": "#f2fcf2", "on-primary-fixed": "#00210d", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#594400", "surface-dim": "#d2ddd3", "surface-tint": "#166c3b", "on-surface": "#151e18", "tertiary-fixed": "#ffdf95", "on-tertiary-fixed": "#251a00", "tertiary-container": "#755900", "on-secondary-fixed-variant": "#005227", "tertiary": "#584200", "surface-variant": "#dbe5db", "on-background": "#151e18", "background": "#f2fcf2", "inverse-surface": "#29332c", "on-secondary-container": "#00743a", "on-primary-fixed-variant": "#005229", "inverse-primary": "#87d89c", "secondary-fixed-dim": "#73dc90", "surface-container-high": "#e1ebe1", "on-primary-container": "#97e9ab", "surface-container": "#e6f1e7", "secondary-fixed": "#8ff9aa", "primary-fixed-dim": "#87d89c", "surface-container-highest": "#dbe5db", "on-error-container": "#93000a", "primary": "#005128", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "on-tertiary-container": "#ffd158", "on-secondary": "#ffffff", "on-secondary-fixed": "#00210c", "tertiary-fixed-dim": "#f4bf1b", "inverse-on-surface": "#e9f3e9", "surface-container-low": "#ecf6ec", "error-container": "#ffdad6", "secondary": "#006d36", "outline-variant": "#bfc9be", "primary-fixed": "#a2f5b6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "gutter-mobile": "0.75rem", "margin": "1rem", "margin-tablet": "1.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "margin-mobile": "1rem", "space-sm": "0.5rem" }, fontFamily: { "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "display-lg-mobile": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,40,25,0.06)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-transform" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col justify-center ml-1"><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight leading-tight truncate max-w-[210px]">Pm Kisan Tracker</h1><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-primary">verified_user</span> Govt of India &amp; MahaDBT</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Help and toll-free helpline" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container"><span class="material-symbols-outlined text-[22px]">support_agent</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Content Area -->
+<div class="px-gutter-mobile py-space-sm flex flex-col gap-space-md">
+<!-- 1. Top Beneficiary Compliance Status Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container-high flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close-up warm photographic portrait of Ramesh Balu Shinde, a smiling 52-year-old rural Indian farmer wearing a white Gandhi topi and light kurta against agricultural green backdrop, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDivV3K4S2GZCiVPcRZqBMHoCtv8IGTfcPJyuiTwRZ7TVQq5a158mkYYatTW85fBafRt29vTu2ubP5BrpdTtlt3mHi9O_PNxL_Wfrek8GiJIQpLxe8pd4NuFsRQr2puzKD72u5Jo7H2Tdqu5f1FCd9-YaRgTnY0OijtU2hS4TnigdBDLh6PH_CGHjifraKlUqkeR38uDeTxTpg8EHRPwsNSL0d-cSlp7iqGrXvOtbUm"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">रमेश बाळू शिंदे</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">Ramesh Balu Shinde • ID: <strong class="text-on-surface font-semibold">MH291884210</strong></span>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">सक्रिय (Active)</span>
+</div>
+</div>
+<!-- Eligibility Banner -->
+<div class="bg-secondary-container/30 rounded-lg p-space-xs px-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">check_circle</span>
+<span class="font-label-md text-label-md text-primary font-semibold truncate">पुढील १९ वा हप्त्यासाठी १००% पात्र (Fully Eligible)</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2 py-0.5 rounded-full shrink-0">4/4 निकष पूर्ण</span>
+</div>
+<!-- 4 Statutory Grid Checkmarks -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<!-- 1. e-KYC -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">fingerprint</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 truncate">
+              e-KYC पूर्ण
+              <span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">बायोमेट्रिक नोंद प्रमाणित</span>
+</div>
+</div>
+<!-- 2. NPCI Bank Link -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">account_balance</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 truncate">
+              NPCI बँक जोडणी
+              <span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">DBT थेट खात्यात सक्रिय</span>
+</div>
+</div>
+<!-- 3. Land Seeding -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">landscape</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 truncate">
+              जमीन नोंदणी (Land)
+              <span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2.7 एकर (गावनिहाय प्रमाणित)</span>
+</div>
+</div>
+<!-- 4. PFMS Status -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 truncate">
+              PFMS संमती
+              <span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Approved by Bank</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Latest Installment Spotlight Hero Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Decorative background glow -->
+<div class="absolute -right-12 -top-12 w-36 h-36 bg-secondary-container/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">stars</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold tracking-wide">नवीनतम हप्ता • LATEST CREDITED</span>
+</div>
+<span class="bg-primary text-on-primary text-[11px] font-semibold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+          १८ वा हप्ता (18th)
+        </span>
+</div>
+<div class="flex items-baseline justify-between pt-1 relative z-10">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">थेट DBT रक्कम (Direct Credit)</span>
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold tracking-tight">₹२,०००</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-right">
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> जमा (Success)
+          </span>
+</div>
+</div>
+<!-- Transaction details breakdown -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-2 mt-1 relative z-10">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span> क्रेडिट तारीख व वेळ
+          </span>
+<span class="font-label-md text-label-md font-semibold">05 Oct 2024, 11:24 AM</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">account_balance</span> बँक खाते
+          </span>
+<span class="font-label-md text-label-md font-semibold">Bank of Maharashtra (••4109)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">tag</span> UTR / PFMS संदर्भ क्र.
+          </span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface bg-surface-container px-1.5 py-0.5 rounded">MH-PFMS-20241005-99821</span>
+</div>
+</div>
+<!-- PDF Download Button -->
+<button class="mt-1 w-full h-12 bg-primary hover:bg-primary-container text-on-primary rounded-lg flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-[0.98] transition-transform shadow-sm" id="downloadReceiptBtn">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>पेमेंट पावती डाऊनलोड करा (Receipt PDF)</span>
+</button>
+<div class="hidden text-center font-label-sm text-label-sm text-primary font-semibold" id="receiptToast">✓ पावती मोबाइलमध्ये सुरक्षित जतन केली!</div>
+</div>
+<!-- 4. Maharashtra Namo Shetkari Mahasanman Nidhi Bonus Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">
+            महा
+          </div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">नमो शेतकरी महासन्मान निधी</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">महाराष्ट्र शासन महा-डीबीटी (GoM Top-up)</span>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full">
+          + ₹६,०००/वर्ष
+        </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">४ था हप्ता जमा (4th Installment)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">05 Oct 2024 (PM-Kisan सोबतच ट्रान्सफर)</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹२,०००</span>
+</div>
+<!-- Combined Annual Benefit callout -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">savings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">एकूण वार्षिक आर्थिक आधार</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">₹१२,००० प्रतिवर्ष (केंद्र ₹६,००० + राज्य ₹६,०००)</span>
+</div>
+</div>
+</div>
+<!-- 3. Historical Installments Timeline & Ledger -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">मागील हप्त्यांचा इतिहास</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">पासबुक व जमा विवरण (Payment Ledger)</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">एकूण प्राप्त (१८ हप्ते)</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">₹३६,०००</span>
+</div>
+</div>
+<!-- Visual Lifetime Progress Bar -->
+<div class="flex flex-col gap-1 py-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>हप्ते पूर्णता ट्रॅकर (18/18 Payouts Cleared)</span>
+<span class="text-primary font-semibold">100%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full w-full"></div>
+</div>
+</div>
+<!-- Timeline List -->
+<div class="flex flex-col gap-2.5 pt-1">
+<!-- 17th -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface font-semibold text-xs">
+              17
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">१७ वा हप्ता (June 2024)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">18 Jun 2024 • UTR: MH-PFMS-881920</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹२,०००</span>
+<span class="font-label-sm text-label-sm text-primary block flex items-center justify-end gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check</span> जमा
+            </span>
+</div>
+</div>
+<!-- 16th -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface font-semibold text-xs">
+              16
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">१६ वा हप्ता (Feb 2024)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">28 Feb 2024 • UTR: MH-PFMS-771891</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹२,०००</span>
+<span class="font-label-sm text-label-sm text-primary block flex items-center justify-end gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check</span> जमा
+            </span>
+</div>
+</div>
+<!-- 15th -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface font-semibold text-xs">
+              15
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">१५ वा हप्ता (Nov 2023)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">15 Nov 2023 • UTR: MH-PFMS-660142</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹२,०००</span>
+<span class="font-label-sm text-label-sm text-primary block flex items-center justify-end gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check</span> जमा
+            </span>
+</div>
+</div>
+</div>
+<!-- View full statement link button -->
+<button class="w-full py-2.5 mt-1 bg-surface-container text-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-1 hover:bg-surface-container-high transition-colors">
+<span>सर्व १७ हप्त्यांची जुनी यादी पहा (View Full Ledger)</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- 5. Bank Account Update & DBT Grievance Cell -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm mb-4">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">हप्ता थांबला आहे का किंवा मदत हवी आहे?</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">DBT Grievance &amp; Bank Mandate Resolution</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        बँक खाते विलीनीकरण, आधार लिंकिंग समस्या किंवा नाव त्रुटी असल्यास खालील अधिकृत पर्यायांचा वापर करून निवारण करा.
+      </p>
+<div class="flex flex-col gap-2 pt-1">
+<!-- Option 1: Change bank -->
+<button class="w-full p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left flex items-center justify-between active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">swap_horizontal_circle</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">बँक खाते बदला (NPCI DBT Mandate)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">नव्याने उघडलेले Post Office किंवा बँक लिंक करा</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Option 2: Raise Grievance -->
+<button class="w-full p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left flex items-center justify-between active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px]">report_problem</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">तक्रार नोंदवा (Raise PM-Kisan Grievance)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">थेट जिल्हा कृषी अधिकाऱ्यांना अर्ज पाठवा</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Option 3: CSC Center locator -->
+<button class="w-full p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left flex items-center justify-between active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">storefront</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">जवळचे महा-ई-सेवा केंद्र (Taluka CSC)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">बायोमेट्रिक स्कॅनसाठी स्थानिक केंद्र शोधा</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Toll Free helpline footer strip -->
+<div class="mt-2 p-2.5 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">phone_in_talk</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">टोल फ्री मदत: १५५२६१ / १८००-११-५५२६</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold bg-surface-container-lowest px-2.5 py-1 rounded shadow-sm" href="tel:155261">कॉल करा</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const btn = document.getElementById('downloadReceiptBtn');
+    const toast = document.getElementById('receiptToast');
+    if (btn && toast) {
+      btn.addEventListener('click', function() {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>डाऊनलोड होत आहे...</span>';
+        setTimeout(function() {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>पावती डाऊनलोड झाली (PDF)</span>';
+          btn.classList.add('bg-secondary', 'text-on-secondary');
+          toast.classList.remove('hidden');
+          setTimeout(function() {
+            toast.classList.add('hidden');
+          }, 3500);
+        }, 800);
+      });
+    }
+  })();
+</script></main></body></html>

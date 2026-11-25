@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html lang="mr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#8ff9aa", "surface-variant": "#dbe5db", "error": "#ba1a1a", "outline": "#6f7a70", "surface-container": "#e6f1e7", "surface-dim": "#d2ddd3", "on-primary-fixed-variant": "#005229", "on-primary-container": "#97e9ab", "on-secondary-fixed": "#00210c", "primary-fixed-dim": "#87d89c", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdf95", "tertiary-fixed-dim": "#f4bf1b", "inverse-primary": "#87d89c", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4940", "on-primary": "#ffffff", "outline-variant": "#bfc9be", "on-background": "#151e18", "inverse-on-surface": "#e9f3e9", "surface": "#f2fcf2", "secondary-fixed": "#8ff9aa", "on-tertiary-fixed-variant": "#594400", "on-tertiary-container": "#ffd158", "error-container": "#ffdad6", "on-error": "#ffffff", "on-surface": "#151e18", "primary-fixed": "#a2f5b6", "on-secondary-fixed-variant": "#005227", "primary": "#005128", "secondary-fixed-dim": "#73dc90", "primary-container": "#146b3a", "on-secondary": "#ffffff", "surface-bright": "#f2fcf2", "on-error-container": "#93000a", "tertiary": "#584200", "surface-container-high": "#e1ebe1", "on-tertiary-fixed": "#251a00", "surface-tint": "#166c3b", "surface-container-low": "#ecf6ec", "inverse-surface": "#29332c", "surface-container-highest": "#dbe5db", "tertiary-container": "#755900", "background": "#f2fcf2", "on-secondary-container": "#00743a", "secondary": "#006d36", "on-primary-fixed": "#00210d" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-tablet": "1.5rem", "margin": "1rem", "gutter-mobile": "0.75rem", "gutter": "1rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "space-xl": "2rem" }, "fontFamily": { "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.015em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(20,40,25,0.05)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary"><span class="material-symbols-outlined text-[20px]">agriculture</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Annual Farm Balance Sheet &amp; P&amp;L Statement</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="सूचना (Notifications)" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Top Fiscal Year Segmented Selector & Refresh Timestamp -->
+<div class="px-margin pt-space-xs pb-space-sm flex items-center justify-between gap-space-sm">
+<div class="inline-flex bg-surface-container p-1 rounded-full shadow-sm" role="tablist">
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-primary text-on-primary shadow-sm flex items-center gap-1.5" id="tab-fy24" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>FY २०२३-२४ (Audited)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center gap-1.5" id="tab-fy25" type="button">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>FY २०२४-२५ (चालू YTD)</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">sync</span>
+<span>अद्ययावत: आज</span>
+</div>
+</div>
+<!-- Farm Entity & Official Verification Card -->
+<div class="px-margin mb-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide uppercase">प्रमाणित शेती खाते (Verified AgriStack)</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">श्री रमेश बाळू शिंदे कृषी फार्म</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">मुळशी, जि. पुणे • २.७ एकर सिंचनाखालील क्षेत्र</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<span>FPO #MUL-8842</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">fact_check</span>
+<span>AgriStack &amp; CA Audited</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span>KCC ID: 8492-MH</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Executive P&L Summary Bento Hero -->
+<div class="px-margin mb-space-lg">
+<div class="bg-primary rounded-xl p-space-lg text-on-primary shadow-md relative overflow-hidden">
+<!-- Ambient foliage graphic element -->
+<div class="absolute -right-6 -bottom-8 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[180px]">psychiatry</span>
+</div>
+<div class="flex items-center justify-between mb-space-sm relative z-10">
+<span class="font-label-md text-label-md tracking-wider uppercase text-on-primary-container">वार्षिक आर्थिक नफा-तोटा सारांश</span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 backdrop-blur-md px-2.5 py-0.5 rounded-full text-on-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>FY 23-24 P&amp;L</span>
+</span>
+</div>
+<!-- Net Profit Headline -->
+<div class="relative z-10 mb-space-md">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">₹४,२४,३००</span>
+<span class="font-headline-sm text-headline-sm font-normal text-on-primary-container">.००</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-lg text-label-lg text-on-primary">निव्वळ कृषी नफा (Net Farm Profit)</span>
+<span class="inline-flex items-center gap-0.5 text-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+१८.४% YoY</span>
+</span>
+</div>
+</div>
+<!-- Key Margin Pill -->
+<div class="relative z-10 mb-space-lg flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/25 text-on-primary font-label-md text-label-md backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">pie_chart</span>
+<span>निव्वळ नफा प्रमाण (Net Margin): <strong class="text-secondary-container font-bold">५७.१%</strong></span>
+</span>
+</div>
+<!-- Gross Revenue & Cultivation Cost Dual Split -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-md bg-on-primary/10 rounded-xl p-space-md relative z-10 backdrop-blur-sm">
+<div>
+<div class="flex items-center gap-1 text-on-primary-container font-label-sm text-label-sm mb-0.5">
+<span class="material-symbols-outlined text-[15px]">south_west</span>
+<span>एकूण शेतमाल उत्पन्न</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">₹७,४२,५००</div>
+<span class="font-label-sm text-label-sm text-on-primary-container">१००% थेट APMC व FPO</span>
+</div>
+<div>
+<div class="flex items-center gap-1 text-tertiary-fixed font-label-sm text-label-sm mb-0.5">
+<span class="material-symbols-outlined text-[15px]">north_east</span>
+<span>एकूण व्यवस्थापन खर्च</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-tertiary-fixed">-₹३,१८,२००</div>
+<span class="font-label-sm text-label-sm text-on-primary-container">लागवड, मजुरी व वाहतूक</span>
+</div>
+</div>
+<!-- Cash Realization vs Escrow Distribution -->
+<div class="mt-space-md pt-space-sm relative z-10 flex items-center justify-between gap-space-sm text-on-primary-container font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>खात्यात जमा: <strong class="text-on-primary">₹३,८५,०००</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+<span>एस्क्रो / तारण: <strong class="text-on-primary">₹३९,३००</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Revenue Breakdown by Channel (उत्पन्नाचे स्रोत) -->
+<div class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">उत्पन्नाचे स्रोत (Revenue Breakdown)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">४ मुख्य मार्ग</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Visual Stacked Distribution Bar -->
+<div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1.5">
+<span>स्रोत विभाजन प्रमाण</span>
+<span class="font-bold text-on-surface">१००% (₹७,४२,५००)</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 55.2%;" title="FPO Direct: 55.2%"></div>
+<div class="bg-secondary h-full" style="width: 28.6%;" title="APMC: 28.6%"></div>
+<div class="bg-tertiary-container h-full" style="width: 10.8%;" title="DBT Subsidies: 10.8%"></div>
+<div class="bg-tertiary-fixed-dim h-full" style="width: 5.4%;" title="By-product: 5.4%"></div>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>FPO ५५.२%</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>मंडी २८.६%</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>DBT १०.८%</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>बाय-प्रॉडक्ट ५.४%</span>
+</div>
+</div>
+</div>
+<!-- Itemized Channel List -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Channel 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">store</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">थेट FPO खरेदी विक्री (Direct FPO Sales)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">सह्याद्री फार्म्स व मुळशी क्लस्टर करार</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">₹४,१०,०००</div>
+<span class="inline-flex px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-primary font-semibold">५५.२%</span>
+</div>
+</div>
+<!-- Channel 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">APMC लिलाव (Pune &amp; Vashi Mandi)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">टोमॅटो, आले व भाजीपाला स्पॉट ऑक्शन</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">₹२,१२,५००</div>
+<span class="inline-flex px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">२८.६%</span>
+</div>
+</div>
+<!-- Channel 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">सरकारी अनुदान व DBT (MahaDBT + PM Kisan)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">ठिबक सिंचन अनुदान + नमो शेतकरी योजना</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">₹८०,०००</div>
+<span class="inline-flex px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-tertiary-container font-semibold">१०.८%</span>
+</div>
+</div>
+<!-- Channel 4 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">compost</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">बायोमास व चारा विक्री (Farmgate Biomass)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">ऊसाचे पाचट, भुसा व गांडूळखत थेट विक्री</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">₹४०,०००</div>
+<span class="inline-flex px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">५.४%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comprehensive Cultivation & Operational Expenditure (खर्चाची वर्गवारी) -->
+<div class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">खर्चाची तपशीलवार वर्गवारी (Expenditure)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-error font-semibold">₹३,१८,२००</span>
+</div>
+<!-- FPO Collective Bulk Saving Badge -->
+<div class="bg-surface-container-high rounded-xl p-space-sm mb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">savings</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">FPO सामूहिक खरेदीद्वारे <strong>₹१२,०००</strong> ची प्रत्यक्ष बचत झाली</span>
+</div>
+<span class="inline-flex px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex-shrink-0">बचत</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<!-- Exp 1: Labor & Harvesting -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+<span class="font-label-lg text-label-lg text-on-surface">मजुरी व तोडणी (Farm Labor &amp; Harvesting)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹९८,५००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>५५ मनुष्य-दिवस (खुरपणी, छाटणी व फळतोडणी)</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">३१.०% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full" style="width: 31%;"></div>
+</div>
+</div>
+<!-- Exp 2: Bio Fertilizers & Soil amendments -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">science</span>
+<span class="font-label-lg text-label-lg text-on-surface">सेंद्रिय खते व सूक्ष्म अन्नद्रव्ये (Bio-Nutrients)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹६८,५००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>जीवामृत, निंबोळी पेंड, १९:१९:१९ विद्राव्य खते</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">२१.५% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full" style="width: 21.5%;"></div>
+</div>
+</div>
+<!-- Exp 3: Transport & Mandi Logistics -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">local_shipping</span>
+<span class="font-label-lg text-label-lg text-on-surface">वाहतूक व बाजार उपकर (Logistics &amp; Mandi Cess)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹४६,०००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>पुणे व नवी मुंबई टर्मिनल भाडे आणि पॅकिंग क्रेट्स</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">१४.५% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-on-surface-variant h-full" style="width: 14.5%;"></div>
+</div>
+</div>
+<!-- Exp 4: Farm Machinery & Tractor Hiring -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">precision_manufacturing</span>
+<span class="font-label-lg text-label-lg text-on-surface">ट्रॅक्टर व अवजारे भाडे (Custom Hiring CHC)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹४२,६००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>नांगरणी, रोटाव्हेटर, बेड मेकर व ड्रोन फवारणी भाडे</span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">१३.४% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 13.4%;"></div>
+</div>
+</div>
+<!-- Exp 5: Certified Seeds & Saplings -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">spa</span>
+<span class="font-label-lg text-label-lg text-on-surface">प्रमाणित बियाणे व रोपे (Certified Seeds)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹३४,२००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>कलमी भाजीपाला ट्रे रोपे आणि संकरित बियाणे</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">१०.७% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full" style="width: 10.7%;"></div>
+</div>
+</div>
+<!-- Exp 6: Micro Irrigation & Power -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">water_drop</span>
+<span class="font-label-lg text-label-lg text-on-surface">ठिबक सिंचन देखभाल व वीज (Drip &amp; Power)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹२८,४००</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>व्हेंचुरी सिस्टीम, फिल्टर क्लिनिंग व महावितरण बिल</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">८.९% वाटा</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full" style="width: 8.9%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Produce & Farm Assets Photo Banner -->
+<div class="px-margin mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">landscape</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">शेततळे व सिंचन पायाभूत सुविधा</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">जिओ-टॅग २०२३</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<img class="w-full h-28 object-cover rounded-lg" data-alt="Vibrant lush green high-tech agricultural farm plot with precision inline drip irrigation pipes laid out on red fertile Maharashtra soil, bright sunny morning light, captured with modern documentary agricultural realism in Pune district" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBBkhP4EmISgIOluNhT1OYKYtXEjBXrlENQNyFXPlvYnj7OAgzNQcBC_72vIzy9NO8iEfDsGGoDWoirQI_E54253_Mkq10ZTBXUpAy2rnLedti9fDh_tH2Q2oSLTYJEupxGL0aD_drZgeL3vwB6xYNhqflawyOgXNq4c9EWzSz-SyaNai3PEYW24iLIKFn71l69afCseho5Yuih7hAbk8PSIOidbO3q2aJLKtzicYE"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">ठिबक सिंचन संच (२.७ एकर)</span>
+</div>
+<div class="flex flex-col gap-1">
+<img class="w-full h-28 object-cover rounded-lg" data-alt="Solar powered agricultural water pump and inverter array installed next to a fresh farm water pond under clear rural blue sky, sustainable farming equipment in Maharashtra, crisp clean photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAna37EecU2KvLx33LfPgT0nXKy_ABWtdJsbujGS1YRTSxwe1_877B69duWa-xaq5HtbNqhPAnwbzVh5dlPbNSsF2_s0Cbf-DJ_pCK67ZILyJtxbJWF-RWJTYPEb4iEwDzQYGqI4F5DuaG29aXYxBK2VtG1ERIIIEWEHS6RGJQXfIA-3TMbupGX5S3Pw-UCQckfhJumvsekyfQlBEa1bVRxhBasDbNbNYpuCoO7Yi3O"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">५ HP सौर कृषी पंप संच</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Farm Assets & Liabilities Statement (मालमत्ता व देणी ताळेबंद) -->
+<div class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">शेत ताळेबंद (Balance Sheet Snapshot)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">३१ मार्च २०२४ स्थिती</span>
+</div>
+<!-- Net Worth / Farm Solvency Ratio Bento -->
+<div class="bg-surface-container-high rounded-xl p-space-md mb-space-sm flex items-center justify-between">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">शेतीची निव्वळ संपत्ती (Farm Net Worth)</div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary mt-0.5">₹१३,०५,०००</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">सॉल्व्हन्सी प्रमाण: ९.७x (अत्यंत सुरक्षित)</div>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[32px]">shield_with_heart</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Assets Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">एकूण मालमत्ता (Total Farm Assets)</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">₹१४,५५,०००</span>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<!-- Sub-asset 1 -->
+<div class="flex items-start justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">चालू मालमत्ता (Current Assets)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">किसान एस्क्रो वॉलेट शिल्लक + कोल्ड स्टोरेज साठा माल</div>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface text-right">₹२,१५,०००</div>
+</div>
+<!-- Sub-asset 2 -->
+<div class="flex items-start justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">स्थिर मालमत्ता (Fixed Farm Assets)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">ठिबक सिंचन संच, ५ HP सौर पंप, अवजारे व शेततळे लायनर</div>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface text-right">₹१२,४०,०००</div>
+</div>
+</div>
+</div>
+<!-- Liabilities Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">एकूण देणी (Farm Liabilities)</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹१,५०,०००</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">KCC पीक कर्ज (Kisan Credit Card)</span>
+<span class="inline-flex px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">४% सवलत व्याज</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">बँक ऑफ महाराष्ट्र, मुळशी शाखा (नियमित परतफेड चालू)</div>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface text-right">₹१,५०,०००</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bank Ready Certificate & Export Action Zone -->
+<div class="px-margin mb-space-lg">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-3">
+<!-- Visual QR Stamp Code Representation -->
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest p-1.5 flex-shrink-0 flex flex-col items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[36px] text-on-surface">qr_code_2</span>
+<span class="font-label-sm text-[9px] text-primary tracking-tighter uppercase font-bold">CA Verified</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>बँक पीक कर्ज व सीए तपासणीसाठी प्रमाणित</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight mt-0.5">बँक-पात्र ताळेबंद अहवाल</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">UDIN: २४०८९२८९४९KISON • अधिकृत वित्तीय पडताळणी पूर्ण</p>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 px-space-md rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" id="btn-download-pdf" type="button">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+<span>डाउनलोड प्रमाणित ताळेबंद (Audited P&amp;L PDF)</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface py-2.5 px-space-sm rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm transition-colors" id="btn-download-excel" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">table_view</span>
+<span>एक्सेल सारांश (Excel)</span>
+</button>
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface py-2.5 px-space-sm rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm transition-colors" id="btn-share-ca" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">share</span>
+<span>CA / बँकेला पाठवा</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive FY Toggle & Toast Feedback Script -->
+<script>
+    (function() {
+      const tabFy24 = document.getElementById('tab-fy24');
+      const tabFy25 = document.getElementById('tab-fy25');
+      const btnPdf = document.getElementById('btn-download-pdf');
+      const btnExcel = document.getElementById('btn-download-excel');
+      const btnShare = document.getElementById('btn-share-ca');
+
+      if (tabFy24 && tabFy25) {
+        tabFy24.addEventListener('click', function() {
+          tabFy24.className = "px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-primary text-on-primary shadow-sm flex items-center gap-1.5";
+          tabFy25.className = "px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center gap-1.5";
+        });
+
+        tabFy25.addEventListener('click', function() {
+          tabFy25.className = "px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-primary text-on-primary shadow-sm flex items-center gap-1.5";
+          tabFy24.className = "px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center gap-1.5";
+        });
+      }
+
+      function showDelightToast(msg) {
+        const existing = document.getElementById('kisan-toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'kisan-toast';
+        toast.className = 'fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg font-label-md text-label-md flex items-center gap-2 animate-bounce';
+        toast.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>' + msg;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2600);
+      }
+
+      if (btnPdf) {
+        btnPdf.addEventListener('click', () => showDelightToast('प्रमाणित PDF अहवाल डाउनलोड सुरू झाला आहे.'));
+      }
+      if (btnExcel) {
+        btnExcel.addEventListener('click', () => showDelightToast('वित्तीय एक्सेल स्प्रेडशीट जतन केली जात आहे.'));
+      }
+      if (btnShare) {
+        btnShare.addEventListener('click', () => showDelightToast('CA व बँक लोन मॅनेजर सोबत थेट लिंक शेअर केली!'));
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,40,25,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs max-w-md mx-auto"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">space_dashboard</span><span class="font-label-sm text-label-sm mt-0.5">डॅशबोर्ड</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="mandi-rates" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm mt-0.5">बाजारभाव</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors text-primary font-bold" data-path="annual-farm-balance-sheet-&amp;-p&amp;l-statement" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-sm text-label-sm mt-0.5">अनालिटिक्स</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="farm-ledger" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">हिशोब</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="farmer-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">खाते</span></a></div></nav></body></html>
