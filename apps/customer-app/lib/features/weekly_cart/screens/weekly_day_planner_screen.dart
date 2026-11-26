@@ -157,7 +157,7 @@ class _WeeklyDayPlannerScreenState extends State<WeeklyDayPlannerScreen> {
                     onPressed: () {
                       setState(() {
                         _items.add(WeeklyCartItemModel(
-                          id: 'wi-${DateTime.now().millisecondsSinceEpoch}',
+                          id: '',
                           productId: p.id,
                           productName: p.name,
                           unit: p.unit,

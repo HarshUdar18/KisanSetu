@@ -9,6 +9,13 @@ class AddressModel {
   final double? latitude;
   final double? longitude;
   final bool isDefault;
+  final String recipientType; // MYSELF or SOMEONE_ELSE
+  final String? recipientFirstName;
+  final String? recipientLastName;
+  final String? recipientPhone;
+  final String? streetBuilding;
+  final String? landmark;
+  final String? locationSummary;
 
   const AddressModel({
     required this.id,
@@ -21,6 +28,13 @@ class AddressModel {
     this.latitude,
     this.longitude,
     this.isDefault = false,
+    this.recipientType = 'MYSELF',
+    this.recipientFirstName,
+    this.recipientLastName,
+    this.recipientPhone,
+    this.streetBuilding,
+    this.landmark,
+    this.locationSummary,
   });
 
   factory AddressModel.fromJson(Map<String, dynamic> json) {
@@ -34,28 +48,57 @@ class AddressModel {
       pincode: json['pincode'] as String? ?? '',
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
-      isDefault: json['isDefault'] as bool? ?? (json['default'] as bool? ?? false),
+      isDefault:
+          json['isDefault'] as bool? ?? (json['default'] as bool? ?? false),
+      recipientType: (json['recipientType'] as String?) ?? 'MYSELF',
+      recipientFirstName: json['recipientFirstName'] as String?,
+      recipientLastName: json['recipientLastName'] as String?,
+      recipientPhone: json['recipientPhone'] as String?,
+      streetBuilding: json['streetBuilding'] as String?,
+      landmark: json['landmark'] as String?,
+      locationSummary: json['locationSummary'] as String?,
     );
   }
 
   String get fullAddressText {
-    final parts = [addressLine1];
-    if (addressLine2 != null && addressLine2!.isNotEmpty) parts.add(addressLine2!);
+    final parts = <String>[addressLine1];
+    if (streetBuilding != null && streetBuilding!.isNotEmpty) {
+      parts.add(streetBuilding!);
+    }
+    if (landmark != null && landmark!.isNotEmpty) {
+      parts.add('Near $landmark');
+    }
+    if (addressLine2 != null && addressLine2!.isNotEmpty) {
+      parts.add(addressLine2!);
+    }
     parts.add('$city, $state - $pincode');
     return parts.join(', ');
   }
 
   String get fullAddress => fullAddressText;
 
+  String get recipientFullName {
+    final f = (recipientFirstName ?? '').trim();
+    final l = (recipientLastName ?? '').trim();
+    return '$f $l'.trim();
+  }
+
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'addressLine1': addressLine1,
-        if (addressLine2 != null) 'addressLine2': addressLine2,
-        'city': city,
-        'state': state,
-        'pincode': pincode,
-        if (latitude != null) 'latitude': latitude,
-        if (longitude != null) 'longitude': longitude,
-        'isDefault': isDefault,
-      };
+    'label': label,
+    'addressLine1': addressLine1,
+    if (addressLine2 != null) 'addressLine2': addressLine2,
+    'city': city,
+    'state': state,
+    'pincode': pincode,
+    if (latitude != null) 'latitude': latitude,
+    if (longitude != null) 'longitude': longitude,
+    'isDefault': isDefault,
+    'recipientType': recipientType,
+    if (recipientFirstName != null) 'recipientFirstName': recipientFirstName,
+    if (recipientLastName != null) 'recipientLastName': recipientLastName,
+    if (recipientPhone != null) 'recipientPhone': recipientPhone,
+    if (streetBuilding != null) 'streetBuilding': streetBuilding,
+    if (landmark != null) 'landmark': landmark,
+    if (locationSummary != null) 'locationSummary': locationSummary,
+  };
 }

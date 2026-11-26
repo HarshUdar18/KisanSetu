@@ -85,7 +85,7 @@ class SelectLanguageScreen extends StatelessWidget {
               Expanded(
                 child: ListView.separated(
                   itemCount: _languages.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
+                  separatorBuilder: (_, _) => const SizedBox(height: 12),
                   itemBuilder: (context, index) {
                     final lang = _languages[index];
                     final isSelected = settings.languageCode == lang['code'];
@@ -167,7 +167,7 @@ class SelectLanguageScreen extends StatelessWidget {
                     if (fromSettings) {
                       context.pop();
                     } else {
-                      context.go('/welcome');
+                      context.go('/login');
                     }
                   },
                   child: Text(fromSettings ? 'Save Language' : 'Continue'),

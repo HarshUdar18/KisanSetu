@@ -100,45 +100,53 @@ class _PaymentScreenState extends State<PaymentScreen> {
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 8),
-          ...[
-            {
-              'id': 'UPI_GPAY',
-              'title': 'Google Pay (UPI)',
-              'sub': 'Instant 1-tap settlement',
+          RadioGroup<String>(
+            groupValue: _method,
+            onChanged: (v) {
+              if (v != null) setState(() => _method = v);
             },
-            {
-              'id': 'UPI_PHONEPE',
-              'title': 'PhonePe UPI',
-              'sub': 'Zero convenience fee',
-            },
-            {
-              'id': 'UPI_ID',
-              'title': 'Enter Any UPI ID',
-              'sub': 'BHIM, Paytm, Cred',
-            },
-            {
-              'id': 'CARD',
-              'title': 'Credit / Debit Card',
-              'sub': 'Visa, Mastercard, RuPay',
-            },
-            {
-              'id': 'COD',
-              'title': 'Cash / UPI on Delivery',
-              'sub': 'Pay at doorstep',
-            },
-          ].map(
-            (m) => Card(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: RadioListTile<String>(
-                value: m['id']!,
-                groupValue: _method,
-                onChanged: (v) => setState(() => _method = v!),
-                title: Text(
-                  m['title']!,
-                  style: Theme.of(context).textTheme.labelLarge,
-                ),
-                subtitle: Text(m['sub']!),
-              ),
+            child: Column(
+              children: [
+                {
+                  'id': 'UPI_GPAY',
+                  'title': 'Google Pay (UPI)',
+                  'sub': 'Instant 1-tap settlement',
+                },
+                {
+                  'id': 'UPI_PHONEPE',
+                  'title': 'PhonePe UPI',
+                  'sub': 'Zero convenience fee',
+                },
+                {
+                  'id': 'UPI_ID',
+                  'title': 'Enter Any UPI ID',
+                  'sub': 'BHIM, Paytm, Cred',
+                },
+                {
+                  'id': 'CARD',
+                  'title': 'Credit / Debit Card',
+                  'sub': 'Visa, Mastercard, RuPay',
+                },
+                {
+                  'id': 'COD',
+                  'title': 'Cash / UPI on Delivery',
+                  'sub': 'Pay at doorstep',
+                },
+              ]
+                  .map(
+                    (m) => Card(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      child: RadioListTile<String>(
+                        value: m['id']!,
+                        title: Text(
+                          m['title']!,
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
+                        subtitle: Text(m['sub']!),
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ],

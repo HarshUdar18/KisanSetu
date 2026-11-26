@@ -22,10 +22,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void initState() {
     super.initState();
     final auth = context.read<AuthProvider>();
-    _nameCtrl = TextEditingController(text: auth.fullName ?? 'Sunita Deshmukh');
-    _emailCtrl = TextEditingController(
-        text: auth.email ?? 'sunita.deshmukh@kisansetu.local');
-    _phoneCtrl = TextEditingController(text: auth.identifier ?? '9876543211');
+    _nameCtrl = TextEditingController(text: auth.fullName ?? '');
+    _emailCtrl = TextEditingController(text: auth.email ?? '');
+    _phoneCtrl = TextEditingController(text: auth.identifier ?? '');
   }
 
   @override
@@ -53,9 +52,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           const SizedBox(height: 12),
           TextField(
             controller: _phoneCtrl,
+            readOnly: true,
             keyboardType: TextInputType.phone,
             decoration: const InputDecoration(
-              labelText: 'Mobile Number',
+              labelText: 'Verified Mobile Number',
               prefixText: '+91 ',
             ),
           ),

@@ -30,31 +30,29 @@ class _AccountSecurityScreenState extends State<AccountSecurityScreen> {
           Card(
             child: SwitchListTile(
               title: const Text('Biometrics & App Passcode'),
-              subtitle: const Text('Require fingerprint/PIN before UPI checkout'),
+              subtitle: const Text(
+                'Require fingerprint/PIN before UPI checkout',
+              ),
               value: _biometrics,
               onChanged: (v) => setState(() => _biometrics = v),
             ),
           ),
+          const SizedBox(height: AppSpacing.md),
+          Text(
+            'Active Sessions',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           const SizedBox(height: 8),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.lock_reset, color: AppColors.primary),
-              title: const Text('Change Password'),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/forgot-password'),
+          ..._sessions.map(
+            (s) => Card(
+              margin: const EdgeInsets.only(bottom: 8),
+              child: ListTile(
+                leading: const Icon(Icons.devices, color: AppColors.primary),
+                title: Text(s['device']!),
+                subtitle: Text(s['loc']!),
+              ),
             ),
           ),
-          const SizedBox(height: AppSpacing.md),
-          Text('Active Sessions', style: Theme.of(context).textTheme.headlineSmall),
-          const SizedBox(height: 8),
-          ..._sessions.map((s) => Card(
-                margin: const EdgeInsets.only(bottom: 8),
-                child: ListTile(
-                  leading: const Icon(Icons.devices, color: AppColors.primary),
-                  title: Text(s['device']!),
-                  subtitle: Text(s['loc']!),
-                ),
-              )),
           if (_sessions.length > 1)
             OutlinedButton(
               onPressed: () async {
@@ -74,8 +72,10 @@ class _AccountSecurityScreenState extends State<AccountSecurityScreen> {
           TextButton.icon(
             onPressed: () => context.push('/delete-account'),
             icon: const Icon(Icons.delete_forever, color: AppColors.error),
-            label: const Text('Delete Account Request',
-                style: TextStyle(color: AppColors.error)),
+            label: const Text(
+              'Delete Account Request',
+              style: TextStyle(color: AppColors.error),
+            ),
           ),
         ],
       ),

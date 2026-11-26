@@ -124,7 +124,59 @@ class AddressProvider extends ChangeNotifier {
       latitude: address.latitude,
       longitude: address.longitude,
       isDefault: address.isDefault,
+      recipientType: address.recipientType,
+      recipientFirstName: address.recipientFirstName,
+      recipientLastName: address.recipientLastName,
+      recipientPhone: address.recipientPhone,
+      streetBuilding: address.streetBuilding,
+      landmark: address.landmark,
+      locationSummary: address.locationSummary,
     ));
+    _isLoading = false;
+    notifyListeners();
+    return true;
+  }
+
+  Future<bool> updateAddress(AddressModel address) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+    try {
+      final response = await dioClient.put(
+        '/addresses/${address.id}',
+        data: address.toJson(),
+      );
+      final updated = response.data['data'];
+      if (updated is Map<String, dynamic>) {
+        final model = AddressModel.fromJson(updated);
+        if (model.isDefault) {
+          _addresses =
+              _addresses.map((a) => _copyWithDefault(a, false)).toList();
+        }
+        final idx = _addresses.indexWhere((a) => a.id == address.id);
+        if (idx >= 0) {
+          _addresses[idx] = model;
+        } else {
+          _addresses.add(model);
+        }
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      }
+    } catch (_) {
+      if (!enableMockFallback) {
+        _errorMessage =
+            'Unable to update address. Please check your connection and retry.';
+        _isLoading = false;
+        notifyListeners();
+        return false;
+      }
+    }
+
+    final idx = _addresses.indexWhere((a) => a.id == address.id);
+    if (idx >= 0) {
+      _addresses[idx] = address;
+    }
     _isLoading = false;
     notifyListeners();
     return true;
@@ -137,6 +189,15 @@ class AddressProvider extends ChangeNotifier {
     _addresses = _addresses
         .map((a) => _copyWithDefault(a, a.id == id))
         .toList();
+    notifyListeners();
+  }
+
+  void clearLocalState() {
+    _addresses = [];
+    _lastServiceability = null;
+    _errorMessage = null;
+    _isLoading = false;
+    _isCheckingServiceability = false;
     notifyListeners();
   }
 
@@ -187,22 +248,10 @@ class AddressProvider extends ChangeNotifier {
       notifyListeners();
       return res;
     } catch (_) {
-      final pilotMap = {
-        '411005': 'Shivajinagar Central Hub',
-        '411035': 'Akurdi Agro Hub',
-        '411038': 'Kothrud & Mulshi Cluster',
-      };
-      final area = pilotMap[clean];
-      final res = area != null
-          ? ServiceabilityResult(
-              isServiceable: true,
-              serviceAreaName: area,
-              message: 'Delivery available in $area within 12 hours.',
-            )
-          : const ServiceabilityResult(
-              isServiceable: false,
-              message: 'Delivery currently unavailable in your area.',
-            );
+      const res = ServiceabilityResult(
+        isServiceable: false,
+        message: 'Unable to verify serviceability right now. Please try again.',
+      );
       _lastServiceability = res;
       _isCheckingServiceability = false;
       notifyListeners();
@@ -222,6 +271,13 @@ class AddressProvider extends ChangeNotifier {
       latitude: a.latitude,
       longitude: a.longitude,
       isDefault: isDefault,
+      recipientType: a.recipientType,
+      recipientFirstName: a.recipientFirstName,
+      recipientLastName: a.recipientLastName,
+      recipientPhone: a.recipientPhone,
+      streetBuilding: a.streetBuilding,
+      landmark: a.landmark,
+      locationSummary: a.locationSummary,
     );
   }
 }

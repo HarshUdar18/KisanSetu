@@ -25,6 +25,14 @@ public class CreateAddressRequest {
     private BigDecimal longitude;
     private boolean isDefault = false;
 
+    private String recipientType = "MYSELF";
+    private String recipientFirstName;
+    private String recipientLastName;
+    private String recipientPhone;
+    private String streetBuilding;
+    private String landmark;
+    private String locationSummary;
+
     public CreateAddressRequest() {}
 
     public String getLabel() { return label; }
@@ -45,4 +53,18 @@ public class CreateAddressRequest {
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
     public boolean isDefault() { return isDefault; }
     public void setDefault(boolean aDefault) { isDefault = aDefault; }
+    public String getRecipientType() { return recipientType; }
+    public void setRecipientType(String recipientType) { this.recipientType = recipientType; }
+    public String getRecipientFirstName() { return recipientFirstName; }
+    public void setRecipientFirstName(String recipientFirstName) { this.recipientFirstName = recipientFirstName; }
+    public String getRecipientLastName() { return recipientLastName; }
+    public void setRecipientLastName(String recipientLastName) { this.recipientLastName = recipientLastName; }
+    public String getRecipientPhone() { return recipientPhone; }
+    public void setRecipientPhone(String recipientPhone) { this.recipientPhone = recipientPhone; }
+    public String getStreetBuilding() { return streetBuilding; }
+    public void setStreetBuilding(String streetBuilding) { this.streetBuilding = streetBuilding; }
+    public String getLandmark() { return landmark; }
+    public void setLandmark(String landmark) { this.landmark = landmark; }
+    public String getLocationSummary() { return locationSummary; }
+    public void setLocationSummary(String locationSummary) { this.locationSummary = locationSummary; }
 }

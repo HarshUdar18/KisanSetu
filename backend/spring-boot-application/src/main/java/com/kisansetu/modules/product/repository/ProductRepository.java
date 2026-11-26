@@ -19,8 +19,12 @@ public interface ProductRepository extends JpaRepository<Product, UUID> {
     Optional<Product> findByIdForUpdate(@Param("id") UUID id);
 
     List<Product> findByCategoryIdAndIsAvailableTrue(UUID categoryId);
+    List<Product> findByCategoryId(UUID categoryId);
     List<Product> findByIsAvailableTrue();
+    Optional<Product> findByProductCodeIgnoreCase(String productCode);
+    boolean existsByCategoryIdAndProductCodeIgnoreCase(UUID categoryId, String productCode);
+    boolean existsByCanonicalNameIgnoreCase(String canonicalName);
 
-    @Query("SELECT p FROM Product p WHERE p.isAvailable = true AND (LOWER(p.name) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.marathiName) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.description) LIKE LOWER(CONCAT('%', :query, '%')))")
+    @Query("SELECT p FROM Product p WHERE LOWER(p.name) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.canonicalName) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.marathiName) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.productCode) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.description) LIKE LOWER(CONCAT('%', :query, '%'))")
     List<Product> searchProducts(@Param("query") String query);
 }

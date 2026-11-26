@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import '../../../core/services/mock_farmer_services.dart';
+import '../../../core/network/dio_client.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/farmer_header.dart';
 import '../providers/demand_provider.dart';
@@ -191,9 +191,39 @@ class BulkEscrowScreen extends StatelessWidget {
   }
 }
 
-/// Implements Stitch `daily_apmc_mandi_rates_live_spot_ticker`.
-class MandiSpotRatesScreen extends StatelessWidget {
+/// Implements Stitch `daily_apmc_mandi_rates_live_spot_ticker` backed by `/api/v1/products`.
+class MandiSpotRatesScreen extends StatefulWidget {
   const MandiSpotRatesScreen({super.key});
+
+  @override
+  State<MandiSpotRatesScreen> createState() => _MandiSpotRatesScreenState();
+}
+
+class _MandiSpotRatesScreenState extends State<MandiSpotRatesScreen> {
+  List<Map<String, dynamic>> _rates = [];
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRates();
+  }
+
+  Future<void> _loadRates() async {
+    try {
+      final res = await context.read<DioClient>().get('/products');
+      final data = res.data['data'];
+      final raw = data is Map ? (data['content'] as List<dynamic>? ?? []) : (data as List<dynamic>? ?? []);
+      if (mounted) {
+        setState(() {
+          _rates = raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+          _loading = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -208,33 +238,27 @@ class MandiSpotRatesScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(AppSpacing.margin),
-        itemCount: MockFarmerServices.mandiSpotRates.length,
-        itemBuilder: (_, i) {
-          final r = MockFarmerServices.mandiSpotRates[i];
-          return Card(
-            margin: const EdgeInsets.only(bottom: 10),
-            child: ListTile(
-              title: Text(r['crop'] as String),
-              subtitle: Text(r['mandi'] as String),
-              trailing: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text('₹${(r['rate'] as num).toStringAsFixed(0)}/${r['unit']}',
-                      style: Theme.of(context).textTheme.labelLarge),
-                  Text(r['trend'] as String,
-                      style: const TextStyle(
-                          color: AppColors.success,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w700)),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
+      body: _loading
+          ? const Center(child: CircularProgressIndicator())
+          : _rates.isEmpty
+              ? const Center(child: Text('No live market rates available yet.'))
+              : ListView.builder(
+                  padding: const EdgeInsets.all(AppSpacing.margin),
+                  itemCount: _rates.length,
+                  itemBuilder: (_, i) {
+                    final r = _rates[i];
+                    final price = (r['currentPrice'] as num?)?.toDouble() ?? 0.0;
+                    return Card(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      child: ListTile(
+                        title: Text((r['name'] ?? '').toString()),
+                        subtitle: Text((r['categoryName'] ?? 'Market').toString()),
+                        trailing: Text('₹${price.toStringAsFixed(0)}/${r['unit'] ?? 'kg'}',
+                            style: Theme.of(context).textTheme.labelLarge),
+                      ),
+                    );
+                  },
+                ),
     );
   }
 }

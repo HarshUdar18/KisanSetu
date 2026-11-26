@@ -87,15 +87,23 @@ class _CancelOrderScreenState extends State<CancelOrderScreen> {
                   Text('Select Cancellation Reason',
                       style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(height: 8),
-                  ..._reasons.map((r) => Card(
-                        margin: const EdgeInsets.only(bottom: 8),
-                        child: RadioListTile<String>(
-                          value: r,
-                          groupValue: _reason,
-                          onChanged: (v) => setState(() => _reason = v!),
-                          title: Text(r, style: const TextStyle(fontSize: 14)),
-                        ),
-                      )),
+                  RadioGroup<String>(
+                    groupValue: _reason,
+                    onChanged: (v) {
+                      if (v != null) setState(() => _reason = v);
+                    },
+                    child: Column(
+                      children: _reasons
+                          .map((r) => Card(
+                                margin: const EdgeInsets.only(bottom: 8),
+                                child: RadioListTile<String>(
+                                  value: r,
+                                  title: Text(r, style: const TextStyle(fontSize: 14)),
+                                ),
+                              ))
+                          .toList(),
+                    ),
+                  ),
                   const Spacer(),
                   SizedBox(
                     width: double.infinity,

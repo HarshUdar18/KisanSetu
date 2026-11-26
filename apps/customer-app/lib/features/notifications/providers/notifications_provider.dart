@@ -1,16 +1,11 @@
 import 'package:flutter/foundation.dart';
 import '../../../core/network/dio_client.dart';
-import '../../../core/services/mock_services.dart';
 
 class NotificationsProvider extends ChangeNotifier {
   final DioClient? dioClient;
   final bool enableMockFallback;
 
-  NotificationsProvider({this.dioClient, this.enableMockFallback = false}) {
-    if (enableMockFallback) {
-      _items = MockCustomerServices.notifications.map((e) => Map<String, dynamic>.from(e)).toList();
-    }
-  }
+  NotificationsProvider({this.dioClient, this.enableMockFallback = false});
 
   List<Map<String, dynamic>> _items = [];
   bool _isLoading = false;

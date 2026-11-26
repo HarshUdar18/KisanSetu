@@ -1,0 +1,4 @@
+app:
+  auth:
+    otp:
+      expose-in-development: true

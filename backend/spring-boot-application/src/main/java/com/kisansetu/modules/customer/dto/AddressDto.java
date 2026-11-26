@@ -15,6 +15,13 @@ public class AddressDto {
     private BigDecimal latitude;
     private BigDecimal longitude;
     private boolean isDefault;
+    private String recipientType;
+    private String recipientFirstName;
+    private String recipientLastName;
+    private String recipientPhone;
+    private String streetBuilding;
+    private String landmark;
+    private String locationSummary;
 
     public AddressDto() {}
 
@@ -30,6 +37,13 @@ public class AddressDto {
         dto.setLatitude(address.getLatitude());
         dto.setLongitude(address.getLongitude());
         dto.setDefault(address.isDefault());
+        dto.setRecipientType(address.getRecipientType());
+        dto.setRecipientFirstName(address.getRecipientFirstName());
+        dto.setRecipientLastName(address.getRecipientLastName());
+        dto.setRecipientPhone(address.getRecipientPhone());
+        dto.setStreetBuilding(address.getStreetBuilding());
+        dto.setLandmark(address.getLandmark());
+        dto.setLocationSummary(address.getLocationSummary());
         return dto;
     }
 
@@ -53,4 +67,18 @@ public class AddressDto {
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
     public boolean isDefault() { return isDefault; }
     public void setDefault(boolean aDefault) { isDefault = aDefault; }
+    public String getRecipientType() { return recipientType; }
+    public void setRecipientType(String recipientType) { this.recipientType = recipientType; }
+    public String getRecipientFirstName() { return recipientFirstName; }
+    public void setRecipientFirstName(String recipientFirstName) { this.recipientFirstName = recipientFirstName; }
+    public String getRecipientLastName() { return recipientLastName; }
+    public void setRecipientLastName(String recipientLastName) { this.recipientLastName = recipientLastName; }
+    public String getRecipientPhone() { return recipientPhone; }
+    public void setRecipientPhone(String recipientPhone) { this.recipientPhone = recipientPhone; }
+    public String getStreetBuilding() { return streetBuilding; }
+    public void setStreetBuilding(String streetBuilding) { this.streetBuilding = streetBuilding; }
+    public String getLandmark() { return landmark; }
+    public void setLandmark(String landmark) { this.landmark = landmark; }
+    public String getLocationSummary() { return locationSummary; }
+    public void setLocationSummary(String locationSummary) { this.locationSummary = locationSummary; }
 }

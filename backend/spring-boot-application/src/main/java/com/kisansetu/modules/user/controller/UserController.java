@@ -64,7 +64,7 @@ public class UserController {
                     farmerProfile.getState() != null ? farmerProfile.getState() : "").replaceAll("^, |, $", "").trim();
             pincode = farmerProfile.getPincode();
         } else {
-            fullName = user.getPhone();
+            fullName = "";
         }
 
         CustomerProfileDto dto = new CustomerProfileDto(

@@ -1,5 +1,6 @@
 package com.kisansetu.modules.farmer.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kisansetu.modules.user.entity.User;
 import jakarta.persistence.*;
 import java.time.Instant;
@@ -13,6 +14,7 @@ public class FarmerProfile {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;

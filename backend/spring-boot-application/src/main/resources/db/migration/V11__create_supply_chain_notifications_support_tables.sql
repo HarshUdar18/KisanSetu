@@ -111,8 +111,8 @@ INSERT INTO fpo_organizations (id, name, registration_number, district, state, c
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO warehouses (id, name, code, location, capacity_tons, used_tons, cold_storage_available, status) VALUES
-    ('w0000000-0000-0000-0000-000000000001', 'Pune Central Cold Hub', 'WH-PUN-01', 'Chakan MIDC, Pune', 250.00, 84.50, TRUE, 'OPERATIONAL'),
-    ('w0000000-0000-0000-0000-000000000002', 'Nashik Aggregation Depot', 'WH-NSK-01', 'Lasalgaon, Nashik', 400.00, 140.00, TRUE, 'OPERATIONAL')
+    ('77000000-0000-0000-0000-000000000001', 'Pune Central Cold Hub', 'WH-PUN-01', 'Chakan MIDC, Pune', 250.00, 84.50, TRUE, 'OPERATIONAL'),
+    ('77000000-0000-0000-0000-000000000002', 'Nashik Aggregation Depot', 'WH-NSK-01', 'Lasalgaon, Nashik', 400.00, 140.00, TRUE, 'OPERATIONAL')
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO coupons (id, code, discount_type, discount_value, min_order_amount, max_discount, is_active) VALUES

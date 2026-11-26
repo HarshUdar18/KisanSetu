@@ -106,6 +106,14 @@ public class OperationsController {
         return ResponseEntity.ok(ApiResponse.ok("Inventory retrieved", inventoryRepo.findAll()));
     }
 
+    @GetMapping("/inventory/availability")
+    @Operation(summary = "Check available and reserved stock for a product")
+    public ResponseEntity<ApiResponse<InventoryItem>> getAvailability(@RequestParam UUID productId) {
+        InventoryItem item = inventoryRepo.findByProductId(productId)
+                .orElseThrow(() -> new ApiException("INVENTORY_NOT_FOUND", "No inventory record for product", HttpStatus.NOT_FOUND));
+        return ResponseEntity.ok(ApiResponse.ok("Inventory availability retrieved", item));
+    }
+
     @PutMapping("/admin/inventory/{productId}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<InventoryItem>> upsertInventory(
@@ -128,7 +136,8 @@ public class OperationsController {
     // --- Collections ---
     @GetMapping("/collections")
     public ResponseEntity<ApiResponse<List<CollectionRecord>>> listCollections(@AuthenticationPrincipal UserPrincipal principal) {
-        boolean isAdmin = principal == null || principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        boolean isAdmin = principal == null || principal.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN") || a.getAuthority().equals("ROLE_SUPER_ADMIN"));
         List<CollectionRecord> list = isAdmin
                 ? collectionRepo.findAll()
                 : collectionRepo.findByFarmerIdOrderByScheduledDateDesc(principal.getId());
@@ -155,7 +164,8 @@ public class OperationsController {
     // --- Quality Inspections ---
     @GetMapping("/quality")
     public ResponseEntity<ApiResponse<List<QualityInspection>>> listQuality(@AuthenticationPrincipal UserPrincipal principal) {
-        boolean isAdmin = principal == null || principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        boolean isAdmin = principal == null || principal.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN") || a.getAuthority().equals("ROLE_SUPER_ADMIN"));
         List<QualityInspection> list = isAdmin
                 ? qualityRepo.findAll()
                 : qualityRepo.findByFarmerIdOrderByInspectedAtDesc(principal.getId());
@@ -211,7 +221,8 @@ public class OperationsController {
     // --- Support Tickets ---
     @GetMapping("/support/tickets")
     public ResponseEntity<ApiResponse<List<SupportTicket>>> listTickets(@AuthenticationPrincipal UserPrincipal principal) {
-        boolean isAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        boolean isAdmin = principal.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN") || a.getAuthority().equals("ROLE_SUPER_ADMIN"));
         List<SupportTicket> list = isAdmin
                 ? ticketRepo.findAllByOrderByCreatedAtDesc()
                 : ticketRepo.findByUserIdOrderByCreatedAtDesc(principal.getId());

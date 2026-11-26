@@ -35,10 +35,12 @@ import {
   AdminProfilePage,
   AdminUsersPage,
   AnalyticsPage,
+  HubsPage,
   NotificationsPage,
   SettingsPage,
   SupportPage,
 } from '../features/governance/GovernancePages';
+import { ServiceAreasPage } from '../features/governance/ServiceAreasPage';
 
 const ProtectedRoute: React.FC<{
   children: React.ReactNode;
@@ -94,6 +96,8 @@ export const AppRoutes: React.FC = () => {
         <Route path="/notifications" element={<ProtectedRoute permission="notifications"><NotificationsPage /></ProtectedRoute>} />
         <Route path="/support" element={<ProtectedRoute permission="support"><SupportPage /></ProtectedRoute>} />
         <Route path="/admin-users" element={<ProtectedRoute permission="admin-users"><AdminUsersPage /></ProtectedRoute>} />
+        <Route path="/hubs" element={<ProtectedRoute permission="hubs"><HubsPage /></ProtectedRoute>} />
+        <Route path="/service-areas" element={<ProtectedRoute permission="settings"><ServiceAreasPage /></ProtectedRoute>} />
         <Route path="/settings" element={<ProtectedRoute permission="settings"><SettingsPage /></ProtectedRoute>} />
         <Route path="/profile" element={<AdminProfilePage />} />
       </Route>

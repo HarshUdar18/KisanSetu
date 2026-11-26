@@ -1,23 +1,25 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/kisan_header.dart';
+import '../../location/providers/address_provider.dart';
 import '../providers/auth_provider.dart';
 
-/// Implements Stitch:
-/// - `otp_verification`
-/// - `otp_incorrect_retry`
-/// - `otp_expired_resend_options`
+/// 6-digit OTP verification screen with resend cooldown, change-number action,
+/// and development-only OTP display when provided by the backend.
 class OtpVerificationScreen extends StatefulWidget {
   final String phone;
-  final bool fromRegistration;
+  final String countryCode;
+  final int initialCooldownSeconds;
 
   const OtpVerificationScreen({
     super.key,
     required this.phone,
-    this.fromRegistration = false,
+    this.countryCode = '+91',
+    this.initialCooldownSeconds = 30,
   });
 
   @override
@@ -26,221 +28,262 @@ class OtpVerificationScreen extends StatefulWidget {
 
 class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   final _otpCtrl = TextEditingController();
-  int _secondsLeft = 45;
-  Timer? _timer;
+  late int _resendSecondsLeft;
+  Timer? _resendTimer;
+  bool _verifyingOrNavigating = false;
 
   @override
   void initState() {
     super.initState();
-    _startTimer();
+    _startResendCountdown(widget.initialCooldownSeconds);
   }
 
-  void _startTimer() {
-    _timer?.cancel();
-    setState(() => _secondsLeft = 45);
-    _timer = Timer.periodic(const Duration(seconds: 1), (t) {
-      if (!mounted) return;
-      if (_secondsLeft <= 1) {
+  void _startResendCountdown(int seconds) {
+    _resendTimer?.cancel();
+    setState(() => _resendSecondsLeft = seconds.clamp(1, 120));
+    _resendTimer = Timer.periodic(const Duration(seconds: 1), (t) {
+      if (!mounted) {
         t.cancel();
-        context.read<AuthProvider>().simulateOtpExpired();
+        return;
+      }
+      if (_resendSecondsLeft <= 1) {
+        t.cancel();
+        setState(() => _resendSecondsLeft = 0);
       } else {
-        setState(() => _secondsLeft--);
+        setState(() => _resendSecondsLeft--);
       }
     });
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
+    _resendTimer?.cancel();
     _otpCtrl.dispose();
     super.dispose();
   }
 
+  String _formattedPhone() {
+    final p = widget.phone;
+    if (widget.countryCode == '+91' && p.length == 10) {
+      return '+91 ${p.substring(0, 5)} ${p.substring(5)}';
+    }
+    if (p.startsWith('+')) return p;
+    return '${widget.countryCode} $p';
+  }
+
   Future<void> _verify() async {
-    final ok = await context
-        .read<AuthProvider>()
-        .verifyOtp(widget.phone, _otpCtrl.text.trim());
+    if (_verifyingOrNavigating) return;
+    final otp = _otpCtrl.text.trim();
+    if (otp.length != 6) return;
+
+    _verifyingOrNavigating = true;
+    final auth = context.read<AuthProvider>();
+    final ok = await auth.verifyOtp(
+      widget.phone,
+      otp,
+      countryCode: widget.countryCode,
+    );
     if (!mounted) return;
     if (ok) {
-      _timer?.cancel();
-      if (widget.fromRegistration) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Registration Successful! Welcome to Kisan Setu.'),
-          ),
-        );
-      }
-      context.go('/home');
+      _resendTimer?.cancel();
+      await context.read<AddressProvider>().fetchAddresses();
+      if (!mounted) return;
+      context.go('/select-location');
+    } else {
+      _verifyingOrNavigating = false;
     }
   }
 
-  Future<void> _resend(String channel) async {
-    await context.read<AuthProvider>().requestOtp(widget.phone);
-    if (!mounted) return;
-    _startTimer();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('New OTP sent via $channel to +91 ${widget.phone}')),
+  Future<void> _resend() async {
+    if (_resendSecondsLeft > 0) return;
+    final auth = context.read<AuthProvider>();
+    final ok = await auth.requestOtp(
+      widget.phone,
+      countryCode: widget.countryCode,
     );
+    if (!mounted) return;
+    if (ok) {
+      _otpCtrl.clear();
+      _startResendCountdown(auth.resendCooldownSeconds);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('New OTP sent to ${_formattedPhone()}')),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final auth = context.watch<AuthProvider>();
-    final isIncorrect = auth.otpStatus == OtpVerificationStatus.invalid;
-    final isExpired = auth.otpStatus == OtpVerificationStatus.expired;
+    final isError = auth.errorMessage != null &&
+        (auth.otpStatus == OtpVerificationStatus.invalid ||
+            auth.otpStatus == OtpVerificationStatus.expired);
+    final canVerify = _otpCtrl.text.trim().length == 6 && !auth.isLoading;
 
     return Scaffold(
       backgroundColor: AppColors.surface,
-      appBar: const KisanStackAppBar(title: 'Verify Mobile Number'),
+      appBar: const KisanStackAppBar(title: 'OTP Verification'),
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.margin),
+          padding: const EdgeInsets.all(AppSpacing.lg),
           children: [
+            Text(
+              'Verify your mobile number',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
             const SizedBox(height: AppSpacing.sm),
             Text(
-              isExpired
-                  ? 'Verification Code Expired'
-                  : isIncorrect
-                      ? 'Incorrect Code Entered'
-                      : 'Enter 6-Digit Verification Code',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'Sent to +91 ${widget.phone}.',
+              'We have sent a verification code to ${_formattedPhone()}',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: AppColors.onSurfaceVariant,
                   ),
             ),
-            if (auth.developmentOtp != null) ...[
-              const SizedBox(height: 12),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  minimumSize: const Size(0, 36),
+                ),
+                onPressed: auth.isLoading ? null : () => context.pop(),
+                icon: const Icon(Icons.edit_outlined, size: 16),
+                label: const Text('Change mobile number'),
+              ),
+            ),
+
+            if (auth.developmentOtp != null && auth.developmentOtp!.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.sm),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryContainer.withValues(alpha: 0.35),
+                  color: AppColors.secondaryContainer.withValues(alpha: 0.45),
                   borderRadius: BorderRadius.circular(AppRadius.lg),
-                  border: Border.all(color: AppColors.primary.withValues(alpha: 0.4)),
+                  border: Border.all(
+                    color: AppColors.primary.withValues(alpha: 0.35),
+                  ),
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.developer_mode, color: AppColors.primary, size: 20),
+                    const Icon(
+                      Icons.developer_mode,
+                      color: AppColors.primary,
+                      size: 20,
+                    ),
                     const SizedBox(width: 10),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Your Development OTP',
-                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: AppColors.primary),
-                          ),
-                          Text(
-                            auth.developmentOtp!,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, letterSpacing: 4),
-                          ),
-                        ],
+                      child: Text(
+                        'Development OTP: ${auth.developmentOtp!}',
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.primary,
+                        ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {
+                        Clipboard.setData(ClipboardData(text: auth.developmentOtp!));
                         _otpCtrl.text = auth.developmentOtp!;
+                        setState(() {});
                       },
-                      child: const Text('Autofill'),
+                      child: const Text('Copy & Fill'),
                     ),
                   ],
                 ),
               ),
             ],
+
             const SizedBox(height: AppSpacing.lg),
-            if (isIncorrect || isExpired)
+
+            if (isError)
               Container(
                 margin: const EdgeInsets.only(bottom: AppSpacing.md),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: AppColors.errorContainer,
-                  borderRadius: BorderRadius.circular(AppRadius.lg),
+                  borderRadius: BorderRadius.circular(AppRadius.md),
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.error_outline, color: AppColors.error),
+                    const Icon(Icons.error_outline, color: AppColors.error, size: 18),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        auth.errorMessage ??
-                            (isExpired
-                                ? 'OTP expired. Choose a channel below to resend.'
-                                : 'Invalid OTP. Please check and retry.'),
+                        auth.errorMessage!,
                         style: const TextStyle(
-                            color: AppColors.onErrorContainer, fontSize: 13),
+                          color: AppColors.onErrorContainer,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
+
             TextField(
               controller: _otpCtrl,
               keyboardType: TextInputType.number,
+              autofillHints: const [AutofillHints.oneTimeCode],
               maxLength: 6,
               textAlign: TextAlign.center,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              onChanged: (_) {
+                auth.clearError();
+                setState(() {});
+              },
+              onSubmitted: (_) {
+                if (canVerify) _verify();
+              },
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
-                letterSpacing: 8,
+                letterSpacing: 10,
               ),
               decoration: const InputDecoration(
                 counterText: '',
+                filled: true,
+                fillColor: AppColors.surfaceContainerLowest,
                 hintText: '• • • • • •',
               ),
             ),
-            const SizedBox(height: AppSpacing.md),
+
+            const SizedBox(height: AppSpacing.lg),
+
             SizedBox(
               width: double.infinity,
+              height: 52,
               child: ElevatedButton(
-                onPressed: auth.isLoading || isExpired ? null : _verify,
+                onPressed: canVerify ? _verify : null,
                 child: auth.isLoading
                     ? const SizedBox(
-                        width: 18,
-                        height: 18,
+                        width: 20,
+                        height: 20,
                         child: CircularProgressIndicator(
-                            strokeWidth: 2, color: Colors.white),
+                          strokeWidth: 2.2,
+                          color: Colors.white,
+                        ),
                       )
-                    : const Text('Verify & Continue'),
+                    : const Text('Verify'),
               ),
             ),
-            const SizedBox(height: AppSpacing.lg),
-            if (!isExpired)
-              Center(
-                child: Text(
-                  'Code expires in 00:${_secondsLeft.toString().padLeft(2, '0')}',
-                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: AppColors.primary,
-                      ),
-                ),
-              ),
+
             const SizedBox(height: AppSpacing.md),
-            Text(
-              'Choose How to Receive New Code',
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            const SizedBox(height: 8),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OutlinedButton.icon(
-                  onPressed: () => _resend('SMS'),
-                  icon: const Icon(Icons.sms_outlined, size: 18),
-                  label: const Text('Resend SMS'),
-                ),
-                OutlinedButton.icon(
-                  onPressed: () => _resend('WhatsApp'),
-                  icon: const Icon(Icons.chat_outlined, size: 18),
-                  label: const Text('WhatsApp OTP'),
-                ),
-                OutlinedButton.icon(
-                  onPressed: () => _resend('Voice Call'),
-                  icon: const Icon(Icons.call_outlined, size: 18),
-                  label: const Text('Voice Call'),
-                ),
+                if (_resendSecondsLeft > 0)
+                  Text(
+                    'Resend OTP in 00:${_resendSecondsLeft.toString().padLeft(2, '0')}',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppColors.onSurfaceVariant,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  )
+                else
+                  TextButton(
+                    onPressed: auth.isLoading ? null : _resend,
+                    child: const Text('Resend OTP'),
+                  ),
               ],
             ),
           ],

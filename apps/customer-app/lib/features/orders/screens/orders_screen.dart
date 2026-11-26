@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/auth_gate.dart';
 import '../../../core/widgets/empty_state_view.dart';
 import '../../../core/widgets/kisan_header.dart';
+import '../../auth/providers/auth_provider.dart';
 import '../providers/orders_provider.dart';
 
 /// Implements Stitch `my_orders` (All / Active / Completed / Cancelled).
@@ -21,12 +23,27 @@ class _OrdersScreenState extends State<OrdersScreen> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      if (mounted) context.read<OrdersProvider>().fetchOrders();
+      if (!mounted) return;
+      if (context.read<AuthProvider>().isAuthenticated) {
+        context.read<OrdersProvider>().fetchOrders();
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final auth = context.watch<AuthProvider>();
+    if (!auth.isAuthenticated) {
+      return const Scaffold(
+        backgroundColor: AppColors.surface,
+        appBar: KisanTabHeader(),
+        body: GuestAuthRequiredView(
+          icon: Icons.receipt_long_outlined,
+          title: 'Sign in to view your orders',
+          subtitle: 'Track farm harvest deliveries, invoices, and live order status.',
+        ),
+      );
+    }
     final ordersProvider = context.watch<OrdersProvider>();
     final orders = ordersProvider.orders.where((o) {
       if (_filter == 'ACTIVE') {

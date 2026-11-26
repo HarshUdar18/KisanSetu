@@ -74,5 +74,5 @@ INSERT INTO demand_requests (id, requester_id, product_id, quantity_kg, target_p
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO settlements (id, farmer_id, gross_amount, platform_commission, net_amount, status, bank_account_masked, remarks) VALUES
-    ('s0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 12500.00, 1250.00, 11250.00, 'PENDING', 'SBIN-XXXX-4521', 'Pending finance DBT authorization for weekly harvest batch')
+    ('55000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 12500.00, 1250.00, 11250.00, 'PENDING', 'SBIN-XXXX-4521', 'Pending finance DBT authorization for weekly harvest batch')
 ON CONFLICT (id) DO NOTHING;

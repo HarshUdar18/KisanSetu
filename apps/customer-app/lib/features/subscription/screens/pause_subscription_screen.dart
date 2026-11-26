@@ -39,20 +39,28 @@ class _PauseSubscriptionScreenState extends State<PauseSubscriptionScreen> {
                   ),
             ),
             const SizedBox(height: AppSpacing.lg),
-            ...[
-              '3 Days (Weekend Trip)',
-              '7 Days (Back Next Week)',
-              '14 Days (Extended Vacation)',
-              'Until I Resume Manually',
-            ].map((opt) => Card(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  child: RadioListTile<String>(
-                    value: opt,
-                    groupValue: _duration,
-                    onChanged: (v) => setState(() => _duration = v!),
-                    title: Text(opt),
-                  ),
-                )),
+            RadioGroup<String>(
+              groupValue: _duration,
+              onChanged: (v) {
+                if (v != null) setState(() => _duration = v);
+              },
+              child: Column(
+                children: [
+                  '3 Days (Weekend Trip)',
+                  '7 Days (Back Next Week)',
+                  '14 Days (Extended Vacation)',
+                  'Until I Resume Manually',
+                ]
+                    .map((opt) => Card(
+                          margin: const EdgeInsets.only(bottom: 10),
+                          child: RadioListTile<String>(
+                            value: opt,
+                            title: Text(opt),
+                          ),
+                        ))
+                    .toList(),
+              ),
+            ),
             const Spacer(),
             SizedBox(
               width: double.infinity,

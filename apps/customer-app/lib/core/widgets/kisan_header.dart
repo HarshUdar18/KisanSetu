@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import '../../features/cart/providers/cart_provider.dart';
 import '../providers/app_settings_provider.dart';
 import '../theme/app_theme.dart';
 
@@ -17,7 +16,6 @@ class KisanTabHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final settings = context.watch<AppSettingsProvider>();
-    final cartCount = context.watch<CartProvider>().cart.itemCount;
 
     return Container(
       decoration: BoxDecoration(
@@ -32,17 +30,6 @@ class KisanTabHeader extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.symmetric(horizontal: AppSpacing.margin),
             child: Row(
               children: [
-                // Brand Mark
-                Container(
-                  width: 34,
-                  height: 34,
-                  decoration: BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                  ),
-                  child: const Icon(Icons.eco, color: AppColors.harvestGold, size: 20),
-                ),
-                const SizedBox(width: AppSpacing.sm),
                 // Delivery Location Pill
                 Expanded(
                   child: InkWell(
@@ -61,7 +48,9 @@ class KisanTabHeader extends StatelessWidget implements PreferredSizeWidget {
                           const SizedBox(width: 4),
                           Expanded(
                             child: Text(
-                              'Deliver to: ${settings.formattedDeliveryLocation}',
+                              settings.isLocationSelected
+                                  ? 'Deliver to: ${settings.formattedDeliveryLocation}'
+                                  : 'Select delivery location',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context).textTheme.labelSmall?.copyWith(
@@ -83,38 +72,7 @@ class KisanTabHeader extends StatelessWidget implements PreferredSizeWidget {
                   onPressed: () => context.push('/search'),
                   icon: const Icon(Icons.search, color: AppColors.onSurfaceVariant),
                 ),
-                // Cart with Harvest Gold badge
-                Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    IconButton(
-                      tooltip: 'Shopping Cart',
-                      onPressed: () => context.push('/cart'),
-                      icon: const Icon(Icons.shopping_cart_outlined,
-                          color: AppColors.onSurfaceVariant),
-                    ),
-                    if (cartCount > 0)
-                      Positioned(
-                        right: 6,
-                        top: 6,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                          decoration: const BoxDecoration(
-                            color: AppColors.tertiaryFixedDim,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Text(
-                            '$cartCount',
-                            style: const TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.onTertiaryFixed,
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
+                const SizedBox(width: 4),
                 // Profile Avatar
                 InkWell(
                   onTap: () => context.go('/profile'),

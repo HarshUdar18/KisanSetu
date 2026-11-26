@@ -2,6 +2,7 @@ package com.kisansetu.modules.customer.entity;
 
 import com.kisansetu.modules.user.entity.User;
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -26,11 +27,11 @@ public class CustomerProfile {
     @Column(name = "pincode", length = 10)
     private String pincode;
 
-    @Column(name = "latitude")
-    private Double latitude;
+    @Column(name = "latitude", precision = 10, scale = 7)
+    private BigDecimal latitude;
 
-    @Column(name = "longitude")
-    private Double longitude;
+    @Column(name = "longitude", precision = 10, scale = 7)
+    private BigDecimal longitude;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
@@ -94,19 +95,19 @@ public class CustomerProfile {
         this.pincode = pincode;
     }
 
-    public Double getLatitude() {
+    public BigDecimal getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public BigDecimal getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;
     }
 

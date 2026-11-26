@@ -1,18 +1,10 @@
 import 'package:flutter/foundation.dart';
 import '../../../core/network/dio_client.dart';
-import '../../../core/services/mock_farmer_services.dart';
 
 class SettlementsProvider extends ChangeNotifier {
   final DioClient? dioClient;
-  final bool enableMockFallback;
 
-  SettlementsProvider({this.dioClient, this.enableMockFallback = false}) {
-    if (enableMockFallback) {
-      _ledger = MockFarmerServices.settlementEntries.map((e) => Map<String, dynamic>.from(e)).toList();
-      _weeklyBalance = 24850.00;
-      _walletBalance = 3420.00;
-    }
-  }
+  SettlementsProvider({this.dioClient});
 
   List<Map<String, dynamic>> _ledger = [];
   final List<Map<String, dynamic>> _storeCart = [];
@@ -61,9 +53,7 @@ class SettlementsProvider extends ChangeNotifier {
       }).toList();
       _weeklyBalance = pendingTotal;
     } catch (_) {
-      if (!enableMockFallback) {
-        _errorMessage = 'Unable to load settlements. Please retry.';
-      }
+      _errorMessage = 'Unable to load settlements. Please retry.';
     }
     _isLoading = false;
     notifyListeners();

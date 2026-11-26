@@ -1,20 +1,13 @@
 import 'package:flutter/foundation.dart';
 import '../../../core/network/dio_client.dart';
-import '../../../core/services/mock_farmer_services.dart';
 
 class DemandProvider extends ChangeNotifier {
   final DioClient? dioClient;
-  final bool enableMockFallback;
 
-  DemandProvider({this.dioClient, this.enableMockFallback = false}) {
-    if (enableMockFallback) {
-      _demands = MockFarmerServices.demandRequests.map((e) => Map<String, dynamic>.from(e)).toList();
-      _orders = MockFarmerServices.confirmedOrders.map((e) => Map<String, dynamic>.from(e)).toList();
-    }
-  }
+  DemandProvider({this.dioClient});
 
   List<Map<String, dynamic>> _demands = [];
-  List<Map<String, dynamic>> _orders = [];
+  final List<Map<String, dynamic>> _orders = [];
   bool _isLoading = false;
   String? _errorMessage;
 
@@ -46,9 +39,7 @@ class DemandProvider extends ChangeNotifier {
         };
       }).toList();
     } catch (_) {
-      if (!enableMockFallback) {
-        _errorMessage = 'Unable to load demand requests. Please retry.';
-      }
+      _errorMessage = 'Unable to load demand requests. Please retry.';
     }
     _isLoading = false;
     notifyListeners();
@@ -61,23 +52,13 @@ class DemandProvider extends ChangeNotifier {
     if (action == 'ACCEPTED' && dioClient != null) {
       try {
         await dioClient!.put('/demands/$id/accept', data: {
-          if (quotedRate != null) 'offeredPricePerKg': quotedRate,
+          'offeredPricePerKg': ?quotedRate,
         });
       } catch (_) {}
     }
 
     _demands[idx]['status'] = action;
     if (quotedRate != null) _demands[idx]['rate'] = quotedRate;
-    if (action == 'ACCEPTED') {
-      _orders.insert(0, {
-        'id': 'ord-${DateTime.now().millisecondsSinceEpoch}',
-        'buyer': _demands[idx]['buyer'],
-        'items': _demands[idx]['crop'],
-        'amount': _demands[idx]['total'],
-        'status': 'CONFIRMED',
-        'slot': _demands[idx]['window'],
-      });
-    }
     notifyListeners();
   }
 

@@ -21,8 +21,11 @@ import com.kisansetu.modules.order.repository.OrderRepository;
 import com.kisansetu.modules.pricing.entity.MarketPrice;
 import com.kisansetu.modules.pricing.repository.MarketPriceRepository;
 import com.kisansetu.modules.product.entity.Product;
+import com.kisansetu.modules.servicearea.dto.GeofenceDtos.GeofenceValidateRequest;
+import com.kisansetu.modules.servicearea.dto.GeofenceDtos.GeofenceValidationResult;
 import com.kisansetu.modules.servicearea.entity.ServiceArea;
 import com.kisansetu.modules.servicearea.repository.ServiceAreaRepository;
+import com.kisansetu.modules.servicearea.service.GeofenceService;
 import com.kisansetu.modules.user.entity.User;
 import com.kisansetu.modules.user.repository.UserRepository;
 import org.springframework.http.HttpStatus;
@@ -49,8 +52,32 @@ public class OrderService {
     private final UserRepository userRepository;
     private final DomainEventPublisher eventPublisher;
     private final StockConservationService stockConservationService;
+    private final GeofenceService geofenceService;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final SecureRandom random = new SecureRandom();
+
+    @org.springframework.beans.factory.annotation.Autowired
+    public OrderService(OrderRepository orderRepository,
+            OrderItemRepository orderItemRepository,
+            CartService cartService,
+            AddressRepository addressRepository,
+            ServiceAreaRepository serviceAreaRepository,
+            MarketPriceRepository marketPriceRepository,
+            UserRepository userRepository,
+            DomainEventPublisher eventPublisher,
+            StockConservationService stockConservationService,
+            GeofenceService geofenceService) {
+        this.orderRepository = orderRepository;
+        this.orderItemRepository = orderItemRepository;
+        this.cartService = cartService;
+        this.addressRepository = addressRepository;
+        this.serviceAreaRepository = serviceAreaRepository;
+        this.marketPriceRepository = marketPriceRepository;
+        this.userRepository = userRepository;
+        this.eventPublisher = eventPublisher;
+        this.stockConservationService = stockConservationService;
+        this.geofenceService = geofenceService;
+    }
 
     public OrderService(OrderRepository orderRepository,
             OrderItemRepository orderItemRepository,
@@ -61,15 +88,9 @@ public class OrderService {
             UserRepository userRepository,
             DomainEventPublisher eventPublisher,
             StockConservationService stockConservationService) {
-        this.orderRepository = orderRepository;
-        this.orderItemRepository = orderItemRepository;
-        this.cartService = cartService;
-        this.addressRepository = addressRepository;
-        this.serviceAreaRepository = serviceAreaRepository;
-        this.marketPriceRepository = marketPriceRepository;
-        this.userRepository = userRepository;
-        this.eventPublisher = eventPublisher;
-        this.stockConservationService = stockConservationService;
+        this(orderRepository, orderItemRepository, cartService, addressRepository,
+                serviceAreaRepository, marketPriceRepository, userRepository,
+                eventPublisher, stockConservationService, null);
     }
 
     @Transactional(readOnly = true)
@@ -104,20 +125,29 @@ public class OrderService {
         summary.setTaxAmount(cart.getTaxAmount());
         summary.setTotalAmount(cart.getTotalAmount());
 
-        if (addressId != null) {
-            Address address = addressRepository.findByIdAndUserId(addressId, userId)
-                    .orElse(null);
-            if (address != null) {
-                summary.setSelectedAddress(AddressDto.fromEntity(address));
-                Optional<ServiceArea> sa = serviceAreaRepository.findByPincode(address.getPincode());
-                summary.setServiceable(sa.isPresent() && "ACTIVE".equalsIgnoreCase(sa.get().getStatus()));
-                summary.setServiceAreaName(sa.map(ServiceArea::getName).orElse(null));
-            }
-        } else {
-            Address def = addressRepository.findByUserIdAndIsDefaultTrue(userId).orElse(null);
-            if (def != null) {
-                summary.setSelectedAddress(AddressDto.fromEntity(def));
-                Optional<ServiceArea> sa = serviceAreaRepository.findByPincode(def.getPincode());
+        Address selectedAddress = addressId != null
+                ? addressRepository.findByIdAndUserId(addressId, userId).orElse(null)
+                : addressRepository.findByUserIdAndIsDefaultTrue(userId).orElse(null);
+
+        if (selectedAddress != null) {
+            summary.setSelectedAddress(AddressDto.fromEntity(selectedAddress));
+            if (geofenceService != null && selectedAddress.getLatitude() != null && selectedAddress.getLongitude() != null) {
+                GeofenceValidationResult geo = geofenceService.validateServiceability(
+                        new GeofenceValidateRequest(
+                                selectedAddress.getLatitude().doubleValue(),
+                                selectedAddress.getLongitude().doubleValue(),
+                                "CUSTOMER_DELIVERY",
+                                selectedAddress.getPincode(),
+                                null,
+                                selectedAddress.getCity(),
+                                selectedAddress.getState(),
+                                selectedAddress.getId()
+                        )
+                );
+                summary.setServiceable(geo.serviceable());
+                summary.setServiceAreaName(geo.localityName());
+            } else {
+                Optional<ServiceArea> sa = serviceAreaRepository.findByPincode(selectedAddress.getPincode());
                 summary.setServiceable(sa.isPresent() && "ACTIVE".equalsIgnoreCase(sa.get().getStatus()));
                 summary.setServiceAreaName(sa.map(ServiceArea::getName).orElse(null));
             }
@@ -141,10 +171,31 @@ public class OrderService {
                 .orElseThrow(() -> new ApiException("ADDRESS_NOT_FOUND", "Address not found or unauthorized",
                         HttpStatus.NOT_FOUND));
 
-        ServiceArea serviceArea = serviceAreaRepository.findByPincode(address.getPincode())
-                .orElseThrow(() -> new ApiException("OUTSIDE_SERVICE_AREA",
-                        "Delivery address is outside the supported service area (Shivajinagar/Akurdi).",
-                        HttpStatus.BAD_REQUEST));
+        GeofenceValidationResult geofenceDecision = null;
+        ServiceArea serviceArea = null;
+        if (geofenceService != null && address.getLatitude() != null && address.getLongitude() != null) {
+            geofenceDecision = geofenceService.validateServiceability(
+                    new GeofenceValidateRequest(
+                            address.getLatitude().doubleValue(),
+                            address.getLongitude().doubleValue(),
+                            "CUSTOMER_DELIVERY",
+                            address.getPincode(),
+                            null,
+                            address.getCity(),
+                            address.getState(),
+                            address.getId()
+                    )
+            );
+            if (!geofenceDecision.serviceable()) {
+                throw new ApiException(geofenceDecision.reasonCode(), geofenceDecision.message(), HttpStatus.BAD_REQUEST);
+            }
+            serviceArea = serviceAreaRepository.findByPincode(address.getPincode()).orElse(null);
+        } else {
+            serviceArea = serviceAreaRepository.findByPincode(address.getPincode())
+                    .orElseThrow(() -> new ApiException("OUTSIDE_SERVICE_AREA",
+                            "Sorry, Kisan Setu is not currently available at this location.",
+                            HttpStatus.BAD_REQUEST));
+        }
 
         String addressJson = "";
         try {
@@ -162,6 +213,11 @@ public class OrderService {
                 serviceArea,
                 request.getDeliveryDate(),
                 request.getDeliverySlot());
+        if (geofenceDecision != null) {
+            order.setServiceLocalityId(geofenceDecision.localityId());
+            order.setGeofenceVersion(geofenceDecision.boundaryVersion());
+            order.setServiceabilityDecision(geofenceDecision.reasonCode());
+        }
 
         BigDecimal subtotal = BigDecimal.ZERO;
         for (CartItem item : cart.getItems()) {

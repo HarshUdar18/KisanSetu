@@ -106,4 +106,33 @@ class PreferencesService {
     } catch (_) {}
     return (_memoryFallback[key] as bool?) ?? defaultValue;
   }
+
+  Future<void> remove(String key) async {
+    _memoryFallback.remove(key);
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(key);
+    } catch (_) {}
+  }
+}
+
+/// Pure in-memory preferences implementation for deterministic unit/widget tests.
+class InMemoryPreferencesService extends PreferencesService {
+  final Map<String, Object> _store = {};
+
+  @override
+  Future<void> setString(String key, String value) async => _store[key] = value;
+
+  @override
+  Future<String?> getString(String key) async => _store[key] as String?;
+
+  @override
+  Future<void> setBool(String key, bool value) async => _store[key] = value;
+
+  @override
+  Future<bool> getBool(String key, {bool defaultValue = false}) async =>
+      (_store[key] as bool?) ?? defaultValue;
+
+  @override
+  Future<void> remove(String key) async => _store.remove(key);
 }

@@ -1,8 +1,10 @@
 package com.kisansetu.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kisansetu.common.exception.ApiException;
 import com.kisansetu.common.exception.BadRequestException;
 import com.kisansetu.modules.auth.dto.OtpChallenge;
+import com.kisansetu.modules.auth.dto.SendOtpRequest;
 import com.kisansetu.modules.auth.provider.DevelopmentOtpProvider;
 import com.kisansetu.modules.auth.provider.LocalSmsProvider;
 import org.junit.jupiter.api.Test;
@@ -80,5 +82,38 @@ class DevelopmentOtpProviderTest {
 
         // Even the originally generated OTP is now rejected because challenge was invalidated
         assertThrows(BadRequestException.class, () -> provider.verifyOtp("9876543212", challenge.developmentOtp()));
+    }
+
+    @Test
+    void normalizesIndianPhoneNumbersAndRejectsInvalidInputs() {
+        SendOtpRequest spaced = new SendOtpRequest("+91 98765 43211");
+        spaced.setCountryCode("+91");
+        assertEquals("9876543211", spaced.resolveIdentifier());
+
+        SendOtpRequest zeroPrefix = new SendOtpRequest("09876543211");
+        assertEquals("9876543211", zeroPrefix.resolveIdentifier());
+
+        SendOtpRequest tooShort = new SendOtpRequest("98765");
+        assertThrows(BadRequestException.class, tooShort::resolveIdentifier);
+
+        SendOtpRequest arbitrary = new SendOtpRequest("hello-world");
+        assertThrows(BadRequestException.class, arbitrary::resolveIdentifier);
+    }
+
+    @Test
+    void rejectsDuplicateOtpReuseAndBlocksProdWithoutSmsCredentials() {
+        MockEnvironment localEnv = new MockEnvironment();
+        localEnv.setActiveProfiles("local");
+        DevelopmentOtpProvider localProvider = new DevelopmentOtpProvider(localEnv, new LocalSmsProvider());
+        var challenge = localProvider.generateOtp("9876543219");
+        assertDoesNotThrow(() -> localProvider.verifyOtp("9876543219", challenge.developmentOtp()));
+        assertThrows(BadRequestException.class, () -> localProvider.verifyOtp("9876543219", challenge.developmentOtp()));
+
+        MockEnvironment prodEnv = new MockEnvironment();
+        prodEnv.setActiveProfiles("prod");
+        LocalSmsProvider blockingSms = new LocalSmsProvider("", "", true);
+        DevelopmentOtpProvider prodProvider = new DevelopmentOtpProvider(prodEnv, blockingSms, false);
+        ApiException blocked = assertThrows(ApiException.class, () -> prodProvider.generateOtp("9876543219"));
+        assertEquals("SMS_PROVIDER_BLOCKED", blocked.getCode());
     }
 }

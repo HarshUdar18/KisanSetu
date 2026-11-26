@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
@@ -15,11 +16,22 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final _ctrl = TextEditingController();
+  Timer? _debounce;
 
   @override
   void dispose() {
+    _debounce?.cancel();
     _ctrl.dispose();
     super.dispose();
+  }
+
+  void _onSearchChanged(String q) {
+    _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        context.read<CatalogProvider>().setSearchQuery(q);
+      }
+    });
   }
 
   void _applySearch(String q) {
@@ -41,7 +53,7 @@ class _SearchScreenState extends State<SearchScreen> {
           TextField(
             controller: _ctrl,
             autofocus: true,
-            onChanged: catalog.setSearchQuery,
+            onChanged: _onSearchChanged,
             decoration: InputDecoration(
               hintText: 'Search onions, A2 milk, spinach, FPOs...',
               prefixIcon: const Icon(Icons.search),

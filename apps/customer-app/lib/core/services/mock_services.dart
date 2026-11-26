@@ -155,7 +155,7 @@ class MockCustomerServices {
     },
     {
       'q': 'What if my PIN code is not serviceable yet?',
-      'a': 'We currently serve Pune pilot corridors (411005, 411035, 411038). You can still browse all produce and join the waitlist for your neighborhood.',
+      'a': 'We verify delivery availability for your exact delivery address at checkout. You can still browse all fresh farm produce anytime.',
     },
   ];
 

@@ -90,7 +90,7 @@ class FarmerDashboardScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Namaste, ${auth.fullName ?? 'Ramesh Shinde'}',
+                          'Namaste, ${auth.fullName ?? 'Farmer'}',
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         Text(

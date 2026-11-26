@@ -36,7 +36,7 @@ class ProductLoadingSkeleton extends StatelessWidget {
             crossAxisSpacing: 12,
             childAspectRatio: 0.72,
           ),
-          itemBuilder: (_, __) => Container(
+          itemBuilder: (_, _) => Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppColors.surfaceContainerLowest,

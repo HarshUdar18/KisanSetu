@@ -7,6 +7,8 @@ import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/confirmation_dialog.dart';
 import '../../../core/widgets/kisan_header.dart';
 import '../../auth/providers/auth_provider.dart';
+import '../../cart/providers/cart_provider.dart';
+import '../../location/providers/address_provider.dart';
 
 /// Implements Stitch `customer_profile`.
 class ProfileScreen extends StatelessWidget {
@@ -45,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Text(
                         auth.isAuthenticated
-                            ? (auth.fullName ?? 'Sunita Deshmukh')
+                            ? (auth.fullName ?? 'Kisan Setu Customer')
                             : 'Guest Shopper',
                         style: const TextStyle(
                           fontSize: 18,
@@ -55,7 +57,9 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       Text(
                         auth.isAuthenticated
-                            ? '+91 ${auth.identifier ?? '9876543211'}'
+                            ? (auth.identifier != null
+                                ? '+91 ${auth.identifier}'
+                                : 'Verified Customer')
                             : 'Sign in to sync baskets & orders',
                         style: const TextStyle(
                           fontSize: 12,
@@ -162,7 +166,11 @@ class ProfileScreen extends StatelessWidget {
                 if (ok == true && context.mounted) {
                   await auth.logout();
                   if (!context.mounted) return;
-                  context.go('/welcome');
+                  context.read<AddressProvider>().clearLocalState();
+                  context.read<CartProvider>().clearLocalState();
+                  await settings.clearLocationOnLogout();
+                  if (!context.mounted) return;
+                  context.go('/login');
                 }
               },
               icon: const Icon(Icons.logout),
@@ -171,7 +179,7 @@ class ProfileScreen extends StatelessWidget {
           else
             ElevatedButton(
               onPressed: () => context.push('/login'),
-              child: const Text('Sign In / Register'),
+              child: const Text('Continue with Mobile Number'),
             ),
 
           const SizedBox(height: 12),

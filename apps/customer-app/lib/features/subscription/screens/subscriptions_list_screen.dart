@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/auth_gate.dart';
 import '../../../core/widgets/kisan_header.dart';
+import '../../auth/providers/auth_provider.dart';
 import '../providers/subscription_provider.dart';
 
 /// Implements Stitch `subscription_overview`.
@@ -19,12 +21,27 @@ class _SubscriptionsListScreenState extends State<SubscriptionsListScreen> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      if (mounted) context.read<SubscriptionProvider>().fetchSubscriptions();
+      if (!mounted) return;
+      if (context.read<AuthProvider>().isAuthenticated) {
+        context.read<SubscriptionProvider>().fetchSubscriptions();
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final auth = context.watch<AuthProvider>();
+    if (!auth.isAuthenticated) {
+      return const Scaffold(
+        backgroundColor: AppColors.surface,
+        appBar: KisanStackAppBar(title: 'Farm Subscriptions'),
+        body: GuestAuthRequiredView(
+          icon: Icons.autorenew,
+          title: 'Sign in to manage subscriptions',
+          subtitle: 'Create or pause recurring A2 milk and farm produce plans.',
+        ),
+      );
+    }
     final provider = context.watch<SubscriptionProvider>();
     final subs = provider.subscriptions;
 
@@ -70,14 +87,19 @@ class _SubscriptionsListScreenState extends State<SubscriptionsListScreen> {
                 SizedBox(height: 4),
                 Text(
                   'Lock guaranteed morning A2 milk and fresh greens, pause anytime for vacations, and support steady farmer income.',
-                  style: TextStyle(fontSize: 12, color: AppColors.onPrimaryContainer),
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.onPrimaryContainer,
+                  ),
                 ),
               ],
             ),
           ),
           const SizedBox(height: AppSpacing.md),
-          Text('Your Subscription Plans',
-              style: Theme.of(context).textTheme.headlineSmall),
+          Text(
+            'Your Subscription Plans',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           const SizedBox(height: 10),
           ...subs.map((s) {
             final isActive = s.status == 'ACTIVE';
@@ -92,11 +114,15 @@ class _SubscriptionsListScreenState extends State<SubscriptionsListScreen> {
                       : AppColors.surfaceContainer,
                   child: Icon(
                     Icons.autorenew,
-                    color: isActive ? AppColors.onSecondaryContainer : AppColors.outline,
+                    color: isActive
+                        ? AppColors.onSecondaryContainer
+                        : AppColors.outline,
                   ),
                 ),
-                title: Text(s.weeklyCartTitle,
-                    style: Theme.of(context).textTheme.labelLarge),
+                title: Text(
+                  s.weeklyCartTitle,
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 4),
                   child: Text(
@@ -108,19 +134,24 @@ class _SubscriptionsListScreenState extends State<SubscriptionsListScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
                         color: isActive
                             ? AppColors.secondaryContainer
                             : isPaused
-                                ? AppColors.tertiaryFixed
-                                : AppColors.errorContainer,
+                            ? AppColors.tertiaryFixed
+                            : AppColors.errorContainer,
                         borderRadius: BorderRadius.circular(AppRadius.full),
                       ),
                       child: Text(
                         s.status,
                         style: const TextStyle(
-                            fontSize: 10, fontWeight: FontWeight.w700),
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ],

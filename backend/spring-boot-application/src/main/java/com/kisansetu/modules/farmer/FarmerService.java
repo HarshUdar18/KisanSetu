@@ -1,9 +1,12 @@
 package com.kisansetu.modules.farmer;
 
 import com.kisansetu.common.exception.ResourceNotFoundException;
+import com.kisansetu.modules.collection.FarmerCollectionWorkflowService;
+import com.kisansetu.modules.farmer.entity.FarmerListing;
 import com.kisansetu.modules.farmer.entity.FarmerProfile;
 import com.kisansetu.modules.farmer.repository.FarmerListingRepository;
 import com.kisansetu.modules.farmer.repository.FarmerProfileRepository;
+import com.kisansetu.modules.operations.entity.CollectionRecord;
 import com.kisansetu.modules.operations.repository.CollectionRecordRepository;
 import com.kisansetu.modules.settlement.entity.Settlement;
 import com.kisansetu.modules.settlement.repository.SettlementRepository;
@@ -11,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -21,15 +26,18 @@ public class FarmerService {
     private final FarmerListingRepository listingRepository;
     private final CollectionRecordRepository collectionRepository;
     private final SettlementRepository settlementRepository;
+    private final FarmerCollectionWorkflowService collectionWorkflowService;
 
     public FarmerService(FarmerProfileRepository farmerProfileRepository,
                          FarmerListingRepository listingRepository,
                          CollectionRecordRepository collectionRepository,
-                         SettlementRepository settlementRepository) {
+                         SettlementRepository settlementRepository,
+                         FarmerCollectionWorkflowService collectionWorkflowService) {
         this.farmerProfileRepository = farmerProfileRepository;
         this.listingRepository = listingRepository;
         this.collectionRepository = collectionRepository;
         this.settlementRepository = settlementRepository;
+        this.collectionWorkflowService = collectionWorkflowService;
     }
 
     @Transactional(readOnly = true)
@@ -61,25 +69,43 @@ public class FarmerService {
     @Transactional(readOnly = true)
     public Map<String, Object> getDashboardSummary(UUID userId) {
         FarmerProfile profile = getProfileByUserId(userId);
-        long activeListings = listingRepository.findByFarmerIdOrderByCreatedAtDesc(userId).stream()
+        List<FarmerListing> listings = listingRepository.findByFarmerIdOrderByCreatedAtDesc(userId);
+        long activeListings = listings.stream()
                 .filter(l -> Boolean.TRUE.equals(l.getIsAvailable()) && "ACTIVE".equalsIgnoreCase(l.getStatus())).count();
-        long pendingCollections = collectionRepository.findByFarmerIdOrderByScheduledDateDesc(userId).stream()
-                .filter(c -> "SCHEDULED".equalsIgnoreCase(c.getStatus())).count();
+        BigDecimal availableStockKg = listings.stream()
+                .filter(l -> Boolean.TRUE.equals(l.getIsAvailable()) && l.getQuantityAvailable() != null)
+                .map(FarmerListing::getQuantityAvailable)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        List<CollectionRecord> collections = collectionRepository.findByFarmerIdOrderByScheduledDateDesc(userId);
+        long pendingCollections = collections.stream()
+                .filter(c -> "SCHEDULED".equalsIgnoreCase(c.getStatus()) || "REQUESTED".equalsIgnoreCase(c.getStatus())).count();
+        long acceptedCollections = collections.stream()
+                .filter(c -> "INSPECTED".equalsIgnoreCase(c.getStatus()) || "TRANSFERRED".equalsIgnoreCase(c.getStatus()) || "COMPLETED".equalsIgnoreCase(c.getStatus())).count();
+
+        long pendingTransfers = collectionWorkflowService.listFarmerTransfers(userId).stream()
+                .filter(t -> !"COMPLETED".equalsIgnoreCase(String.valueOf(t.get("status")))).count();
+
         BigDecimal walletBalance = settlementRepository.findByFarmerIdOrderByCreatedAtDesc(userId).stream()
                 .filter(s -> "PENDING".equalsIgnoreCase(s.getStatus()) || "AUTHORIZED".equalsIgnoreCase(s.getStatus()))
                 .map(Settlement::getNetAmount)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        return Map.of(
-                "farmerName", profile.getFullName(),
-                "village", profile.getVillage() != null ? profile.getVillage() : "N/A",
-                "district", profile.getDistrict() != null ? profile.getDistrict() : "N/A",
-                "primaryCrop", profile.getPrimaryCropCategory() != null ? profile.getPrimaryCropCategory() : "General",
-                "activeListingsCount", activeListings,
-                "pendingCollectionsCount", pendingCollections,
-                "walletBalance", walletBalance,
-                "soilType", profile.getSoilType() != null ? profile.getSoilType() : "",
-                "irrigationType", profile.getIrrigationType() != null ? profile.getIrrigationType() : ""
-        );
+        Map<String, Object> summary = new HashMap<>();
+        summary.put("farmerName", profile.getFullName());
+        summary.put("kycStatus", "PENDING");
+        summary.put("village", profile.getVillage() != null ? profile.getVillage() : "");
+        summary.put("district", profile.getDistrict() != null ? profile.getDistrict() : "");
+        summary.put("primaryCrop", profile.getPrimaryCropCategory() != null ? profile.getPrimaryCropCategory() : "General");
+        summary.put("activeListingsCount", activeListings);
+        summary.put("availableStockKg", availableStockKg);
+        summary.put("pendingCollectionsCount", pendingCollections);
+        summary.put("acceptedCollectionsCount", acceptedCollections);
+        summary.put("pendingTransfersCount", pendingTransfers);
+        summary.put("walletBalance", walletBalance);
+        summary.put("soilType", profile.getSoilType() != null ? profile.getSoilType() : "");
+        summary.put("irrigationType", profile.getIrrigationType() != null ? profile.getIrrigationType() : "");
+        summary.put("assignedCollectionPoint", collectionWorkflowService.getAssignedCollectionPoint(userId));
+        return summary;
     }
 }

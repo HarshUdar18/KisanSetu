@@ -28,14 +28,14 @@ class FarmerAuthProvider extends ChangeNotifier {
   String? _errorMessage;
   String? _developmentOtp;
   FarmerOtpStatus _otpStatus = FarmerOtpStatus.idle;
-  KycStatus _kycStatus = KycStatus.approved;
+  KycStatus _kycStatus = KycStatus.pending;
 
-  // Protected masked KYC summary (never exposes full Aadhaar/account in plain storage)
-  String _aadhaarMasked = '•••• •••• 8842';
-  String _panMasked = 'ABCPS1234F';
-  String _bankName = 'State Bank of India';
-  String _bankAccountMasked = '•••• 4201';
-  String _ifsc = 'SBIN0001245';
+  // Protected masked KYC summary (populated from backend /farmer/profile)
+  String _aadhaarMasked = '';
+  String _panMasked = '';
+  String _bankName = '';
+  String _bankAccountMasked = '';
+  String _ifsc = '';
 
   bool get isLoading => _isLoading;
   bool get isAuthenticated => _isAuthenticated;
@@ -72,6 +72,7 @@ class FarmerAuthProvider extends ChangeNotifier {
         }
       } catch (_) {}
       await storageService.delete(AppConstants.tokenKey);
+    await storageService.delete(AppConstants.refreshTokenKey);
       _isAuthenticated = false;
       _token = null;
       notifyListeners();
@@ -102,32 +103,23 @@ class FarmerAuthProvider extends ChangeNotifier {
         return false;
       }
 
+      final refreshToken = data['refreshToken'] as String?;
       await storageService.write(AppConstants.tokenKey, token);
+      if (refreshToken != null && refreshToken.isNotEmpty) {
+        await storageService.write(AppConstants.refreshTokenKey, refreshToken);
+      }
       _isLoading = false;
       _isAuthenticated = true;
       _sessionExpired = false;
       _token = token;
       _identifier = identifier;
-      _fullName = (data['user']?['fullName'] ?? 'Ramesh Shinde') as String?;
+      _fullName = data['user']?['fullName'] as String?;
       _roles = roles;
       notifyListeners();
       return true;
     } catch (_) {
-      if (identifier == '9876543212' && password == 'password123') {
-        const devToken = 'dev-farmer-jwt-token';
-        await storageService.write(AppConstants.tokenKey, devToken);
-        _isLoading = false;
-        _isAuthenticated = true;
-        _sessionExpired = false;
-        _token = devToken;
-        _identifier = identifier;
-        _fullName = 'Ramesh Balasaheb Shinde';
-        _roles = const ['ROLE_FARMER'];
-        notifyListeners();
-        return true;
-      }
       _isLoading = false;
-      _errorMessage = 'Invalid farmer credentials. Try 9876543212 / password123 in dev.';
+      _errorMessage = 'Invalid farmer credentials.';
       notifyListeners();
       return false;
     }
@@ -182,37 +174,44 @@ class FarmerAuthProvider extends ChangeNotifier {
     }
 
     try {
+      final clean = phone.trim();
+      final isEmail = clean.contains('@');
       final res = await dioClient.post('/auth/verify-otp', data: {
-        'phone': phone,
+        'identifier': clean,
+        if (!isEmail) 'phone': clean,
+        if (isEmail) 'email': clean.toLowerCase(),
+        'role': 'ROLE_FARMER',
         'otp': otp,
       });
       final data = res.data['data'] ?? res.data;
       final token = data['token'] as String? ?? '';
+      final refreshToken = data['refreshToken'] as String?;
+      final roles = List<String>.from(data['roles'] ??
+          (data['user']?['roles'] as List<dynamic>? ?? []));
+
+      if (!roles.contains('ROLE_FARMER') && !roles.contains('ROLE_ADMIN')) {
+        _isLoading = false;
+        _otpStatus = FarmerOtpStatus.invalid;
+        _errorMessage = 'Access denied. This account does not have the FARMER role.';
+        notifyListeners();
+        return false;
+      }
+
       await storageService.write(AppConstants.tokenKey, token);
+      if (refreshToken != null && refreshToken.isNotEmpty) {
+        await storageService.write(AppConstants.refreshTokenKey, refreshToken);
+      }
       _isLoading = false;
       _isAuthenticated = true;
       _token = token;
-      _identifier = phone;
-      _fullName = 'Ramesh Balasaheb Shinde';
-      _roles = const ['ROLE_FARMER'];
+      _identifier = clean;
+      _fullName = (data['user']?['fullName'] as String?) ?? 'Farmer';
+      _roles = roles;
       _otpStatus = FarmerOtpStatus.verified;
       _developmentOtp = null;
       notifyListeners();
       return true;
     } catch (_) {
-      if (enableMockFallback && otp == '123456') {
-        const devToken = 'dev-farmer-jwt-token';
-        await storageService.write(AppConstants.tokenKey, devToken);
-        _isLoading = false;
-        _isAuthenticated = true;
-        _token = devToken;
-        _identifier = phone;
-        _fullName = 'Ramesh Balasaheb Shinde';
-        _roles = const ['ROLE_FARMER'];
-        _otpStatus = FarmerOtpStatus.verified;
-        notifyListeners();
-        return true;
-      }
       _isLoading = false;
       _otpStatus = FarmerOtpStatus.invalid;
       _errorMessage = 'Invalid or expired OTP. Please check and try again.';
@@ -300,14 +299,14 @@ class FarmerAuthProvider extends ChangeNotifier {
     notifyListeners();
     try {
       await dioClient.put('/farmer/profile', data: {
-        if (farmName != null) 'farmName': farmName,
-        if (landArea != null) 'landArea': landArea,
-        if (landUnit != null) 'landUnit': landUnit,
-        if (soilType != null) 'soilType': soilType,
-        if (irrigationType != null) 'irrigationType': irrigationType,
-        if (farmingExperienceYears != null) 'farmingExperienceYears': farmingExperienceYears,
-        if (village != null) 'village': village,
-        if (district != null) 'district': district,
+        'farmName': ?farmName,
+        'landArea': ?landArea,
+        'landUnit': ?landUnit,
+        'soilType': ?soilType,
+        'irrigationType': ?irrigationType,
+        'farmingExperienceYears': ?farmingExperienceYears,
+        'village': ?village,
+        'district': ?district,
       });
       _isLoading = false;
       notifyListeners();
@@ -325,6 +324,7 @@ class FarmerAuthProvider extends ChangeNotifier {
       await dioClient.post('/auth/logout');
     } catch (_) {}
     await storageService.delete(AppConstants.tokenKey);
+    await storageService.delete(AppConstants.refreshTokenKey);
     _isAuthenticated = false;
     _sessionExpired = false;
     _token = null;

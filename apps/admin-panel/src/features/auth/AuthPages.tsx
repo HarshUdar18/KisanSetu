@@ -22,7 +22,6 @@ import {
   ArrowForward,
   Phone,
   Email,
-  SupportAgent,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, type AdminRoleName } from '../../context/AuthContext';
@@ -32,8 +31,8 @@ import { adminColors } from '../../theme/theme';
 export const AdminLoginPage: React.FC = () => {
   const [realm, setRealm] = useState<AdminRoleName>('Super Admin');
   const [authMode, setAuthMode] = useState<'password' | 'otp'>('password');
-  const [phone, setPhone] = useState('9876543210');
-  const [password, setPassword] = useState('password123');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [developmentOtp, setDevelopmentOtp] = useState<string | null>(null);
@@ -68,18 +67,19 @@ export const AdminLoginPage: React.FC = () => {
         : await adminApi.login(phone.trim(), password);
       const data = res?.data ?? res;
       const roles: string[] = data?.roles ?? data?.user?.roles ?? [];
-      if (!roles.includes('ROLE_ADMIN')) {
-        setError('Access denied: Account does not hold ROLE_ADMIN.');
+      if (!roles.includes('ROLE_ADMIN') && !roles.includes('ROLE_SUPER_ADMIN')) {
+        setError('Access denied: Account does not hold ROLE_ADMIN or ROLE_SUPER_ADMIN.');
         setLoading(false);
         return;
       }
+      const isSuper = roles.includes('ROLE_SUPER_ADMIN');
       login(data.token, {
-        id: data.user?.id ?? data.userId ?? 'adm-1',
-        phoneNumber: phone,
-        email: data.user?.email ?? 'admin@kisansetu.local',
-        fullName: data.user?.fullName ?? 'Rajesh Kulkarni',
+        id: data.user?.id ?? data.userId ?? '',
+        phoneNumber: phone.trim(),
+        email: data.user?.email ?? '',
+        fullName: data.user?.fullName ?? (isSuper ? 'Super Admin' : 'Admin'),
         roles,
-        adminRole: realm,
+        adminRole: isSuper ? 'Super Admin' : realm,
       });
       navigate('/dashboard');
     } catch (err: any) {
@@ -272,29 +272,17 @@ export const AdminLoginPage: React.FC = () => {
               <Card>
                 <CardContent>
                   <Stack direction="row" sx={{ mb: 1, justifyContent: "space-between", alignItems: "center" }}>
-                    <Typography variant="subtitle2">OPERATIONAL BROADCAST</Typography>
-                    <Chip size="small" label="LIVE" sx={{ bgcolor: adminColors.secondaryContainer }} />
+                    <Typography variant="subtitle2">AUTHENTICATION POLICY</Typography>
+                    <Chip size="small" label="RBAC" sx={{ bgcolor: adminColors.secondaryContainer }} />
                   </Stack>
-                  <Typography variant="h5">184 / 184 Clusters</Typography>
-                  <Typography variant="body2">99.98% Telemetry Uptime across Pune & Nashik Hubs</Typography>
+                  <Typography variant="h6">Role-Scoped Access</Typography>
+                  <Typography variant="body2">Sign in with an authorized Admin or Super Admin account provisioned on the backend.</Typography>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent>
-                  <Typography variant="subtitle2" gutterBottom>Escrow Clearing Engine (e-NAM)</Typography>
-                  <Typography variant="h6">₹42.85 Cr Settled</Typography>
-                  <Typography variant="body2">Batch T+0 Cycle Active • Zero Audit Discrepancies</Typography>
-                </CardContent>
-              </Card>
-              <Card sx={{ bgcolor: adminColors.primary, color: '#FFFFFF' }}>
-                <CardContent>
-                  <Stack direction="row" spacing={1} sx={{ mb: 1, alignItems: "center" }}>
-                    <SupportAgent />
-                    <Typography variant="subtitle2">EMERGENCY NOC DESK (24x7)</Typography>
-                  </Stack>
-                  <Typography variant="body2" sx={{ color: adminColors.onPrimaryContainer }}>
-                    +91 20 2560 9900 • support.admin@kisansetu.local
-                  </Typography>
+                  <Typography variant="subtitle2" gutterBottom>Audit & Security</Typography>
+                  <Typography variant="body2">All administrative actions, hub assignments, and KYC approvals are logged in PostgreSQL.</Typography>
                 </CardContent>
               </Card>
             </Stack>

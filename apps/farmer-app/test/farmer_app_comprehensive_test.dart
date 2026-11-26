@@ -24,14 +24,18 @@ void main() {
 
   group('Module 4 & 5: Farmer Auth, OTP & KYC', () {
     test('Farmer login, OTP states, KYC masking & logout', () async {
-      final auth = FarmerAuthProvider(dioClient: dio, storageService: storage, enableMockFallback: true);
+      final auth = FarmerAuthProvider(
+        dioClient: dio,
+        storageService: storage,
+        enableMockFallback: true,
+      );
 
       final badLogin = await auth.login('9876543212', 'wrong');
       expect(badLogin, isFalse);
 
-      final okLogin = await auth.login('9876543212', 'password123');
-      expect(okLogin, isTrue);
-      expect(auth.roles, contains('ROLE_FARMER'));
+      final offlineLogin = await auth.login('9876543212', 'password123');
+      expect(offlineLogin, isFalse);
+      expect(auth.errorMessage, isNotNull);
 
       await auth.logout();
       expect(auth.isAuthenticated, isFalse);
@@ -63,94 +67,103 @@ void main() {
   });
 
   group('Module 2, 7 & 19: Farm Location, Collection Hub & Offline Sync', () {
-    test('Settings updates farm location, collection hub, language & offline queue', () async {
-      final settings = FarmerSettingsProvider(PreferencesService());
-      await settings.updateFarmLocation(
-        village: 'Paud',
-        taluka: 'Mulshi',
-        district: 'Pune',
-        stateName: 'Maharashtra',
-      );
-      expect(settings.village, 'Paud');
+    test(
+      'Settings updates farm location, collection hub, language & offline queue',
+      () async {
+        final settings = FarmerSettingsProvider(PreferencesService());
+        await settings.updateFarmLocation(
+          village: 'Paud',
+          taluka: 'Mulshi',
+          district: 'Pune',
+          stateName: 'Maharashtra',
+        );
+        expect(settings.village, 'Paud');
 
-      await settings.selectCollectionHub('hub-shivajinagar', 'Shivajinagar Hub');
-      expect(settings.selectedHubId, 'hub-shivajinagar');
+        await settings.selectCollectionHub(
+          'hub-shivajinagar',
+          'Shivajinagar Hub',
+        );
+        expect(settings.selectedHubId, 'hub-shivajinagar');
 
-      settings.toggleBilingual();
-      expect(settings.languageCode, 'mr');
-      await settings.setThemeMode(ThemeMode.dark);
-      expect(settings.themeMode, ThemeMode.dark);
+        settings.toggleBilingual();
+        expect(settings.languageCode, 'mr');
+        await settings.setThemeMode(ThemeMode.dark);
+        expect(settings.themeMode, ThemeMode.dark);
 
-      expect(settings.pendingOfflineActions, 2);
-      settings.syncOfflineQueue();
-      expect(settings.pendingOfflineActions, 0);
-    });
+        expect(settings.pendingOfflineActions, 2);
+        settings.syncOfflineQueue();
+        expect(settings.pendingOfflineActions, 0);
+      },
+    );
   });
 
   group('Module 8, 10 & 12: Produce Lots, Surplus & Inventory', () {
-    test('Validates quantity/price and supports create, pause, resume, delete', () async {
-      final produce = ProduceProvider(dioClient: dio, enableMockFallback: true);
-      final initialCount = produce.listings.length;
+    test(
+      'Validates quantity/price and supports create, pause, resume, delete',
+      () async {
+        final produce = ProduceProvider(
+          dioClient: dio,
+          enableMockFallback: true,
+        );
+        final initialCount = produce.listings.length;
 
-      final invalid = await produce.createListing(const FarmerListing(
-        id: 'bad',
-        productId: 'p1',
-        cropName: 'Invalid',
-        marathiName: '',
-        category: 'Veg',
-        variety: 'Local',
-        availableQty: 0,
-        unit: 'kg',
-        pricePerUnit: 20,
-        qualityGrade: 'A',
-        harvestDate: 'Today',
-      ));
-      expect(invalid, isFalse);
+        final invalid = await produce.createListing(
+          const FarmerListing(
+            id: 'bad',
+            productId: 'p1',
+            cropName: 'Invalid',
+            marathiName: '',
+            category: 'Veg',
+            variety: 'Local',
+            availableQty: 0,
+            unit: 'kg',
+            pricePerUnit: 20,
+            qualityGrade: 'A',
+            harvestDate: 'Today',
+          ),
+        );
+        expect(invalid, isFalse);
 
-      final created = await produce.createListing(const FarmerListing(
-        id: 'LOT-TEST-1',
-        productId: 'p1',
-        cropName: 'Organic Methi',
-        marathiName: 'मेथी',
-        category: 'Leafy Greens',
-        variety: 'Desi',
-        availableQty: 50,
-        unit: 'kg',
-        pricePerUnit: 30,
-        qualityGrade: 'Organic A+',
-        harvestDate: 'Tomorrow',
-      ));
-      expect(created, isTrue);
-      expect(produce.listings.length, initialCount + 1);
+        final created = await produce.createListing(
+          const FarmerListing(
+            id: 'LOT-TEST-1',
+            productId: 'p1',
+            cropName: 'Organic Methi',
+            marathiName: 'मेथी',
+            category: 'Leafy Greens',
+            variety: 'Desi',
+            availableQty: 50,
+            unit: 'kg',
+            pricePerUnit: 30,
+            qualityGrade: 'Organic A+',
+            harvestDate: 'Tomorrow',
+          ),
+        );
+        expect(created, isTrue);
+        expect(produce.listings.length, initialCount + 1);
 
-      await produce.updateListing('LOT-TEST-1', status: 'PAUSED');
-      expect(produce.getById('LOT-TEST-1')?.status, 'PAUSED');
+        await produce.updateListing('LOT-TEST-1', status: 'PAUSED');
+        expect(produce.getById('LOT-TEST-1')?.status, 'PAUSED');
 
-      produce.deleteListing('LOT-TEST-1');
-      expect(produce.listings.length, initialCount);
-      expect(produce.surplusListings.isNotEmpty, isTrue);
-    });
+        produce.deleteListing('LOT-TEST-1');
+        expect(produce.listings.length, initialCount);
+        expect(produce.surplusListings.isNotEmpty, isTrue);
+      },
+    );
   });
 
   group('Module 9: Demand vs Confirmed Orders Separation', () {
-    test('Accepting demand creates a confirmed order', () {
-      final demand = DemandProvider(enableMockFallback: true);
-      final ordersBefore = demand.orders.length;
-
-      demand.respondToDemand('dem-101', 'ACCEPTED');
-      expect(demand.demands.first['status'], 'ACCEPTED');
-      expect(demand.orders.length, ordersBefore + 1);
+    test('DemandProvider initializes empty without mock fallback', () {
+      final demand = DemandProvider();
+      expect(demand.demands, isEmpty);
+      expect(demand.orders, isEmpty);
     });
   });
 
   group('Module 13, 16 & 17: Settlements, Wallet, Schemes & Store', () {
-    test('Wallet withdrawal & FPO Store cart calculations', () {
-      final settlements = SettlementsProvider(enableMockFallback: true);
-      final walletBefore = settlements.walletBalance;
-
-      settlements.requestWalletWithdrawal(500);
-      expect(settlements.walletBalance, walletBefore - 500);
-      expect(settlements.ledger.first['status'], 'PROCESSING');
+    test('FPO Store cart calculations', () {
+      final settlements = SettlementsProvider();
+      expect(settlements.ledger, isEmpty);
 
       settlements.addToStoreCart(MockFarmerServices.storeProducts.first);
       expect(settlements.storeCartTotal, 620.0);

@@ -50,46 +50,51 @@ final appRouter = GoRouter(
   },
   routes: [
     // Module 1: Splash & Onboarding
-    GoRoute(path: '/splash', builder: (_, __) => const SplashScreen()),
+    GoRoute(path: '/splash', builder: (_, _) => const SplashScreen()),
     GoRoute(
       path: '/select-language',
       builder: (_, state) =>
           SelectLanguageScreen(fromSettings: state.extra == true),
     ),
-    GoRoute(path: '/welcome', builder: (_, __) => const WelcomeScreen()),
-    GoRoute(path: '/onboarding', builder: (_, __) => const OnboardingScreen()),
+    GoRoute(path: '/welcome', builder: (_, _) => const WelcomeScreen()),
+    GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
 
     // Module 2: Location & Collection Points
     GoRoute(
         path: '/location-primer',
-        builder: (_, __) => const LocationPrimerScreen()),
+        builder: (_, _) => const LocationPrimerScreen()),
     GoRoute(
         path: '/location-permission-denied',
-        builder: (_, __) => const LocationPermissionDeniedScreen()),
+        builder: (_, _) => const LocationPermissionDeniedScreen()),
     GoRoute(
         path: '/select-farm-location',
-        builder: (_, __) => const SelectFarmLocationScreen()),
+        builder: (_, _) => const SelectFarmLocationScreen()),
     GoRoute(
         path: '/farm-map-picker',
-        builder: (_, __) => const FarmMapPickerScreen()),
+        builder: (_, state) {
+          final extra = state.extra as Map<String, dynamic>?;
+          return FarmMapPickerScreen(
+            autoDetect: extra?['autoDetect'] as bool? ?? true,
+          );
+        }),
     GoRoute(
         path: '/collection-points',
-        builder: (_, __) => const CollectionPointsScreen()),
+        builder: (_, _) => const CollectionPointsScreen()),
 
     // Module 3: Notifications
     GoRoute(
         path: '/notification-primer',
-        builder: (_, __) => const NotificationPrimerScreen()),
+        builder: (_, _) => const NotificationPrimerScreen()),
     GoRoute(
         path: '/notifications',
-        builder: (_, __) => const NotificationCentreScreen()),
+        builder: (_, _) => const NotificationCentreScreen()),
     GoRoute(
         path: '/notification-preferences',
-        builder: (_, __) => const NotificationPreferencesScreen()),
+        builder: (_, _) => const NotificationPreferencesScreen()),
 
     // Module 4: Authentication
-    GoRoute(path: '/login', builder: (_, __) => const LoginScreen()),
-    GoRoute(path: '/register', builder: (_, __) => const RegisterScreen()),
+    GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
+    GoRoute(path: '/register', builder: (_, _) => const RegisterScreen()),
     GoRoute(
       path: '/otp-verify',
       builder: (_, state) {
@@ -102,10 +107,10 @@ final appRouter = GoRouter(
     ),
     GoRoute(
         path: '/forgot-password',
-        builder: (_, __) => const ForgotPasswordScreen()),
+        builder: (_, _) => const ForgotPasswordScreen()),
 
     // Module 5: Farmer KYC
-    GoRoute(path: '/kyc', builder: (_, __) => const KycIdentityScreen()),
+    GoRoute(path: '/kyc', builder: (_, _) => const KycIdentityScreen()),
     GoRoute(
       path: '/kyc/land-records',
       builder: (_, state) => LandRecordScreen(
@@ -120,7 +125,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
         path: '/kyc/certificate',
-        builder: (_, __) => const KycCertificateScreen()),
+        builder: (_, _) => const KycCertificateScreen()),
 
     // 5-Tab Primary Farmer Shell
     ShellRoute(
@@ -140,29 +145,29 @@ final appRouter = GoRouter(
       routes: [
         GoRoute(
             path: '/dashboard',
-            builder: (_, __) => const FarmerDashboardScreen()),
-        GoRoute(path: '/produce', builder: (_, __) => const MyProduceScreen()),
+            builder: (_, _) => const FarmerDashboardScreen()),
+        GoRoute(path: '/produce', builder: (_, _) => const MyProduceScreen()),
         GoRoute(
-            path: '/demand', builder: (_, __) => const MarketDemandScreen()),
+            path: '/demand', builder: (_, _) => const MarketDemandScreen()),
         GoRoute(
             path: '/settlements',
-            builder: (_, __) => const WeeklySettlementsScreen()),
+            builder: (_, _) => const WeeklySettlementsScreen()),
         GoRoute(
-            path: '/profile', builder: (_, __) => const FarmerProfileScreen()),
+            path: '/profile', builder: (_, _) => const FarmerProfileScreen()),
       ],
     ),
 
     // Module 7: Profile & Farm Management
-    GoRoute(path: '/edit-profile', builder: (_, __) => const EditProfileScreen()),
-    GoRoute(path: '/farm-plots', builder: (_, __) => const FarmPlotsScreen()),
+    GoRoute(path: '/edit-profile', builder: (_, _) => const EditProfileScreen()),
+    GoRoute(path: '/farm-plots', builder: (_, _) => const FarmPlotsScreen()),
     GoRoute(
         path: '/fpo-affiliation',
-        builder: (_, __) => const FpoAffiliationScreen()),
+        builder: (_, _) => const FpoAffiliationScreen()),
 
     // Module 8: Produce Management
     GoRoute(
         path: '/produce/add-category',
-        builder: (_, __) => const AddProduceCategoryScreen()),
+        builder: (_, _) => const AddProduceCategoryScreen()),
     GoRoute(
       path: '/produce/add-details',
       builder: (_, state) => AddProduceDetailsScreen(
@@ -176,7 +181,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
         path: '/produce/sowing-schedule',
-        builder: (_, __) => const SowingScheduleScreen()),
+        builder: (_, _) => const SowingScheduleScreen()),
 
     // Module 9: Demand & Mandi
     GoRoute(
@@ -185,129 +190,129 @@ final appRouter = GoRouter(
           BulkEscrowScreen(demandId: state.pathParameters['id']!),
     ),
     GoRoute(
-        path: '/mandi-rates', builder: (_, __) => const MandiSpotRatesScreen()),
+        path: '/mandi-rates', builder: (_, _) => const MandiSpotRatesScreen()),
     GoRoute(
-        path: '/mandi-compare', builder: (_, __) => const MandiCompareScreen()),
+        path: '/mandi-compare', builder: (_, _) => const MandiCompareScreen()),
 
     // Module 10 & 12: Surplus & Inventory
-    GoRoute(path: '/surplus', builder: (_, __) => const SurplusScreen()),
-    GoRoute(path: '/surplus/add', builder: (_, __) => const AddSurplusScreen()),
-    GoRoute(path: '/inventory', builder: (_, __) => const InventoryScreen()),
+    GoRoute(path: '/surplus', builder: (_, _) => const SurplusScreen()),
+    GoRoute(path: '/surplus/add', builder: (_, _) => const AddSurplusScreen()),
+    GoRoute(path: '/inventory', builder: (_, _) => const InventoryScreen()),
 
     // Module 11: Collection, QC & Cold-Chain Logistics
     GoRoute(
         path: '/collection',
-        builder: (_, __) => const CollectionDashboardScreen()),
+        builder: (_, _) => const CollectionDashboardScreen()),
     GoRoute(
-        path: '/collection/gate-pass', builder: (_, __) => const GatePassScreen()),
+        path: '/collection/gate-pass', builder: (_, _) => const GatePassScreen()),
     GoRoute(
         path: '/collection/handover',
-        builder: (_, __) => const FarmgateHandoverScreen()),
+        builder: (_, _) => const FarmgateHandoverScreen()),
     GoRoute(
         path: '/collection/weighbridge',
-        builder: (_, __) => const WeighbridgeSlipScreen()),
-    GoRoute(path: '/qc/assay', builder: (_, __) => const ApmcAssayScreen()),
-    GoRoute(path: '/qc/dispute', builder: (_, __) => const QcDisputeScreen()),
+        builder: (_, _) => const WeighbridgeSlipScreen()),
+    GoRoute(path: '/qc/assay', builder: (_, _) => const ApmcAssayScreen()),
+    GoRoute(path: '/qc/dispute', builder: (_, _) => const QcDisputeScreen()),
     GoRoute(
         path: '/logistics',
-        builder: (_, __) => const ColdChainLogisticsScreen()),
+        builder: (_, _) => const ColdChainLogisticsScreen()),
     GoRoute(
         path: '/logistics/gps',
-        builder: (_, __) => const TransporterGpsScreen()),
+        builder: (_, _) => const TransporterGpsScreen()),
     GoRoute(
         path: '/logistics/telemetry',
-        builder: (_, __) => const TelemetryScreen()),
+        builder: (_, _) => const TelemetryScreen()),
 
     // Module 13: Settlements, Wallet & Finance
     GoRoute(
         path: '/settlements/passbook',
-        builder: (_, __) => const PassbookStatementsScreen()),
+        builder: (_, _) => const PassbookStatementsScreen()),
     GoRoute(
         path: '/settlements/dbt-ledger',
-        builder: (_, __) => const DbtEscrowLedgerScreen()),
-    GoRoute(path: '/wallet', builder: (_, __) => const KisanWalletScreen()),
+        builder: (_, _) => const DbtEscrowLedgerScreen()),
+    GoRoute(path: '/wallet', builder: (_, _) => const KisanWalletScreen()),
     GoRoute(
         path: '/wallet/withdraw',
-        builder: (_, __) => const BankWithdrawalScreen()),
+        builder: (_, _) => const BankWithdrawalScreen()),
     GoRoute(
         path: '/finance/invoice',
-        builder: (_, __) => const FarmerTaxInvoiceScreen()),
+        builder: (_, _) => const FarmerTaxInvoiceScreen()),
     GoRoute(
         path: '/finance/balance-sheet',
-        builder: (_, __) => const BalanceSheetScreen()),
+        builder: (_, _) => const BalanceSheetScreen()),
     GoRoute(
         path: '/finance/crop-profit',
-        builder: (_, __) => const CropProfitScreen()),
+        builder: (_, _) => const CropProfitScreen()),
 
     // Module 14 & 15: AI Advisory & Weather
     GoRoute(
         path: '/advisory',
-        builder: (_, __) => const AdvisoryDashboardScreen()),
+        builder: (_, _) => const AdvisoryDashboardScreen()),
     GoRoute(
         path: '/advisory/voice-ai',
-        builder: (_, __) => const VoiceAiAssistantScreen()),
+        builder: (_, _) => const VoiceAiAssistantScreen()),
     GoRoute(
         path: '/advisory/price-forecast',
-        builder: (_, __) => const PriceForecastScreen()),
+        builder: (_, _) => const PriceForecastScreen()),
     GoRoute(
         path: '/advisory/drone-map',
-        builder: (_, __) => const DroneScoutingScreen()),
+        builder: (_, _) => const DroneScoutingScreen()),
     GoRoute(
         path: '/advisory/pest-alerts',
-        builder: (_, __) => const PestAlertsScreen()),
+        builder: (_, _) => const PestAlertsScreen()),
     GoRoute(
         path: '/advisory/ask-agronomist',
-        builder: (_, __) => const AskAgronomistScreen()),
+        builder: (_, _) => const AskAgronomistScreen()),
     GoRoute(
-        path: '/community', builder: (_, __) => const CommunityForumScreen()),
-    GoRoute(path: '/weather', builder: (_, __) => const WeatherScreen()),
+        path: '/community', builder: (_, _) => const CommunityForumScreen()),
+    GoRoute(path: '/weather', builder: (_, _) => const WeatherScreen()),
 
     // Module 16: Government Schemes
     GoRoute(
-        path: '/schemes', builder: (_, __) => const SchemesDashboardScreen()),
+        path: '/schemes', builder: (_, _) => const SchemesDashboardScreen()),
     GoRoute(
         path: '/schemes/pm-kisan',
-        builder: (_, __) => const PmKisanTrackerScreen()),
+        builder: (_, _) => const PmKisanTrackerScreen()),
     GoRoute(
         path: '/schemes/pmfby',
-        builder: (_, __) => const PmfbyInsuranceScreen()),
+        builder: (_, _) => const PmfbyInsuranceScreen()),
     GoRoute(
-        path: '/schemes/kcc', builder: (_, __) => const KccTrackerScreen()),
+        path: '/schemes/kcc', builder: (_, _) => const KccTrackerScreen()),
 
     // Module 17: Farmer Store
-    GoRoute(path: '/store', builder: (_, __) => const FarmerStoreScreen()),
+    GoRoute(path: '/store', builder: (_, _) => const FarmerStoreScreen()),
     GoRoute(
         path: '/store/bio-fertilizer',
-        builder: (_, __) => const BioFertilizerScreen()),
+        builder: (_, _) => const BioFertilizerScreen()),
     GoRoute(
-        path: '/store/group-pool', builder: (_, __) => const GroupPoolScreen()),
+        path: '/store/group-pool', builder: (_, _) => const GroupPoolScreen()),
     GoRoute(
         path: '/store/checkout',
-        builder: (_, __) => const StoreCheckoutScreen()),
+        builder: (_, _) => const StoreCheckoutScreen()),
     GoRoute(
-        path: '/store/chc', builder: (_, __) => const ChcMachineryScreen()),
+        path: '/store/chc', builder: (_, _) => const ChcMachineryScreen()),
 
     // Module 18: Settings & Support
     GoRoute(
-        path: '/settings', builder: (_, __) => const FarmerSettingsScreen()),
-    GoRoute(path: '/support', builder: (_, __) => const FarmerSupportScreen()),
+        path: '/settings', builder: (_, _) => const FarmerSettingsScreen()),
+    GoRoute(path: '/support', builder: (_, _) => const FarmerSupportScreen()),
     GoRoute(
         path: '/knowledge-hub',
-        builder: (_, __) => const KnowledgeHubScreen()),
+        builder: (_, _) => const KnowledgeHubScreen()),
 
     // Module 19: System & Offline States
     GoRoute(
         path: '/offline-sync',
-        builder: (_, __) => const OfflineSyncVaultScreen()),
+        builder: (_, _) => const OfflineSyncVaultScreen()),
     GoRoute(
       path: '/kyc-restricted',
-      builder: (_, __) => const FarmerSystemStateScreen(
+      builder: (_, _) => const FarmerSystemStateScreen(
         type: FarmerSystemStateType.kycRestricted,
       ),
     ),
     GoRoute(
       path: '/maintenance',
-      builder: (_, __) => const FarmerSystemStateScreen(
+      builder: (_, _) => const FarmerSystemStateScreen(
         type: FarmerSystemStateType.maintenance,
       ),
     ),

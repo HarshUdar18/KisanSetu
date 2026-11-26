@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../../../core/network/dio_client.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/farmer_header.dart';
 import '../providers/auth_provider.dart';
@@ -14,7 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _phoneCtrl = TextEditingController(text: '9876543212');
-  final _passCtrl = TextEditingController(text: 'password123');
+  final _passCtrl = TextEditingController();
   bool _otpMode = false;
 
   @override
@@ -126,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () => setState(() => _otpMode = !_otpMode),
                           child: Text(_otpMode
                               ? 'Login with Password Instead'
-                              : 'Login with Mobile OTP (123456)'),
+                              : 'Login with Mobile OTP'),
                         ),
                       ),
                     ],
@@ -401,14 +403,82 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  int _step = 0;
   final _phoneCtrl = TextEditingController();
+  final _otpCtrl = TextEditingController();
   final _passCtrl = TextEditingController();
+  bool _loading = false;
+  String? _devCode;
+  String? _error;
 
   @override
   void dispose() {
     _phoneCtrl.dispose();
+    _otpCtrl.dispose();
     _passCtrl.dispose();
     super.dispose();
+  }
+
+  Future<void> _requestReset() async {
+    final phone = _phoneCtrl.text.trim();
+    if (phone.isEmpty) {
+      setState(() => _error = 'Enter your registered phone number or email.');
+      return;
+    }
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    try {
+      final res = await context.read<DioClient>().post('/auth/forgot-password', data: {'identifier': phone});
+      final data = res.data['data'] as Map<String, dynamic>?;
+      if (mounted) {
+        setState(() {
+          _step = 1;
+          _loading = false;
+          _devCode = (kDebugMode && data != null)
+              ? data['developmentResetCode']?.toString()
+              : null;
+        });
+      }
+    } catch (_) {
+      if (mounted) {
+        setState(() {
+          _loading = false;
+          _error = 'Unable to initiate password reset. Check connection.';
+        });
+      }
+    }
+  }
+
+  Future<void> _submitReset() async {
+    if (_otpCtrl.text.trim().length < 6 || _passCtrl.text.length < 6) {
+      setState(() => _error = 'Enter 6-digit code and password (min 6 chars).');
+      return;
+    }
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    try {
+      await context.read<DioClient>().post('/auth/reset-password', data: {
+        'identifier': _phoneCtrl.text.trim(),
+        'token': _otpCtrl.text.trim(),
+        'newPassword': _passCtrl.text,
+      });
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Password updated! Please sign in.')),
+      );
+      context.pop();
+    } catch (_) {
+      if (mounted) {
+        setState(() {
+          _loading = false;
+          _error = 'Invalid or expired reset code.';
+        });
+      }
+    }
   }
 
   @override
@@ -419,29 +489,46 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.margin),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextField(
-              controller: _phoneCtrl,
-              keyboardType: TextInputType.phone,
-              decoration: const InputDecoration(labelText: 'Registered Mobile Number'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _passCtrl,
-              obscureText: true,
-              decoration: const InputDecoration(labelText: 'New Password'),
-            ),
+            if (_error != null) ...[
+              Text(_error!, style: const TextStyle(color: AppColors.error)),
+              const SizedBox(height: 10),
+            ],
+            if (_step == 0)
+              TextField(
+                controller: _phoneCtrl,
+                keyboardType: TextInputType.phone,
+                decoration: const InputDecoration(labelText: 'Registered Mobile Number or Email'),
+              ),
+            if (_step == 1) ...[
+              if (_devCode != null)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text('Dev Reset Code: $_devCode',
+                      style: const TextStyle(fontWeight: FontWeight.w700, color: AppColors.primary)),
+                ),
+              TextField(
+                controller: _otpCtrl,
+                keyboardType: TextInputType.number,
+                maxLength: 6,
+                decoration: const InputDecoration(labelText: '6-Digit Reset Code', counterText: ''),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: _passCtrl,
+                obscureText: true,
+                decoration: const InputDecoration(labelText: 'New Password (min 6 chars)'),
+              ),
+            ],
             const Spacer(),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Password updated! Please sign in.')),
-                  );
-                  context.pop();
-                },
-                child: const Text('Reset Password'),
+                onPressed: _loading ? null : (_step == 0 ? _requestReset : _submitReset),
+                child: _loading
+                    ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                    : Text(_step == 0 ? 'Send Reset Code' : 'Reset Password'),
               ),
             ),
           ],

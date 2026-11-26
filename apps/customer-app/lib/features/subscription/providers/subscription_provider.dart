@@ -60,11 +60,11 @@ class SubscriptionProvider extends ChangeNotifier {
         DateTime.now().add(const Duration(days: 1)).toIso8601String().split('T').first;
     try {
       await dioClient.post('/subscriptions', data: {
-        if (weeklyCartId != null) 'weeklyCartId': weeklyCartId,
+        'weeklyCartId': ?weeklyCartId,
         'addressId': addressId,
         'frequency': frequency,
         'startDate': startDate,
-        if (deliveryPreferences != null) 'deliveryPreferences': deliveryPreferences,
+        'deliveryPreferences': ?deliveryPreferences,
       });
     } catch (_) {}
 

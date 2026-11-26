@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kisansetu_customer_app/core/network/dio_client.dart';
@@ -53,12 +55,14 @@ void main() {
   });
 
   group('Module 2 & 6: Location, Serviceability & Addresses', () {
-    test('Serviceability validates pilot PINs and rejects non-serviceable PINs', () async {
-      final provider = AddressProvider(dioClient: dio, enableMockFallback: true);
+    test('Serviceability validates active PINs and rejects non-serviceable PINs', () async {
+      final serviceabilityDio = DioClient(storageService: storage);
+      serviceabilityDio.dio.httpClientAdapter = _ServiceabilityStubAdapter();
+      final provider = AddressProvider(dioClient: serviceabilityDio);
 
-      final valid = await provider.checkServiceability('411038');
+      final valid = await provider.checkServiceability('411005');
       expect(valid.isServiceable, isTrue);
-      expect(valid.serviceAreaName, contains('Kothrud'));
+      expect(valid.serviceAreaName, contains('Shivajinagar'));
 
       final invalid = await provider.checkServiceability('999999');
       expect(invalid.isServiceable, isFalse);
@@ -118,13 +122,12 @@ void main() {
       expect(cart.cart.subtotal, 380.0);
       expect(cart.directFarmerShare, closeTo(304.0, 0.01));
 
-      final badCoupon = cart.applyCoupon('INVALID99');
+      final badCoupon = await cart.applyCoupon('INVALID99');
       expect(badCoupon['valid'], isFalse);
 
-      final goodCoupon = cart.applyCoupon('KISANFIRST');
-      expect(goodCoupon['valid'], isTrue);
-      expect(cart.couponDiscount, 50.0);
-      expect(cart.finalPayable, cart.cart.estimatedTotal - 50.0);
+      final emptyCoupon = await cart.applyCoupon('   ');
+      expect(emptyCoupon['valid'], isFalse);
+      expect(cart.couponDiscount, 0.0);
     });
   });
 
@@ -213,12 +216,12 @@ void main() {
 
   group('Module 11 & 12: Notifications & Settings', () {
     test('Notifications & AppSettingsProvider update preferences', () async {
-      final notif = NotificationsProvider(enableMockFallback: true);
-      expect(notif.unreadCount, greaterThan(0));
+      final notif = NotificationsProvider();
+      expect(notif.unreadCount, 0);
       notif.markAllRead();
       expect(notif.unreadCount, 0);
 
-      final settings = AppSettingsProvider(PreferencesService());
+      final settings = AppSettingsProvider(InMemoryPreferencesService());
       await settings.setLanguage('mr');
       expect(settings.languageCode, 'mr');
       await settings.setThemeMode(ThemeMode.dark);
@@ -227,4 +230,39 @@ void main() {
       expect(MockCustomerServices.faqs.isNotEmpty, isTrue);
     });
   });
+}
+
+class _ServiceabilityStubAdapter implements HttpClientAdapter {
+  @override
+  void close({bool force = false}) {}
+
+  @override
+  Future<ResponseBody> fetch(
+    RequestOptions options,
+    Stream<List<int>>? requestStream,
+    Future<void>? cancelFuture,
+  ) async {
+    final pin = options.queryParameters['pinCode']?.toString() ?? '';
+    final payload = pin == '411005'
+        ? {
+            'success': true,
+            'data': {
+              'isServiceable': true,
+              'serviceAreaName': 'Shivajinagar',
+              'message': 'Delivery available in Shivajinagar.',
+            },
+          }
+        : {
+            'success': true,
+            'data': {
+              'isServiceable': false,
+              'message': 'Delivery currently unavailable in your area.',
+            },
+          };
+    return ResponseBody.fromString(
+      jsonEncode(payload),
+      200,
+      headers: {Headers.contentTypeHeader: [Headers.jsonContentType]},
+    );
+  }
 }

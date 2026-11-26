@@ -1,14 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import '../../../core/services/mock_farmer_services.dart';
+import '../../../core/network/dio_client.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/farmer_header.dart';
 import '../../settlements/providers/settlements_provider.dart';
 
-/// Module 17: Farmer Store & CHC Machinery (Isolated Prototype).
-class FarmerStoreScreen extends StatelessWidget {
+/// Module 17: Farmer Store & CHC Machinery backed by `/api/v1/farmer-store/products`.
+class FarmerStoreScreen extends StatefulWidget {
   const FarmerStoreScreen({super.key});
+
+  @override
+  State<FarmerStoreScreen> createState() => _FarmerStoreScreenState();
+}
+
+class _FarmerStoreScreenState extends State<FarmerStoreScreen> {
+  List<Map<String, dynamic>> _products = [];
+  bool _loading = true;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProducts();
+  }
+
+  Future<void> _loadProducts() async {
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    try {
+      final res = await context.read<DioClient>().get('/farmer-store/products');
+      final raw = res.data['data'] as List<dynamic>? ?? [];
+      if (mounted) {
+        setState(() {
+          _products = raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+          _loading = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) {
+        setState(() {
+          _error = 'Unable to load store products. Tap retry.';
+          _loading = false;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +71,6 @@ class FarmerStoreScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.margin),
         children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: AppColors.tertiaryFixed.withValues(alpha: 0.45),
-              borderRadius: BorderRadius.circular(AppRadius.md),
-            ),
-            child: const Text(
-              'Prototype FPO Store: Group pool bookings are queued for FPO coordinator confirmation.',
-              style: TextStyle(fontSize: 12),
-            ),
-          ),
-          const SizedBox(height: 10),
           Wrap(
             spacing: 8,
             children: [
@@ -62,18 +89,47 @@ class FarmerStoreScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          ...MockFarmerServices.storeProducts.map((p) => Card(
+          if (_loading)
+            const Center(child: Padding(padding: EdgeInsets.all(24), child: CircularProgressIndicator()))
+          else if (_error != null)
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Text(_error!),
+                    const SizedBox(height: 8),
+                    ElevatedButton(onPressed: _loadProducts, child: const Text('Retry')),
+                  ],
+                ),
+              ),
+            )
+          else if (_products.isEmpty)
+            const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text('No store products available yet.'),
+              ),
+            )
+          else
+            ..._products.map((p) {
+              final subsidyPrice = (p['subsidizedPrice'] ?? p['subsidyPrice'] ?? 0) as num;
+              final mrp = (p['mrp'] ?? 0) as num;
+              return Card(
                 margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(p['name'] as String,
+                  title: Text((p['name'] ?? '').toString(),
                       style: Theme.of(context).textTheme.labelLarge),
                   subtitle: Text(
-                      '${p['category']} • ${p['poolDiscount']}\nSubsidized: ₹${(p['subsidyPrice'] as num).toStringAsFixed(0)} (MRP ₹${(p['mrp'] as num).toStringAsFixed(0)})'),
+                      '${p['category'] ?? ''} • ${p['unit'] ?? ''}\nSubsidized: ₹${subsidyPrice.toStringAsFixed(0)} (MRP ₹${mrp.toStringAsFixed(0)})'),
                   isThreeLine: true,
                   trailing: ElevatedButton(
                     style: ElevatedButton.styleFrom(minimumSize: const Size(0, 36)),
                     onPressed: () {
-                      settlements.addToStoreCart(p);
+                      settlements.addToStoreCart({
+                        ...p,
+                        'subsidyPrice': subsidyPrice,
+                      });
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('${p['name']} added to Store Cart')),
                       );
@@ -81,7 +137,8 @@ class FarmerStoreScreen extends StatelessWidget {
                     child: const Text('+ Add'),
                   ),
                 ),
-              )),
+              );
+            }),
         ],
       ),
     );

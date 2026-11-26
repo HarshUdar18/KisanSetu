@@ -1,0 +1,8 @@
+ALTER TABLE addresses
+    ADD COLUMN IF NOT EXISTS recipient_type VARCHAR(20) NOT NULL DEFAULT 'MYSELF',
+    ADD COLUMN IF NOT EXISTS recipient_first_name VARCHAR(80),
+    ADD COLUMN IF NOT EXISTS recipient_last_name VARCHAR(80),
+    ADD COLUMN IF NOT EXISTS recipient_phone VARCHAR(20),
+    ADD COLUMN IF NOT EXISTS street_building VARCHAR(255),
+    ADD COLUMN IF NOT EXISTS landmark VARCHAR(255),
+    ADD COLUMN IF NOT EXISTS location_summary VARCHAR(255);

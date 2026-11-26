@@ -3,10 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/kisan_header.dart';
+import '../../catalog/models/product_model.dart';
+import '../../catalog/providers/catalog_provider.dart';
 import '../../location/providers/address_provider.dart';
 import '../providers/subscription_provider.dart';
 
-/// Implements Stitch `create_subscription`.
+/// Backend-driven Subscription Creation backed by live catalogue & centralized delivery slots.
 class CreateSubscriptionScreen extends StatefulWidget {
   const CreateSubscriptionScreen({super.key});
 
@@ -16,23 +18,63 @@ class CreateSubscriptionScreen extends StatefulWidget {
 }
 
 class _CreateSubscriptionScreenState extends State<CreateSubscriptionScreen> {
-  String _selectedPlan = 'Pure A2 Gir Cow Milk (1L) + Fresh Greens';
-  String _frequency = 'DAILY';
-  String _slot = 'Morning Harvest (6:00 AM - 8:00 AM)';
+  final Map<String, int> _selectedQuantities = {};
+  String _frequency = 'WEEKLY';
+  String _slotLabel = '';
+  List<Map<String, dynamic>> _slots = const [];
+  bool _loadingSlots = true;
 
-  static const _plans = [
-    {'title': 'Pure A2 Gir Cow Milk (1L) + Fresh Greens', 'price': 117.0},
-    {'title': 'Family Weekly Organic Veggie Box (5kg)', 'price': 540.0},
-    {'title': 'Seasonal Fruit & Immunity Basket', 'price': 360.0},
-  ];
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() async {
+      if (!mounted) return;
+      final catalog = context.read<CatalogProvider>();
+      final dio = context.read<AddressProvider>().dioClient;
+      if (catalog.allProducts.isEmpty) {
+        await catalog.loadCatalog();
+      }
+      if (!mounted) return;
+      await _loadSlots(dio);
+    });
+  }
+
+  Future<void> _loadSlots(dynamic dio) async {
+    try {
+      final res = await dio
+          .get('/delivery-slots', queryParameters: {'slotType': 'SUBSCRIPTION'});
+      final raw = (res.data['data'] as List<dynamic>? ?? [])
+          .whereType<Map<String, dynamic>>()
+          .toList();
+      if (mounted) {
+        setState(() {
+          _slots = raw;
+          if (raw.isNotEmpty) {
+            _slotLabel = raw.first['label'] as String? ?? '';
+          }
+          _loadingSlots = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingSlots = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final addr = context.watch<AddressProvider>().defaultAddress;
     final subProvider = context.watch<SubscriptionProvider>();
-    final planPrice = (_plans
-            .firstWhere((p) => p['title'] == _selectedPlan)['price'] as num)
-        .toDouble();
+    final catalog = context.watch<CatalogProvider>();
+    final eligibleProducts = catalog.allProducts
+        .where((p) => p.isInStock && p.currentPrice > 0)
+        .take(15)
+        .toList();
+
+    double subtotal = 0.0;
+    for (final p in eligibleProducts) {
+      final qty = _selectedQuantities[p.id] ?? 0;
+      subtotal += p.currentPrice * qty;
+    }
 
     return Scaffold(
       backgroundColor: AppColors.surface,
@@ -40,24 +82,45 @@ class _CreateSubscriptionScreenState extends State<CreateSubscriptionScreen> {
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.margin),
         children: [
-          Text('Choose Produce & Plan',
+          Text('Select Fresh Produce for Your Basket',
               style: Theme.of(context).textTheme.headlineSmall),
-          const SizedBox(height: 10),
-          ..._plans.map((p) {
-            final title = p['title'] as String;
-            final selected = title == _selectedPlan;
-            return Card(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: RadioListTile<String>(
-                value: title,
-                groupValue: _selectedPlan,
-                onChanged: (v) => setState(() => _selectedPlan = v!),
-                title: Text(title, style: Theme.of(context).textTheme.labelLarge),
-                subtitle: Text('₹${(p['price'] as num).toStringAsFixed(0)} per delivery'),
-                selected: selected,
+          const SizedBox(height: 8),
+          if (catalog.isLoading && eligibleProducts.isEmpty)
+            const Center(child: Padding(padding: EdgeInsets.all(16), child: CircularProgressIndicator()))
+          else if (eligibleProducts.isEmpty)
+            const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text('No in-stock farmer listings are currently available for subscription.'),
               ),
-            );
-          }),
+            )
+          else
+            ...eligibleProducts.map((ProductModel p) {
+              final qty = _selectedQuantities[p.id] ?? 0;
+              return Card(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: ListTile(
+                  title: Text(p.name, style: Theme.of(context).textTheme.labelLarge),
+                  subtitle: Text('₹${p.currentPrice.toStringAsFixed(2)} / ${p.unit} • ${p.stockStatus.replaceAll('_', ' ')}'),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.remove_circle_outline),
+                        onPressed: qty > 0
+                            ? () => setState(() => _selectedQuantities[p.id] = qty - 1)
+                            : null,
+                      ),
+                      Text('$qty', style: const TextStyle(fontWeight: FontWeight.w700)),
+                      IconButton(
+                        icon: const Icon(Icons.add_circle_outline),
+                        onPressed: () => setState(() => _selectedQuantities[p.id] = qty + 1),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
           const SizedBox(height: AppSpacing.md),
           Text('Delivery Frequency',
               style: Theme.of(context).textTheme.headlineSmall),
@@ -73,45 +136,67 @@ class _CreateSubscriptionScreenState extends State<CreateSubscriptionScreen> {
             }).toList(),
           ),
           const SizedBox(height: AppSpacing.md),
-          Text('Morning Slot', style: Theme.of(context).textTheme.headlineSmall),
+          Text('Subscription Delivery Slot',
+              style: Theme.of(context).textTheme.headlineSmall),
           const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            children: [
-              'Morning Harvest (6:00 AM - 8:00 AM)',
-              'Mid-Morning (8:00 AM - 10:00 AM)',
-            ].map((s) {
-              return ChoiceChip(
-                label: Text(s),
-                selected: _slot == s,
-                onSelected: (_) => setState(() => _slot = s),
-              );
-            }).toList(),
+          if (_loadingSlots)
+            const LinearProgressIndicator()
+          else if (_slots.isEmpty)
+            const Text('No active subscription slots configured.')
+          else
+            Wrap(
+              spacing: 8,
+              children: _slots.map((s) {
+                final label = s['label'] as String? ?? '';
+                return ChoiceChip(
+                  label: Text(label),
+                  selected: _slotLabel == label,
+                  onSelected: (_) => setState(() => _slotLabel = label),
+                );
+              }).toList(),
+            ),
+          const SizedBox(height: AppSpacing.md),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Estimated Per-Delivery Subtotal',
+                      style: TextStyle(fontWeight: FontWeight.w600)),
+                  Text('₹${subtotal.toStringAsFixed(2)}',
+                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: AppColors.primary)),
+                ],
+              ),
+            ),
           ),
-          const SizedBox(height: AppSpacing.xl),
+          const SizedBox(height: AppSpacing.lg),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: subProvider.isLoading
+              onPressed: subProvider.isLoading || subtotal <= 0 || _slotLabel.isEmpty
                   ? null
                   : () async {
-                      await subProvider.createSubscription(
-                        title: _selectedPlan,
+                      final itemsSummary = eligibleProducts
+                          .where((p) => (_selectedQuantities[p.id] ?? 0) > 0)
+                          .map((p) => '${p.name} x${_selectedQuantities[p.id]}')
+                          .join(', ');
+                      final ok = await subProvider.createSubscription(
+                        title: itemsSummary,
                         frequency: _frequency,
-                        addressId: addr?.id ?? 'addr-1',
-                        totalPerCycle: planPrice,
-                        deliveryPreferences: _slot,
+                        addressId: addr?.id ?? '',
+                        totalPerCycle: subtotal,
+                        deliveryPreferences: _slotLabel,
                       );
                       if (!context.mounted) return;
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Subscription Confirmed! First delivery tomorrow.'),
-                        ),
-                      );
-                      context.pop();
+                      if (ok) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Subscription created and linked to backend.')),
+                        );
+                        context.pop();
+                      }
                     },
-              child: Text(
-                  'Confirm Subscription • ₹${planPrice.toStringAsFixed(0)}/cycle'),
+              child: Text('Start Subscription (₹${subtotal.toStringAsFixed(2)}/delivery)'),
             ),
           ),
         ],

@@ -3,15 +3,20 @@ package com.kisansetu.modules.auth.provider;
 import com.kisansetu.common.exception.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.HexFormat;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -28,33 +33,42 @@ public class DevelopmentOtpProvider {
 
     private final Environment environment;
     private final SmsProvider smsProvider;
+    private final boolean exposeInDevelopment;
     private final SecureRandom random = new SecureRandom();
     private final Map<String, OtpEntry> otpCache = new ConcurrentHashMap<>();
     private final Map<String, Deque<Instant>> rateLimitWindows = new ConcurrentHashMap<>();
 
-    public DevelopmentOtpProvider(Environment environment, SmsProvider smsProvider) {
+    @org.springframework.beans.factory.annotation.Autowired
+    public DevelopmentOtpProvider(
+            Environment environment,
+            SmsProvider smsProvider,
+            @Value("${app.auth.otp.expose-in-development:false}") boolean exposeInDevelopment) {
         this.environment = environment;
         this.smsProvider = smsProvider;
+        this.exposeInDevelopment = exposeInDevelopment;
+    }
+
+    public DevelopmentOtpProvider(Environment environment, SmsProvider smsProvider) {
+        this(environment, smsProvider, true);
     }
 
     public boolean isDevelopmentMode() {
-        return environment.acceptsProfiles(Profiles.of("dev", "local"))
+        return exposeInDevelopment
+                && environment.acceptsProfiles(Profiles.of("dev", "local"))
                 && !environment.acceptsProfiles(Profiles.of("prod", "production"));
     }
 
-    public GeneratedOtpChallenge generateOtp(String phone) {
+    public GeneratedOtpChallenge generateOtp(String identifier) {
         Instant now = Instant.now();
 
-        // Enforce resend cooldown
-        OtpEntry existing = otpCache.get(phone);
+        OtpEntry existing = otpCache.get(identifier);
         if (existing != null && now.isBefore(existing.lastSentAt.plusSeconds(RESEND_COOLDOWN_SECONDS))) {
             long waitSeconds = Duration.between(now, existing.lastSentAt.plusSeconds(RESEND_COOLDOWN_SECONDS))
                     .getSeconds() + 1;
             throw new BadRequestException("Please wait " + waitSeconds + " seconds before requesting a new OTP.");
         }
 
-        // Enforce rate limiting (max 5 requests per 15-minute window)
-        Deque<Instant> timestamps = rateLimitWindows.computeIfAbsent(phone, k -> new ArrayDeque<>());
+        Deque<Instant> timestamps = rateLimitWindows.computeIfAbsent(identifier, k -> new ArrayDeque<>());
         synchronized (timestamps) {
             Instant windowStart = now.minusSeconds(RATE_LIMIT_WINDOW_SECONDS);
             while (!timestamps.isEmpty() && timestamps.peekFirst().isBefore(windowStart)) {
@@ -66,53 +80,68 @@ public class DevelopmentOtpProvider {
             timestamps.addLast(now);
         }
 
-        // Always generate a fresh dynamic 6-digit OTP; overwrites & invalidates any
-        // previous OTP
         String otp = String.format("%06d", random.nextInt(1000000));
-        otpCache.put(phone, new OtpEntry(otp, now, now.plusSeconds(OTP_EXPIRY_SECONDS)));
+        String otpHash = sha256(identifier + ":" + otp);
+        otpCache.put(identifier, new OtpEntry(otpHash, now, now.plusSeconds(OTP_EXPIRY_SECONDS)));
 
-        boolean devMode = isDevelopmentMode();
-        if (!devMode) {
-            smsProvider.sendOtpSms(phone, "Your Kisan Setu verification code is " + otp + ". Valid for 5 minutes.");
+        boolean devExpose = isDevelopmentMode();
+        if (!devExpose && (identifier.matches("^[6-9]\\d{9}$") || identifier.startsWith("+"))) {
+            smsProvider.sendOtpSms(identifier,
+                    "Your Kisan Setu verification code is " + otp + ". Valid for 5 minutes.");
         }
-        log.info("Dynamic OTP challenge generated for phone ending in {}",
-                phone.length() >= 4 ? phone.substring(phone.length() - 4) : "****");
+        log.info("Dynamic OTP challenge generated for identifier ending in {}",
+                identifier.length() >= 4 ? identifier.substring(identifier.length() - 4) : "****");
 
         return new GeneratedOtpChallenge(
-                phone,
+                identifier,
                 "OTP dispatched successfully.",
-                devMode ? otp : null,
+                devExpose ? otp : null,
                 OTP_EXPIRY_SECONDS,
                 RESEND_COOLDOWN_SECONDS);
     }
 
-    public void verifyOtp(String phone, String enteredOtp) {
-        OtpEntry entry = otpCache.get(phone);
+    public SmsProvider getSmsProvider() {
+        return smsProvider;
+    }
+
+    public void verifyOtp(String identifier, String enteredOtp) {
+        OtpEntry entry = otpCache.get(identifier);
         if (entry == null) {
             throw new BadRequestException("No active OTP found. Please request a new OTP.");
         }
 
         if (entry.isExpired()) {
-            otpCache.remove(phone);
+            otpCache.remove(identifier);
             throw new BadRequestException("OTP has expired. Please request a new OTP.");
         }
 
         if (entry.attempts >= MAX_ATTEMPTS) {
-            otpCache.remove(phone);
+            otpCache.remove(identifier);
             throw new BadRequestException("Maximum OTP verification attempts exceeded. Please request a new OTP.");
         }
 
-        if (!entry.otp.equals(enteredOtp)) {
+        String enteredHash = sha256(identifier + ":" + enteredOtp);
+        if (!MessageDigest.isEqual(entry.otpHash.getBytes(StandardCharsets.UTF_8),
+                enteredHash.getBytes(StandardCharsets.UTF_8))) {
             entry.attempts++;
             int remaining = MAX_ATTEMPTS - entry.attempts;
             if (remaining <= 0) {
-                otpCache.remove(phone);
+                otpCache.remove(identifier);
                 throw new BadRequestException("Maximum OTP verification attempts exceeded. Please request a new OTP.");
             }
             throw new BadRequestException("Invalid OTP entered. " + remaining + " attempt(s) remaining.");
         }
 
-        otpCache.remove(phone);
+        otpCache.remove(identifier);
+    }
+
+    private String sha256(String value) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            return HexFormat.of().formatHex(md.digest(value.getBytes(StandardCharsets.UTF_8)));
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 unavailable", e);
+        }
     }
 
     public record GeneratedOtpChallenge(
@@ -124,13 +153,13 @@ public class DevelopmentOtpProvider {
     }
 
     private static class OtpEntry {
-        final String otp;
+        final String otpHash;
         final Instant lastSentAt;
         final Instant expiresAt;
         int attempts = 0;
 
-        OtpEntry(String otp, Instant lastSentAt, Instant expiresAt) {
-            this.otp = otp;
+        OtpEntry(String otpHash, Instant lastSentAt, Instant expiresAt) {
+            this.otpHash = otpHash;
             this.lastSentAt = lastSentAt;
             this.expiresAt = expiresAt;
         }

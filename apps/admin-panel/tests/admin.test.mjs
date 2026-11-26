@@ -13,7 +13,7 @@ test('All 24 admin routes are wired in AppRoutes.tsx', () => {
     '/products', '/produce', '/demand', '/orders', '/collections', '/quality',
     '/warehouses', '/inventory', '/logistics', '/payments', '/settlements',
     '/subscriptions', '/farmer-store', '/promotions', '/notifications',
-    '/support', '/admin-users', '/settings', '/profile',
+    '/support', '/admin-users', '/hubs', '/settings', '/profile',
   ];
   for (const r of expectedRoutes) {
     assert.ok(routesSrc.includes(`path="${r}"`), `Missing route: ${r}`);
@@ -28,12 +28,11 @@ test('AdminLayout sidebar includes all 23+ navigation sections with RBAC permiss
   assert.ok(layoutSrc.includes('Admin Users & Roles'));
 });
 
-test('Mock data separates Product Catalogue from Farmer Produce Listings and masks sensitive KYC', () => {
+test('Mock data has been removed and no production records are hardcoded', () => {
   const mockSrc = fs.readFileSync(path.join(root, 'src/services/mockAdminData.ts'), 'utf8');
-  assert.ok(mockSrc.includes('•••• ••••'), 'Aadhaar must be masked');
-  assert.ok(mockSrc.includes('mockProduceListings'));
-  assert.ok(mockSrc.includes('mockOrders'));
-  assert.ok(mockSrc.includes('mockTransactions'));
+  assert.ok(!mockSrc.includes('mockProduceListings'), 'mockProduceListings must be removed');
+  assert.ok(!mockSrc.includes('mockOrders'), 'mockOrders must be removed');
+  assert.ok(!mockSrc.includes('mockTransactions'), 'mockTransactions must be removed');
 });
 
 test('Production dist bundle exists after vite build', () => {

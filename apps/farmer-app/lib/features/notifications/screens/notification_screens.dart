@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../../../core/network/dio_client.dart';
 import '../../../core/providers/farmer_settings_provider.dart';
-import '../../../core/services/mock_farmer_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/empty_state_view.dart';
 import '../../../core/widgets/farmer_header.dart';
@@ -63,8 +63,27 @@ class NotificationCentreScreen extends StatefulWidget {
 }
 
 class _NotificationCentreScreenState extends State<NotificationCentreScreen> {
-  final List<Map<String, dynamic>> _items =
-      MockFarmerServices.notifications.map((e) => Map<String, dynamic>.from(e)).toList();
+  List<Map<String, dynamic>> _items = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadNotifications();
+  }
+
+  Future<void> _loadNotifications() async {
+    try {
+      final res = await context.read<DioClient>().get('/notifications');
+      final raw = res.data['data'] as List<dynamic>? ?? [];
+      if (mounted) {
+        setState(() {
+          _items = raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +107,7 @@ class _NotificationCentreScreenState extends State<NotificationCentreScreen> {
           : ListView.separated(
               padding: const EdgeInsets.all(AppSpacing.margin),
               itemCount: _items.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 8),
+              separatorBuilder: (_, _) => const SizedBox(height: 8),
               itemBuilder: (_, i) {
                 final n = _items[i];
                 return Card(

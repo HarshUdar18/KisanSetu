@@ -7,6 +7,7 @@ class AppConstants {
 
   // Secure storage keys (Farmer-specific, never shared with Customer App)
   static const String tokenKey = 'kisansetu_farmer_auth_token';
+  static const String refreshTokenKey = 'kisansetu_farmer_refresh_token';
   static const String userKey = 'kisansetu_farmer_user_data';
 
   // SharedPreferences keys (Non-sensitive settings only)

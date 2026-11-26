@@ -46,16 +46,24 @@ class _EditScheduleScreenState extends State<EditScheduleScreen> {
             Text('Preferred Time Slot',
                 style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 10),
-            ...[
-              'Morning Harvest (6:00 AM - 8:00 AM)',
-              'Mid-Morning (8:00 AM - 10:00 AM)',
-              'Evening Fresh (5:00 PM - 7:00 PM)',
-            ].map((s) => RadioListTile<String>(
-                  value: s,
-                  groupValue: _slot,
-                  onChanged: (v) => setState(() => _slot = v!),
-                  title: Text(s),
-                )),
+            RadioGroup<String>(
+              groupValue: _slot,
+              onChanged: (v) {
+                if (v != null) setState(() => _slot = v);
+              },
+              child: Column(
+                children: [
+                  'Morning Harvest (6:00 AM - 8:00 AM)',
+                  'Mid-Morning (8:00 AM - 10:00 AM)',
+                  'Evening Fresh (5:00 PM - 7:00 PM)',
+                ]
+                    .map((s) => RadioListTile<String>(
+                          value: s,
+                          title: Text(s),
+                        ))
+                    .toList(),
+              ),
+            ),
             const Spacer(),
             SizedBox(
               width: double.infinity,

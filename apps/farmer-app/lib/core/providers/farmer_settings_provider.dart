@@ -15,18 +15,20 @@ class FarmerSettingsProvider extends ChangeNotifier {
   PermissionState _locationPermission = PermissionState.unknown;
   PermissionState _notificationPermission = PermissionState.unknown;
 
-  String _farmName = 'Shinde Farmstead';
-  String _village = 'Mulshi';
-  String _taluka = 'Mulshi';
-  String _district = 'Pune';
+  String _farmName = '';
+  String _village = '';
+  String _taluka = '';
+  String _district = '';
   String _stateName = 'Maharashtra';
-  String _landArea = '3.4';
+  double? _farmLatitude;
+  double? _farmLongitude;
+  String _landArea = '';
   String _landUnit = 'Acres';
   String _ownershipType = 'Individual Smallholder / Landowner';
-  String _soilType = 'Black Cotton / Loamy';
-  String _waterSource = 'Drip Irrigation + Borewell';
-  String _selectedHubId = 'hub-mulshi';
-  String _selectedHubName = 'Mulshi Dawn Hub (मुळशी डाऊन केंद्र)';
+  String _soilType = '';
+  String _waterSource = '';
+  String _selectedHubId = '';
+  String _selectedHubName = '';
 
   // Notification preferences
   bool orderNotifs = true;
@@ -52,6 +54,8 @@ class FarmerSettingsProvider extends ChangeNotifier {
   String get taluka => _taluka;
   String get district => _district;
   String get stateName => _stateName;
+  double? get farmLatitude => _farmLatitude;
+  double? get farmLongitude => _farmLongitude;
   String get landArea => _landArea;
   String get landUnit => _landUnit;
   String get ownershipType => _ownershipType;
@@ -108,11 +112,15 @@ class FarmerSettingsProvider extends ChangeNotifier {
     required String taluka,
     required String district,
     required String stateName,
+    double? latitude,
+    double? longitude,
   }) async {
     _village = village;
     _taluka = taluka;
     _district = district;
     _stateName = stateName;
+    if (latitude != null) _farmLatitude = latitude;
+    if (longitude != null) _farmLongitude = longitude;
     await _prefs.setString(AppConstants.farmVillageKey, village);
     await _prefs.setString(AppConstants.farmDistrictKey, district);
     notifyListeners();

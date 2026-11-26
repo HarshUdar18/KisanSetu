@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../../features/auth/providers/auth_provider.dart';
 import '../../features/cart/providers/cart_provider.dart';
 import '../../features/catalog/models/product_model.dart';
 import '../theme/app_theme.dart';
+import 'auth_gate.dart';
 
 /// Product card matching Stitch `home_dashboard` & `DESIGN.md` specifications.
 class ProductCard extends StatelessWidget {
@@ -48,9 +50,26 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final auth = context.watch<AuthProvider>();
     final cart = context.watch<CartProvider>();
     final qty = cart.quantityForProduct(product.id);
     final itemId = cart.itemIdForProduct(product.id);
+
+    Future<void> handleAdd() async {
+      if (!auth.isAuthenticated) {
+        await promptGuestSignIn(
+          context,
+          actionDescription: 'add fresh produce to your basket',
+        );
+        return;
+      }
+      final ok = await cart.addProduct(product);
+      if (!ok && context.mounted && cart.errorMessage != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(cart.errorMessage!)),
+        );
+      }
+    }
 
     return InkWell(
       onTap: () => context.push('/product/${product.id}'),
@@ -70,7 +89,7 @@ class ProductCard extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: 112,
+                  height: 92,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: _categoryBg(product.categoryId),
@@ -152,7 +171,7 @@ class ProductCard extends StatelessWidget {
                 width: double.infinity,
                 height: 38,
                 child: OutlinedButton.icon(
-                  onPressed: () => cart.addProduct(product),
+                  onPressed: handleAdd,
                   style: OutlinedButton.styleFrom(
                     backgroundColor: AppColors.surfaceContainerLow,
                     foregroundColor: AppColors.primary,

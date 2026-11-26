@@ -20,23 +20,30 @@ void main() {
 }
 
 class KisanSetuCustomerApp extends StatelessWidget {
-  const KisanSetuCustomerApp({super.key});
+  final SecureStorageService? storageService;
+  final PreferencesService? preferencesService;
+
+  const KisanSetuCustomerApp({
+    super.key,
+    this.storageService,
+    this.preferencesService,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final storageService = FlutterSecureStorageImpl();
-    final preferencesService = PreferencesService();
-    final dioClient = DioClient(storageService: storageService);
+    final storage = storageService ?? FlutterSecureStorageImpl();
+    final prefs = preferencesService ?? PreferencesService();
+    final dioClient = DioClient(storageService: storage);
 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => AppSettingsProvider(preferencesService),
+          create: (_) => AppSettingsProvider(prefs),
         ),
         ChangeNotifierProvider(
           create: (_) => AuthProvider(
             dioClient: dioClient,
-            storageService: storageService,
+            storageService: storage,
           ),
         ),
         ChangeNotifierProvider(

@@ -121,7 +121,7 @@ export const DataSourceBanner: React.FC<{ isLive: boolean; label: string }> = ({
   >
     {isLive
       ? `Connected to Live Spring Boot API (${label})`
-      : `Offline / Prototype Fallback Active (${label}) — isolated mock dataset shown.`}
+      : `Backend Offline (${label}) — unable to reach live API.`}
   </Alert>
 );
 

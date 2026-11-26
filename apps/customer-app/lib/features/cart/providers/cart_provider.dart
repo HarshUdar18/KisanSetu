@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import '../../../core/network/dio_client.dart';
-import '../../../core/services/mock_services.dart';
 import '../../catalog/models/product_model.dart';
 import '../models/cart_model.dart';
 
@@ -172,14 +171,52 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Map<String, dynamic> applyCoupon(String code) {
-    final res = MockCustomerServices.validateCoupon(code, _cart.subtotal);
-    if (res['valid'] == true) {
-      _appliedCouponCode = res['code'] as String;
-      _couponDiscount = (res['discountAmount'] as num).toDouble();
-      notifyListeners();
+  void clearLocalState() {
+    _cart = CartModel.empty();
+    _appliedCouponCode = null;
+    _couponDiscount = 0.0;
+    _priceUpdatedNotice = null;
+    _errorMessage = null;
+    _isLoading = false;
+    notifyListeners();
+  }
+
+  Future<Map<String, dynamic>> applyCoupon(String code) async {
+    final trimmed = code.trim();
+    if (trimmed.isEmpty) {
+      return {'valid': false, 'message': 'Please enter a coupon code'};
     }
-    return res;
+    try {
+      final res = await dioClient.get('/coupons/validate', queryParameters: {'code': trimmed});
+      final coupon = Map<String, dynamic>.from(res.data['data'] as Map);
+      final minOrder = (coupon['minOrderAmount'] as num?)?.toDouble() ?? 0.0;
+      if (_cart.subtotal < minOrder) {
+        return {
+          'valid': false,
+          'message': 'Minimum order of ₹${minOrder.toStringAsFixed(0)} required for ${coupon['code']}.',
+        };
+      }
+      final discountType = (coupon['discountType'] ?? 'FLAT').toString().toUpperCase();
+      final discountVal = (coupon['discountValue'] as num?)?.toDouble() ?? 0.0;
+      final maxDiscount = (coupon['maxDiscount'] as num?)?.toDouble() ?? discountVal;
+      double discount = discountType == 'PERCENT'
+          ? (_cart.subtotal * discountVal / 100.0)
+          : discountVal;
+      if (maxDiscount > 0 && discount > maxDiscount) {
+        discount = maxDiscount;
+      }
+      _appliedCouponCode = (coupon['code'] ?? trimmed).toString();
+      _couponDiscount = discount;
+      notifyListeners();
+      return {
+        'valid': true,
+        'code': _appliedCouponCode,
+        'discountAmount': discount,
+        'message': 'Coupon $_appliedCouponCode applied! Saved ₹${discount.toStringAsFixed(0)}.',
+      };
+    } catch (_) {
+      return {'valid': false, 'message': 'Invalid or expired coupon code.'};
+    }
   }
 
   void removeCoupon() {

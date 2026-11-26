@@ -1,6 +1,7 @@
 package com.kisansetu.modules.servicearea.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -21,14 +22,14 @@ public class ServiceArea {
     @Column(length = 10)
     private String pincode;
 
-    @Column(name = "latitude")
-    private Double latitude;
+    @Column(name = "latitude", precision = 10, scale = 7)
+    private BigDecimal latitude;
 
-    @Column(name = "longitude")
-    private Double longitude;
+    @Column(name = "longitude", precision = 10, scale = 7)
+    private BigDecimal longitude;
 
-    @Column(name = "radius_km")
-    private Double radiusKm = 5.0;
+    @Column(name = "radius_km", precision = 5, scale = 2)
+    private BigDecimal radiusKm = BigDecimal.valueOf(5.0);
 
     @Column(length = 50)
     private String city = "Pune";
@@ -41,7 +42,7 @@ public class ServiceArea {
 
     public ServiceArea() {}
 
-    public ServiceArea(String name, String pincode, Double latitude, Double longitude, Double radiusKm, String city) {
+    public ServiceArea(String name, String pincode, BigDecimal latitude, BigDecimal longitude, BigDecimal radiusKm, String city) {
         this.name = name;
         this.pincode = pincode;
         this.latitude = latitude;
@@ -85,27 +86,27 @@ public class ServiceArea {
         this.pincode = pincode;
     }
 
-    public Double getLatitude() {
+    public BigDecimal getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public BigDecimal getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;
     }
 
-    public Double getRadiusKm() {
+    public BigDecimal getRadiusKm() {
         return radiusKm;
     }
 
-    public void setRadiusKm(Double radiusKm) {
+    public void setRadiusKm(BigDecimal radiusKm) {
         this.radiusKm = radiusKm;
     }
 

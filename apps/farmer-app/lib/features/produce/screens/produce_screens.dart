@@ -275,8 +275,8 @@ class _AddProduceDetailsScreenState extends State<AddProduceDetailsScreen> {
               final price = double.tryParse(_priceCtrl.text.trim()) ?? 0;
               final ok = await context.read<ProduceProvider>().createListing(
                     FarmerListing(
-                      id: 'LOT-${DateTime.now().millisecondsSinceEpoch.toString().substring(8)}',
-                      productId: 'prod-custom',
+                      id: '',
+                      productId: '',
                       cropName: crop,
                       marathiName: '',
                       category: category,

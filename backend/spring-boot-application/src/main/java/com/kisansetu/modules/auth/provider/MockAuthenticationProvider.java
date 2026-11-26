@@ -6,7 +6,9 @@ import com.kisansetu.modules.audit.AuditService;
 import com.kisansetu.modules.auth.dto.AuthResult;
 import com.kisansetu.modules.auth.dto.OtpChallenge;
 import com.kisansetu.modules.auth.dto.RegisterUserRequest;
+import com.kisansetu.modules.auth.entity.PasswordResetToken;
 import com.kisansetu.modules.auth.entity.RefreshToken;
+import com.kisansetu.modules.auth.repository.PasswordResetTokenRepository;
 import com.kisansetu.modules.auth.repository.RefreshTokenRepository;
 import com.kisansetu.modules.customer.entity.CustomerProfile;
 import com.kisansetu.modules.customer.repository.CustomerProfileRepository;
@@ -25,11 +27,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.time.Instant;
+import java.util.HexFormat;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -46,7 +51,10 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
     private final AuditService auditService;
     private final DevelopmentOtpProvider otpProvider;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final PasswordResetTokenRepository passwordResetTokenRepository;
+    private final SecureRandom resetRandom = new SecureRandom();
     private final long jwtExpirationMs;
+    private final String googleClientId;
 
     public MockAuthenticationProvider(
             UserRepository userRepository,
@@ -58,7 +66,9 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
             AuditService auditService,
             DevelopmentOtpProvider otpProvider,
             RefreshTokenRepository refreshTokenRepository,
-            @Value("${kisansetu.jwt.expiration-ms:86400000}") long jwtExpirationMs) {
+            PasswordResetTokenRepository passwordResetTokenRepository,
+            @Value("${kisansetu.jwt.expiration-ms:86400000}") long jwtExpirationMs,
+            @Value("${app.auth.google.client-id:}") String googleClientId) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.customerProfileRepository = customerProfileRepository;
@@ -68,7 +78,9 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
         this.auditService = auditService;
         this.otpProvider = otpProvider;
         this.refreshTokenRepository = refreshTokenRepository;
+        this.passwordResetTokenRepository = passwordResetTokenRepository;
         this.jwtExpirationMs = jwtExpirationMs;
+        this.googleClientId = googleClientId != null ? googleClientId.trim() : "";
     }
 
     @Override
@@ -122,11 +134,12 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
         auditService.logEvent(savedUser.getId(), "USER_REGISTERED", "USER", savedUser.getId().toString(),
                 "Registered with role " + targetRoleName, null);
 
-        return new AuthResult(token, savedUser.getId(), savedUser.getPhone(), roles, jwtExpirationMs);
+        String refresh = issueRefreshToken(savedUser);
+        return new AuthResult(token, refresh, savedUser.getId(), savedUser.getPhone(), roles, jwtExpirationMs);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public AuthResult loginWithPassword(String identifier, String password) {
         String trimmed = identifier.trim();
         User user = userRepository.findByPhoneOrEmail(trimmed, trimmed.toLowerCase())
@@ -147,7 +160,8 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
 
         auditService.logEvent(user.getId(), "LOGIN_SUCCESS", "USER", user.getId().toString(), "Password login", null);
 
-        return new AuthResult(token, user.getId(), principalUsername, roles, jwtExpirationMs);
+        String refresh = issueRefreshToken(user);
+        return new AuthResult(token, refresh, user.getId(), principalUsername, roles, jwtExpirationMs);
     }
 
     @Override
@@ -164,29 +178,138 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     @Transactional
-    public AuthResult verifyOtp(String phone, String otp) {
-        otpProvider.verifyOtp(phone, otp);
+    public AuthResult verifyOtp(String identifier, String otp) {
+        return verifyOtp(identifier, otp, null);
+    }
 
-        // Find or auto-provision basic user on verified phone
-        User user = userRepository.findByPhone(phone).orElseGet(() -> {
-            Role customerRole = roleRepository.findById("ROLE_CUSTOMER")
-                    .orElseGet(() -> roleRepository.save(new Role("ROLE_CUSTOMER", "Retail Consumer")));
-            User newUser = new User(phone, null, passwordEncoder.encode("devSecretPassword123"));
-            newUser.addRole(customerRole);
+    @Override
+    @Transactional
+    public AuthResult verifyOtp(String identifier, String otp, String requestedRole) {
+        String normalized = identifier.trim();
+        boolean isEmail = normalized.contains("@");
+        String lookup = isEmail ? normalized.toLowerCase() : normalized;
+        otpProvider.verifyOtp(lookup, otp);
+
+        String targetRole = (requestedRole != null && requestedRole.trim().equalsIgnoreCase("ROLE_FARMER"))
+                ? "ROLE_FARMER" : "ROLE_CUSTOMER";
+
+        User user = userRepository.findByPhoneOrEmail(lookup, lookup.toLowerCase()).orElseGet(() -> {
+            Role role = roleRepository.findById(targetRole)
+                    .orElseGet(() -> roleRepository.save(new Role(targetRole, "Self-registered " + targetRole)));
+            User newUser = new User(
+                    isEmail ? null : lookup,
+                    isEmail ? lookup : null,
+                    passwordEncoder.encode(UUID.randomUUID().toString())
+            );
+            newUser.addRole(role);
             User saved = userRepository.save(newUser);
 
-            CustomerProfile profile = new CustomerProfile(saved, "New Customer (" + phone + ")", "", "");
-            customerProfileRepository.save(profile);
+            if ("ROLE_FARMER".equals(targetRole)) {
+                FarmerProfile fp = new FarmerProfile(saved, "Kisan Setu Farmer", "", "", "Maharashtra", "", "General Produce");
+                farmerProfileRepository.save(fp);
+            } else {
+                CustomerProfile profile = new CustomerProfile(saved, "", "", "");
+                customerProfileRepository.save(profile);
+            }
             return saved;
         });
 
-        List<String> roles = user.getRoles().stream().map(Role::getId).collect(Collectors.toList());
-        String token = jwtService.generateToken(user.getId(), user.getPhone(), roles);
+        if ("ROLE_CUSTOMER".equals(targetRole) && customerProfileRepository.findByUserId(user.getId()).isEmpty()) {
+            customerProfileRepository.save(new CustomerProfile(user, "", "", ""));
+        }
 
-        auditService.logEvent(user.getId(), "OTP_VERIFIED", "USER", user.getId().toString(), "OTP verified login", null);
+        List<String> roles = user.getRoles().stream().map(Role::getId).collect(Collectors.toList());
+        if ("ROLE_FARMER".equals(targetRole) && !roles.contains("ROLE_FARMER") && !roles.contains("ROLE_ADMIN")) {
+            throw new com.kisansetu.common.exception.ApiException(
+                    "ROLE_FORBIDDEN", "This account does not have FARMER role.", org.springframework.http.HttpStatus.FORBIDDEN);
+        }
+        String principalId = user.getPhone() != null ? user.getPhone() : user.getEmail();
+        String token = jwtService.generateToken(user.getId(), principalId, roles);
+
+        auditService.logEvent(user.getId(), "OTP_VERIFIED", "USER", user.getId().toString(), "OTP verified login (" + targetRole + ")", null);
 
         String refresh = issueRefreshToken(user);
-        return new AuthResult(token, refresh, user.getId(), user.getPhone(), roles, jwtExpirationMs);
+        return new AuthResult(token, refresh, user.getId(), principalId, roles, jwtExpirationMs);
+    }
+
+    @Override
+    @Transactional
+    public AuthResult loginWithGoogle(String idToken) {
+        if (!StringUtils.hasText(googleClientId)) {
+            throw new com.kisansetu.common.exception.ApiException(
+                    "GOOGLE_AUTH_BLOCKED",
+                    "Google Sign-In is not configured on this server (missing GOOGLE_OAUTH_CLIENT_ID).",
+                    org.springframework.http.HttpStatus.SERVICE_UNAVAILABLE
+            );
+        }
+        if (!StringUtils.hasText(idToken)) {
+            throw new BadRequestException("Google ID token is required");
+        }
+        try {
+            var factory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
+            factory.setConnectTimeout(5000);
+            factory.setReadTimeout(8000);
+            var rest = new org.springframework.web.client.RestTemplate(factory);
+            @SuppressWarnings("unchecked")
+            Map<String, Object> tokenInfo = rest.getForObject(
+                    "https://oauth2.googleapis.com/tokeninfo?id_token={token}",
+                    Map.class,
+                    idToken.trim()
+            );
+            if (tokenInfo == null) {
+                throw new BadCredentialsException("Empty Google tokeninfo response");
+            }
+            String aud = String.valueOf(tokenInfo.getOrDefault("aud", ""));
+            String iss = String.valueOf(tokenInfo.getOrDefault("iss", ""));
+            String email = String.valueOf(tokenInfo.getOrDefault("email", "")).trim().toLowerCase();
+            boolean emailVerified = "true".equalsIgnoreCase(String.valueOf(tokenInfo.getOrDefault("email_verified", "false")));
+            long exp = Long.parseLong(String.valueOf(tokenInfo.getOrDefault("exp", "0")));
+
+            if (!googleClientId.equals(aud)
+                    || (!"accounts.google.com".equals(iss) && !"https://accounts.google.com".equals(iss))
+                    || !emailVerified
+                    || email.isEmpty()
+                    || Instant.now().getEpochSecond() >= exp) {
+                throw new BadCredentialsException("Invalid or expired Google ID token");
+            }
+
+            String name = String.valueOf(tokenInfo.getOrDefault("name", "Kisan Setu Customer"));
+            User user = userRepository.findByEmail(email).orElseGet(() -> {
+                Role customerRole = roleRepository.findById("ROLE_CUSTOMER")
+                        .orElseGet(() -> roleRepository.save(new Role("ROLE_CUSTOMER", "Retail Consumer")));
+                User newUser = new User(null, email, passwordEncoder.encode(UUID.randomUUID().toString()));
+                newUser.addRole(customerRole);
+                User saved = userRepository.save(newUser);
+                customerProfileRepository.save(new CustomerProfile(saved, name, "", ""));
+                return saved;
+            });
+
+            List<String> roles = user.getRoles().stream().map(Role::getId).collect(Collectors.toList());
+            String principalId = user.getPhone() != null ? user.getPhone() : user.getEmail();
+            String token = jwtService.generateToken(user.getId(), principalId, roles);
+            auditService.logEvent(user.getId(), "GOOGLE_LOGIN", "USER", user.getId().toString(), "Google ID token verified", null);
+            String refresh = issueRefreshToken(user);
+            return new AuthResult(token, refresh, user.getId(), principalId, roles, jwtExpirationMs);
+        } catch (com.kisansetu.common.exception.ApiException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            throw new BadCredentialsException("Google Sign-In verification failed: " + ex.getMessage());
+        }
+    }
+
+    @Override
+    public Map<String, Object> getCapabilities() {
+        boolean smsConfigured = otpProvider.getSmsProvider() != null && otpProvider.getSmsProvider().isConfigured();
+        boolean devMode = otpProvider.isDevelopmentMode();
+        return Map.of(
+                "phoneOtp", true,
+                "emailOtp", true,
+                "passwordLogin", true,
+                "googleSignIn", StringUtils.hasText(googleClientId),
+                "exposeDevOtp", devMode,
+                "smsConfigured", smsConfigured,
+                "otpDeliveryMode", devMode ? "DEVELOPMENT_IN_APP" : (smsConfigured ? "SMS" : "BLOCKED")
+        );
     }
 
     private String issueRefreshToken(User user) {
@@ -227,6 +350,20 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
     @Override
     @Transactional
     public void logout(String token) {
+        logout(token, null);
+    }
+
+    @Override
+    @Transactional
+    public void logout(String token, String refreshToken) {
+        if (StringUtils.hasText(refreshToken)) {
+            refreshTokenRepository.findByToken(refreshToken.trim()).ifPresent(rt -> {
+                rt.setRevoked(true);
+                refreshTokenRepository.save(rt);
+                auditService.logEvent(rt.getUser().getId(), "LOGOUT", "USER", rt.getUser().getId().toString(),
+                        "User logged out (refresh token revoked)", null);
+            });
+        }
         if (StringUtils.hasText(token) && jwtService.isTokenValid(token)) {
             try {
                 var userId = jwtService.extractUserId(token);
@@ -236,6 +373,110 @@ public class MockAuthenticationProvider implements AuthenticationProvider {
                 });
                 auditService.logEvent(userId, "LOGOUT", "USER", userId.toString(), "User logged out", null);
             } catch (Exception ignored) {}
+        }
+    }
+
+    @Override
+    @Transactional
+    public Map<String, Object> forgotPassword(String identifier) {
+        String genericMessage = "If an account exists for that identifier, a password reset code has been issued.";
+        if (!StringUtils.hasText(identifier)) {
+            return Map.of("message", genericMessage, "expiresInSeconds", 900);
+        }
+        String trimmed = identifier.trim();
+        var userOpt = userRepository.findByPhoneOrEmail(trimmed, trimmed.toLowerCase());
+        if (userOpt.isEmpty()) {
+            return Map.of("message", genericMessage, "expiresInSeconds", 900);
+        }
+
+        User user = userOpt.get();
+        passwordResetTokenRepository.findByUserIdAndUsedFalse(user.getId()).forEach(t -> {
+            t.setUsed(true);
+            passwordResetTokenRepository.save(t);
+        });
+
+        String rawCode = String.format("%06d", resetRandom.nextInt(1000000));
+        String hash = sha256Hex(rawCode);
+        passwordResetTokenRepository.save(new PasswordResetToken(user, hash, Instant.now().plusSeconds(900)));
+        auditService.logEvent(user.getId(), "PASSWORD_RESET_REQUESTED", "USER", user.getId().toString(),
+                "Password reset code generated", null);
+
+        if (otpProvider.isDevelopmentMode()) {
+            return Map.of(
+                    "message", genericMessage,
+                    "expiresInSeconds", 900,
+                    "developmentResetCode", rawCode
+            );
+        }
+        return Map.of("message", genericMessage, "expiresInSeconds", 900);
+    }
+
+    @Override
+    @Transactional
+    public void resetPassword(String identifier, String token, String newPassword) {
+        if (!StringUtils.hasText(newPassword) || newPassword.length() < 6) {
+            throw new BadRequestException("New password must be at least 6 characters long");
+        }
+        if (!StringUtils.hasText(identifier) || !StringUtils.hasText(token)) {
+            throw new BadRequestException("Identifier and reset code are required");
+        }
+        String trimmed = identifier.trim();
+        User user = userRepository.findByPhoneOrEmail(trimmed, trimmed.toLowerCase())
+                .orElseThrow(() -> new BadCredentialsException("Invalid or expired reset code"));
+
+        PasswordResetToken resetToken = passwordResetTokenRepository
+                .findTopByUserIdAndUsedFalseOrderByCreatedAtDesc(user.getId())
+                .orElseThrow(() -> new BadCredentialsException("Invalid or expired reset code"));
+
+        if (resetToken.isExpired() || !MessageDigest.isEqual(
+                resetToken.getTokenHash().getBytes(StandardCharsets.UTF_8),
+                sha256Hex(token.trim()).getBytes(StandardCharsets.UTF_8))) {
+            throw new BadCredentialsException("Invalid or expired reset code");
+        }
+
+        resetToken.setUsed(true);
+        passwordResetTokenRepository.save(resetToken);
+
+        user.setPasswordHash(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        refreshTokenRepository.findByUserIdAndRevokedFalse(user.getId()).ifPresent(rt -> {
+            rt.setRevoked(true);
+            refreshTokenRepository.save(rt);
+        });
+        auditService.logEvent(user.getId(), "PASSWORD_RESET_SUCCESS", "USER", user.getId().toString(),
+                "Password reset completed", null);
+    }
+
+    @Override
+    @Transactional
+    public void changePassword(UUID userId, String currentPassword, String newPassword) {
+        if (!StringUtils.hasText(newPassword) || newPassword.length() < 6) {
+            throw new BadRequestException("New password must be at least 6 characters long");
+        }
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new BadCredentialsException("User not found"));
+        if (!passwordEncoder.matches(currentPassword, user.getPasswordHash())) {
+            throw new BadCredentialsException("Current password is incorrect");
+        }
+        user.setPasswordHash(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        refreshTokenRepository.findByUserIdAndRevokedFalse(userId).ifPresent(rt -> {
+            rt.setRevoked(true);
+            refreshTokenRepository.save(rt);
+        });
+        auditService.logEvent(userId, "PASSWORD_CHANGED", "USER", userId.toString(),
+                "Password changed by user", null);
+    }
+
+    private String sha256Hex(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] digest = md.digest(input.getBytes(StandardCharsets.UTF_8));
+            return HexFormat.of().formatHex(digest);
+        } catch (Exception e) {
+            throw new IllegalStateException("SHA-256 unavailable", e);
         }
     }
 }

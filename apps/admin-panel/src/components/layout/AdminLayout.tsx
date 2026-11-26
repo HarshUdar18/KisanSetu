@@ -49,6 +49,7 @@ import {
   SupportAgent as SupportIcon,
   AdminPanelSettings as RbacIcon,
   Settings as SettingsIcon,
+  Hub as HubIcon,
   Menu as MenuIcon,
   ChevronLeft,
   ChevronRight,
@@ -61,6 +62,7 @@ import {
 } from '@mui/icons-material';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { adminApi } from '../../services/adminApi';
 import { adminColors } from '../../theme/theme';
 import { ConfirmActionDialog } from '../common/AdminPrimitives';
 
@@ -91,18 +93,19 @@ const NAV_GROUPS: NavGroup[] = [
       { label: 'Customers', path: '/customers', perm: 'customers', icon: <CustomersIcon fontSize="small" /> },
       { label: 'Farmers', path: '/farmers', perm: 'farmers', icon: <FarmersIcon fontSize="small" /> },
       { label: 'FPOs', path: '/fpos', perm: 'fpos', icon: <FpoIcon fontSize="small" /> },
-      { label: 'KYC Verification', path: '/kyc', perm: 'kyc', icon: <KycIcon fontSize="small" />, badge: '14' },
+      { label: 'KYC Verification', path: '/kyc', perm: 'kyc', icon: <KycIcon fontSize="small" /> },
     ],
   },
   {
     title: 'SUPPLY CHAIN & CATALOG',
     items: [
+      { label: 'Hub Management', path: '/hubs', perm: 'hubs', icon: <HubIcon fontSize="small" /> },
       { label: 'Product Catalogue', path: '/products', perm: 'products', icon: <CatalogIcon fontSize="small" /> },
       { label: 'Produce Listings', path: '/produce', perm: 'produce', icon: <ProduceIcon fontSize="small" /> },
       { label: 'Demand Management', path: '/demand', perm: 'demand', icon: <DemandIcon fontSize="small" /> },
-      { label: 'Order Management', path: '/orders', perm: 'orders', icon: <OrdersIcon fontSize="small" />, badge: '28' },
+      { label: 'Order Management', path: '/orders', perm: 'orders', icon: <OrdersIcon fontSize="small" /> },
       { label: 'Collection Points', path: '/collections', perm: 'collections', icon: <CollectionIcon fontSize="small" /> },
-      { label: 'Quality Inspection', path: '/quality', perm: 'quality', icon: <QualityIcon fontSize="small" />, badge: '6' },
+      { label: 'Quality Inspection', path: '/quality', perm: 'quality', icon: <QualityIcon fontSize="small" /> },
       { label: 'Warehouses', path: '/warehouses', perm: 'warehouses', icon: <WarehouseIcon fontSize="small" /> },
       { label: 'Inventory', path: '/inventory', perm: 'inventory', icon: <InventoryIcon fontSize="small" /> },
       { label: 'Logistics & Fleet', path: '/logistics', perm: 'logistics', icon: <LogisticsIcon fontSize="small" /> },
@@ -112,7 +115,7 @@ const NAV_GROUPS: NavGroup[] = [
     title: 'FINANCE & COMMERCE',
     items: [
       { label: 'Payments & Escrow', path: '/payments', perm: 'payments', icon: <PaymentsIcon fontSize="small" /> },
-      { label: 'Farmer Settlements', path: '/settlements', perm: 'settlements', icon: <SettlementsIcon fontSize="small" />, badge: 'Due' },
+      { label: 'Farmer Settlements', path: '/settlements', perm: 'settlements', icon: <SettlementsIcon fontSize="small" /> },
       { label: 'Subscriptions', path: '/subscriptions', perm: 'subscriptions', icon: <SubscriptionsIcon fontSize="small" /> },
       { label: 'Farmer Store', path: '/farmer-store', perm: 'farmer-store', icon: <StoreIcon fontSize="small" /> },
       { label: 'Coupons & Offers', path: '/promotions', perm: 'promotions', icon: <CouponsIcon fontSize="small" /> },
@@ -124,6 +127,7 @@ const NAV_GROUPS: NavGroup[] = [
       { label: 'Notifications', path: '/notifications', perm: 'notifications', icon: <NotificationsIcon fontSize="small" /> },
       { label: 'Support & Complaints', path: '/support', perm: 'support', icon: <SupportIcon fontSize="small" /> },
       { label: 'Admin Users & Roles', path: '/admin-users', perm: 'admin-users', icon: <RbacIcon fontSize="small" /> },
+      { label: 'Service Areas & PINs', path: '/service-areas', perm: 'settings', icon: <HubIcon fontSize="small" /> },
       { label: 'System Settings', path: '/settings', perm: 'settings', icon: <SettingsIcon fontSize="small" /> },
     ],
   },
@@ -137,6 +141,15 @@ export const AdminLayout: React.FC = () => {
   const [globalSearch, setGlobalSearch] = useState('');
   const [profileMenuEl, setProfileMenuEl] = useState<null | HTMLElement>(null);
   const [logoutOpen, setLogoutOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  React.useEffect(() => {
+    adminApi.fetchNotifications().then(({ data, isLive }) => {
+      if (isLive) {
+        setUnreadCount(data.filter((n: any) => !n.read).length);
+      }
+    });
+  }, []);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -283,15 +296,15 @@ export const AdminLayout: React.FC = () => {
       <Box sx={{ p: 1.5 }}>
         <Stack direction="row" spacing={1.2} sx={{ justifyContent: collapsed && !isMobile ? 'center' : 'flex-start', alignItems: "center" }}>
           <Avatar sx={{ width: 32, height: 32, bgcolor: adminColors.primary, fontSize: 13 }}>
-            {(user?.fullName ?? 'RK').slice(0, 2).toUpperCase()}
+            {(user?.fullName ?? user?.phoneNumber ?? 'AD').slice(0, 2).toUpperCase()}
           </Avatar>
           {(!collapsed || isMobile) && (
             <Box sx={{ minWidth: 0 }}>
               <Typography variant="subtitle2" noWrap>
-                {user?.fullName ?? 'Rajesh Kulkarni'}
+                {user?.fullName ?? user?.phoneNumber ?? 'Admin'}
               </Typography>
               <Typography variant="caption" noWrap sx={{ color: adminColors.outline }}>
-                {user?.adminRole ?? 'Super Admin'} • Pune HQ
+                {user?.adminRole ?? (user?.roles?.includes('ROLE_SUPER_ADMIN') ? 'Super Admin' : 'Admin')}
               </Typography>
             </Box>
           )}
@@ -404,7 +417,7 @@ export const AdminLayout: React.FC = () => {
             </Tooltip>
 
             <IconButton onClick={() => navigate('/notifications')}>
-              <Badge badgeContent={3} color="error">
+              <Badge badgeContent={unreadCount} color="error">
                 <NotificationsIcon fontSize="small" />
               </Badge>
             </IconButton>
@@ -415,7 +428,7 @@ export const AdminLayout: React.FC = () => {
 
             <IconButton onClick={(e) => setProfileMenuEl(e.currentTarget)}>
               <Avatar sx={{ width: 32, height: 32, bgcolor: adminColors.primary, fontSize: 13 }}>
-                {(user?.fullName ?? 'RK').slice(0, 2).toUpperCase()}
+                {(user?.fullName ?? user?.phoneNumber ?? 'AD').slice(0, 2).toUpperCase()}
               </Avatar>
             </IconButton>
 

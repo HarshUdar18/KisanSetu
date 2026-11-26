@@ -52,4 +52,31 @@ public class SubscriptionController {
         SubscriptionDto sub = subscriptionService.getSubscription(principal.getId(), id);
         return ResponseEntity.ok(ApiResponse.ok("Subscription retrieved", sub));
     }
+
+    @PostMapping("/{id}/pause")
+    @Operation(summary = "Pause active subscription")
+    public ResponseEntity<ApiResponse<SubscriptionDto>> pauseSubscription(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable UUID id) {
+        return ResponseEntity.ok(ApiResponse.ok("Subscription paused",
+                subscriptionService.updateStatus(principal.getId(), id, "PAUSED")));
+    }
+
+    @PostMapping("/{id}/resume")
+    @Operation(summary = "Resume paused subscription")
+    public ResponseEntity<ApiResponse<SubscriptionDto>> resumeSubscription(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable UUID id) {
+        return ResponseEntity.ok(ApiResponse.ok("Subscription resumed",
+                subscriptionService.updateStatus(principal.getId(), id, "ACTIVE")));
+    }
+
+    @PostMapping("/{id}/cancel")
+    @Operation(summary = "Cancel subscription")
+    public ResponseEntity<ApiResponse<SubscriptionDto>> cancelSubscription(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable UUID id) {
+        return ResponseEntity.ok(ApiResponse.ok("Subscription cancelled",
+                subscriptionService.updateStatus(principal.getId(), id, "CANCELLED")));
+    }
 }

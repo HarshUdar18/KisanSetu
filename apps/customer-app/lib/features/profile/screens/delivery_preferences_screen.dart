@@ -22,19 +22,27 @@ class DeliveryPreferencesScreen extends StatelessWidget {
           Text('Morning Harvest Delivery Slot',
               style: Theme.of(context).textTheme.headlineSmall),
           const SizedBox(height: 8),
-          ...[
-            'Morning Harvest (6:00 AM - 8:00 AM)',
-            'Mid-Morning (8:00 AM - 10:00 AM)',
-            'Evening Fresh (5:00 PM - 7:00 PM)',
-          ].map((slot) => Card(
-                margin: const EdgeInsets.only(bottom: 8),
-                child: RadioListTile<String>(
-                  value: slot,
-                  groupValue: settings.preferredDeliverySlot,
-                  onChanged: (v) => settings.updateDeliveryPreferences(slot: v),
-                  title: Text(slot),
-                ),
-              )),
+          RadioGroup<String>(
+            groupValue: settings.preferredDeliverySlot,
+            onChanged: (v) {
+              if (v != null) settings.updateDeliveryPreferences(slot: v);
+            },
+            child: Column(
+              children: [
+                'Morning Harvest (6:00 AM - 8:00 AM)',
+                'Mid-Morning (8:00 AM - 10:00 AM)',
+                'Evening Fresh (5:00 PM - 7:00 PM)',
+              ]
+                  .map((slot) => Card(
+                        margin: const EdgeInsets.only(bottom: 8),
+                        child: RadioListTile<String>(
+                          value: slot,
+                          title: Text(slot),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ),
           const SizedBox(height: 12),
           SwitchListTile(
             title: const Text('Leave at Doorstep (Zero-Contact)'),

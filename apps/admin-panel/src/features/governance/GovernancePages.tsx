@@ -21,7 +21,7 @@ import {
 } from '@mui/material';
 import { Download, Send } from '@mui/icons-material';
 import { DataSourceBanner, KpiCard, StatusBadge } from '../../components/common/AdminPrimitives';
-import { useAuth, type AdminRoleName } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { adminApi } from '../../services/adminApi';
 import { apiClient } from '../../api/client';
 
@@ -141,61 +141,222 @@ export const SupportPage: React.FC = () => {
   );
 };
 
-export const AnalyticsPage: React.FC = () => (
-  <Box>
-    <Stack direction="row" sx={{ mb: 2, justifyContent: "space-between", alignItems: "center" }}>
-      <Typography variant="h4">Financial P&L, APEDA & APMC Statutory Reports</Typography>
-      <Button variant="outlined" startIcon={<Download />}>Export Report</Button>
-    </Stack>
-    <DataSourceBanner isLive={false} label="Analytics & Statutory Reports" />
-    <Grid container spacing={2}>
-      <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="Gross Platform GMV" value="₹1.42 Cr" badge="+18.4%" /></Grid>
-      <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="Direct Farmer Payout Ratio" value="80.2%" subtitle="Zero middleman commission" /></Grid>
-      <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="APEDA Export Lots" value="312" subtitle="100% Residue-free" /></Grid>
-    </Grid>
-  </Box>
-);
+export const AnalyticsPage: React.FC = () => {
+  const [metrics, setMetrics] = useState<Record<string, number> | null>(null);
+  const [isLive, setIsLive] = useState(false);
+
+  React.useEffect(() => {
+    adminApi.fetchDashboardAnalytics().then(({ data, isLive: live }) => {
+      setMetrics(data);
+      setIsLive(live);
+    });
+  }, []);
+
+  return (
+    <Box>
+      <Stack direction="row" sx={{ mb: 2, justifyContent: "space-between", alignItems: "center" }}>
+        <Typography variant="h4">Financial & Operational Analytics</Typography>
+        <Button variant="outlined" startIcon={<Download />} disabled={!isLive}>Export Report</Button>
+      </Stack>
+      <DataSourceBanner isLive={isLive} label="Live PostgreSQL Analytics" />
+      <Grid container spacing={2}>
+        <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="Total Revenue" value={`₹${(metrics?.totalRevenue ?? 0).toLocaleString('en-IN')}`} /></Grid>
+        <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="Pending Settlements" value={`₹${(metrics?.pendingSettlementAmount ?? 0).toLocaleString('en-IN')}`} /></Grid>
+        <Grid size={{ xs: 12, sm: 4 }}><KpiCard title="Active Produce Listings" value={String(metrics?.activeProduceListings ?? 0)} /></Grid>
+      </Grid>
+    </Box>
+  );
+};
+
+export const HubsPage: React.FC = () => {
+  const { isSuperAdmin } = useAuth();
+  const [hubs, setHubs] = useState<any[]>([]);
+  const [isLive, setIsLive] = useState(false);
+  const [name, setName] = useState('');
+  const [code, setCode] = useState('');
+  const [district, setDistrict] = useState('');
+  const [pincode, setPincode] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const loadHubs = async () => {
+    const { data, isLive: live } = await adminApi.fetchHubs();
+    setHubs(data);
+    setIsLive(live);
+  };
+
+  React.useEffect(() => {
+    loadHubs();
+  }, []);
+
+  const handleCreateHub = async () => {
+    setError('');
+    setSuccess('');
+    try {
+      await adminApi.createHub({ name, code, district, pincode, state: 'Maharashtra' });
+      setSuccess(`Hub ${code.toUpperCase()} created and persisted.`);
+      setName('');
+      setCode('');
+      setDistrict('');
+      setPincode('');
+      await loadHubs();
+    } catch (e: any) {
+      setError(e?.response?.data?.message ?? 'Failed to create hub.');
+    }
+  };
+
+  return (
+    <Box>
+      <Typography variant="h4" gutterBottom>Operational Hub Management</Typography>
+      <DataSourceBanner isLive={isLive} label={isSuperAdmin() ? 'All Platform Hubs (Super Admin)' : 'Assigned Hubs Only'} />
+      {isSuperAdmin() && (
+        <Card sx={{ mb: 3 }}>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>Create New Hub (Super Admin Only)</Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 1 }}>
+              <TextField label="Hub Name" value={name} onChange={(e) => setName(e.target.value)} size="small" />
+              <TextField label="Hub Code (e.g. HUB-PUN-02)" value={code} onChange={(e) => setCode(e.target.value)} size="small" />
+              <TextField label="District" value={district} onChange={(e) => setDistrict(e.target.value)} size="small" />
+              <TextField label="PIN Code" value={pincode} onChange={(e) => setPincode(e.target.value)} size="small" />
+              <Button variant="contained" onClick={handleCreateHub} disabled={!name.trim() || !code.trim()}>
+                Create Hub
+              </Button>
+            </Stack>
+            {error && <Alert severity="error" sx={{ mt: 1 }}>{error}</Alert>}
+            {success && <Alert severity="success" sx={{ mt: 1 }}>{success}</Alert>}
+          </CardContent>
+        </Card>
+      )}
+      <Card>
+        <CardContent>
+          {hubs.length === 0 ? (
+            <Alert severity="info">No hubs found in database.</Alert>
+          ) : (
+            <TableContainer>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Code</TableCell>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Type</TableCell>
+                    <TableCell>District</TableCell>
+                    <TableCell>PIN</TableCell>
+                    <TableCell>Status</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {hubs.map((h) => (
+                    <TableRow key={h.id}>
+                      <TableCell sx={{ fontWeight: 600 }}>{h.code}</TableCell>
+                      <TableCell>{h.name}</TableCell>
+                      <TableCell>{h.hubType}</TableCell>
+                      <TableCell>{h.district ?? '-'}</TableCell>
+                      <TableCell>{h.pincode ?? '-'}</TableCell>
+                      <TableCell><StatusBadge status={h.status} /></TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
+        </CardContent>
+      </Card>
+    </Box>
+  );
+};
 
 export const AdminUsersPage: React.FC = () => {
-  const roles: AdminRoleName[] = [
-    'Super Admin',
-    'Operations Admin',
-    'Farmer Management Admin',
-    'Customer Support Admin',
-    'Finance Admin',
-    'Warehouse Admin',
-    'Logistics Admin',
-  ];
+  const { isSuperAdmin } = useAuth();
+  const [admins, setAdmins] = useState<any[]>([]);
+  const [isLive, setIsLive] = useState(false);
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const loadAdmins = async () => {
+    const { data, isLive: live } = await adminApi.fetchAdmins();
+    setAdmins(data);
+    setIsLive(live);
+  };
+
+  React.useEffect(() => {
+    if (isSuperAdmin()) {
+      loadAdmins();
+    }
+  }, []);
+
+  const handleCreateAdmin = async () => {
+    setError('');
+    setSuccess('');
+    try {
+      await adminApi.createAdmin({ phone, email, fullName, password });
+      setSuccess(`Admin account created for ${phone}.`);
+      setPhone('');
+      setEmail('');
+      setFullName('');
+      setPassword('');
+      await loadAdmins();
+    } catch (e: any) {
+      setError(e?.response?.data?.message ?? 'Failed to create admin account.');
+    }
+  };
 
   return (
     <Box>
       <Typography variant="h4" gutterBottom>Enterprise RBAC & Admin Governance</Typography>
-      <DataSourceBanner isLive={false} label="RBAC & Forensic Audit Trail" />
-      <Card>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>Configured Administrative Roles ({roles.length})</Typography>
-          <TableContainer>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Role Name</TableCell>
-                  <TableCell>Scope</TableCell>
-                  <TableCell>Status</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {roles.map((r) => (
-                  <TableRow key={r}>
-                    <TableCell sx={{ fontWeight: 600 }}>{r}</TableCell>
-                    <TableCell>{r === 'Super Admin' ? 'Full Platform Governance' : 'Scoped Module Permissions'}</TableCell>
-                    <TableCell><StatusBadge status="ACTIVE" /></TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </CardContent>
-      </Card>
+      <DataSourceBanner isLive={isLive} label="Super Admin Account & Role Management" />
+      {!isSuperAdmin() ? (
+        <Alert severity="warning">Only Super Admin can view or provision Admin accounts.</Alert>
+      ) : (
+        <>
+          <Card sx={{ mb: 3 }}>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>Provision Regular Admin (Super Admin Only)</Typography>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                <TextField label="Phone (10 digits)" value={phone} onChange={(e) => setPhone(e.target.value)} size="small" />
+                <TextField label="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} size="small" />
+                <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} size="small" />
+                <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} size="small" />
+                <Button variant="contained" onClick={handleCreateAdmin} disabled={!phone.trim() || !password.trim()}>
+                  Create Admin
+                </Button>
+              </Stack>
+              {error && <Alert severity="error" sx={{ mt: 1 }}>{error}</Alert>}
+              {success && <Alert severity="success" sx={{ mt: 1 }}>{success}</Alert>}
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>Persisted Admin Accounts ({admins.length})</Typography>
+              <TableContainer>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Phone</TableCell>
+                      <TableCell>Email</TableCell>
+                      <TableCell>Roles</TableCell>
+                      <TableCell>Status</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {admins.map((a) => (
+                      <TableRow key={a.id}>
+                        <TableCell sx={{ fontWeight: 600 }}>{a.phone}</TableCell>
+                        <TableCell>{a.email ?? '-'}</TableCell>
+                        <TableCell>{(a.roles ?? []).join(', ')}</TableCell>
+                        <TableCell><StatusBadge status={a.status} /></TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </CardContent>
+          </Card>
+        </>
+      )}
     </Box>
   );
 };
@@ -229,10 +390,10 @@ export const AdminProfilePage: React.FC = () => {
       <Typography variant="h4" gutterBottom>Admin Profile & Security</Typography>
       <Card sx={{ maxWidth: 540 }}>
         <CardContent>
-          <Typography variant="h6">{user?.fullName ?? 'Rajesh Kulkarni'}</Typography>
-          <Typography variant="body2">Role: {user?.adminRole ?? 'Super Admin'}</Typography>
-          <Typography variant="body2">Phone: {user?.phoneNumber ?? '9876543210'}</Typography>
-          <Typography variant="body2">Email: {user?.email ?? 'admin@kisansetu.local'}</Typography>
+          <Typography variant="h6">{user?.fullName ?? 'Authenticated Admin'}</Typography>
+          <Typography variant="body2">Roles: {(user?.roles ?? []).join(', ') || user?.adminRole || '-'}</Typography>
+          <Typography variant="body2">Phone: {user?.phoneNumber ?? '-'}</Typography>
+          <Typography variant="body2">Email: {user?.email ?? '-'}</Typography>
         </CardContent>
       </Card>
     </Box>

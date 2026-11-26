@@ -71,6 +71,15 @@ public class SubscriptionService {
     }
 
     @Transactional
+    public SubscriptionDto updateStatus(UUID userId, UUID id, String nextStatus) {
+        Subscription subscription = subscriptionRepository.findByIdAndUserId(id, userId)
+                .orElseThrow(() -> new ApiException("SUBSCRIPTION_NOT_FOUND", "Subscription not found", HttpStatus.NOT_FOUND));
+        subscription.setStatus(nextStatus);
+        subscriptionRepository.save(subscription);
+        return mapToDto(subscription);
+    }
+
+    @Transactional
     public SubscriptionDto createSubscription(UUID userId, CreateSubscriptionRequest request) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ApiException("USER_NOT_FOUND", "User not found", HttpStatus.NOT_FOUND));

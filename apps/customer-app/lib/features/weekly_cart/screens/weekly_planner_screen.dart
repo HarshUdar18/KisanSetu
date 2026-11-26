@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/auth_gate.dart';
 import '../../../core/widgets/kisan_header.dart';
+import '../../auth/providers/auth_provider.dart';
 import '../providers/weekly_cart_provider.dart';
 
 /// Implements Stitch `weekly_cart_planner` (Mon–Sun dashboard + single-edit rule).
@@ -18,12 +20,28 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      if (mounted) context.read<WeeklyCartProvider>().fetchWeeklyCarts();
+      if (!mounted) return;
+      if (context.read<AuthProvider>().isAuthenticated) {
+        context.read<WeeklyCartProvider>().fetchWeeklyCarts();
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final auth = context.watch<AuthProvider>();
+    if (!auth.isAuthenticated) {
+      return const Scaffold(
+        backgroundColor: AppColors.surface,
+        appBar: KisanTabHeader(),
+        body: GuestAuthRequiredView(
+          icon: Icons.calendar_month_outlined,
+          title: 'Sign in to plan your Weekly Basket',
+          subtitle:
+              'Schedule Monday-to-Sunday fresh vegetables and A2 milk deliveries.',
+        ),
+      );
+    }
     final provider = context.watch<WeeklyCartProvider>();
     final cart = provider.activeWeeklyCart;
     final selectedDay = provider.selectedDay;
@@ -35,8 +53,10 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
         children: [
-          Text('Weekly Kitchen Basket',
-              style: Theme.of(context).textTheme.headlineMedium),
+          Text(
+            'Weekly Kitchen Basket',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
           const SizedBox(height: 4),
           Text(
             'Schedule your fresh vegetables and dairy deliveries by day. Edit anytime until 9 PM the previous night.',
@@ -58,11 +78,16 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                 const Icon(Icons.chevron_left),
                 Column(
                   children: [
-                    Text(cart?.title ?? 'Week 44 Kitchen Basket',
-                        style: Theme.of(context).textTheme.labelLarge),
+                    Text(
+                      cart?.title ?? 'Week 44 Kitchen Basket',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ),
                     const SizedBox(height: 2),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                       decoration: BoxDecoration(
                         color: AppColors.secondaryContainer,
                         borderRadius: BorderRadius.circular(AppRadius.full),
@@ -115,7 +140,9 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
-                              color: isSelected ? Colors.white : AppColors.onSurface,
+                              color: isSelected
+                                  ? Colors.white
+                                  : AppColors.onSurface,
                             ),
                           ),
                           const SizedBox(height: 4),
@@ -123,8 +150,8 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                             radius: 3.5,
                             backgroundColor: hasItems
                                 ? (isSelected
-                                    ? AppColors.harvestGold
-                                    : AppColors.secondary)
+                                      ? AppColors.harvestGold
+                                      : AppColors.secondary)
                                 : AppColors.outlineVariant,
                           ),
                         ],
@@ -146,7 +173,8 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               TextButton.icon(
-                onPressed: () => context.push('/weekly-planner/day/$selectedDay'),
+                onPressed: () =>
+                    context.push('/weekly-planner/day/$selectedDay'),
                 icon: const Icon(Icons.edit_outlined, size: 16),
                 label: const Text('Edit Day'),
               ),
@@ -163,7 +191,9 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                     ElevatedButton(
                       onPressed: () =>
                           context.push('/weekly-planner/day/$selectedDay'),
-                      style: ElevatedButton.styleFrom(minimumSize: const Size(0, 38)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(0, 38),
+                      ),
                       child: const Text('+ Add Items'),
                     ),
                   ],
@@ -171,22 +201,28 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
               ),
             )
           else
-            ...dayPlan.items.map((item) => Card(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: ListTile(
-                    leading: const CircleAvatar(
-                      backgroundColor: AppColors.surfaceContainer,
-                      child: Icon(Icons.eco, color: AppColors.primary, size: 20),
-                    ),
-                    title: Text(item.productName,
-                        style: Theme.of(context).textTheme.labelLarge),
-                    subtitle: Text('${item.quantity.toStringAsFixed(0)} × ${item.unit}'),
-                    trailing: Text(
-                      '₹${item.totalPrice.toStringAsFixed(0)}',
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
+            ...dayPlan.items.map(
+              (item) => Card(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: ListTile(
+                  leading: const CircleAvatar(
+                    backgroundColor: AppColors.surfaceContainer,
+                    child: Icon(Icons.eco, color: AppColors.primary, size: 20),
                   ),
-                )),
+                  title: Text(
+                    item.productName,
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  subtitle: Text(
+                    '${item.quantity.toStringAsFixed(0)} × ${item.unit}',
+                  ),
+                  trailing: Text(
+                    '₹${item.totalPrice.toStringAsFixed(0)}',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                ),
+              ),
+            ),
 
           const SizedBox(height: 12),
           Container(
@@ -225,8 +261,10 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('WEEKLY SUMMARY',
-                        style: TextStyle(fontSize: 11, color: AppColors.outline)),
+                    const Text(
+                      'WEEKLY SUMMARY',
+                      style: TextStyle(fontSize: 11, color: AppColors.outline),
+                    ),
                     Text(
                       '${cart?.days.where((d) => d.items.isNotEmpty).length ?? 0} Deliveries Planned',
                       style: const TextStyle(
@@ -254,9 +292,11 @@ class _WeeklyPlannerScreenState extends State<WeeklyPlannerScreen> {
                       context.push('/weekly-planner/submitted');
                     },
                     icon: const Icon(Icons.check_circle_outline),
-                    label: Text(cart?.status == 'DRAFT'
-                        ? 'Submit Weekly Schedule'
-                        : 'View Submission & Edit Status'),
+                    label: Text(
+                      cart?.status == 'DRAFT'
+                          ? 'Submit Weekly Schedule'
+                          : 'View Submission & Edit Status',
+                    ),
                   ),
                 ),
               ],

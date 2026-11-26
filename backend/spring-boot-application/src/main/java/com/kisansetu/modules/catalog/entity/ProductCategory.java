@@ -27,6 +27,9 @@ public class ProductCategory {
     @Column(name = "display_order", nullable = false)
     private int displayOrder = 0;
 
+    @Column(name = "parent_category_id")
+    private UUID parentCategoryId;
+
     @Column(name = "is_active", nullable = false)
     private boolean isActive = true;
 
@@ -63,6 +66,9 @@ public class ProductCategory {
     public void setDisplayOrder(int displayOrder) { this.displayOrder = displayOrder; }
     public boolean isActive() { return isActive; }
     public void setActive(boolean active) { isActive = active; }
+    public UUID getParentCategoryId() { return parentCategoryId; }
+    public void setParentCategoryId(UUID parentCategoryId) { this.parentCategoryId = parentCategoryId; }
     public Instant getCreatedAt() { return createdAt; }
     public Instant getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(Instant updatedAt) { this.updatedAt = updatedAt; }
 }

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/auth_gate.dart';
 import '../../../core/widgets/kisan_header.dart';
 import '../../../core/widgets/product_card.dart';
+import '../../auth/providers/auth_provider.dart';
 import '../../cart/providers/cart_provider.dart';
 import '../providers/catalog_provider.dart';
 
@@ -87,8 +89,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               Expanded(
                 child: ElevatedButton.icon(
                   onPressed: () async {
-                    await cart.addProduct(product, quantity: _qty);
-                    if (!context.mounted) return;
+                    if (!context.read<AuthProvider>().isAuthenticated) {
+                      await promptGuestSignIn(
+                        context,
+                        actionDescription: 'add fresh produce to your basket',
+                      );
+                      return;
+                    }
+                    final added = await cart.addProduct(product, quantity: _qty);
+                    if (!context.mounted || !added) return;
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text('${product.name} added to Farm Basket'),

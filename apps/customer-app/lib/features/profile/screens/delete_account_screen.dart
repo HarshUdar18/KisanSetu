@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../../../core/providers/app_settings_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/kisan_header.dart';
 import '../../auth/providers/auth_provider.dart';
+import '../../cart/providers/cart_provider.dart';
+import '../../location/providers/address_provider.dart';
 
 /// Implements Stitch `delete_account_confirmation`.
 class DeleteAccountScreen extends StatefulWidget {
@@ -42,7 +45,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () => context.go('/welcome'),
+                      onPressed: () => context.go('/login'),
                       child: const Text('Done'),
                     ),
                   ),
@@ -78,6 +81,12 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                       onPressed: _confirmed
                           ? () async {
                               await context.read<AuthProvider>().logout();
+                              if (!context.mounted) return;
+                              context.read<AddressProvider>().clearLocalState();
+                              context.read<CartProvider>().clearLocalState();
+                              await context
+                                  .read<AppSettingsProvider>()
+                                  .clearLocationOnLogout();
                               if (mounted) setState(() => _submitted = true);
                             }
                           : null,

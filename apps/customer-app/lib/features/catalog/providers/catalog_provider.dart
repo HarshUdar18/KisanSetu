@@ -54,11 +54,23 @@ class CatalogProvider extends ChangeNotifier {
       return true;
     }).toList();
 
-    if (_sortBy == 'price_low') {
-      list.sort((a, b) => a.currentPrice.compareTo(b.currentPrice));
-    } else if (_sortBy == 'price_high') {
-      list.sort((a, b) => b.currentPrice.compareTo(a.currentPrice));
-    }
+    int rank(ProductModel p) => switch (p.stockStatus) {
+      'IN_STOCK' => 0,
+      'LOW_STOCK' => 1,
+      'OUT_OF_STOCK' => 2,
+      _ => 3,
+    };
+
+    list.sort((a, b) {
+      final stockCmp = rank(a).compareTo(rank(b));
+      if (stockCmp != 0) return stockCmp;
+      if (_sortBy == 'price_low') {
+        return a.currentPrice.compareTo(b.currentPrice);
+      } else if (_sortBy == 'price_high') {
+        return b.currentPrice.compareTo(a.currentPrice);
+      }
+      return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    });
     return list;
   }
 
@@ -68,14 +80,16 @@ class CatalogProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final catRes = await dioClient.get('/categories');
-      final rawCats = catRes.data['data'] as List<dynamic>? ?? [];
+      final results = await Future.wait([
+        dioClient.get('/categories'),
+        dioClient.get('/products'),
+      ]);
+      final rawCats = results[0].data['data'] as List<dynamic>? ?? [];
       _categories = rawCats
           .map((e) => CategoryModel.fromJson(e as Map<String, dynamic>))
           .toList();
 
-      final prodRes = await dioClient.get('/products');
-      final rawProds = prodRes.data['data'] as List<dynamic>? ?? [];
+      final rawProds = results[1].data['data'] as List<dynamic>? ?? [];
       _products = rawProds
           .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
           .toList();
@@ -90,6 +104,12 @@ class CatalogProvider extends ChangeNotifier {
 
     _isLoading = false;
     notifyListeners();
+  }
+
+  Future<List<Map<String, dynamic>>> fetchListingsForProduct(String productId) async {
+    final res = await dioClient.get('/products/$productId/listings');
+    final raw = res.data['data'] as List<dynamic>? ?? [];
+    return raw.whereType<Map<String, dynamic>>().toList();
   }
 
   ProductModel? getById(String id) {

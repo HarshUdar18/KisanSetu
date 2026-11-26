@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import '../../../core/services/mock_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/kisan_header.dart';
 import '../../../core/widgets/product_card.dart';
 import '../../../core/widgets/product_loading_skeleton.dart';
 import '../../auth/providers/auth_provider.dart';
-import '../../weekly_cart/providers/weekly_cart_provider.dart';
+import '../../cart/providers/cart_provider.dart';
 import '../../catalog/providers/catalog_provider.dart';
+import '../../location/providers/address_provider.dart';
+import '../../weekly_cart/providers/weekly_cart_provider.dart';
 
-/// Implements Stitch `home_dashboard`.
+/// Customer Dashboard (`home_dashboard`).
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -19,16 +20,32 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _initialLoadTriggered = false;
+
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      if (!mounted) return;
-      final catalog = context.read<CatalogProvider>();
-      if (catalog.allProducts.isEmpty) {
-        catalog.loadCatalog();
-      }
-    });
+    Future.microtask(_loadDashboardData);
+  }
+
+  Future<void> _loadDashboardData() async {
+    if (!mounted || _initialLoadTriggered) return;
+    _initialLoadTriggered = true;
+
+    final auth = context.read<AuthProvider>();
+    final catalog = context.read<CatalogProvider>();
+    final cart = context.read<CartProvider>();
+    final addresses = context.read<AddressProvider>();
+    final weekly = context.read<WeeklyCartProvider>();
+
+    await Future.wait([
+      if (catalog.allProducts.isEmpty) catalog.loadCatalog(),
+      if (auth.isAuthenticated) ...[
+        cart.fetchCart(),
+        if (addresses.addresses.isEmpty) addresses.fetchAddresses(),
+        weekly.fetchWeeklyCarts(),
+      ],
+    ]);
   }
 
   @override
@@ -37,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final auth = context.watch<AuthProvider>();
     final weekly = context.watch<WeeklyCartProvider>();
     final products = catalog.filteredProducts;
-    final featuredFarmer = MockCustomerServices.farmers.first;
 
     return Scaffold(
       backgroundColor: AppColors.surface,
@@ -56,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Namaste, ${auth.fullName?.split(' ').first ?? 'Neighbor'}',
+                          'Namaste, ${auth.greetingFirstName}',
                           style: Theme.of(context).textTheme.labelMedium?.copyWith(
                                 color: AppColors.primary,
                               ),
@@ -255,18 +271,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            const CircleAvatar(
-                              radius: 4,
-                              backgroundColor: AppColors.secondary,
-                            ),
-                            const SizedBox(width: 8),
-                            Text(
-                              'Morning Harvest Specials',
-                              style: Theme.of(context).textTheme.headlineSmall,
-                            ),
-                          ],
+                        Expanded(
+                          child: Row(
+                            children: [
+                              const CircleAvatar(
+                                radius: 4,
+                                backgroundColor: AppColors.secondary,
+                              ),
+                              const SizedBox(width: 8),
+                              Flexible(
+                                child: Text(
+                                  'Morning Harvest Specials',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.headlineSmall,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         TextButton(
                           onPressed: () => context.push('/catalog'),
@@ -279,6 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: GridView.builder(
+                      padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: products.length > 4 ? 4 : products.length,
@@ -286,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisCount: 2,
                         mainAxisSpacing: 12,
                         crossAxisSpacing: 12,
-                        childAspectRatio: 0.68,
+                        mainAxisExtent: 252,
                       ),
                       itemBuilder: (context, index) =>
                           ProductCard(product: products[index]),
@@ -295,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   // Meet Your Farmers (FPO Spotlight)
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
+                    padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -337,7 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: [
                                         Flexible(
                                           child: Text(
-                                            featuredFarmer['name'] as String,
+                                            'Verified FPO Producer Network',
                                             style: Theme.of(context).textTheme.labelLarge,
                                           ),
                                         ),
@@ -347,34 +369,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     Text(
-                                      '${featuredFarmer['cluster']} (${featuredFarmer['distanceKm']} km away)',
+                                      'Direct from local Farmer Producer Organizations',
                                       style: Theme.of(context).textTheme.bodySmall,
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 6, vertical: 2),
-                                          decoration: BoxDecoration(
-                                            color: AppColors.tertiaryFixed,
-                                            borderRadius:
-                                                BorderRadius.circular(AppRadius.sm),
-                                          ),
-                                          child: Text(
-                                            '★ ${featuredFarmer['rating']}',
-                                            style: const TextStyle(
-                                              fontSize: 11,
-                                              fontWeight: FontWeight.w700,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Text(
-                                          '(${featuredFarmer['deliveries']} deliveries)',
-                                          style: Theme.of(context).textTheme.bodySmall,
-                                        ),
-                                      ],
                                     ),
                                   ],
                                 ),
@@ -395,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       const Text(
-                                        'ACTIVE PRODUCE',
+                                        'LIVE CATALOGUE',
                                         style: TextStyle(
                                           fontSize: 10,
                                           fontWeight: FontWeight.w700,
@@ -403,7 +399,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                       Text(
-                                        (featuredFarmer['crops'] as List).join(', '),
+                                        '${products.length} fresh items available',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: Theme.of(context).textTheme.labelMedium,
@@ -413,14 +409,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 const SizedBox(width: 8),
                                 ElevatedButton(
-                                  onPressed: () =>
-                                      context.push('/farmer/${featuredFarmer['id']}'),
+                                  onPressed: () => context.push('/fpo-network'),
                                   style: ElevatedButton.styleFrom(
                                     minimumSize: const Size(0, 36),
                                     padding:
                                         const EdgeInsets.symmetric(horizontal: 12),
                                   ),
-                                  child: const Text('View Harvest',
+                                  child: const Text('Explore FPOs',
                                       style: TextStyle(fontSize: 12)),
                                 ),
                               ],
@@ -466,7 +461,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     style: Theme.of(context).textTheme.labelLarge,
                                   ),
                                   Text(
-                                    'Est. ₹${weekly.activeWeeklyCart?.weeklyEstimatedTotal.toStringAsFixed(0) ?? '865'} • Finalize by 9:00 PM',
+                                    weekly.activeWeeklyCart != null
+                                        ? 'Est. ₹${weekly.activeWeeklyCart!.weeklyEstimatedTotal.toStringAsFixed(0)} • Finalize by 9:00 PM'
+                                        : 'Plan Mon–Sun fresh veggies & A2 milk',
                                     style: Theme.of(context).textTheme.bodySmall,
                                   ),
                                 ],

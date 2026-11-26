@@ -10,6 +10,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.UUID;
 
@@ -44,10 +45,10 @@ public class CustomerService {
             profile.setPincode(request.getPincode().trim());
         }
         if (request.getLatitude() != null) {
-            profile.setLatitude(request.getLatitude());
+            profile.setLatitude(BigDecimal.valueOf(request.getLatitude()));
         }
         if (request.getLongitude() != null) {
-            profile.setLongitude(request.getLongitude());
+            profile.setLongitude(BigDecimal.valueOf(request.getLongitude()));
         }
 
         CustomerProfile updated = profileRepository.save(profile);

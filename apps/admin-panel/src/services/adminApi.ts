@@ -19,7 +19,9 @@ export interface CategoryDto {
 
 export interface ProductDto {
   id: string;
+  productCode?: string;
   name: string;
+  canonicalName?: string;
   marathiName?: string;
   categoryId?: string;
   categoryName?: string;
@@ -27,6 +29,7 @@ export interface ProductDto {
   currentPrice: number;
   previousPrice?: number;
   isAvailable?: boolean;
+  isPerishable?: boolean;
 }
 
 export const adminApi = {
@@ -272,5 +275,54 @@ export const adminApi = {
   async createStoreProduct(payload: { name: string; category: string; unit: string; mrp: number; subsidizedPrice: number; stockQuantity: number }) {
     const res = await apiClient.post('/admin/farmer-store/products', payload);
     return res.data?.data;
+  },
+
+  async fetchHubs(): Promise<{ data: any[]; isLive: boolean }> {
+    try {
+      const res = await apiClient.get('/admin/hubs');
+      return { data: res.data?.data ?? [], isLive: true };
+    } catch { return { data: [], isLive: false }; }
+  },
+
+  async createHub(payload: { name: string; code: string; hubType?: string; addressLine?: string; village?: string; district?: string; state?: string; pincode?: string; contactName?: string; contactPhone?: string }) {
+    const res = await apiClient.post('/admin/hubs', payload);
+    return res.data?.data;
+  },
+
+  async fetchAdmins(): Promise<{ data: any[]; isLive: boolean }> {
+    try {
+      const res = await apiClient.get('/admin/admins');
+      return { data: res.data?.data ?? [], isLive: true };
+    } catch { return { data: [], isLive: false }; }
+  },
+
+  async createAdmin(payload: { phone: string; password: string; email?: string; fullName: string }) {
+    const res = await apiClient.post('/admin/admins', payload);
+    return res.data?.data;
+  },
+
+  async createProduct(payload: {
+    categoryId: string;
+    productCode: string;
+    name: string;
+    marathiName?: string;
+    unit: string;
+    currentPrice?: number;
+    isPerishable?: boolean;
+  }) {
+    const res = await apiClient.post('/admin/products', payload);
+    return res.data?.data;
+  },
+
+  async toggleProductStatus(id: string, isAvailable: boolean) {
+    const res = await apiClient.patch(`/admin/products/${id}/status`, { isAvailable });
+    return res.data?.data;
+  },
+
+  async fetchUnits(): Promise<{ data: any[]; isLive: boolean }> {
+    try {
+      const res = await apiClient.get('/units');
+      return { data: res.data?.data ?? [], isLive: true };
+    } catch { return { data: [], isLive: false }; }
   },
 };

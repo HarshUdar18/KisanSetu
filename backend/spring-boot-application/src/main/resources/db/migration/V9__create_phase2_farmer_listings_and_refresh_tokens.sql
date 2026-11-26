@@ -38,8 +38,8 @@ CREATE INDEX IF NOT EXISTS idx_refresh_tokens_token ON refresh_tokens(token);
 
 -- 3. Seed Sample Farmer Listings (Tukaram Patil - Farmer ID: a0000000-0000-0000-0000-000000000003)
 INSERT INTO farmer_listings (id, farmer_id, product_id, quantity_available, unit, price_per_unit, harvest_date, description, quality_grade, is_available, status) VALUES
-    ('l0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000001', 450.00, 'kg', 27.50, CURRENT_DATE + INTERVAL '1 day', 'Freshly plucked organic Desi Tomatoes from Khed polyhouse', 'GRADE_A', TRUE, 'ACTIVE'),
-    ('l0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000002', 800.00, 'kg', 31.00, CURRENT_DATE - INTERVAL '2 days', 'Well-dried, medium graded Nashik Red Onions ready for transit', 'GRADE_A', TRUE, 'ACTIVE'),
-    ('l0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000003', 1000.00, 'kg', 22.00, CURRENT_DATE, 'Freshly dug clean mountain potatoes', 'GRADE_A', TRUE, 'ACTIVE'),
-    ('l0000000-0000-0000-0000-000000000004', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000011', 1500.00, 'kg', 44.00, CURRENT_DATE - INTERVAL '5 days', 'Cleaned and bagged Lokwan Sharbati Wheat, moisture content < 12%', 'GRADE_A', TRUE, 'ACTIVE')
+    ('11000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000001', 450.00, 'kg', 27.50, CURRENT_DATE + INTERVAL '1 day', 'Freshly plucked organic Desi Tomatoes from Khed polyhouse', 'GRADE_A', TRUE, 'ACTIVE'),
+    ('11000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000002', 800.00, 'kg', 31.00, CURRENT_DATE - INTERVAL '2 days', 'Well-dried, medium graded Nashik Red Onions ready for transit', 'GRADE_A', TRUE, 'ACTIVE'),
+    ('11000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000003', 1000.00, 'kg', 22.00, CURRENT_DATE, 'Freshly dug clean mountain potatoes', 'GRADE_A', TRUE, 'ACTIVE'),
+    ('11000000-0000-0000-0000-000000000004', 'a0000000-0000-0000-0000-000000000003', 'f0000000-0000-0000-0000-000000000011', 1500.00, 'kg', 44.00, CURRENT_DATE - INTERVAL '5 days', 'Cleaned and bagged Lokwan Sharbati Wheat, moisture content < 12%', 'GRADE_A', TRUE, 'ACTIVE')
 ON CONFLICT (id) DO NOTHING;

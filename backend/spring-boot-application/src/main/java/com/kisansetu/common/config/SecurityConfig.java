@@ -3,6 +3,8 @@ package com.kisansetu.common.config;
 import com.kisansetu.common.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -43,6 +45,7 @@ public class SecurityConfig {
                                 "/api/v1/service-areas/**",
                                 "/api/v1/categories/**",
                                 "/api/v1/products/**",
+                                "/api/v1/units/**",
                                 "/api/v1/prices/**",
                                 "/api/v1/fpos/**",
                                 "/api/v1/produce/**",
@@ -50,14 +53,21 @@ public class SecurityConfig {
                                 "/api/v1/farmer-store/products/**",
                                 "/api/v1/schemes/**",
                                 "/api/v1/weather/**",
+                                "/api/v1/delivery-slots",
+                                "/api/v1/locations/providers/status",
+                                "/api/v1/locations/nearby/hubs",
+                                "/api/v1/locations/reverse-geocode",
+                                "/api/v1/locations/geocode",
                                 "/v3/api-docs/**",
                                 "/v3/api-docs.yaml",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
                                 "/actuator/**"
                         ).permitAll()
-                        // Role-specific protected prefixes for future modules
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        // Super Admin provision is public but guarded by bootstrap secret
+                        .requestMatchers("/api/v1/admin/super/provision").permitAll()
+                        // Both ADMIN and SUPER_ADMIN can access admin endpoints
+                        .requestMatchers("/api/v1/admin/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
                         .requestMatchers("/api/v1/farmer/**").hasAnyRole("FARMER", "ADMIN")
                         .requestMatchers("/api/v1/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
                         .requestMatchers("/api/v1/bulk-buyer/**").hasAnyRole("BULK_BUYER", "ADMIN")
@@ -68,6 +78,11 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    static RoleHierarchy roleHierarchy() {
+        return RoleHierarchyImpl.fromHierarchy("ROLE_SUPER_ADMIN > ROLE_ADMIN");
     }
 
     @Bean

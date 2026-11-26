@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:dio/dio.dart';
 import '../config/app_config.dart';
 import '../constants/app_constants.dart';
@@ -6,6 +7,7 @@ import '../storage/storage_service.dart';
 class DioClient {
   final Dio dio;
   final SecureStorageService storageService;
+  Completer<String?>? _refreshCompleter;
 
   DioClient({
     required this.storageService,
@@ -31,8 +33,66 @@ class DioClient {
           }
           return handler.next(options);
         },
+        onError: (error, handler) async {
+          final req = error.requestOptions;
+          if (error.response?.statusCode == 401 &&
+              !req.path.contains('/auth/login') &&
+              !req.path.contains('/auth/refresh') &&
+              req.extra['retried'] != true) {
+            final newToken = await _refreshAccessToken();
+            if (newToken != null && newToken.isNotEmpty) {
+              req.headers['Authorization'] = 'Bearer $newToken';
+              req.extra['retried'] = true;
+              try {
+                final cloned = await dio.fetch(req);
+                return handler.resolve(cloned);
+              } catch (e) {
+                return handler.next(error);
+              }
+            }
+          }
+          return handler.next(error);
+        },
       ),
     );
+  }
+
+  Future<String?> _refreshAccessToken() async {
+    if (_refreshCompleter != null) {
+      return _refreshCompleter!.future;
+    }
+    _refreshCompleter = Completer<String?>();
+    try {
+      final refreshToken = await storageService.read(AppConstants.refreshTokenKey);
+      if (refreshToken == null || refreshToken.isEmpty) {
+        _refreshCompleter!.complete(null);
+        return null;
+      }
+      final res = await Dio(BaseOptions(baseUrl: AppConfig.apiBaseUrl))
+          .post('/auth/refresh', data: {'refreshToken': refreshToken});
+      final data = res.data['data'] as Map<String, dynamic>?;
+      final newToken = data?['token'] as String?;
+      final newRefresh = data?['refreshToken'] as String?;
+      if (newToken != null && newToken.isNotEmpty) {
+        await storageService.write(AppConstants.tokenKey, newToken);
+        if (newRefresh != null && newRefresh.isNotEmpty) {
+          await storageService.write(AppConstants.refreshTokenKey, newRefresh);
+        }
+        _refreshCompleter!.complete(newToken);
+        return newToken;
+      }
+      await storageService.delete(AppConstants.tokenKey);
+      await storageService.delete(AppConstants.refreshTokenKey);
+      _refreshCompleter!.complete(null);
+      return null;
+    } catch (_) {
+      await storageService.delete(AppConstants.tokenKey);
+      await storageService.delete(AppConstants.refreshTokenKey);
+      _refreshCompleter!.complete(null);
+      return null;
+    } finally {
+      _refreshCompleter = null;
+    }
   }
 
   Future<Response> get(String path, {Map<String, dynamic>? queryParameters}) {

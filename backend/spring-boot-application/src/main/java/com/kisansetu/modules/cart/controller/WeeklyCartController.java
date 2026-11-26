@@ -3,6 +3,9 @@ package com.kisansetu.modules.cart.controller;
 import com.kisansetu.common.response.ApiResponse;
 import com.kisansetu.common.security.UserPrincipal;
 import com.kisansetu.modules.cart.dto.*;
+import com.kisansetu.modules.cart.service.WeeklyCartOptimizationService;
+import com.kisansetu.modules.cart.service.WeeklyCartOptimizationService.OptimizeRequest;
+import com.kisansetu.modules.cart.service.WeeklyCartOptimizationService.OptimizeResponse;
 import com.kisansetu.modules.cart.service.WeeklyCartService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,9 +24,20 @@ import java.util.UUID;
 public class WeeklyCartController {
 
     private final WeeklyCartService weeklyCartService;
+    private final WeeklyCartOptimizationService optimizationService;
 
-    public WeeklyCartController(WeeklyCartService weeklyCartService) {
+    public WeeklyCartController(WeeklyCartService weeklyCartService, WeeklyCartOptimizationService optimizationService) {
         this.weeklyCartService = weeklyCartService;
+        this.optimizationService = optimizationService;
+    }
+
+    @PostMapping("/optimize")
+    @Operation(summary = "Optimize weekly basket against live farmer stock, pricing, and serviceability")
+    public ResponseEntity<ApiResponse<OptimizeResponse>> optimizeBasket(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @RequestBody OptimizeRequest request) {
+        return ResponseEntity.ok(ApiResponse.ok("Weekly basket optimization evaluated",
+                optimizationService.optimize(principal.getId(), request)));
     }
 
     @GetMapping

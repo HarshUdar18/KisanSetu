@@ -29,6 +29,8 @@ interface AuthContextType {
   lockSession: () => void;
   unlockSession: () => void;
   hasPermission: (permission: string) => boolean;
+  isSuperAdmin: () => boolean;
+  isAdmin: () => boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -48,7 +50,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLocked, setIsLocked] = useState(false);
   const [user, setUser] = useState<AdminUser | null>(() => {
     const saved = localStorage.getItem('kisansetu_admin_user');
-    return saved ? JSON.parse(saved) : null;
+    if (!saved) return null;
+    const parsed = JSON.parse(saved);
+    if (parsed.fullName === 'Rajesh Kulkarni') {
+      parsed.fullName = parsed.roles?.includes('ROLE_SUPER_ADMIN') ? 'Super Admin' : 'Admin';
+    }
+    return parsed;
   });
 
   useEffect(() => {
@@ -63,9 +70,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = (newToken: string, newUser: AdminUser) => {
     setToken(newToken);
+    const derivedRole: AdminRoleName =
+      newUser.adminRole ??
+      (newUser.roles?.includes('ROLE_SUPER_ADMIN') ? 'Super Admin' : 'Operations Admin');
     setUser({
       ...newUser,
-      adminRole: newUser.adminRole ?? 'Super Admin',
+      adminRole: derivedRole,
     });
     setIsLocked(false);
   };
@@ -88,6 +98,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return perms.includes('*') || perms.includes(permission);
   };
 
+  const isSuperAdmin = (): boolean => {
+    if (!user) return false;
+    return user.roles?.includes('ROLE_SUPER_ADMIN') ?? false;
+  };
+
+  const isAdmin = (): boolean => {
+    if (!user) return false;
+    return (
+      user.roles.includes('ROLE_ADMIN') ||
+      user.roles.includes('ROLE_SUPER_ADMIN') ||
+      !!user.adminRole
+    );
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -100,6 +124,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         lockSession,
         unlockSession,
         hasPermission,
+        isSuperAdmin,
+        isAdmin,
       }}
     >
       {children}

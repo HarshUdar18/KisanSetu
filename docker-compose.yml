@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgis/postgis:16-3.4-alpine
     container_name: kisansetu-postgres
     restart: unless-stopped
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      - "${POSTGRES_PORT:-5433}:5432"
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-kisansetu_db}
       POSTGRES_USER: ${POSTGRES_USER:-kisansetu_user}
@@ -57,6 +55,39 @@ services:
       timeout: 10s
       retries: 5
       start_period: 15s
+    networks:
+      - kisansetu-network
+
+  backend:
+    build:
+      context: ./backend/spring-boot-application
+      dockerfile: Dockerfile
+    container_name: kisansetu-backend
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      PORT: 8080
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-local}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-kisansetu_db}
+      POSTGRES_USER: ${POSTGRES_USER:-kisansetu_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-kisansetu_secret}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: ${RABBITMQ_USER:-kisansetu}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-kisansetu_secret}
+      SUPER_ADMIN_BOOTSTRAP_SECRET: ${SUPER_ADMIN_BOOTSTRAP_SECRET:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     networks:
       - kisansetu-network
 

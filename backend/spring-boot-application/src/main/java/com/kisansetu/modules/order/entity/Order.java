@@ -64,6 +64,22 @@ public class Order {
     @Column(name = "total_amount", nullable = false, precision = 10, scale = 2)
     private BigDecimal totalAmount = BigDecimal.ZERO;
 
+    @Column(name = "service_locality_id")
+    private UUID serviceLocalityId;
+
+    @Column(name = "geofence_version")
+    private Integer geofenceVersion;
+
+    @Column(name = "serviceability_decision", length = 60)
+    private String serviceabilityDecision;
+
+    public UUID getServiceLocalityId() { return serviceLocalityId; }
+    public void setServiceLocalityId(UUID serviceLocalityId) { this.serviceLocalityId = serviceLocalityId; }
+    public Integer getGeofenceVersion() { return geofenceVersion; }
+    public void setGeofenceVersion(Integer geofenceVersion) { this.geofenceVersion = geofenceVersion; }
+    public String getServiceabilityDecision() { return serviceabilityDecision; }
+    public void setServiceabilityDecision(String serviceabilityDecision) { this.serviceabilityDecision = serviceabilityDecision; }
+
     @Column(name = "payment_reference", length = 100)
     private String paymentReference;
 

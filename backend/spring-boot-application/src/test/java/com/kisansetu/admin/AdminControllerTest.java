@@ -45,7 +45,9 @@ class AdminControllerTest {
                 userRepository,
                 productCategoryRepository,
                 Mockito.mock(com.kisansetu.modules.order.repository.OrderRepository.class),
-                Mockito.mock(com.kisansetu.modules.farmer.repository.FarmerProfileRepository.class));
+                Mockito.mock(com.kisansetu.modules.farmer.repository.FarmerProfileRepository.class),
+                Mockito.mock(com.kisansetu.modules.admin.service.AdminManagementService.class),
+                Mockito.mock(com.kisansetu.modules.hub.service.HubManagementService.class));
 
         customerRole = new Role("ROLE_CUSTOMER", "Registered Customer");
 

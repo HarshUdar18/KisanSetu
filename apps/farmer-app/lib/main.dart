@@ -26,6 +26,7 @@ class KisanSetuFarmerApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        Provider<DioClient>.value(value: dioClient),
         ChangeNotifierProvider(
           create: (_) => FarmerSettingsProvider(preferencesService),
         ),

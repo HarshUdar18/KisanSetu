@@ -45,6 +45,27 @@ public class Address {
     @Column(name = "is_default", nullable = false)
     private boolean isDefault = false;
 
+    @Column(name = "recipient_type", nullable = false, length = 20)
+    private String recipientType = "MYSELF";
+
+    @Column(name = "recipient_first_name", length = 80)
+    private String recipientFirstName;
+
+    @Column(name = "recipient_last_name", length = 80)
+    private String recipientLastName;
+
+    @Column(name = "recipient_phone", length = 20)
+    private String recipientPhone;
+
+    @Column(name = "street_building", length = 255)
+    private String streetBuilding;
+
+    @Column(name = "landmark", length = 255)
+    private String landmark;
+
+    @Column(name = "location_summary", length = 255)
+    private String locationSummary;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
@@ -95,6 +116,20 @@ public class Address {
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
     public boolean isDefault() { return isDefault; }
     public void setDefault(boolean isDefault) { this.isDefault = isDefault; }
+    public String getRecipientType() { return recipientType; }
+    public void setRecipientType(String recipientType) { this.recipientType = recipientType; }
+    public String getRecipientFirstName() { return recipientFirstName; }
+    public void setRecipientFirstName(String recipientFirstName) { this.recipientFirstName = recipientFirstName; }
+    public String getRecipientLastName() { return recipientLastName; }
+    public void setRecipientLastName(String recipientLastName) { this.recipientLastName = recipientLastName; }
+    public String getRecipientPhone() { return recipientPhone; }
+    public void setRecipientPhone(String recipientPhone) { this.recipientPhone = recipientPhone; }
+    public String getStreetBuilding() { return streetBuilding; }
+    public void setStreetBuilding(String streetBuilding) { this.streetBuilding = streetBuilding; }
+    public String getLandmark() { return landmark; }
+    public void setLandmark(String landmark) { this.landmark = landmark; }
+    public String getLocationSummary() { return locationSummary; }
+    public void setLocationSummary(String locationSummary) { this.locationSummary = locationSummary; }
     public Instant getCreatedAt() { return createdAt; }
     public Instant getUpdatedAt() { return updatedAt; }
 }
